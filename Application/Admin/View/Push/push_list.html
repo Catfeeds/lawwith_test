@@ -1,0 +1,354 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="panel panel-default">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <ul class="nav nav-tabs">
+                <!--<li class="active">-->
+                    <!--<a href="#home-3" data-toggle="tab">-->
+                        <!--<span class="badge-black"><i class="fa-slack"></i></span>-->
+                        <!--<span class="hidden-xs">话题</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <li class="active">
+                    <a href="#profile-3" data-toggle="tab">
+                        <span class="badge-black"><i class="fa-h-square"></i></span>
+                        <span class="hidden-xs">求助</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#messages-3" data-toggle="tab">
+                        <span class="badge-black"><i class="fa-glass"></i></span>
+                        <span class="hidden-xs">活动</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings-3" data-toggle="tab">
+                        <span class="badge-black"><i class="fa-youtube-play"></i></span>
+                        <span class="hidden-xs">视频</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#inbox-3" data-toggle="tab">
+                        <span class="badge-black"><i class="fa-institution"></i></span>
+                        <span class="hidden-xs">律所</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#inbox-4" data-toggle="tab">
+                        <span class="badge-black"><i class="fa-user-md"></i></span>
+                        <span class="hidden-xs">律师</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home-3">
+
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>话题</th>
+                                <th>发布者</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="middle-align">
+                            <empty name="data1">
+                                <tr><td align="center" colspan="4">暂无数据</td></tr>
+                                <else/>
+                                <foreach name="data1" item="vo">
+                                    <tr>
+                                        <td>
+                                            #{$vo.title}#
+                                            <!--<if condition="$vo['is_stick'] eq 1">-->
+                                            <!--<span class="label label-blue">置顶</span>-->
+                                            <!--</if>-->
+                                            <!--<if condition="$vo['is_push'] eq 1">-->
+                                            <!--<span class="label label-success">首页推荐</span>-->
+                                            <!--</if>-->
+                                            <!--<span class="label label-red">热门</span>-->
+                                        </td>
+                                        <td>官方</td>
+                                        <td>{$vo.push_date|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="$vo['is_push'] eq 1">
+                                                <a href="{:U('Content/changePush',array('is_push'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt($vo['type'])))}" class="btn btn-pink btn-sm btn-icon icon-left">取消推荐</a>
+                                                <else />
+                                                <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(1)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                            </empty>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="profile-3">
+
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>求助</th>
+                                <th>发布者</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="middle-align">
+                            <empty name="data2">
+                                <tr><td align="center" colspan="4">暂无数据</td></tr>
+                                <else/>
+                                <foreach name="data2" item="vo">
+                                    <tr>
+                                        <td>
+                                            #{$vo.title}#
+                                            <!--<if condition="$vo['is_stick'] eq 1">-->
+                                            <!--<span class="label label-blue">置顶</span>-->
+                                            <!--</if>-->
+                                            <!--<if condition="$vo['is_push'] eq 1">-->
+                                            <!--<span class="label label-success">首页推荐</span>-->
+                                            <!--</if>-->
+                                            <!--<span class="label label-red">热门</span>-->
+                                        </td>
+                                        <td>官方</td>
+                                        <td>{$vo.push_date|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="$vo['is_push'] eq 1">
+                                                <a href="{:U('Content/changePush',array('is_push'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt($vo['type'])))}" class="btn btn-pink btn-sm btn-icon icon-left">取消推荐</a>
+                                                <else />
+                                                <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(1)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                            </empty>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="messages-3">
+
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>活动</th>
+                                <th>发布者</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="middle-align">
+                            <empty name="data3">
+                                <tr><td align="center" colspan="4">暂无数据</td></tr>
+                                <else/>
+                                <foreach name="data3" item="vo">
+                                    <tr>
+                                        <td>
+                                            #{$vo.title}#
+                                            <!--<if condition="$vo['is_stick'] eq 1">-->
+                                            <!--<span class="label label-blue">置顶</span>-->
+                                            <!--</if>-->
+                                            <!--<if condition="$vo['is_push'] eq 1">-->
+                                            <!--<span class="label label-success">首页推荐</span>-->
+                                            <!--</if>-->
+                                            <!--<span class="label label-red">热门</span>-->
+                                        </td>
+                                        <td>官方</td>
+                                        <td>{$vo.push_date|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="$vo['is_push'] eq 1">
+                                                <a href="{:U('Content/pushIndex',array('is_push'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id'])))}" class="btn btn-pink btn-sm btn-icon icon-left">取消推荐</a>
+                                                <else />
+                                                <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(1)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                            </empty>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="settings-3">
+
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>视频</th>
+                                <th>发布者</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="middle-align">
+                            <empty name="data4">
+                                <tr><td align="center" colspan="4">暂无数据</td></tr>
+                                <else/>
+                                <foreach name="data4" item="vo">
+                                    <tr>
+                                        <td>
+                                            #{$vo.title}#
+                                            <!--<if condition="$vo['is_stick'] eq 1">-->
+                                            <!--<span class="label label-blue">置顶</span>-->
+                                            <!--</if>-->
+                                            <!--<if condition="$vo['is_push'] eq 1">-->
+                                            <!--<span class="label label-success">首页推荐</span>-->
+                                            <!--</if>-->
+                                            <!--<span class="label label-red">热门</span>-->
+                                        </td>
+                                        <td>官方</td>
+                                        <td>{$vo.push_date|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="$vo['is_push'] eq 1">
+                                                <a href="{:U('Train/changeTrain',array('status'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id']),'mark'=>lx_encrypt(1)))}" class="btn btn-pink btn-sm btn-icon icon-left">取消首页推荐</a>
+                                                <else />
+                                                <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(1)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐首页</a>
+                                            </if>
+                                            <if condition="$vo['push_list'] eq 1">
+                                                <a href="{:U('Train/changeTrain',array('status'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id']),'mark'=>lx_encrypt(2)))}" class="btn btn-pink btn-sm btn-icon icon-left">取消列表推荐</a>
+                                                <else />
+                                                <a href="{:U('Train/banner_list',array('mid'=>lx_encrypt($vo['id'])))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐列表</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                            </empty>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="inbox-3">
+
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>律所名称</th>
+                                <th>发布者</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="middle-align">
+                            <empty name="data5">
+                                <tr><td align="center" colspan="4">暂无数据</td></tr>
+                                <else/>
+                                <foreach name="data5" item="vo">
+                                    <tr>
+                                        <td>
+                                            #{$vo.law_name}#
+                                            <!--<if condition="$vo['is_stick'] eq 1">-->
+                                            <!--<span class="label label-blue">置顶</span>-->
+                                            <!--</if>-->
+                                            <!--<if condition="$vo['is_push'] eq 1">-->
+                                            <!--<span class="label label-success">首页推荐</span>-->
+                                            <!--</if>-->
+                                            <!--<span class="label label-red">热门</span>-->
+                                        </td>
+                                        <td>官方</td>
+                                        <td>{$vo.push_date|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="$vo['is_push'] eq 1">
+                                                <a href="{:U('Content/changeLaws',array('is_push'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id'])))}" class="btn btn-pink btn-sm btn-icon icon-left">取消推荐</a>
+                                                <else />
+                                                <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(1)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                            </empty>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="inbox-4">
+
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>发布者</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="middle-align">
+                            <empty name="data6">
+                                <tr><td align="center" colspan="4">暂无数据</td></tr>
+                                <else/>
+                                <foreach name="data6" item="vo">
+                                    <tr>
+                                        <td>
+                                            #{$vo.uname}#
+                                            <!--<if condition="$vo['is_stick'] eq 1">-->
+                                            <!--<span class="label label-blue">置顶</span>-->
+                                            <!--</if>-->
+                                            <!--<if condition="$vo['is_push'] eq 1">-->
+                                            <!--<span class="label label-success">首页推荐</span>-->
+                                            <!--</if>-->
+                                            <!--<span class="label label-red">热门</span>-->
+                                        </td>
+                                        <td>官方</td>
+                                        <td>{$vo.push_date|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="$vo['is_push'] eq 1">
+                                                <a href="{:U('User/changeAccount',array('is_push'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id']),'u_type'=>lx_encrypt($vo['type'])))}" class="btn btn-pink btn-sm btn-icon icon-left">取消推荐</a>
+                                                <else />
+                                                <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(1)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                            </empty>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<include file="Public/footer" />

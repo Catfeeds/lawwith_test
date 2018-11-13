@@ -1,0 +1,95 @@
+<include file="Public/main" />
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<include file="Public/header"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description"></p>
+    </div>
+    <div class="breadcrumb-env">
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="panel-heading">
+    <div class="album-header">
+        <button class="btn btn-success btn-icon" onclick="create()" >
+            <span>创建分类</span>
+        </button>
+    </div>
+    </div>
+    <table class="table table-bordered table-striped" id="train_list">
+        <thead>
+        <tr>
+            <th>分类ID</th>
+            <th>分类名称</th>
+            <th>排序</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>创建者</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="middle-align">
+            <foreach name="data" item="vo">
+                <tr>
+                    <td><span>{$vo.cate_id}</span></td>
+                    <td><span>{$vo.cate_name}</span></td>
+                    <td><span>{$vo.sort}</span></td>
+                    <td><span>{$vo.status}</span></td>
+                    <td><span>{$vo.create_time|date='Y-m-d',###}</span></td>
+                    <td><span>{$vo.author}</span></td>
+                    <td>
+                    <span>
+                        <if condition="$vo['status'] eq 1">
+                            <a href="{:U('Video/updateCategoryStatus',array('cate_id'=>$vo['cate_id'],'status'=>$vo['status']))}">隐藏</a>
+                        <else />
+                            <a href="{:U('Video/updateCategoryStatus',array('cate_id'=>$vo['cate_id'],'status'=>$vo['status']))}" style="color: red">显示</a>
+                        </if>
+                        &nbsp;&nbsp;
+                        <a href="{:U('Video/categoryUpdate',array('cate_id'=>$vo['cate_id']))}">编辑</a>
+                        &nbsp;&nbsp;
+                        <a href="javascript:categoryDelete({$vo['cate_id']});">删除</a>
+                    </span>
+                    </td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+    <div class="flickr">{$page}</div>
+</div>
+<script type="text/javascript">
+    function create() {
+        window.location.href = "{:U('Video/categoryCreate')}";
+    }
+
+    function categoryDelete(cate_id) {
+        if(confirm('该删除不可恢复,确定删除吗?')) {
+            $.ajax({
+                async: false, type: 'post', url: "{:U('Video/categoryDelete')}", data: {cate_id: cate_id},
+                error: function () {
+                    alert('删除失败^,程序异常');
+                },
+                success: function (response) {
+                    console.log(JSON.parse(response));
+                    if (JSON.parse(response).msg) {
+                        window.location.href = "{:U('Video/category')}";
+                    } else {
+                        alert(JSON.parse(response).message);
+                    }
+                }
+            });
+        }
+    }
+</script>
+<include file="Public/footer" />

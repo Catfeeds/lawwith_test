@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="icon" href="http://lx2016.oss-cn-beijing.aliyuncs.com/Icon/2016-06-15/lx_logo80.png" type="image/x-icon"/>
+	<link rel="stylesheet" href="__Theme__/chatroom/dist/css/chartroom.css"/>
+	<link href="//nos.netease.com/vod163/nep.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="m-head">
+		<div class="g-doc">
+			<div class="logo item">聊天室</div>
+			<div class="nav item">
+				<a href="./main.html">首页</a>
+			</div>
+			<div class="info item">
+				<img src="__Theme__/chatroom/images/default-icon.png" alt="头像" id="avatar">
+				<div id="nickName">未登录</div>
+				<!--<a href="roomManage.html" id="nickName">未登录</a>-->
+			</div>
+			<!--<div class="action item"><a href="./anchor.html"><b class="icon"></b>我要当主播</a></div>-->
+		</div>
+	</div>
+	<div class="g-doc">
+		<div class="m-room" id="room">
+			<!--<div class="g-left">-->
+				<!--<div class="info">-->
+					<!--<div class="avatar">-->
+						<!--<img class="image" id="roomAvatar" src="__Theme__/chatroom/images/default-icon.png"/>-->
+					<!--</div>-->
+					<!--<div class="detail">-->
+						<!--<p class="title" id="roomTitle">房间名</p>-->
+						<!--<p class="desc">主播：<span id="roomCreator"></span>&nbsp;&nbsp;在线人数：<span id="roomOnlineMemberNum"></span></p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--&lt;!&ndash;<div class="media">&ndash;&gt;-->
+					<!--&lt;!&ndash;&lt;!&ndash;<img src="" id="video" class="hide">&ndash;&gt;&ndash;&gt;-->
+
+					<!--&lt;!&ndash;&lt;!&ndash; 注意video元素不要使用display:none隐藏，这会flash模式下swf文件得不到加载，播放器一直处于初始化过程中 &ndash;&gt;&ndash;&gt;-->
+					<!--&lt;!&ndash;<video id="my-video" class="video-js" x-webkit-airplay="allow" webkit-playsinline controls poster="{$Think.cookie.roomavator}" preload="auto" width="744" height="453" data-setup="{}">&ndash;&gt;-->
+						<!--&lt;!&ndash;<source src="{$Think.cookie.videoUrl}" type="video/mp4">&ndash;&gt;-->
+					<!--&lt;!&ndash;</video>&ndash;&gt;-->
+				<!--&lt;!&ndash;</div>&ndash;&gt;-->
+			<!--</div>-->
+			<!--<div class="g-right">-->
+				<div class="m-status" id="linkStatus">连接中。。。</div>
+				<div class="announcement_title">
+					直播公告
+				</div>
+				<div class="announcement" id="roomAnnouncement">
+				</div>
+				<ul class="tab">
+					<li class="crt j-tab" data-value="chat">直播互动</li>
+					<li class="j-tab" data-value="member">在线成员</li>
+				</ul>
+				<div class="chat j-pannel j-chat">
+				</div>
+				<div class="member j-pannel hide">
+					<div class="list j-member">
+					</div>
+					<div class="more j-more">
+						<a>加载更多</a>
+					</div>
+				</div>
+				<div class="edit">
+					<textarea style="width: 100%" class="editText" id="editText" placeholder="Ctrl+Enter快速发送"></textarea>
+				</div>
+				<div class="sendBtn">
+					<div id="emojiTag"></div>
+					<a class="u-btn btn" id="sentText">发送</a>
+					<a class="btn custom" id="customBtn"></a>
+					<a class="btn emoji" id="emoji"></a>
+				</div>
+			<!--</div>-->
+		</div>
+	</div>
+	<div id="menu" class="m-menu" style="display:none">
+		<ul>
+			<li class="j-item j-kick" data-type="0"  title="移除直播室">踢人</li>
+			<li class="j-item j-gag" data-type="1"  title="禁止发言">禁言</li>
+			<li class="j-item j-black" data-type="2"  title="永久不能进入该直播间">拉黑该用户</li>
+			<li class="j-item admin j-admin" data-type="3">任命管理员</li>
+		</ul>
+	</div>
+	<script src="//nos.netease.com/vod163/nep.min.js"></script>
+	<script src="__JS__/config.js"></script>
+	<script src="__Theme__/chatroom/dist/js/title.js"></script>
+	<script src="__JS__/jquery-1.7.1.min.js"></script>
+	<script src="__JS__/NIM_Web_SDK_v3.2.0.js"></script>
+	<script src="__Theme__/chatroom/dist/js/util.js"></script>
+	<script src="__Theme__/chatroom/dist/js/emoji.js"></script>
+	<script src="__Theme__/chatroom/dist/js/link.js"></script>
+	<script src="__Theme__/chatroom/dist/js/room.js"></script>
+</body>
+</html>

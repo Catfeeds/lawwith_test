@@ -1,0 +1,196 @@
+<include file="Public/main" />
+<include file="Public/header"/>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>用户管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">在线直播</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body form-horizontal">
+            <form id="For_video" action="" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">频道名称</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="name"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">公&nbsp;&nbsp;&nbsp;&nbsp;告</label>
+                    <div class="col-lg-5 kv-main">
+                        <textarea name="announcement" class="form-control" cols="" rows="3"></textarea>
+                        <!-- <input class="form-control" type="text" name="announcement"> -->
+                        <span style="font-size: small; color: #00aa00">长度限制40个字以内</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <script type="text/javascript">
+                        jQuery(document).ready(function($)
+                        {
+                            $("#s2example-2").select2({
+                                placeholder: '请选择专业领域',
+                                allowClear: true
+                            }).on('select2-open', function()
+                            {
+                                // Adding Custom Scrollbar
+                                $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                            });
+
+                        });
+                    </script>
+                    <label class="col-lg-1 control-label">专业领域 </label>
+                    <div class="col-lg-5">
+                        <select class="form-control" id="s2example-2" name="major_id[]" multiple>
+                            <option></option>
+                            <optgroup label="请选择专业领域">
+                                <volist name="major" id="major_vo">
+                                    <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                </volist>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">管理员账号</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control mobile" type="text" name="mobile">
+                        <span style="font-size: small; color: #00aa00">填写手机号,为直播间管理员</span></div>
+                    <div class="error mobile" style="color: red;"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">机器人数</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="robot"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">封面图片</label>
+                    <div class="col-lg-5 kv-main">
+                        <input class="form-control" type="file" name="thumb_img">
+                        <span style="font-size: small; color: #00aa00">* 图片的大小500kb,宽：564px,高：319px</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">收费/免费</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="amount" placeholder="0元免费/大于0收费，单位/元"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">公开</label>
+                    <div class="col-lg-5">
+                        <input type="checkbox" name="is_private" class="iswitch iswitch-info" checked="checked" value="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <button type="button" class="btn btn-success" id="btn-submit">保 存</button>
+                        <a href="javascript:window.history.go(-1)" class="btn btn-outline btn-default">返 回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_video')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        name: {
+                            validators: {
+                                notEmpty: {
+                                    message: '直播间名称不能为空！'
+                                }
+                            }
+                        },
+                        announcement: {
+                            validators: {
+                                notEmpty: {
+                                    message: '直播间公告不能为空！'
+                                }
+                            }
+                        },
+                        major: {
+                            validators: {
+                                notEmpty: {
+                                    message: '专业领域不能为空！'
+                                }
+                            }
+                        },
+                        mobile: {
+                            validators: {
+                                notEmpty: {
+                                    message: '管理员手机号不能为空！'
+                                }
+                            }
+                        },
+                        robot: {
+                            validators: {
+                                notEmpty: {
+                                    message: '机器人数目不能为空！'
+                                }
+                            }
+                        },
+                        thumb_img: {
+                            validators: {
+                                notEmpty: {
+                                    message: '直播间封面图不能为空！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+
+    //验证手机号有效性,是否已注册
+    $(".kv-main .mobile").blur(function(){
+        var mobile = $(".kv-main .mobile").val();
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            async: true,
+            url:"{:U('Admin/Live/verifyAccount')}",
+            data:{mobile: mobile},
+            success:function(data){
+                if(data.status == 0) {
+                    $(".error").html(data.msg);
+                }
+
+                if(data.status == 1){
+                    $("#btn-submit").prop("type","submit");
+                    $(".error").empty();
+                }
+            },
+            error:function(){
+                console.log('请求失败');
+            }
+        });
+    });
+</script>
+<script src="__JS__/showIMG.js"></script>
+<script type="text/javascript" src="__JS__/html5Upload.js"></script>
+<script src="__JS__/select2/select2.min.js"></script>
+<link rel="stylesheet" href="__JS__/select2/select2.css">
+<link rel="stylesheet" href="__JS__/select2/select2-bootstrap.css">
+<include file="Public/footer"/>

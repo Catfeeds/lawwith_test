@@ -1,0 +1,73 @@
+<include file="Public/head"/>
+<style>
+.hz_nr img{width:100%;text-align: center}
+</style>
+    <if condition="$data['is_money'] eq 1">
+        <div class="banner"></div>
+    <else/>
+        <div style="display: none;"></div>
+    </if>
+    <div class="hz_top">
+    	<p>{$data.title}</p>
+    </div>
+    <div class="hz_nr">{$data.content}</div>
+    <notempty name="data.imgs">
+        <div class="hz_nrIMG">
+            <volist name=":explode(',',$data['imgs'])" id="img_id">
+                <div class="img_list"><img src="{$img_id|img_path}"/></div>
+            </volist>
+        </div>
+    </notempty>
+    <div class="hz_nrbt"><span>创建于</span>{$data.send_time|date='Y-m-d H:i',###}</div>
+    <div class="hz_cet oh hz_cetXian">
+    	<div class="hz_cetlef fl">
+            <volist name=":explode(',',$data['tag_major'])" id="dat_vo">
+                <volist name="majors" id="major_vo">
+                    <if condition="$major_vo['id'] eq $dat_vo">
+                        {$major_vo.delimiter}{$major_vo.major_name}&nbsp;&nbsp;
+                    </if>
+                </volist>
+            </volist>
+        </div>
+        <div class="hz_cetrig fr"><span><img src="__SHARE__/images/hz_icon02.jpg"></span>{$data.comment_sums.counts}</div>
+        <div class="hz_cetrig fr"><span><img src="__SHARE__/images/hz_icon01.jpg"></span>{$data.views}</div>
+    </div>
+
+    <foreach name="data.comm_list" item="comm_dat">
+        <div class="hz_wtbdy">
+            <div class="hz_wttil oh">
+                <if condition="$comm_dat['is_nym'] eq 0">
+                    <div class="hz_wtpic fl">
+                        <notempty name="comm_dat.icon">
+                            <img src="{$comm_dat.icon}">
+                            <else/>
+                            <img src="__SHARE__/images/default.png">
+                        </notempty>
+                    </div>
+                    <div class="hz_wtxm fl">{$comm_dat.uname}</div>
+                    <div class="hz_wtzw fl">
+                        <switch name="comm_dat.type">
+                            <case value="1">律师</case>
+                            <case value="2">法务</case>
+                            <case value="3">学者</case>
+                            <case value="5">其他</case>
+                            <default/>
+                        </switch>
+                    </div>
+                    <else/>
+                    <div class="hz_wttil oh">
+                        <div class="hz_wtpic fl"><img src="__SHARE__/images/default.png"></div>
+                        <div class="hz_wtxm fl">匿名</div>
+                    </div>
+                </if>
+                <div class="hz_wtsj fr">{$comm_dat.time|date='Y-m-d H:i',###}</div>
+            </div>
+            <div class="hz_wtnr"><pre>{$comm_dat.content}</pre></div>
+            <div class="hz_cet oh">
+                <div class="hz_cetlef fl"></div>
+                <div class="hz_cetrig fr"><span><img src="__SHARE__/images/zan.jpg"></span>{$comm_dat.likes}</div>
+                <div class="hz_cetrig fr"><span><img src="__SHARE__/images/nozan.jpg"></span>{$comm_dat.dislikes}</div>
+            </div>
+        </div>
+    </foreach>
+    <include file="Public/foot"/>

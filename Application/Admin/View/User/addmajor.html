@@ -1,0 +1,134 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap.css"/>
+<link rel="stylesheet" href="__CSS__/bootstrapValidator.css"/>
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="{:U('User/major')}">专业</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form id="major_Form" method="post" class="form-horizontal" action="{:U('User/subMajor')}">
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">专业名称</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="majorName" value="{$data1.major_name}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">所属父级</label>
+                        <div class="col-lg-5">
+                            <select class="form-control" name="pid">
+                                <option value="0">默认为顶级</option>
+                                <volist name="tree" id="vo">
+                                    <if condition="$data1['pid'] eq $vo['id']">
+                                        <option value="{$vo['id']}" selected>{$vo.delimiter}{$vo.major_name}</option>
+                                    <else />
+                                        <option value="{$vo['id']}">{$vo.delimiter}{$vo.major_name}</option>
+                                    </if>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">排序</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" name="sort" placeholder="99" value="{$data1['sort']|default=99}"/>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-lg-3 control-label">状态</label>-->
+                        <!--<div class="col-lg-5">-->
+                            <!--<if condition="$data1['status'] eq 1">-->
+                                <!--<input type="checkbox" name="status" class="iswitch iswitch-info" checked="checked" value="1">-->
+                                <!--<else/>-->
+                                <!--<input type="checkbox" name="status" class="iswitch iswitch-info" value="1">-->
+                            <!--</if>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="form-group" id="last">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <input type="hidden" name="mid" value="{$data1.id}">
+                            <button type="submit" class="btn btn-primary ajax-post">确认添加</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#major_Form')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        majorName: {
+                            message: '专业名称无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '专业名称不能为空！'
+                                },
+                                remote: {
+                                    url: "{:U('User/checkMajor')}",
+                                    message: '专业名称已存在'
+                                }
+                            }
+                        },
+                        sort: {
+                            message: '排序无效',
+                            validators: {
+                                notEmpty: {
+                                    message: '排序不能为空！'
+                                },
+                                regexp: {
+                                    regexp: /^[0-9]*$/,
+                                    message: '排序必须为数字！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+<include file="Public/footer"/>

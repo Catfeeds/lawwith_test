@@ -1,0 +1,318 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__Date__/dateSelect.css">
+<script type="text/javascript" src="__Date__/dateSelect.js"></script>
+<!--<link rel="stylesheet" href="__CSS__/bootstrap.css"/>-->
+<!--<link rel="stylesheet" href="__CSS__/bootstrapValidator.css"/>-->
+<!--<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<style>
+    #preview{
+        width:160px;
+        height:160px;
+        border:1px dashed #000;
+        overflow:hidden;
+        text-align:center;
+        vertical-align:middle;
+        line-height:160px;
+        -moz-border-radius: 80px;/*Firefox*/
+        -webkit-border-radius: 80px;/*Safari, Chrome*/
+        border-radius: 80px;
+        margin-top: 20px;
+    }
+    #imghead {
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+        width: 160px;
+        height:auto;
+    }
+</style>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">律所列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form id="Form2" method="post" class="form-horizontal" action="{:U('Laws/subeditLaws')}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">LOGO </label>
+                        <div class="col-lg-3">
+                            <input id="up_logo" type="file" name="logo" style="display: none" onchange="previewImage(this)"/>
+                            <div id="preview">
+                                <empty name="laws.logo">
+                                    <img id="imghead" src="__IMG__/default_logo.jpg" title="Logo图片">
+                                    <else/>
+                                    <img id="imghead" src="{$laws.logo}" title="Logo图片">
+                                </empty>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <a id="btn_logo" href="javascript:void(0);">
+                                <!--<span>修改logo</span>-->
+                                <span class="label label-purple">修改logo </span>
+                            </a><br/>
+                            <span style="font-size: small; color: #00aa00">* 最大比例：160px 160px;</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">律所名称 </label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="lawName" value="{$laws.law_name}"/>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 输入律所的名称</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">所在地区 </label>
+                        <div class="col-lg-5">
+                                <select name="province" id="province" onchange="loadRegion('province',2,'city','{:U('Laws/getRegion')}');">
+                                    <option value="0" selected>省份/直辖市</option>
+                                    <volist name="province" id="city_vo">
+                                        <if condition="$laws['province'] eq $city_vo['cityname']">
+                                            <option value="{$city_vo.id}" selected>{$city_vo.cityname}</option>
+                                        <else/>
+                                            <option value="{$city_vo.id}">{$city_vo.cityname}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                                <select name="city" id="city"  onchange="loadRegion('city',3,'town','{:U('Laws/getRegion')}');">
+                                    <option value="0">市/县</option>
+                                    <volist name="city" id="city_vo">
+                                        <if condition="$laws['city'] eq $city_vo['cityname']">
+                                            <option value="{$city_vo.id}" selected>{$city_vo.cityname}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                                <select name="town" id="town">
+                                    <option value="0">镇/区</option>
+                                    <volist name="town" id="city_vo">
+                                        <if condition="$laws['town'] eq $city_vo['cityname']">
+                                            <option value="{$city_vo.id}" selected>{$city_vo.cityname}</option>
+                                        </if>
+                                    </volist>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">详细地址</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="address" value="{$laws.address}"/>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">*请填写具体的地址</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">律所电话</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="phone" value="{$laws.phone}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">管理员 </label>
+                        <div class="col-lg-5">
+                            <select class="form-control" name="uadmin">
+                                <option value="">请选择律师</option>
+                                <volist name="lawyer" id="lawyer_vo">
+                                    <if condition="$laws['uadmin'] eq $lawyer_vo['id']">
+                                        <option value="{$lawyer_vo['id']}" selected>{$lawyer_vo['uname']}({$lawyer_vo['mobile']})</option>
+                                    <else/>
+                                        <option value="{$lawyer_vo['id']}">{$lawyer_vo['uname']}({$lawyer_vo['mobile']})</option>
+                                    </if>
+                                </volist>
+                            </select>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 请为律所指定一个管理员</span>
+                    </div>
+
+                    <div class="form-group">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($)
+                            {
+                                $("#s2example-2").select2({
+                                    placeholder: '请选择专业领域',
+                                    allowClear: true
+                                }).on('select2-open', function()
+                                {
+                                    // Adding Custom Scrollbar
+                                    $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                                });
+
+                            });
+                        </script>
+                        <label class="col-lg-3 control-label">专业领域 </label>
+                        <div class="col-lg-5">
+                            <select class="form-control" id="s2example-2" name="major_id[]" multiple>
+                                <option></option>
+                                <optgroup label="请选择专业领域">
+                                    <volist name=":explode(',',$laws['majors'])" id="vx">
+                                        <volist name="major_tree" id="major_vo">
+                                            <if condition="$major_vo['id'] eq $vx">
+                                                <option value="{$major_vo['id']}" selected>{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                                <else/>
+                                                <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                            </if>
+                                        </volist>
+                                    </volist>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">成立时间</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" id="date11" name="create_time" value="{$laws['create_at']|date='Y-m-d',###}"/>
+                            <script type="text/javascript">
+                                $("#date11").dateSelect();
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">简介</label>
+                        <div class="col-lg-5">
+                            <textarea class="form-control autogrow" name="describe" placeholder="描述律所" style="min-height: 100px;">{$laws.profile}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">状态</label>
+                        <div class="col-lg-5">
+                            <if condition="$laws['status'] eq 1">
+                                <input type="checkbox" name="status" class="iswitch iswitch-info" checked="checked" value="1">
+                                <else/>
+                                <input type="checkbox" name="status" class="iswitch iswitch-info" value="1">
+                            </if>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <input type="hidden" name="lid" value="{$laws.id}"/>
+                            <input type="hidden" name="logo_path" value="__ROOT__/Uploads/{$laws.logo}"/>
+                            <button type="submit" class="btn btn-primary">确认保存</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#btn_logo').click(function(){
+            $('#up_logo').click();
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+    function loadRegion(sel,type_id,selName,url){
+        jQuery("#"+selName+" option").each(function(){
+            jQuery(this).remove();
+        });
+        jQuery("<option value=0>请选择</option>").appendTo(jQuery("#"+selName));
+        if(jQuery("#"+sel).val()==0){
+            return;
+        }
+        jQuery.getJSON(url,{pid:jQuery("#"+sel).val(),type:type_id},
+                function(data){
+                    if(data){
+                        jQuery.each(data,function(idx,item){
+                            jQuery("<option value="+item.id+">"+item.cityname+"</option>").appendTo(jQuery("#"+selName));
+                        });
+                    }else{
+                        jQuery("<option value='0'>请选择</option>").appendTo(jQuery("#"+selName));
+                    }
+                }
+        );
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#Form2')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        lawName: {
+                            message: '律所名无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '律所名不能为空！'
+                                }
+//                                remote: {
+//                                    url: "{:U('Laws/checkLaws')}",
+//                                    message: '律所名不可用'
+//                                }
+                            }
+                        },
+                        address: {
+                            validators: {
+                                notEmpty: {
+                                    message: '详细地址不能为空！'
+                                }
+                            }
+                        },
+                        phone: {
+                            validators: {
+                                notEmpty: {
+                                    message: '律所电话不能为空！'
+                                }
+//                                regexp: {
+//                                    regexp: /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/, ///([0-9]+[a-zA-Z]+[\.@#\$%\^&\*\(\)\[\]\\?\\\/\|\-~`\+\=\,\r\n\:\'\"]+)|/
+//                                    message: '请输入有效的电话信息'
+//                                }
+                            }
+                        },
+//                        create_time: {
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '成立时间不能为空！'
+//                                }
+//                            }
+//                        }
+                    }
+                })
+    });
+</script>
+<script src="__JS__/showIMG.js"></script>
+<script src="__JS__/select2/select2.min.js"></script>
+<link rel="stylesheet" href="__JS__/select2/select2.css">
+<link rel="stylesheet" href="__JS__/select2/select2-bootstrap.css">
+<include file="Public/footer"/>

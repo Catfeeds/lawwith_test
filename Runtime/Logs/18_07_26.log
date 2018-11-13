@@ -1,0 +1,665 @@
+[ 2018-07-26T11:40:52+08:00 ] 223.72.38.139 /App/Index/news_recommend
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T15:31:57+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T15:31:57+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T15:32:03+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T15:32:06+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T15:32:09+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4017' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4017' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4017' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4017' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4016' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4016' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4016' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4016' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4015' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4015' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4015' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4015' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4014' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4014' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4014' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4014' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4013' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4013' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4013' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4013' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4012' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4012' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4012' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4012' ) LIMIT 1  
+
+[ 2018-07-26T16:44:54+08:00 ] 223.72.38.139 /App/Index/news_recommend
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `send_time`,`is_money`,`post_amount` FROM `lx_resource` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:34:58+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:34:58+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:35:03+08:00 ] 223.72.38.139 /App/Content/likes
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_bonus_conf` WHERE ( conf_id= ) LIMIT 1  
+ERR: Think\Controller:setRecordSn方法不存在！
+
+[ 2018-07-26T17:35:09+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:35:11+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:39:45+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:39:45+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:39:50+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4027' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4027' ) LIMIT 1  
+
+[ 2018-07-26T17:40:02+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:10+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:19+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:19+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='3989' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='3989' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='3989' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='3989' ) LIMIT 1  
+
+[ 2018-07-26T17:40:26+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:26+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='3983' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='3983' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='3983' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='3983' ) LIMIT 1  
+
+[ 2018-07-26T17:40:31+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:31+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='3977' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='3977' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='3977' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='3977' ) LIMIT 1  
+
+[ 2018-07-26T17:40:35+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:39+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:42+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:46+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:51+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:40:59+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:02+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:06+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:09+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:16+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:20+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:22+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:41:25+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:42:04+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:42:04+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:42:20+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4027' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4027' ) LIMIT 1  
+
+[ 2018-07-26T17:42:22+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4027' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4027' ) LIMIT 1  
+
+[ 2018-07-26T17:43:54+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:44:23+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:44:24+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:47:36+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:47:36+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:50:22+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:50:22+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:52:13+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:52:13+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-07-26T17:57:05+08:00 ] 223.72.38.139 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-07-26T17:57:05+08:00 ] 223.72.38.139 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+

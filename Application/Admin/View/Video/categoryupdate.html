@@ -1,0 +1,87 @@
+<include file="Public/main" />
+<include file="Public/header"/>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>视频管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">视频分类管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body form-horizontal">
+            <form id="For_video" action="{:U('Video/categoryUpdate')}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">分类标题</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="cate_name" placeholder="分类标题" value="{$cate.cate_name}"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">排序</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="sort" placeholder="排序id" value="{$cate.sort}"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">显示</label>
+                    <div class="col-lg-5">
+                        <if condition="$cate['status'] eq 1">
+                            <input type="checkbox" name="status" class="iswitch iswitch-info" checked="checked" value="1">
+                            <else/>
+                            <input type="checkbox" name="status" class="iswitch iswitch-info" value="1">
+                        </if>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <button type="submit" class="btn btn-success">保存</button>
+                        <input type="hidden" name="cate_id" value="{$cate.cate_id}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_video')
+            .bootstrapValidator({
+                message: '这个值无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    cat_name: {
+                        validators: {
+                            notEmpty: {
+                                message: '分类标题不能为空！'
+                            }
+                        }
+                    },
+                    sort: {
+                        validators: {
+                            notEmpty: {
+                                message: '分类排序不能为空！'
+                            }
+                        }
+                    },
+                }
+            })
+    });
+</script>
+<include file="Public/footer"/>

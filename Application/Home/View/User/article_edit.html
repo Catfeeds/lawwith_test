@@ -1,0 +1,268 @@
+<include file="header" />
+    <div class="main"><!--主体开始-->
+        <h1 class="common-author-heading-wrap">
+            <span class="common-author-heading">文章发布</span>
+        </h1>
+
+        <div class="main-left"><!--主体左侧开始-->
+            <div class="main-left-li"><a href="{:U('User/index')}">首页</a></div>
+            <div class="main-left-li"><a href="{:U('User/article_edit')}">新发布</a></div>
+            <div class="main-left-li"><a href="{:U('User/article_list')}">已发布</a></div>
+            <div class="main-left-li"><a href="{:U('User/article_drafts')}">草稿箱</a></div>
+        </div>
+
+        <div class="mainR"><!--主体右侧开始-->
+        <form action="{:U('User/update_data')}" id="Form2" method="post" enctype="multipart/form-data">
+            <div class="mainRBiaoti"><!--标题-->
+                <div class="title">
+                    <i class="star"></i>
+                    <h4>标题<span class="tip">（最多可输入24个字）</span></h4>
+                </div>
+                <div class="content">
+                    <input type="text" name="title" id="arttitle" placeholder="输入标题..." required="required" class="public-input long-input focus-form-ele required-item">
+                </div>
+            </div>
+            <!--标题end-->
+            <!--城市列表-->
+            <div class="mainRCity">
+                <div class="form-group content">
+                    <script type="text/javascript">
+                        jQuery(document).ready(function($)
+                        {
+                            $("#s2example-1").select2({
+                                placeholder: '请选择城市',
+                                allowClear: true,
+                            }).on('select2-open', function()
+                            {
+                                // Adding Custom Scrollbar
+                                $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                            });
+
+                        });
+                    </script>
+                    <label class="col-lg-3 control-label">所属城市</label>
+
+                    <div class="col-lg-12">
+                        <select class="select-list" style="width:100%;" id="s2example-1" name="city_id[]" multiple>
+                            <option></option>
+                            <optgroup label="请选择城市">
+                                <volist name="city" id="cvo">
+                                    <option value="{$cvo['cityname']}">{$cvo.cityname}</option>
+                                </volist>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group content">
+                    <script type="text/javascript">
+                        jQuery(document).ready(function($)
+                        {
+                            $("#s2example-2").select2({
+                                placeholder: '请选择专业领域',
+                                allowClear: true
+                            }).on('select2-open', function()
+                            {
+                                // Adding Custom Scrollbar
+                                $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                            });
+
+                        });
+                    </script>
+                    <label class="col-lg-3 control-label">专业领域 </label>
+                    <div class="col-lg-12">
+                        <select class="select-list" style="width:100%;" id="s2example-2" name="major_id[]" multiple>
+                            <option></option>
+                            <optgroup label="请选择专业领域">
+                                <volist name="major" id="major_vo">
+                                    <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                </volist>
+                            </optgroup>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <!--城市列表-->
+
+            <!--内容部分开始-->
+            <div class="main-content">
+                <div class="title">
+                    <i class="star"></i>
+                    <h4>正文</h4>
+                </div>
+                <div class="content">
+                    <textarea id="editor" class="form-control" name="content" placeholder="内容" style="width:800px;"></textarea>
+                </div>
+            </div>
+            <!--内容部分结束-->
+            <!--上传附件开始-->
+            <div class="imgUp">
+                <div class="title">
+                    <i class="star"></i>
+                    <h4>上传附件</h4>
+                </div>
+                <div class="content">
+                    <div id="demo" class="demo form-control"></div>
+                </div>
+            </div>
+            <!--上传附件结束-->
+            <div class="release">
+                <input type="hidden" name="author" value="{$Think.session.app_id}" />
+                <input type="submit" value="提交" class="submit-button">
+                <input type="submit" value="提交" class="submit-button">
+            </div>
+        </form>
+        </div>
+        <!--主体右侧结束-->
+    </div>
+    <!--主体结束-->
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        //左侧高度随右侧变化而变化
+
+        $('.mainL').height($('.mainR').height());
+        $('.page-container form').submit(function(){
+            var username = $(this).find('.username').val();
+            var password = $(this).find('.password').val();
+            if(username == '') {
+                $(this).find('.error').fadeOut('fast', function(){
+                    $(this).css('top', '27px');
+                });
+                $(this).find('.error').fadeIn('fast', function(){
+                    $(this).parent().find('.username').focus();
+                });
+                return false;
+            }
+            if(password == '') {
+                $(this).find('.error').fadeOut('fast', function(){
+                    $(this).css('top', '96px');
+                });
+                $(this).find('.error').fadeIn('fast', function(){
+                    $(this).parent().find('.password').focus();
+                });
+                return false;
+            }
+        });
+
+        $('.page-container form .username, .page-container form .password').keyup(function(){
+            $(this).parent().find('.error').fadeOut('fast');
+        });
+
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        // 初始化插件
+        $("#demo").zyUpload({
+            width            :   "650px",                 // 宽度
+            height           :   "400px",                 // 宽度
+            itemWidth        :   "120px",                 // 文件项的宽度
+            itemHeight       :   "100px",                 // 文件项的高度
+            url              :   "{:U('User/uploadPicture',array('session_id'=>session_id()))}",  // 上传文件的路径
+            multiple         :   true,                    // 是否可以多个文件上传
+            dragDrop         :   true,                    // 是否可以拖动上传文件
+            del              :   true,                    // 是否可以删除文件
+            finishDel        :   false,  				  // 是否在上传文件完成后删除预览
+            /* 外部获得的回调接口 */
+            onSelect: function(selectFiles, allFiles){    // 选择文件的回调方法  selectFile:当前选中的文件  allFiles:还没上传的全部文件
+                console.info("当前选择了以下文件：");
+                console.info(selectFiles);
+            },
+            onProgress: function(file, loaded, total){    // 正在上传的进度的回调方法
+                console.info("当前正在上传此文件：");
+                console.info(file.name);
+                console.info("进度等信息如下：");
+                console.info(loaded);
+                console.info(total);
+            },
+            onDelete: function(file, files){              // 删除一个文件的回调方法 file:当前删除的文件  files:删除之后的文件
+                console.info("当前删除了此文件：");
+                console.info(file.name);
+            },
+            onSuccess: function(file, response){          // 文件上传成功的回调方法
+                console.info("此文件上传成功：");
+                console.info(file.name);
+            },
+            onFailure: function(file, response){          // 文件上传失败的回调方法
+                console.info("此文件上传失败：");
+                console.info(file.name);
+            },
+            onComplete: function(response){           	  // 上传完成的回调方法
+                console.info("文件上传完成");
+                console.info(response);
+            }
+        });
+
+    });
+</script>
+
+<script src="__ASTYLE__/js/select2/select2.min.js"></script>
+<link rel="stylesheet" href="__ASTYLE__/js/select2/select2.css">
+<link rel="stylesheet" href="__ASTYLE__/js/select2/select2-bootstrap.css">
+<script type="text/javascript" src="__ASTYLE__/js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="__ASTYLE__/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+//    $(document).ready(function() {
+//        $('#Form2')
+//                .bootstrapValidator({
+//                    message: '这个值无效',
+//                    feedbackIcons: {
+//                        valid: 'glyphicon glyphicon-ok',
+//                        invalid: 'glyphicon glyphicon-remove',
+//                        validating: 'glyphicon glyphicon-refresh'
+//                    },
+//                    fields: {
+//                        title: {
+//                            message: '标题无效！',
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '标题不能为空！'
+//                                }
+//                            }
+//                        },
+//
+//                        content: {
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '内容不能为空！'
+//                                }
+//                            }
+//                        },
+//                        'city_id[]': {
+//                            validators: {
+//                                choice: {
+//                                    min: 1,
+//                                    max: 3,
+//                                    message: '请选择1-3个城市标签！'
+//                                }
+//                            }
+//                        },
+//                        'major_id[]': {
+//                            validators: {
+//                                choice: {
+//                                    min: 1,
+//                                    max: 3,
+//                                    message: '请选择1-3个专业标签！'
+//                                }
+//                            }
+//                        }
+//                    }
+//                })
+//    });
+</script>
+<script type="text/javascript">
+
+    //实例化编辑器
+    var ue = UE.getEditor('editor', {
+        toolbars: [
+            ['fullscreen', 'undo', 'redo', 'removeformat', 'cleardoc']
+        ],
+        elementPathEnabled:false,
+        autoHeightEnabled: true,
+        autoFloatEnabled: true
+    });
+</script>
+
+<include file="footer" />

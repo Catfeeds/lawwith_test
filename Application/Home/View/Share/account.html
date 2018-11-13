@@ -1,0 +1,76 @@
+<include file="Public/head"/>
+	<!--<header>-->
+    	<!--<div class="xinxi_fh"><a href="#"><img src="__SHARE__/images/xinxi_fh.jpg"></a></div>-->
+        <!--<div class="xinxi_mid">个人名片</div>-->
+    <!--</header>-->
+    <div class="xinxi_bar">
+    	<div class="xinxi_bartx">
+            <notempty name="data.icon">
+                <img src="{$data.icon}">
+                <else/>
+                <img src="__SHARE__/images/default.png">
+            </notempty>
+        </div>
+        <div class="xinxi_name">{$data.uname}
+            <switch name="data.type">
+                <case value="1"><span>律师</span></case>
+                <case value="2"><span>法务</span></case>
+                <case value="3"><span>学者</span></case>
+                <case value="5"><span>其他</span></case>
+                <default/>
+            </switch>
+        </div>
+        <if condition="$data.status eq 1">
+            <switch name="data.type">
+                <case value="1"><div class="xinxi_zy">认证律师<span><img src="__SHARE__/images/vip.png"></span></div></case>
+                <case value="2"><div class="xinxi_zy">认证法务<span><img src="__SHARE__/images/vip.png"></span></div></case>
+                <case value="3"><div class="xinxi_zy">认证学者<span><img src="__SHARE__/images/vip.png"></span></div></case>
+                <default/>
+            </switch>
+        </if>
+    </div>
+    <div class="xinxi_nr">
+    	<div class="xinxi_nr01 oh">
+        	<div class="xinxi_nr01lef fl">
+                <switch name="data.type">
+                    <case value="1"><span>律师</span></case>
+                    <case value="2"><span>法务</span></case>
+                    <case value="3"><span>学者</span></case>
+                    <case value="5"><span>其他</span></case>
+                    <default/>
+                </switch>
+            </div>
+            <div class="xinxi_nr01lef fr">
+                <if condition="$data.gender eq 2"><span>女</span><else/><span>男</span></if>
+            </div>
+        </div>
+        <div class="xinxi_nrexp">
+            <switch name="data.type">
+                <case value="1"><span>{$data.law_info.law_name}</span></case>
+                <case value="2"><span>{$data.company}</span></case>
+                <case value="3"><span>{$data.school}</span></case>
+                <case value="5"><span>{$data.company}</span></case>
+                <default/>
+            </switch>
+        </div>
+        <div class="xinxi_nrexp"><span>{$data.province}</span><span>{$data.city}</span><span>{$data.town}</span></div>
+        <div class="xinxi_nrexp">
+            <volist name=":explode(',',$data['majors'])" id="dat_vo">
+                <volist name="majors" id="major_vo">
+                    <if condition="$major_vo['id'] eq $dat_vo">
+                        <span>{$major_vo.delimiter}{$major_vo.major_name}</span>
+                    </if>
+                </volist>
+            </volist>
+        </div>
+        <div class="xinxi_nrexp"><span>{$data.price}</span></div>
+        <div class="xinxi_nrexp"><span>{$data.years}年</span></div>
+        <div class="xinxi_nrexp"><span>{$data.lawyer_num}</span></div>
+        <div class="xinxi_nrexp"><span>{$data.mobile}</span></div>
+        <div class="xinxi_nrexp"><span>{$data.hight_diploma}</span></div>
+        <div class="xinxi_nrexp"><span><pre>{$data.education}</pre></span></div>
+        <div class="xinxi_nrexp"><span><pre>{$data.professional}</pre></span></div>
+        <div class="xinxi_nrexp"><span><pre>{$data.prize}</pre></span></div>
+        <div class="xinxi_nrexp"><span><pre>{$data.remark}</pre></span></div>
+    </div>
+    <include file="Public/foot"/>

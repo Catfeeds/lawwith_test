@@ -1,0 +1,112 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<!-- Removing search and results count filter -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="search-form input-group col-xs-3 pull-right">
+            <input type="text" name="nickname" value="{:I('nickname')}" class="form-control search-input" placeholder="请输入专业名称&hellip;">
+            <a class="input-group-addon" href="javascript:;" id="search" url="{:U('major')}">
+                <i class="linecons-search"></i>
+            </a>
+        </div>
+        <div class="album-header">
+            <button class="btn btn-white btn-icon" onclick="addmajor()" >
+                <span>新增</span>
+                <i class="fa-plus"></i>
+            </button>
+        </div>
+        <table class="table table-bordered table-striped" id="example-2">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>排序</th>
+                <th>名称</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody class="middle-align">
+            <foreach name="tree_list" item="vo">
+                <tr>
+                    <td>{$key+1}</td>
+                    <td>{$vo.sort}</td>
+                    <td>{$vo.delimiter}{$vo.major_name}</td>
+                    <td>
+                        <if condition="$vo['status'] eq 1">正常<else />禁止</if>
+                    </td>
+                    <td>
+                        <if condition="$vo['status'] eq 1">
+                        <a href="{:U('User/changeStatus',array('status'=>lx_encrypt(0),'uid'=>lx_encrypt($vo['id'])))}" class="btn btn-danger btn-sm btn-icon icon-left">
+                            禁止
+                        </a>
+                            <else />
+                        <a href="{:U('User/changeStatus',array('status'=>lx_encrypt(1),'uid'=>lx_encrypt($vo['id'])))}" class="btn btn-secondary btn-sm btn-icon icon-left">
+                            解除
+                        </a>
+                        </if>
+                        <a href="{:U('User/addMajor',array('mid'=>lx_encrypt($vo['id'])))}" class="btn btn-info btn-sm btn-icon icon-left">
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+        <div class="flickr">{$page}</div>
+    </div>
+</div>
+<script type="text/javascript">
+    function addmajor(){
+        window.location.href = "{:U('User/addMajor')}";
+    }
+</script>
+<script type="text/javascript">
+    //搜索功能
+    $("#search").click(function(){
+        var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        window.location.href = url;
+    });
+    //回车搜索
+    $(".search-input").keyup(function(e){
+        if(e.keyCode === 13){
+            $("#search").click();
+            return false;
+        }
+    });
+</script>
+<include file="Public/footer"/>

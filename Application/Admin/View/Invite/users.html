@@ -1,0 +1,71 @@
+<!--
+  ~ Copyright (c) 2017. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<include file="Public/main"/>
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap.min.css"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+    </div>
+
+</div>
+<!-- Removing search and results count filter -->
+<div class="panel panel-default">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content">
+                <!--tabs content-->
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped" id="example-2">
+                        <thead>
+                        <tr>
+                            <th>用户姓名</th>
+                            <th>手机号</th>
+                            <th>是否激活</th>
+                            <th>激活时间</th>
+                            <th>提交手机号时间</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="middle-align">
+                        <foreach name="users" item="vo">
+                            <tr>
+                                <td><empty name="vo.user_name">暂未设置用户名<else/><span class="label label-secondary">{$vo.user_name}</span></empty></td>
+                                <td><span style="font-weight: bolder">{$vo.mobile}</span></td>
+                                <td><span class="label label-secondary" style="font-weight: bolder">{$vo['is_actived'] ? '已激活':'未激活'}</span></td>
+                                <td><empty name="vo.actived_time"><else/><span class="label label-secondary" style="font-weight: bolder">{$vo.actived_time|date="Y-m-d H:i:s",###}</span></empty></td>
+                                <td><span class="label label-secondary" style="font-weight: bolder">{$vo.create_time|date="Y-m-d H:i:s",###}</span></td>
+                            </tr>
+                        </foreach>
+
+                        </tbody>
+                    </table>
+                    <div class="flickr">{$page}</div>
+                </div>
+                <!--tabs content-->
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public/footer"/>

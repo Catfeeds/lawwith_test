@@ -1,0 +1,126 @@
+<include file="Public/head"/>
+
+	<!--<header>-->
+    	<!--<div class="xinxi_fh"><a href="#"><img src="__SHARE__/images/xinxi_fh.jpg"></a></div>-->
+        <!--<div class="xinxi_mid">望京聚餐</div>-->
+    <!--</header>-->
+    <div class="hd_top oh">
+    	<div class="hd_toplef fl">
+        	<img src="{$data.imgs}">
+            <div class="hd_toplefwz">
+            <if condition="$data.status eq 1">
+                报名中：
+                <else/>
+                活动结束
+            </if>
+                {$data.part_sums.counts}/{$data.number}
+            </div>
+        </div>
+        <div class="hd_toprig fl">
+        	<div class="hd_rigexp">邀请人数：<span>{$data.number}人</span></div>
+            <div class="hd_rigexp">开始时间：<span>{$data.star_time|date='Y-m-d H:i',###}</span></div>
+            <div class="hd_rigexp">结束时间：<span>{$data.end_time|date='Y-m-d H:i',###}</span></div>
+            <div class="hd_rigexp">人均消费：<span><empty name="data.price">免费<else/>{$data.price}</empty></span></div>
+            <div class="hd_rigexp">截止时间：<span>{$data.deadline|date='Y-m-d H:i',###}</span></div>
+        </div>
+        <div class="hd_fs"><a>活动方式</a>
+            <if condition="$data['type'] eq 1">
+                <span>线下活动</span>
+            <elseif condition="$data['type'] eq 2" />
+                <span>线上活动</span>
+            <else />
+                <span>未知</span>
+            </if>
+        </div>
+        <div class="hd_dz"><span><img src="__SHARE__/images/dizhi.jpg"></span>{$data.address}</div>
+    </div>
+    <div class="hd_js">
+    	<div class="hd_jstil">活动介绍</div>
+        <div class="hd_jsnr"><pre>{$data.remark}</pre></div>
+        <!--<div class="hd_more"><a href="#"><img src="__SHARE__/images/hd_more.jpg"></a></div>-->
+    </div>
+    <div class="hd_faqi">
+    	<div class="hd_faqitil">发起人</div>
+        <div class="hd_faqinr oh">
+            <if condition="$data['author'] eq 0">
+                <div class="hd_faqilef fl"><span><img src="__SHARE__/images/admin.jpg"></span>律携App</div>
+                <else/>
+                <div class="hd_faqilef fl">
+                    <notempty name="data.author_info.icon">
+                        <span><img src="{$data.author_info.icon}"></span>
+                        <else/>
+                        <span><img src="__SHARE__/images/default.png"></span>
+                    </notempty>
+                    {$data.author_info.uname}
+                </div>
+                <div class="hd_faqirig fr">
+                    <if condition="$data.author_info.status eq 1">
+                        <switch name="data.author_info.type">
+                            <case value="1">认证律师</case>
+                            <case value="2">认证法务</case>
+                            <case value="3">认证学者</case>
+                            <case value="5">其他</case>
+                            <default/>
+                        </switch>
+                    <else/>
+                        <switch name="data.author_info.type">
+                            <case value="1">律师</case>
+                            <case value="2">法务</case>
+                            <case value="3">学者</case>
+                            <case value="5">其他</case>
+                            <default/>
+                        </switch>
+                    </if>
+                </div>
+            </if>
+        </div>
+    </div>
+    <notempty name="data.sponsor">
+        <div class="hd_str">
+            <div class="hd_str01">主办单位</div>
+            <div class="hd_str02">{$data.sponsor}</div>
+        </div>
+    </notempty>
+    <div class="hd_rs">
+    	<div class="hd_rstop"><a>活动参与者</a><span>参加人数{$data.part_sums.counts}/{$data.number}</span></div>
+    </div>
+    <div class="hd_rstx oh">
+        <volist name="data.part_info" id="part_icon">
+            <div class="hd_rstxexp fl">
+                <notempty name="part_icon.icon">
+                    <img src="{$part_icon.icon}">
+                    <else/>
+                    <img src="__SHARE__/images/default.png">
+                </notempty>
+            </div>
+        </volist>
+    </div>
+    <div class="hd_pl">
+    	<div class="hd_pltil oh">
+        	<div class="hd_pltillef fl">活动评论（{$data.commt_sums.counts|default=0}）</div>
+            <!--<div class="hd_pltilrig fr"><a href="#">发表评论</a></div>-->
+        </div>
+    </div>
+    <foreach name="data.comm_list" item="list_vo">
+        <div class="hd_plnr oh">
+            <div class="hd_plnrtx fl">
+                <notempty name="list_vo.icon">
+                    <img src="{$list_vo.icon}">
+                    <else/>
+                    <img src="__SHARE__/images/default.png">
+                </notempty>
+            </div>
+            <div class="hd_plnrwz oh fl">
+                <div class="hd_plnrwz01 fl">{$list_vo.uname}</div>
+                <div class="hd_plnrwz02 fl">
+                    {$list_vo.content}
+                </div>
+            </div>
+            <div class="hd_plnrsj fl">{$list_vo.time|date='Y-m-d H:i',###}</div>
+        </div>
+    </foreach>
+    <!--<div class="hd_bm oh">-->
+    	<!--<div class="hd_bmexp" align="center"><a href="#">我要报名</a></div>-->
+        <!--&lt;!&ndash;<div class="hd_bmexp fr"><a href="#">分享活动</a></div>&ndash;&gt;-->
+    <!--</div>-->
+    <include file="Public/foot"/>

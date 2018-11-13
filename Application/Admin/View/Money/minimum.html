@@ -1,0 +1,85 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <!--<p class="description">{$meta_describe}</p>-->
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>提现额度设置</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{$meta_title}</h3>
+            </div>
+            <div class="panel-body">
+
+                <form method="post" id="For_email" action="{:U('Money/minimum')}" role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">最低提现额度</label>
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="linecons-user"></i></span>
+                                <input type="text" class="form-control" name="minimum" placeholder="例:最低提现额度10元" value="{$minimum}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-6">设置最低提现额度时需要注意，设置合适的提现额度。<br>支付宝收取服务费是按照打款笔数收费的，每笔0.5%，最低1元，也就是比如一次批量打款，转账1000个用户，即1000笔，至少收取你1000元服务费</div>
+                    </div>
+                    <div class="form-group-separator"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-success">保存配置</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_email')
+            .bootstrapValidator({
+                message: '这个值无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    minimum: {
+                        validators: {
+                            notEmpty: {
+                                message: '最低提现额度不能为空！'
+                            }
+                        }
+                    },
+                }
+            })
+    });
+</script>
+<include file="Public/footer"/>

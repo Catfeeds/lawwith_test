@@ -1,0 +1,255 @@
+<include file="Public/main" />
+<include file="Public/header" />
+<!-- 引用控制层插件样式 -->
+<!--<link rel="stylesheet" href="__upIMG__/control/css/zyUpload.css" type="text/css">-->
+<!--<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>-->
+<!-- 引用核心层插件 -->
+<!--<script src="__upIMG__/core/zyFile.js"></script>-->
+<!-- 引用控制层插件 -->
+<!--<script src="__upIMG__/control/js/zyUpload.js"></script>-->
+<!-- 引用初始化JS -->
+<!--<script src="__upIMG__/core/lanrenzhijia.js"></script>-->
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<style>
+    #preview{
+        width:360px;
+        height:160px;
+        border:1px dashed #000;
+        overflow:hidden;
+        text-align:center;
+        vertical-align:middle;
+        display:table-cell;
+    }
+    #imghead {
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+    }
+</style>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">{$meta_title|msubstr=2,2,"utf-8",false}列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<section class="mailbox-env">
+
+    <div class="row">
+        <form id="Form_show" method="post" action="{:U('Content/subPush')}" enctype="multipart/form-data">
+        <!-- Email Single -->
+        <div class="col-sm-11 mailbox-right">
+                <div class="mail-single">
+
+                    <!-- Email Title and Button Options -->
+                    <div class="mail-single-header">
+                        <h2>
+                            <switch name="p_type">
+                                <case value="1|2|3|4">{$content.title}</case>
+                                <case value="5">{$content.law_name}</case>
+                                <case value="6">{$content.uname}</case>
+                                <default />
+                            </switch>
+                            <if condition="$content['is_push'] eq 1">
+                                <span class="badge badge-red badge-roundless pull-right upper">首页推荐</span>
+                            </if>
+                            <if condition="$content['is_stick'] eq 1">
+                                <span class="badge badge-warning badge-roundless pull-right upper">置顶</span>
+                            </if>
+                            <a href="#" onclick="javascript:history.back(-1);" class="go-back">
+                                <i class="fa-angle-left"></i>
+                                返回
+                            </a>
+                        </h2>
+                    </div>
+
+                    <!-- Email Info From/Reply -->
+                    <div class="mail-single-info">
+
+                        <div class="mail-single-info-user dropdown">
+                            <a href="#" data-toggle="dropdown">
+                                <switch name="p_type">
+                                    <case value="1|2|3">
+                                        <empty name="content['author_info']['icon']">
+                                            <img src="__IMG__/user-4.png" class="img-circle" width="60" />
+                                            <else/>
+                                            <img style="width: 60px;height: 60px;" src="{$content.author_info.icon}" alt="user-img" class="img-responsive img-circle" />
+                                        </empty>
+                                    </case>
+                                    <case value="4">
+                                        <img src="__IMG__/user-4.png" class="img-circle" width="60" />
+                                    </case>
+                                    <case value="5">
+                                        <empty name="content['logo']">
+                                            <img src="__IMG__/user-4.png" class="img-circle" width="60" />
+                                            <else/>
+                                            <img style="width: 60px;height: 60px;" src="{$content.logo}" alt="user-img" class="img-responsive img-circle" />
+                                        </empty>
+                                    </case>
+                                    <case value="6">
+                                        <empty name="content['icon']">
+                                            <img src="__IMG__/user-4.png" class="img-circle" width="60" />
+                                            <else/>
+                                            <img style="width: 60px;height: 60px;" src="{$content.icon}" alt="user-img" class="img-responsive img-circle" />
+                                        </empty>
+                                    </case>
+                                    <default />
+                                </switch>
+                                <switch name="p_type">
+                                    <case value="1|2|3">
+                                        <if condition="$content['author'] eq 0">
+                                            <span>{$Think.session.username}</span>
+                                            <else/>
+                                            <span>{$content.author_info.uname}</span>
+                                        </if>
+                                    </case>
+                                    <case value="4">{$content.author}</case>
+                                    <default/>
+                                </switch>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mail-single">
+                        <h3>
+                            <i class="el-picture"></i>
+                            标题图片
+                        </h3>
+                        <div class="form-group">
+                        <div class="col-xs-2">
+                            <empty name="content['title_img']">
+                                <input name="banner_img" type="file" class="form-control" required data-bv-notempty-message="标题图片不能为空！" onchange="previewImage(this)" />
+                                <else/>
+                                <input name="banner_img" type="file" class="form-control" onchange="previewImage(this)" />
+                            </empty>
+                        </div>
+                        <div id="preview">
+                            <notempty name="content['title_img']">
+                                <img id="imghead" width=100% height=auto border=0 src="{$content.title_img}" title="标题图片">
+                                <else />
+                                <img id="imghead" width=100% height=auto border=0 src="__IMG__/show_IMG.png">
+                            </notempty>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 图片的大小500kb,宽：1042px，高：498px</span>
+                        </div>
+                    </div>
+                    <div class="mail-single-body">
+                        <h3>
+                            <i class="fa-file-text-o"></i>
+                            排序
+                        </h3>
+                        <div class="form-group">
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="sort" placeholder="99" value="{$content['sort']|default=99}"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="mail-single">
+                        <h3>
+                            <i class="fa-bookmark-o"></i>
+                            标签
+                        </h3>
+
+                        <ul class="list-unstyled list-inline">
+                            <notempty name="content['tag_city']">
+                                <volist name=":explode(',',$content['tag_city'])" id="dat_vo">
+                                    <li><span class="label label-success">#{$content.tag_city}#</span></li>
+                                </volist>
+                            </notempty>
+                            <volist name=":explode(',',$content['tag_major'])" id="dat_vo">
+                                <volist name="major" id="major_vo">
+                                    <if condition="$major_vo['id'] eq $dat_vo">
+                                        <li><span class="label label-warning">#{$major_vo.delimiter}{$major_vo.major_name}#</span></li>
+                                    </if>
+                                </volist>
+                            </volist>
+                            <volist name=":explode(',',$content['majors'])" id="dat_vo">
+                                <volist name="major" id="major_vo">
+                                    <if condition="$major_vo['id'] eq $dat_vo">
+                                        <li><span class="label label-warning">#{$major_vo.delimiter}{$major_vo.major_name}#</span></li>
+                                    </if>
+                                </volist>
+                            </volist>
+                            <volist name=":explode(',',$content['tags'])" id="dat_vo">
+                                <volist name="major" id="major_vo">
+                                    <if condition="$major_vo['id'] eq $dat_vo">
+                                        <li><span class="label label-warning">#{$major_vo.delimiter}{$major_vo.major_name}#</span></li>
+                                    </if>
+                                </volist>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="author" value="{$content.author}"/>
+                    <input type="hidden" name="res_id" value="{$content.id}"/>
+                    <input type="hidden" name="p_type" value="{$p_type}"/>
+                    <input type="hidden" name="mark" value="{$mark}"/>
+                    <input type="hidden" name="banner_img" value="{$content.title_img}"/>
+                    <button type="submit" class="btn btn-blue">发布推荐</button>
+                    <button type="reset" class="btn btn-white">重置</button>
+                </div>
+
+        </div>
+        </form>
+    </div>
+
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#Form_show')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+//                        banner_img: {
+//                            message: '标题图片无效！',
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '标题图片不能为空！'
+//                                }
+//                            }
+//                        },
+                        sort: {
+                            message: '排序无效',
+                            validators: {
+                                notEmpty: {
+                                    message: '排序不能为空！'
+                                },
+                                regexp: {
+                                    regexp: /^[0-9]*$/,
+                                    message: '排序必须为数字！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+<script src="__JS__/showIMG.js"></script>
+
+<include file="Public/footer" />

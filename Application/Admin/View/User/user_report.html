@@ -1,0 +1,98 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li>
+                <a>意见反馈和举报</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<!-- Removing search and results count filter -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-bordered table-striped" id="example-2">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>投诉人</th>
+                <th>内容</th>
+                <th>标题</th>
+                <!--<th>状态</th>-->
+                <th>投诉时间</th>
+            </tr>
+            </thead>
+
+            <tbody class="middle-align">
+            <foreach name="data" item="vo">
+                <tr>
+                    <td>{$key+1}</td>
+                    <td>
+                        <a href="{:U('User/audit_identity',array('uid'=>lx_encrypt($vo['acc_id'])))}">
+                        <empty name="vo.icon">
+                            <img width="45px" height="45px" src="__IMG__/user-4.png" alt="{$vo.uname}" title="{$vo.uname}" class="img-cirlce img-responsive img-thumbnail">
+                        <else/>
+                            <img width="45px" height="45px" src="{$vo.icon}" alt="{$vo.uname}" title="{$vo.uname}" class="img-cirlce img-responsive img-thumbnail">
+                        </empty>
+                        </a>
+                    </td>
+                    <td>{$vo.title}</td>
+                    <td>
+                        <if condition="$vo.type eq 2">
+                            <span style="color: #0a3191">{$vo.object|get_title=2,###}</span>
+                            <else/>
+                            <span style="color: #0a3191">{$vo.object|get_title=1,###}</span>
+                        </if>
+                    </td>
+                    <!--<td>-->
+                        <!--<if condition="$vo['is_read'] eq 1">已读<else />未读</if>-->
+                    <!--</td>-->
+                    <td>{$vo.time|date='Y-m-d H:i',###}</td>
+                    <!--<td>-->
+                        <!--<a href="{:U('User/view_feedback',array('uid'=>lx_encrypt($vo['id'])))}" class="btn btn-info btn-sm btn-icon icon-left">-->
+                            <!--查看-->
+                        <!--</a>-->
+                        <!--&lt;!&ndash;<if condition="$vo['status'] eq 1">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="{:U('User/changeStatus',array('status'=>lx_encrypt(0),'uid'=>lx_encrypt($vo['id'])))}" class="btn btn-danger btn-sm btn-icon icon-left">&ndash;&gt;-->
+                            <!--&lt;!&ndash;禁止&ndash;&gt;-->
+                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<else />&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="{:U('User/changeStatus',array('status'=>lx_encrypt(1),'uid'=>lx_encrypt($vo['id'])))}" class="btn btn-secondary btn-sm btn-icon icon-left">&ndash;&gt;-->
+                            <!--&lt;!&ndash;解除&ndash;&gt;-->
+                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</if>&ndash;&gt;-->
+                    <!--</td>-->
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+        <div class="flickr">{$page}</div>
+    </div>
+</div>
+<script type="text/javascript">
+    function addmajor(){
+        window.location.href = "{:U('User/addMajor')}";
+    }
+</script>
+<include file="Public/footer"/>

@@ -1,0 +1,80 @@
+[ 2018-10-21T04:03:25+08:00 ] 47.92.130.247 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001385s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000050s ]
+
+[ 2018-10-21T12:47:33+08:00 ] 47.100.57.133 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001128s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000045s ]
+
+[ 2018-10-21T16:30:33+08:00 ] 47.92.244.147 /wp-config.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+ERR: 无法加载控制器:Wp-config
+
+[ 2018-10-21T20:14:13+08:00 ] 216.145.5.42 /robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000105s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-10-21T20:14:13+08:00 ] 216.145.5.42 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000121s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001394s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000063s ]
+
+[ 2018-10-21T23:26:36+08:00 ] 52.53.201.78 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001541s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+

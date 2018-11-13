@@ -1,0 +1,113 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<!--<link rel="stylesheet" href="__CSS__/bootstrap.min.css"/>-->
+<script type="text/javascript">
+    // Sample Javascript code for this page
+    jQuery(document).ready(function($)
+    {
+        // Delete Modal
+        $('.gallery-env a[data-action="trash"]').on('click', function(ev)
+        {
+            ev.preventDefault();
+            $("#gallery-image-delete-modal").modal('show');
+        });
+
+    });
+</script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li>
+                <a>管理权限</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<!-- Responsive Table -->
+<section class="gallery-env">
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <button class="btn btn-white btn-icon" onclick="addRole()" >
+                    <span>新建角色</span>
+                    <i class="fa-plus"></i>
+                </button>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+                    <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>名称</th>
+                            <th>扩展名</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="role" item="vo">
+                            <tr>
+                                <th>{$vo.id}</th>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.remark}</td>
+                                <td>
+                                    <if condition="$vo['status'] eq 1">
+                                        <span class="label btn-success">正常</span>
+                                    <else/>
+                                        <span class="label btn-primary">关闭</span>
+                                    </if>
+                                </td>
+                                <td>
+                                    <if condition="$vo['id'] eq 1">
+                                        <span class="label label-danger">无操作</span>
+                                    <else/>
+                                        <a href="{:U('access',array('rid'=>$vo['id']))}" class="btn btn-blue btn-sm btn-icon icon-left">
+                                            <li class="fa-cog"></li>
+                                        </a>
+
+                                        <a href="{:U('delRole?rid='.lx_encrypt($vo['id']))}" onclick="return del_confirm()" class="btn btn-danger btn-sm btn-icon icon-left">
+                                            <li class="fa-trash-o" title="删除"></li>
+                                        </a>
+                                    </if>
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <script type="text/javascript">
+
+                    function addRole(){
+                        window.location.href = "{:U('Rbac/addRole')}";
+                    }
+                </script>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
+<include file="Public/footer"/>

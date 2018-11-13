@@ -1,0 +1,124 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+        <ol class="breadcrumb bc-1">
+            <li><a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a></li>
+            <li><a>内容管理</a></li>
+            <li><a href="{:U('Activity/index')}">活动列表</a></li>
+            <li class="active"><strong>{$meta_title}</strong></li>
+        </ol>
+    </div>
+</div>
+<section class="profile-env">
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- User timeline stories -->
+            <section class="user-timeline-stories invoice-env">
+                <!-- Timeline Story Type: Status -->
+                <div class="invoice-header">
+                    <div class="invoice-logo">
+                        <h3><i class="fa-rss"></i>&nbsp;{$info.title}</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="el-view-mode"></i><span>&nbsp;活动类型：</span>
+                                <strong>
+                                    <if condition="$info.type eq 1">线下活动</if>
+                                    <if condition="$info.type eq 2">线上活动</if>
+                                </strong>
+                            </li>
+                            <li><i class="el-adult"></i><span>&nbsp;限制人数：</span>{$info.number}人</li>
+                            <li><i class="fa-money"></i><span>&nbsp;&nbsp;人均消费：<if condition="$info.price eq 0">免费
+                                <else/>
+                                {$info.price}元
+                            </if></span></li>
+                            <notempty name="info.address">
+                                <li><i class="el-location-circled"></i><span>&nbsp;活动地址：{$info.address}</span></li>
+                            </notempty>
+                        </ul>
+                    </div>
+                </div>
+                <div class="invoice-options hidden-print">
+                    <a class="btn btn-block btn-gray btn-icon btn-icon-standalone btn-icon-standalone-right text-left">
+                        <span>开始时间</span><span>{$info.star_time|date='Y-m-d H:i',###}</span>
+                    </a>
+                    <a class="btn btn-block btn-secondary btn-icon btn-icon-standalone btn-icon-standalone-right btn-single text-left">
+                        <span>结束时间</span><span>{$info.end_time|date='Y-m-d H:i',###}</span>
+                    </a>
+                    <a class="btn btn-block btn-danger btn-icon btn-icon-standalone btn-icon-standalone-right btn-single text-left">
+                        <span>截止时间</span><span>{$info.deadline|date='Y-m-d H:i',###}</span>
+                    </a>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <pre>{$remark}</pre>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <div class="story-options-links">
+                        <a><i class="linecons-eye"></i>阅读<span>({$info.views})</span></a>
+                        <a><i class="linecons-heart"></i>点赞<span>({$info.favorite_sums.counts})</span></a>
+                        <a><i class="linecons-comment"></i>回复<span>({$info.commt_sums.counts})</span></a>
+                    </div>
+                    <ul class="list-margin list-inline">
+                        <p><strong>参加人员</strong></p>
+                        <volist name="info['part_info']" id="usr_info">
+                            <li class="col-2"><img style="width: 32px;height: 32px;"
+                                                   src="{$usr_info['uid']|user_info='icon'}"
+                                                   class="img-circle img-responsive"/></li>
+                        </volist>
+                    </ul>
+                    <!-- Story Comments -->
+                    <ul class="list-unstyled story-comments">
+                        <p><strong>评论</strong></p>
+                        <foreach name="info['commt_info']" item="info_vo">
+                            <li>
+                                <div class="story-comment">
+                                    <a class="comment-user-img">
+                                        <php>
+                                            if(empty(user_info($info_vo['uid'],'icon'))){
+                                            echo '<img src="__IMG__/default_head.png" alt="user-img"
+                                                       class="img-circle img-responsive"/>';
+                                            }else {
+                                            echo '<img src="'.user_info($info_vo['uid'],'icon').'" alt="user-img"
+                                                       class="img-circle img-responsive"/>';
+                                            }
+                                        </php>
+                                    </a>
+                                    <div class="story-comment-content">
+                                        <a class="story-comment-user-name">
+                                            {$info_vo['uid']|user_info='uname'}
+                                            <time>{$info_vo.time|date='Y-m-d H:i',###}</time>
+                                        </a>
+                                        <p>{$info_vo.comm_content}</p>
+                                    </div>
+                                    <!-- Story Options Links -->
+                                    <div class="story-options-links">
+                                        <a>
+                                            <i class="el-thumbs-up"></i>
+                                            点赞
+                                            <span>({$info_vo.likes})</span>
+                                        </a>
+                                        <a>
+                                            <i class="el-thumbs-down"></i>
+                                            点踩
+                                            <span>({$info_vo.dislikes})</span>
+                                        </a>
+                                        <a href="{:U('Content/del_comment',array('t'=>lx_encrypt(2),'cid'=>lx_encrypt($info_vo['id'])))}"
+                                           onclick="return del_confirm()">
+                                            <i class="el-trash"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<include file="Public/footer"/>

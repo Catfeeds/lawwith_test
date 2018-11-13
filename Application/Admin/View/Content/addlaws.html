@@ -1,0 +1,264 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__Date__/dateSelect.css">
+<script type="text/javascript" src="__Date__/dateSelect.js"></script>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<style>
+    #preview{
+        width:160px;
+        height:160px;
+        border:1px dashed #000;
+        overflow:hidden;
+        text-align:center;
+        vertical-align:middle;
+        line-height:160px;
+        -moz-border-radius: 80px;/*Firefox*/
+        -webkit-border-radius: 80px;/*Safari, Chrome*/
+        border-radius: 80px;
+        margin-top: 20px;
+    }
+    #imghead {
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+        width: 160px;
+        height:auto;
+    }
+</style>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">律所列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form id="Form2" method="post" class="form-horizontal" action="{:U('Content/subaddLaws')}" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">LOGO </label>
+                        <div class="col-lg-5">
+                            <input id="up_logo" type="file" name="Logo" onchange="previewImage(this)"/>
+                            <div id="preview">
+                                <img id="imghead" src="__IMG__/default_logo.jpg" title="Logo图片">
+                            </div>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 上传律所logo 最大比例：160px 160px;</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">律所名称 </label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="lawName" />
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 输入律所的名称</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">所在地区 </label>
+                        <div class="col-lg-5">
+                            <select name="province" id="province" onchange="loadRegion('province',2,'city','{:U('Content/getRegion')}');">
+                                <option value="0" selected>省份/直辖市</option>
+                                <volist name="province" id="vo">
+                                    <option value="{$vo.id}" >{$vo.cityname}</option>
+                                </volist>
+                            </select>
+                            <select name="city" id="city"  onchange="loadRegion('city',3,'town','{:U('Content/getRegion')}');">
+                                <option value="0">市/县</option>
+                            </select>
+                            <select name="town" id="town">
+                                <option value="0">镇/区</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">详细地址</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="address"/>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">*请填写具体的地址</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">律所电话</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="phone" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($)
+                            {
+                                $("#s2example-2").select2({
+                                    placeholder: '请选择专业领域',
+                                    allowClear: true
+                                }).on('select2-open', function()
+                                {
+                                    // Adding Custom Scrollbar
+                                    $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                                });
+
+                            });
+                        </script>
+                        <label class="col-lg-3 control-label">专业领域 </label>
+                        <div class="col-lg-5">
+                            <select class="form-control" id="s2example-2" name="major_id[]" multiple>
+                                <option></option>
+                                <optgroup label="请选择专业领域">
+                                    <volist name="major" id="major_vo">
+                                        <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                    </volist>
+                                </optgroup>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">成立时间</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" id="date11" name="create_time"/>
+                            <script type="text/javascript">
+                                $("#date11").dateSelect();
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">简介</label>
+                        <div class="col-lg-5">
+                            <textarea class="form-control autogrow" name="describe" placeholder="描述律所" style="min-height: 100px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">状态</label>
+                        <div class="col-lg-5">
+                            <input type="checkbox" name="status" class="iswitch iswitch-info" checked="checked" value="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary">确认添加</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#btn_logo').click(function(){
+            $('#up_logo').click();
+        });
+    });
+</script>
+<script type="text/javascript">
+    function loadRegion(sel,type_id,selName,url){
+        jQuery("#"+selName+" option").each(function(){
+            jQuery(this).remove();
+        });
+        jQuery("<option value=0>请选择</option>").appendTo(jQuery("#"+selName));
+        if(jQuery("#"+sel).val()==0){
+            return;
+        }
+        jQuery.getJSON(url,{pid:jQuery("#"+sel).val(),type:type_id},
+                function(data){
+                    if(data){
+                        jQuery.each(data,function(idx,item){
+                            jQuery("<option value="+item.id+">"+item.cityname+"</option>").appendTo(jQuery("#"+selName));
+                        });
+                    }else{
+                        jQuery("<option value='0'>请选择</option>").appendTo(jQuery("#"+selName));
+                    }
+                }
+        );
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#Form2')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        lawName: {
+                            message: '律所名无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '律所名不能为空！'
+                                },
+                                remote: {
+                                 url: "{:U('Content/checkLaws')}",
+                                 message: '律所名不可用'
+                                 }
+                            }
+                        },
+                        address: {
+                            validators: {
+                                notEmpty: {
+                                    message: '详细地址不能为空！'
+                                }
+                            }
+                        },
+                        phone: {
+                            validators: {
+                                notEmpty: {
+                                    message: '律所电话不能为空！'
+                                }
+//                                regexp: {
+//                                    regexp: /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/, ///([0-9]+[a-zA-Z]+[\.@#\$%\^&\*\(\)\[\]\\?\\\/\|\-~`\+\=\,\r\n\:\'\"]+)|/
+//                                    message: '请输入有效的电话信息'
+//                                }
+                            }
+                        },
+
+                        create_time: {
+                            validators: {
+                                notEmpty: {
+                                    message: '成立时间不能为空！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+<script src="__JS__/showIMG.js"></script>
+<script src="__JS__/select2/select2.min.js"></script>
+<link rel="stylesheet" href="__JS__/select2/select2.css">
+<link rel="stylesheet" href="__JS__/select2/select2-bootstrap.css">
+<include file="Public/footer"/>

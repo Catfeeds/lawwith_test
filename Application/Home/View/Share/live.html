@@ -1,0 +1,57 @@
+<include file="Public/head"/>
+<input type="hidden" id = 'liveId' value="<?php echo isset($data['id'])?$data['id']:''; ?>">
+<input type="hidden" id = 'status' value="<?php echo isset($data['status'])?$data['status']:0; ?>">
+<?php if($data['status']){ ?>
+<div class="dys_djsp"><!--dys_djsp-->
+    <video id="my-video" class="video-js vjs-fluid vjs-big-play-centered" x-webkit-airplay="allow" webkit-playsinline playsinline controls poster="//nos.netease.com/vod163/poster.png" preload="auto" data-setup='{"preload":"auto","controls":true}'>
+        <source src="<?php echo isset($data['hlsPullUrl'])?$data['hlsPullUrl']:''; ?>" type="application/x-mpegURL">
+    </video>
+
+</div><!--dys_djsp-->
+<?php }else{ ?>
+<div class="liveEnd" style="width:100%;">
+    <img src="__SHARE__/images/liveEnd.jpg" alt="">
+</div>
+<?php } ?>
+
+<div class="livetitle"><?php echo isset($data['name'])?$data['name']:''; ?></div>
+<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.junhe.mobile" style="color: #aaaaaa; border: none;"><div class="userspeaking" style=" width: 94%; margin:15px auto; border-bottom: 1px solid #aaaaaa; text-align: left; color: #aaaaaa;">我要发言...</div></a>
+<div class="morevideo"><!--更多精彩视频-->
+    <div class="morevideotitle"><div class="titletxt">更多精彩视频</div> </div>
+    <div class="videolistbox"><!--视频列表-->
+        <?php if(isset($video) && !empty($video)){ ?>
+        <?php foreach($video as $key => $val){ ?>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.junhe.mobile">
+            <div class="videolist">
+                <div class="videoimg"><img src="<?php echo isset($val['title_img'])?$val['title_img']:'__SHARE__/images/588566c44a0ab.jpg'; ?>"></div>
+                <div class="videoicon"><img src="__SHARE__/images/videoicon.png"></div>
+                <div class="videotitle"><?php echo isset($val['title'])?$val['title']:''; ?></div>
+            </div>
+        </a>
+        <?php } ?>
+        <?php } ?>
+    </div>
+</div><!--更多精彩视频-->
+<script>
+    $(function(){
+        // 定时执行 判断视频是否结束
+        var status = $('#status').val(); // 获取状态值
+        if(status == 1){
+            setInterval(function(){
+                var id = $('#liveId').val();
+                $.post('/Share/liveStatus',{'id':id},function(data){
+                    if(data == 0){
+                        alert('直播已结束');
+                        location.reload();
+                    }
+                });
+            },5000);
+        }
+    });
+
+    neplayer("my-video", {"poster" : "<?php echo $data['thumb_img'] ?>"}, function(){
+        // 当播放器初始化完成时运行的回调函数
+         //视频播放前显示的图片
+    });
+</script>
+<include file="Public/foot"/>

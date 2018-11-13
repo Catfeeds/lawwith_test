@@ -1,0 +1,36 @@
+<div class="upload_app">
+ <!--   <div class="upload_app_img" style=""><img src="http://lx2016.oss-cn-beijing.aliyuncs.com/Logo/2016-06-23/lx_logo58.png"></div>-->
+    <div class="upload_app_btn">
+        <a id="hovertreesystem" href="javascript:void(0)">下载律携APP 与全国法律人在线交流</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" id="light" class="white_content" style="width:100%; height:100vh; display:none;">
+    亲~<br>请用浏览器<br>打开链接下载~
+</a>
+<!--<a id="hovertreesystem" href="">下载</a>-->
+</body>
+<script>
+    $(function () {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            // window.location.href = 'appDownload.html';
+//            $("#hovertreesystem").text('Android版本暂未开放');
+//            $("#hovertreesystem").attr("href","http://shouji.baidu.com/software/9711608.html");
+            $("#hovertreesystem").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=com.junhe.mobile");
+            return;
+        }
+        if (isIOS) {
+            $("#hovertreesystem").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=com.junhe.mobile");
+//            $("#hovertreesystem").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=com.lx.lcsp");
+//            $("#hovertreesystem").click(function(){
+//                $("#light").css('display','block');
+//                $("#fade").css('display','block');
+//            });
+            return;
+        }//hovertree.com
+        $("#hovertreesystem").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=com.junhe.mobile");
+    });
+</script>
+</html>

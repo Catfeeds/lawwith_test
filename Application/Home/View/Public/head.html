@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="description"  content="{$data.title}">
+    <link rel="icon" href="http://lx2016.oss-cn-beijing.aliyuncs.com/Icon/2016-06-15/lx_logo80.png" type="image/x-icon"/>
+    <link href="__SHARE__/live/neplayer.min.css" rel="stylesheet"> <!--网易播放器样式-->
+    <title>{$data.title}--律携</title>
+    <link href="__SHARE__/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__SHARE__/js/jquery.min.js"></script>
+    <style>
+    .upload_app { width:100%; height:auto; margin:auto;  position:fixed; bottom:5px; overflow: hidden;}
+    /*.upload_app_img{ width:40px; height:40px; background:#ba8748; float:left; margin-left:20px;  overflow:hidden;}*/
+    /*.upload_app_img img{ width:40px;  height:auto;  }*/
+    .upload_app_btn{ width:90%; height:50px; background:#ba8748; text-align:center; margin-left: 5%;-moz-border-radius: 5px;/*Firefox*/  -webkit-border-radius: 5px;/*Safari, Chrome*/  border-radius: 5px; overflow: hidden}
+    .upload_app_btn a{ width:100%; color:#fff;  height:50px; display: block; line-height:50px;  text-align:center;}
+    /*.white_content {  display: none;  position: absolute;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.5;  opacity:.50;  filter: alpha(opacity=50);   overflow: auto; position:absolute; top:0; left:0; font-size:16px; color:#fff; line-height:20px; text-align:right;}*/
+    pre {white-space: pre-wrap; word-wrap: break-word;}
+    </style>
+</head>
+
+<body style="width:100%;padding-bottom:70px;">
+<input type="hidden" id="appid" value="{$signPackage.appId}"/>
+<input type="hidden" id="timestamp" value="{$signPackage.timestamp}"/>
+<input type="hidden" id="nonceStr" value="{$signPackage.nonceStr}"/>
+<input type="hidden" id="signature" value="{$signPackage.signature}"/>
+<input type="hidden" id="url" value="{$signPackage.url}"/>
+<input type="hidden" id="title" value="{$title}"/>
+<input type="hidden" id="content" value=""/>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> <!--网易播放器效果文件-->
+<script src="__SHARE__/live/neplayer.min.js"></script>
+<script>
+    $(function(){
+        var appId = $("#appid").val();
+        var timestamp = $("#timestamp").val();
+        var nonceStr = $("#nonceStr").val();
+        var signature = $("#signature").val();
+        var url = $("#url").val();
+        var title = $("#title").val();
+        var content = $("#content").val();
+        wx.config({
+            debug: false,
+            appId: appId,
+            timestamp: timestamp,
+            nonceStr: nonceStr,
+            signature: signature,
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        });
+        wx.ready(function () {
+            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+            wx.checkJsApi({
+                jsApiList: [
+                    'getNetworkType',
+                    'previewImage',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo'
+                ],
+            });
+
+            var shareData = {
+                //标题
+                title: title,
+                //摘要
+                desc: content,
+                //链接,可以换主页
+                link: url,
+                //缩略图
+                imgUrl: 'http://lx2016.oss-cn-beijing.aliyuncs.com/Logo/2016-06-23/lx_logo80.png',
+
+            };
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    });
+</script>

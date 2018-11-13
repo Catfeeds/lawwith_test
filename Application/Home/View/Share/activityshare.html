@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>赠阅！《2016君合业务研究报告》</title>
+    <link href="__SHARE__/activity/css/style_css.css" rel="stylesheet" type="text/css">
+    <input type="hidden" id="appid" value="{$signPackage.appId}"/>
+    <input type="hidden" id="timestamp" value="{$signPackage.timestamp}"/>
+    <input type="hidden" id="nonceStr" value="{$signPackage.nonceStr}"/>
+    <input type="hidden" id="signature" value="{$signPackage.signature}"/>
+    <input type="hidden" id="url" value="{$signPackage.url}"/>
+    <input type="hidden" id="title" value="{$title}"/>
+    <input type="hidden" id="content" value="只要您邀请5个朋友注册律携，就能免费拿到书"/>
+    <!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <!--<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
+    <style>
+        .layui-input {
+            display: block;
+            width: 90%;
+            padding-left: 10px;
+            height: 38px;
+            margin: auto;
+            line-height: 38px;
+            line-height: 36px \9;
+            border: 1px solid #e6e6e6;
+            background-color: #efeeec;
+            border-radius: 4px;
+            font-size: 1.3em;
+            font-weight: bolder;
+        }
+
+        .Top4_button {
+            margin-top: 30px;
+        }
+
+        .invite-success {
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .success-mobile {
+            font-size: 14px;
+        }
+
+        .Top2 h3 {
+            text-align: center;
+            padding: 25px 0;
+        }
+        #tips{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius:5px;
+            opacity:0.6;
+        }
+    </style>
+</head>
+<body>
+<div class="ActivityBox">
+    <div class="Top">
+        <div class="Top1">
+            <img src="__SHARE__/activity/images/Top1.png">
+        </div>
+        <div id="tips" class="Top2"><h3>活动已结束</h3></div>
+        <div class="Top2">
+            <img src="__SHARE__/activity/images/Top2.png">
+        </div>
+        <!--<div class="Top3">-->
+        <!--当前已有<span class="user-count">{$count}</span>人参与活动-->
+        <!--</div>-->
+        <!--<div class="Top3 success-count">-->
+        <!--您已成功邀请<span class="user-count" id="success-count"><empty name="successCount">0<else />{$successCount}</empty></span>人参与-->
+        <!--</div>-->
+        <!--<div class="Top4">-->
+        <!--<input type="text" name="title" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">-->
+        <!--<div class="invite-success" style="display: none">-->
+        <!--<p>手机号验证通过</p>-->
+        <!--<p class="success-mobile"></p>-->
+        <!--</div>-->
+        <!--<div class="Top4_button">-->
+        <!--<div class="submit-button"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <!--<div class="Top5">-->
+        <!--<img src="__SHARE__/activity/images/Top7.png">-->
+        <!--</div>-->
+        <div class="Catalog">
+            <div class="Catalog_Bt">
+                <div class="Catalog_BtTxt">附带本书封面与目录</div>
+            </div>
+            <div class="Catalog_Img"><img src="__SHARE__/activity/images/Catalog2.png"></div>
+            <div class="Catalog_Nr">
+
+                <div class="Catalog_NrPage">
+                    <span>公司并购业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016 年度公司并购业务重要立法摘要</div>
+                    <div>二、2016 年度公司并购组重要业绩汇总</div>
+                    <div>三、市场热点问题研究</div>
+                    <div>四、立法展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>资本市场业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016 年中国证券与资本市场重要立法摘要</div>
+                    <div>二、2016 年君合参与的主要资本市场项目</div>
+                    <div>三、主要业务领域市场实践及主要法律问题简析</div>
+                    <div>四、2017 年资本市场预测</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>银行金融保险业务</span>
+                    <div>年度报告</div>
+                    <div>一、重要新法规</div>
+                    <div>二、热点法律问题分析</div>
+                    <div>三、项目业绩</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>基础设施和项目融资业务</span>
+                    <div>年度报告</div>
+                    <div>一、PPP 专章</div>
+                    <div>二、能源领域年度重要立法及政策、重大项目及市场实践</div>
+                    <div>三、天然气专章</div>
+                    <div>四、碳排放权交易部分</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>房地产业务</span>
+                    <div>年度报告</div>
+                    <div>一、房地产领域年度重要法律法规</div>
+                    <div>二、房地产业务组重要业绩</div>
+                    <div>三、市场热点法律问题研究</div>
+                    <div>四、房地产业务展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>国际贸易业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016 年中国进口贸易救济业务</div>
+                    <div>2016 年中国出口贸易救济业务：美国篇</div>
+                    <div>三、2016 年中国出口贸易救济业务：欧盟篇</div>
+                    <div>四、2016 年海关法业务</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>境外投资业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016 年度中国境外投资领域相关法规的新发展及监管动态</div>
+                    <div>二、2015 年—2016 年重要业绩汇总</div>
+                    <div>三、市场实践及主要问题研究</div>
+                    <div>四、对境外投资的预测和展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>反垄断业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016 年中国反垄断动态</div>
+                    <div>二、2016 年反垄断案件汇总</div>
+                    <div>三、君合反垄断领域部分业绩</div>
+                    <div>四、2017 年反垄断工作展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>传媒娱乐业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016年中国传媒娱乐业务重要立法摘要</div>
+                    <div>二、年度重要业绩汇总</div>
+                    <div>三、2016年度传媒娱乐大事件</div>
+                    <div>四、市场实践及主要问题研究</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>劳动法业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016年劳动法重要立法摘要</div>
+                    <div>二、2016年劳动法业务重大项目及典型案例分析</div>
+                    <div>三、2016年劳动法业务领域市场实践及主要法律问题分析</div>
+                    <div>四、2017年劳动法律市场展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>商标业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016年商标法领域新动态</div>
+                    <div>二、2016年商标保护情况和发展趋势</div>
+                    <div>三、2016年度君合重要业绩汇总</div>
+                    <div>四、2016年度商标热点案例</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>专利法业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016年中国专利法领域新动态</div>
+                    <div>二、2016年专利组重大项目</div>
+                    <div>三、专利法领域实践及相关问题分析</div>
+                    <div>四、2017年专利法律市场展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>合规业务</span>
+                    <div>年度报告</div>
+                    <div>一、EHS（环保、健康、安全）领域法律新发展</div>
+                    <div>二、近年中国行政法律热点评析</div>
+                    <div>三、对《反不正当竞争法修订草案》中反商业贿赂内容的评析</div>
+                    <div>四、两高关于贪污贿赂犯罪最新司法解释的概述及简析</div>
+                    <div>五、两高关于办理环境污染刑事案件最新司法解释评析</div>
+                    <div>六、关于完善操纵证券、期货市场罪法律依据的预判与分析</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>争议解决业务</span>
+                    <div>年度报告</div>
+                    <div>一、2016 年度诉讼仲裁领域相关法规的新发展</div>
+                    <div>二、2016年度诉讼仲裁业务典型业绩介绍</div>
+                    <div>三、2016年度诉讼仲裁业务专题研究报告</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>破产重组业务</span>
+                    <div>年度报告</div>
+                    <div>一、破产重组领域最新动态</div>
+                    <div>二、市场热点问题法律研究</div>
+                    <div>三、2016年破产重组领域典型案例</div>
+                    <div>四、2017年破产重组业务热点与展望</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>境外分所业务</span>
+                    <div>年度报告</div>
+                    <div>一、投资美国</div>
+                    <div>二、香港公司收购、合并及股份回购守则实务简介</div>
+                </div>
+                <div class="Catalog_NrPage">
+                    <span>广东自贸区政策动态</span>
+                    <div>年度报告</div>
+                    <div>一、广东自贸区2016年立法及政策摘要</div>
+                    <div>二、广东自由贸易试验区深圳前海蛇口片区</div>
+                    <div>三、广东自由贸易试验区珠海横琴片区</div>
+                    <div>四、广东自由贸易试验区广州南沙片区</div>
+                </div>
+            </div><!--目录 End-->
+        </div><!--封面与目录 End-->
+        <div class="bottom">本活动最终解释权归北京君时天下互动科技有限公司所有</div>
+    </div>
+    <!--<script src="__SHARE__/activity/js/activityshare.js"></script>-->
+</body>
+</html>
+

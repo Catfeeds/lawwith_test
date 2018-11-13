@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>律携 - {$meta_title}</title>
+    <link rel="icon" href="http://lx2016.oss-cn-beijing.aliyuncs.com/Icon/2016-06-15/lx_logo80.png" type="image/x-icon"/>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/forget.css"/>
+    <script src="__JS__/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+    <link rel="stylesheet" href="__CSS__/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="__CSS__/bootstrap/css/bootstrap.css"/>
+</head>
+
+<body>
+<div class="passport-wrapper">
+    <div id="container">
+        <div class="passport-forget">
+            <ul class="passport-step">
+                <li class="first now"><i class="disc">1</i>
+                    <p class="text">输入邮箱地址</p>
+                </li>
+                <li class=""><i class="disc">2</i><span class="strip"></span>
+                    <p class="text">邮箱验证</p>
+                </li>
+                <li class=""><i class="disc">3</i><span class="strip"></span>
+                    <p class="text">重置密码</p>
+                </li>
+            </ul>
+            <!-- form -->
+            <form method="post" action="{:U('Login/submit_email')}" class="passport-form" id="emailForm">
+                <div class="form-item">
+                    <div class="form-cont form-group">
+                        <input type="text" name="email" class="passport-txt xl w-full" placeholder="请输入注册时使用的邮箱地址" />
+                    </div>
+                </div>
+                <div class="form-item form-submit">
+                    <div class="form-cont form-group">
+                        <input type="submit" class="passport-btn passport-btn-def xl w-full" value="找回密码" jktag="0001|0.1|91017" />
+                    </div>
+                </div>
+            </form>
+            <!-- form end -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#emailForm')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        email: {
+                            validators: {
+                                notEmpty: {
+                                    message: '<span style="color: red;">请输入邮箱！</span>'
+                                },
+                                emailAddress: {
+                                    message: '<span style="color: red;">邮箱格式不正确！</span>'
+                                },
+                                remote: {
+                                    url: "{:U('Login/check_email')}",
+                                    message: '<span style="color: red;">邮箱未注册！</span>'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+</body>
+</html>

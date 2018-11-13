@@ -1,0 +1,1813 @@
+[ 2018-11-09T10:11:24+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.080001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.100000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.100000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.020000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.020000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-09T10:11:42+08:00 ] 127.0.0.1 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.202000s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `lx_user` SET `login_at`=1541729499,`loginip`='127.0.0.1' WHERE ( `id` = 4 ) [ RunTime:0.100000s ]
+NOTIC: [8] Undefined index: superadmin D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Org\Util\Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.210001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=2 and node.pid=100 and node.status=1 [ RunTime:0.000000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=101 and node.status=1 [ RunTime:0.000000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=132 and node.status=1 [ RunTime:0.000000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=145 and node.status=1 [ RunTime:0.000000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=162 and node.status=1 [ RunTime:0.000000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=171 and node.status=1 [ RunTime:0.000000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=193 and node.status=1 [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-09T11:33:42+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:43+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:44+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:45+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:45+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:45+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:46+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:46+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:46+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:47+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:47+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:48+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:33:48+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:36:19+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 500 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 511 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 514 行.
+
+[ 2018-11-09T11:43:29+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:18+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:19+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.013001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.014000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:20+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:21+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.013000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:21+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.013000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014000s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:22+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.012000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:23+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.016000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:24+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015000s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015000s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:24+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.013000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:26+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:27+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:27+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.013000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:28+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.024001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.025001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.027001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.024002s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:35+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:36+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:37+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:44:37+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:45:02+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 501 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 508 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 512 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 515 行.
+
+[ 2018-11-09T11:49:58+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 34 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.013000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.013001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 500 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 511 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 514 行.
+
+[ 2018-11-09T11:50:21+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 34 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:50:22+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 34 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-09T11:50:39+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 34 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 500 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 511 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 514 行.
+
+[ 2018-11-09T11:50:40+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 34 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 500 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 511 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 514 行.
+
+[ 2018-11-09T11:51:34+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.013000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 500 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 511 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014000s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 514 行.
+
+[ 2018-11-09T11:51:43+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1   [ RunTime:0.016000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+NOTIC: [8] Undefined index: limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 793 行.
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20   [ RunTime:0.015001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT -20,20' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT -20,20  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 500 行.
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: video_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 511 行.
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined index: speaker_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 514 行.
+
+[ 2018-11-09T11:53:06+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.015000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015000s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.015001s ]
+
+[ 2018-11-09T11:56:32+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015000s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.014000s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.014001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.013001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.014000s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.016001s ]
+
+[ 2018-11-09T11:59:31+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.015000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1   [ RunTime:0.014001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016001s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.017001s ]
+
+[ 2018-11-09T12:00:07+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.002000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.003000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id=172 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.031002s ]
+
+[ 2018-11-09T12:10:01+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.003000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.003001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id=172 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003001s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.034002s ]
+
+[ 2018-11-09T12:10:34+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.002001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.002000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id=172 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.043002s ]
+
+[ 2018-11-09T12:12:02+08:00 ] 127.0.0.1 /App/Detail/video
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_train` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.003001s ]
+SQL: SELECT count(*) as counts FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`ctime` FROM `lx_train_comment` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.002000s ]
+SQL: SELECT count(*) as counts FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `uid`,`time` FROM `lx_train_favorite` WHERE ( 1=1 AND vid='116' )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`uname`,`icon`,`company`,`position` FROM `lx_account` WHERE ( 1=1 AND id='520' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_order_train` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `lx_order_train` WHERE ( `video_id` = 116 ) AND ( `user_id` = 3454 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train_comment` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid=116 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: my_id D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 507 行.
+SQL: SHOW COLUMNS FROM `lx_train_favorite` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_train_favorite` WHERE ( `vid` = 116 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `lx_video` WHERE ( id=172 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.003000s ]
+SQL: UPDATE `lx_train` SET `views`=views+1 WHERE ( id=116 ) [ RunTime:0.043002s ]
+
+[ 2018-11-09T13:09:01+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-09T13:09:04+08:00 ] 127.0.0.1 /ad
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Ad
+
+[ 2018-11-09T13:41:01+08:00 ] 127.0.0.1 /Money/withdraw
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Money
+
+[ 2018-11-09T13:41:20+08:00 ] 127.0.0.1 /Money/withdraw
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Money
+
+[ 2018-11-09T13:41:50+08:00 ] 127.0.0.1 /Money/withdraw
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Money
+
+[ 2018-11-09T13:43:56+08:00 ] 127.0.0.1 /Admin/Index/Money/withdraw
+ERR: 非法操作:money
+
+[ 2018-11-09T13:44:04+08:00 ] 127.0.0.1 /Admin/Index/Money/withdraw
+ERR: 非法操作:money
+
+[ 2018-11-09T16:05:25+08:00 ] 127.0.0.1 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-11-09T16:05:37+08:00 ] 127.0.0.1 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-11-09T16:05:43+08:00 ] 127.0.0.1 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-11-09T16:20:22+08:00 ] 127.0.0.1 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-11-09T17:10:44+08:00 ] 127.0.0.1 /App/Index/helps_list?num=10&nowpage=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `status` = 1 ) AND ( `type` = 2 ) LIMIT 1   [ RunTime:0.024001s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`tag_city`,`tag_major`,`imgs`,`views`,`send_time`,`tbd_id`,`inviters`,`type`,`status`,`is_nym`,`is_admin`,`is_money`,`red_status`,`redpack_id`,`is_reward`,`reward_money` FROM `lx_resource` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `is_stick` asc,`send_time` desc LIMIT 0,10   [ RunTime:0.032002s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3044' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_comment_info` [ RunTime:0.016001s ]
+ERR: 1146:Table 'lawwith_test.lx_comment_info' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_comment_info`
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3044' [ RunTime:0.041002s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.030002s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3044' ) LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3044' ) ORDER BY time desc  [ RunTime:0.022001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5795' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_log` [ RunTime:0.017001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3044' )  [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_conf` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3037' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3037' [ RunTime:0.018001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3037' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3037' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5795' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3037' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3036' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3036' [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3036' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3036' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5795' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3036' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3035' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3035' [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3035' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3035' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5788' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3035' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3027' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3027' [ RunTime:0.018001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3027' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3027' ) ORDER BY time desc  [ RunTime:0.017000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='24' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3027' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3025' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3025' [ RunTime:0.019001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3025' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3025' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3025' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3023' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3023' [ RunTime:0.018001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3023' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3023' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='24' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3023' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3020' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3020' [ RunTime:0.018001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3020' ) LIMIT 1   [ RunTime:0.016000s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3020' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3020' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3019' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3019' [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3019' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3019' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3019' )  [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3018' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3018' [ RunTime:0.018001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3018' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3018' ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5788' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3018' )  [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016000s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.018001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014000s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: is_reward D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [8] Undefined index: reward_money D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 51 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 51 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 51 行.
+
+[ 2018-11-09T17:19:06+08:00 ] 127.0.0.1 /Admin/Help/views/id/MDAwMDAwMDAwMH51jNw
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-09T17:33:16+08:00 ] 127.0.0.1 /Admin/Help/views/id/MDAwMDAwMDAwMH51jNw
+ERR: 无法加载控制器:Help
+
+[ 2018-11-09T17:38:56+08:00 ] 127.0.0.1 /Admin/Help/views/id/MDAwMDAwMDAwMH51jNw
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-09T17:54:37+08:00 ] 127.0.0.1 /Admin/Money/postAuthorMoney
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`username`,`realname`,`email`,`created_at`,`login_at`,`loginip`,`status`,`remark`,`token`,`exptime` FROM `lx_user` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_role` [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: mapping_order D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 190 行.
+NOTIC: [8] Undefined index: mapping_limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 191 行.
+NOTIC: [8] Undefined index: relation_foreign_key D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 192 行.
+SQL: SELECT b.id, name, remark FROM lx_role_user AS a, lx_role AS b, WHERE a.role_id = b.id AND a. user_id='4' [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE a.role_id = b.id AND a. user_id='4'' at line 1
+ [ SQL语句 ] : SELECT b.id, name, remark FROM lx_role_user AS a, lx_role AS b, WHERE a.role_id = b.id AND a. user_id='4'
+NOTIC: [8] Undefined index: role D:\phpStudy\WWW\lawwith_test\Application\Admin\Controller\AdminController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_account` WHERE ( `num_img` <> '' ) AND ( `auth_time` <> '' ) AND ( `status` = 0 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`icon`,`mobile`,`type`,`auth_time` FROM `lx_account` WHERE ( `num_img` <> '' ) AND ( `auth_time` <> '' ) AND ( `status` = 0 ) ORDER BY auth_time desc  [ RunTime:0.020001s ]
+
+[ 2018-11-09T17:54:49+08:00 ] 127.0.0.1 /Admin/Money/postAuthorMoney
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`username`,`realname`,`email`,`created_at`,`login_at`,`loginip`,`status`,`remark`,`token`,`exptime` FROM `lx_user` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_role` [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: mapping_order D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 190 行.
+NOTIC: [8] Undefined index: mapping_limit D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 191 行.
+NOTIC: [8] Undefined index: relation_foreign_key D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 192 行.
+SQL: SELECT b.id, name, remark FROM lx_role_user AS a, lx_role AS b, WHERE a.role_id = b.id AND a. user_id='4' [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE a.role_id = b.id AND a. user_id='4'' at line 1
+ [ SQL语句 ] : SELECT b.id, name, remark FROM lx_role_user AS a, lx_role AS b, WHERE a.role_id = b.id AND a. user_id='4'
+NOTIC: [8] Undefined index: role D:\phpStudy\WWW\lawwith_test\Application\Admin\Controller\AdminController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_account` WHERE ( `num_img` <> '' ) AND ( `auth_time` <> '' ) AND ( `status` = 0 ) LIMIT 1   [ RunTime:0.030000s ]
+SQL: SELECT `id`,`uname`,`icon`,`mobile`,`type`,`auth_time` FROM `lx_account` WHERE ( `num_img` <> '' ) AND ( `auth_time` <> '' ) AND ( `status` = 0 ) ORDER BY auth_time desc  [ RunTime:0.020000s ]
+
+[ 2018-11-09T17:57:27+08:00 ] 127.0.0.1 /Admin/help/view?id=3044
+ERR: 非法操作:view
+
+[ 2018-11-09T17:57:50+08:00 ] 127.0.0.1 /Admin/help/view?id=3044
+ERR: 非法操作:view
+
+[ 2018-11-09T17:58:03+08:00 ] 127.0.0.1 /Admin/Help/view?id=3044
+ERR: 非法操作:view
+
+[ 2018-11-09T19:33:17+08:00 ] 127.0.0.1 /Admin/Money/postAuthorMoney
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: uid D:\phpStudy\WWW\lawwith_test\Application\Admin\Controller\AdminController.class.php 第 17 行.
+SQL: SELECT `id`,`username`,`realname`,`email`,`created_at`,`login_at`,`loginip`,`status`,`remark`,`token`,`exptime` FROM `lx_user` WHERE ( id= ) LIMIT 1   [ RunTime:0.016001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `id`,`username`,`realname`,`email`,`created_at`,`login_at`,`loginip`,`status`,`remark`,`token`,`exptime` FROM `lx_user` WHERE ( id= ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_account` WHERE ( `num_img` <> '' ) AND ( `auth_time` <> '' ) AND ( `status` = 0 ) LIMIT 1   [ RunTime:0.026001s ]
+SQL: SELECT `id`,`uname`,`icon`,`mobile`,`type`,`auth_time` FROM `lx_account` WHERE ( `num_img` <> '' ) AND ( `auth_time` <> '' ) AND ( `status` = 0 ) ORDER BY auth_time desc  [ RunTime:0.020001s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.016001s ]
+SQL: SELECT `post_amount` FROM `lx_resource` WHERE ( id=3044 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: UPDATE `lx_resource` SET `is_money`=1,`post_amount`='1' WHERE ( id=3044 ) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.034002s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+1 WHERE ( `uid` = 5795 ) [ RunTime:0.029002s ]
+NOTIC: [2] Missing argument 2 for App\Model\WalletModel::getUserWallet(), called in D:\phpStudy\WWW\lawwith_test\Application\Admin\Controller\MoneyController.class.php on line 248 and defined D:\phpStudy\WWW\lawwith_test\Application\App\Model\WalletModel.class.php 第 22 行.
+SQL: SELECT `uid`,`money`,`salt`,`password_error_num`,`name`,`idcard`,`withdraw` FROM `lx_wallet` WHERE ( `uid` = 5795 ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet_log` [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet_log` [ RunTime:0.017001s ]
+SQL: INSERT INTO `lx_wallet_log` (`record_sn`,`uid`,`change_money`,`money`,`remark`,`create_time`,`display`) VALUES ('201811091933162782',5795,'1','24.96','',1541763196,1) [ RunTime:0.021001s ]
+SQL: SHOW COLUMNS FROM `lx_harvest` [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_harvest` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_harvest` (`user_id`,`money`,`payment_type`,`trade_type`,`trade_rource`,`status`,`create_date`) VALUES (5795,'1',1,3,3044,1,1541763196) [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_record_log` [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_record_log` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_record_log` (`record_sn`,`user_id`,`money`,`trade_type`,`trade_rource`,`type`,`pay_type`,`pay_status`,`pay_time`) VALUES ('201811091933162782',5795,'1',1,3044,5,4,1,1541763196) [ RunTime:0.016001s ]
+SQL: SELECT `mobile`,`uname` FROM `lx_account` WHERE ( id=5795 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `post_amount`,`title` FROM `lx_resource` WHERE ( id=3044 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_sys_messages` [ RunTime:0.017001s ]
+SQL: INSERT INTO `lx_sys_messages` (`title`,`content`,`push_obj`,`type`,`send_time`) VALUES ('红包消息','恭喜您得到一个1元官方奖励红包,来自:test','spud(13520088596)',5,1541763196) [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_message` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_message` (`msgid`,`uid`) VALUES (1691,5795) [ RunTime:0.020001s ]
+

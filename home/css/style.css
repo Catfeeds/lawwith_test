@@ -1,0 +1,65 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+html,body{height:100%; min-width:1366px; font-family:"微软雅黑"; background:#FFF;}
+li{list-style-type:none;}
+img{vertical-align:middle;}
+a{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+.clear{clear:both;}
+
+.ce{display:block;width:100%; height:72px;background:rgb(255,255,255);position: absolute;top: 0px; color:#F00;}
+.ce ul{ width:1366px; height:auto; overflow:hidden; margin:auto;}
+.ce li{float:left}
+.logo{ margin-left:750px;}
+.ce .ce_li{margin-right:110px;}
+.ce .ce_li .ce_img2{display:none;}
+.ce li a{padding:10px 5px;color:#000;display:block;padding:30px 5px 15px 5px;margin:0px 40px;cursor:pointer;font-size:18px;}
+.ce li a:hover{border-bottom:3px solid #000;}
+.ce li .dqian{background:none}
+.ce li .xz{border-bottom:3px solid #000;}
+.ce_img1{margin-top:-40px;}
+
+
+.ce2{ width:100%; background:rgb(255,255,255);height:72px; position:fixed;z-index:5;top:0px;margin-top:0px;
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#e4e4e4)";/*IE 8*/
+-moz-box-shadow: 0px 4px 3px #e4e4e4;/*FF 3.5+*/
+-webkit-box-shadow: 0px 4px 3px #e4e4e4;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 0px 4px 3px #e4e4e4;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=180, Color=#e4e4e4); /*IE 5.5-7*/}
+
+
+.ce2 li a{color:#000}
+.ce2 .ce_li{margin-right:210px;}
+.ce2 .ce_li .ce_img2{display:block;padding:5px 0px;}
+.ce2 .ce_li .ce_img{display:none;}
+.ce2 li a{padding:30px 5px 15px 5px;margin:0px 40px;border:0px;}
+.ce2 li a:hover,.ce li .xz{background:rgb(255,255,255);color:#000;}
+
+#div0{width:100%;height:770px;background:#FFF; text-align:center;}
+#div1{width:100%;height:auto;background:#FFF; text-align:center;}
+#div2{width:1366px;height:432px;background:url(../images/Top1_13.png) no-repeat; margin:auto;}
+.div2_1{ width:900px; height:auto; color:#FFF; float:right; font-size:30px; margin:85px 205px 0 0; text-align:right;}
+.div2_2{ width:900px; height:auto; color:#FFF; float:right; font-size:20px; margin:25px 205px 0 0; text-align:left;}
+.div2_3{ width:900px; height:auto; color:#FFF; float:right; font-size:18px; margin:25px 205px 0 0; text-align:left;}
+.div2_3L{ float:left; line-height:40px;}
+.div2_3R{ float:right; line-height:40px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

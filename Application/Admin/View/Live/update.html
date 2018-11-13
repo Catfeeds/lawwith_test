@@ -1,0 +1,117 @@
+<include file="Public/main" />
+<include file="Public/header"/>
+
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>用户管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">在线直播</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body form-horizontal">
+            <form id="For_video" action="{:U('Live/chatRoomUpdate')}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">频道名称</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="name" value="{$data.name}"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">公&nbsp;&nbsp;&nbsp;&nbsp;告</label>
+                    <div class="col-lg-5 kv-main">
+                        <textarea name="announcement" class="form-control" cols="" rows="3" id="announcement">{$data.announcement
+                            }</textarea>
+                        长度限制40个字以内
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">机器人数</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="robot" value="{$data.robot}"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-1 control-label">封面图片</label>
+                    <div class="col-lg-5 kv-main">
+                        <input class="form-control" type="file" name="thumb_img">
+                        <!--<span style="font-size: small; color: #00aa00">* 图片的大小500kb,宽：564px,高：319px</span>-->
+                        <img src="{$data.thumb_img}" style="width:320px;height:200px" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <button type="submit" class="btn btn-success" id="btn-submit">保 存</button>
+                        <a href="javascript:window.history.go(-1)" class="btn btn-outline btn-default">返 回</a>
+                        <input type="hidden" name="roomid" value="{$data.roomid}">
+                        <input type="hidden" name="cid" value="{$data.cid}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_video')
+            .bootstrapValidator({
+                message: '这个值无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    major_id: {
+                        message: '专业标签无效！',
+                        validators: {
+                            notEmpty: {
+                                message: '专业标签不能为空！'
+                            }
+                        }
+                    },
+                    imgs: {
+                        validators: {
+                            notEmpty: {
+                                message: '封面图片不能为空！'
+                            }
+                        }
+                    },
+                    title: {
+                        validators: {
+                            notEmpty: {
+                                message: '标题不能为空！'
+                            }
+                        }
+                    },
+
+                    describe: {
+                        validators: {
+                            notEmpty: {
+                                message: '描述不能为空！'
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
+<script src="__JS__/showIMG.js"></script>
+<script type="text/javascript" src="__JS__/html5Upload.js"></script>
+<include file="Public/footer"/>

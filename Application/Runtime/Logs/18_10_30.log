@@ -1,0 +1,306 @@
+[ 2018-10-30T03:46:26+08:00 ] 183.184.177.161 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000120s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001030s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+
+[ 2018-10-30T04:29:49+08:00 ] 101.132.98.159 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000861s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000903s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000044s ]
+
+[ 2018-10-30T05:02:30+08:00 ] 47.97.204.168 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+
+[ 2018-10-30T08:28:20+08:00 ] 218.92.225.159 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000869s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2018-10-30T08:28:20+08:00 ] 218.92.225.159 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000111s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000939s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000048s ]
+
+[ 2018-10-30T09:46:13+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000727s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000076s ]
+
+[ 2018-10-30T09:46:15+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000655s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000214s ]
+SQL: UPDATE `lx_user` SET `login_at`=1540863975,`loginip`='114.252.173.233' WHERE ( `id` = 1 ) [ RunTime:0.002378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000055s ]
+
+[ 2018-10-30T09:57:29+08:00 ] 114.252.173.233 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-10-30T09:58:29+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000696s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'Admin' ) LIMIT 1   [ RunTime:0.000208s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2018-10-30T09:58:34+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000750s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000219s ]
+SQL: UPDATE `lx_user` SET `login_at`=1540864714,`loginip`='114.252.173.233' WHERE ( `id` = 1 ) [ RunTime:0.002263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2018-10-30T09:59:24+08:00 ] 114.252.173.233 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-10-30T09:59:33+08:00 ] 114.252.173.233 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-10-30T09:59:33+08:00 ] 114.252.173.233 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000106s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-10-30T11:29:35+08:00 ] 114.252.173.233 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-10-30T11:42:29+08:00 ] 196.52.43.70 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000870s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000063s ]
+
+[ 2018-10-30T12:58:02+08:00 ] 101.91.60.108 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000107s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000898s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000055s ]
+
+[ 2018-10-30T13:58:22+08:00 ] 47.100.51.108 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000107s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001509s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000076s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000054s ]
+
+[ 2018-10-30T14:57:18+08:00 ] 94.130.64.80 /robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000101s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-10-30T15:07:07+08:00 ] 94.130.64.80 /robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+ERR: 无法加载控制器:Robots
+
+[ 2018-10-30T15:07:15+08:00 ] 94.130.64.80 /sitemap.xml
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+ERR: 无法加载控制器:Sitemap
+
+[ 2018-10-30T15:51:27+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000868s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000064s ]
+
+[ 2018-10-30T15:51:52+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000135s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000763s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000321s ]
+SQL: UPDATE `lx_user` SET `login_at`=1540885912,`loginip`='114.252.173.233' WHERE ( `id` = 1 ) [ RunTime:0.002368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000094s ]
+
+[ 2018-10-30T15:51:53+08:00 ] 114.252.173.233 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000150s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.000717s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: UPDATE `lx_user` SET `login_at`=1540885913,`loginip`='114.252.173.233' WHERE ( `id` = 1 ) [ RunTime:0.002418s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2018-10-30T15:57:06+08:00 ] 114.252.173.233 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-10-30T15:58:06+08:00 ] 210.22.245.219 /Admin/question/index
+ERR: 无法加载控制器:Question
+
+[ 2018-10-30T20:19:41+08:00 ] 218.92.225.159 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000135s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001318s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001358s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2018-10-30T20:19:41+08:00 ] 218.92.225.159 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.000870s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000026s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000046s ]
+
+[ 2018-10-30T20:56:10+08:00 ] 221.204.175.52 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001365s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001404s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000051s ]
+

@@ -1,0 +1,139 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<!--<link rel="stylesheet" href="__CSS__/bootstrap.css"/>-->
+<!--<link rel="stylesheet" href="__CSS__/bootstrapValidator.css"/>-->
+<!--<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li>
+                <a>管理权限</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">节点列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{$meta_title}{$type}</h3>
+            </div>
+            <div class="panel-body">
+
+                <form id="defaultForm" method="post" class="form-horizontal" action="{:U('Rbac/addNodeHandle')}">
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">{$type}名称 </label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="appName" />
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 只能为英文单词，建议首字母大写</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">{$type}展示名</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="appRemark" />
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 展示名可以为中文</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">状态</label>
+                        <div class="col-lg-5">
+                            <input type="checkbox" name="status" class="iswitch iswitch-info" checked="checked" value="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">排序</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="sort" value="1"/>
+                        </div>
+                        <span style="font-size: small; color: #00aa00">* 应用排序</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <input type="hidden" name="pid" value="{$pid}" />
+                            <input type="hidden" name="level" value="{$level}" />
+                            <button type="submit" class="btn btn-primary">确认添加</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#defaultForm')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        appName: {
+                            message: '名称名无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '名称不能为空！'
+                                },
+                                /*remote: {
+                                 url: 'remote.php',
+                                 message: '用户名不可用'
+                                 },*/
+                                regexp: {
+                                    regexp: /[a-zA-Z]|[0-9]|\-|_/,
+                                    message: '名称只能由数字、字母、下划线或连接符“-”组成！'
+                                }
+                            }
+                        },
+                        appRemark: {
+                            validators: {
+                                notEmpty: {
+                                    message: '展示名不能为空！'
+                                }
+                            },
+                            regexp: {
+                                regexp: /^([A-Za-z]|[\u4E00-\u9FA5])+$/,
+                                message: '展示名，可以为中文！'
+                            }
+                        },
+                        sort: {
+                            validators: {
+                                notEmpty: {
+                                    message: '排序不能为空！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+<include file="Public/footer"/>

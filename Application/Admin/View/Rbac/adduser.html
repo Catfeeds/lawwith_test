@@ -1,0 +1,181 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap.css"/>
+<link rel="stylesheet" href="__CSS__/bootstrapValidator.css"/>
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li>
+                <a>管理权限</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">用户列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form id="defaultForm" method="post" class="form-horizontal" action="{:U('Rbac/addUserHandle')}">
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">用户名</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="username" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">初始化密码</label>
+                        <div class="col-lg-5">
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">确认密码</label>
+                        <div class="col-lg-5">
+                            <input type="password" class="form-control" name="confirmPassword" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">电子邮箱</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="email" />
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-lg-3 control-label">真实姓名</label>-->
+                        <!--<div class="col-lg-5">-->
+                            <!--<input type="text" class="form-control" name="realname" />-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">角色（用户组）</label>
+                        <div class="col-lg-5">
+                            <select class="form-control" name="role_id[]" data-bv-notempty data-bv-notempty-message="请选择有效的角色（用户组）">
+                                <option value="">请选择用户角色</option>
+                                <volist name="role" id="role_vo">
+                                    <option value="{$role_vo['id']}">{$role_vo['remark']}({$role_vo['name']})</option>
+                                </volist>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <!--<a class="btn btn-primary" id="role">添加一个角色</a>-->
+                            <button type="button" class="btn btn-purple" id="role">添加一个角色</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="last">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary">确认添加</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function()
+    {
+        $('#role').click(function()
+        {
+            var obj = $(this).parents('.form-group').clone();
+            obj.find('#role').remove();
+            $('#last').before(obj);
+        })
+    });
+    $(document).ready(function() {
+        $('#defaultForm')
+            .bootstrapValidator({
+                message: '这个值无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    username: {
+                        message: '用户名无效！',
+                        validators: {
+                            notEmpty: {
+                                message: '用户名不能为空！'
+                            },
+                            remote: {
+                             url: "{:U('Rbac/checkUser')}",
+                             message: '用户已存在！'
+                             },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                message: '用户名只能由字母、数字、点和下划线组成！'
+                            }
+                        }
+                    },
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: '电子邮箱不能为空！'
+                            },
+                            emailAddress: {
+                                message: '输入不是有效的电子邮件地址！'
+                            }
+                        }
+                    },
+                    password: {
+                        validators: {
+                            notEmpty: {
+                                message: '初始化密码不能为空！'
+                            },
+                            identical: {
+                                field: 'confirmPassword',
+                                message: '两次密码输入不一致！'
+                            }
+                        }
+                    },
+                    confirmPassword: {
+                        validators: {
+                            notEmpty: {
+                                message: '确认密码不为空！'
+                            },
+                            identical: {
+                                field: 'password',
+                                message: '两次密码输入不一致！'
+                            }
+                        }
+                    }
+                }
+            })
+    });
+</script>
+<include file="Public/footer"/>

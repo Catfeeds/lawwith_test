@@ -1,0 +1,181 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/ueditor.all.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/lang/zh-cn/zh-cn.js"></script>
+
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<section class="mailbox-env">
+
+    <div class="row">
+
+        <!-- Email Single -->
+        <div class="col-sm-11 mailbox-right">
+            <form method="post" action="{:U('Content/sub_editTopic')}">
+            <div class="mail-single">
+
+                <!-- Email Title and Button Options -->
+                <div class="mail-single-header">
+                    <h2>
+                        {$user_resource.title}
+                        <if condition="$user_resource['is_push'] eq 1">
+                            <span class="badge badge-red badge-roundless pull-right upper">首页推荐</span>
+                        </if>
+                        <if condition="$user_resource['is_stick'] eq 1">
+                            <span class="badge badge-warning badge-roundless pull-right upper">置顶</span>
+                        </if>
+                        <a href="#" onclick="javascript:history.back(-1);" class="go-back">
+                            <i class="fa-angle-left"></i>
+                            返回
+                        </a>
+                    </h2>
+                </div>
+
+                <!-- Email Info From/Reply -->
+                <div class="mail-single-info">
+
+                    <div class="mail-single-info-user dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <empty name="user_resource['author_info']['icon']">
+                                <img src="__IMG__/user-4.png" class="img-circle" width="38" />
+                                <else/>
+                                <img style="width: 48px;height: 48px;" src="{$user_resource.author_info.icon}" alt="user-img" class="img-responsive img-circle" />
+                            </empty>
+                            <if condition="$user_resource['author'] eq 0">
+                                <span>{$Think.session.username}</span>
+                            <else/>
+                                <span>{$user_resource.author_info.uname}</span>
+                            </if>
+                        </a>
+                    </div>
+                    <div class="mail-single-info-options">
+                        <em class="time">{$user_resource['send_time']|date='Y-m-d H:i',###}</em>
+                    </div>
+                </div>
+
+                <div class="mail-single-attachments">
+                    <h3>
+                        <i class="el-picture"></i>
+                        标题图片
+                    </h3>
+
+                    <div align="center">
+                        <img style="width: auto;height: 200px;" src="{$user_resource.title_img|img_path}" title="标题图片">
+                    </div>
+                </div>
+
+                <div class="mail-single-body">
+                    <h3>
+                        <i class="fa-file-text-o"></i>
+                        内容
+                    </h3>
+                        <textarea class="form-control autogrow" name="content" placeholder="话题内容" style="min-height: 100px;">{$user_resource.content}</textarea>
+
+                </div>
+
+                <div class="mail-single-attachments">
+                    <h3>
+                        <i class="linecons-attach"></i>
+                        附件
+                    </h3>
+                    <notempty name="user_resource['imgs']">
+                        <ul class="list-unstyled list-inline">
+                            <volist name=":explode(',',$user_resource['imgs'])" id="fj_img">
+                                <li>
+                                    <img style="width: 200px;height: 150px;" src="{$fj_img|img_path}" class="img-thumbnail" />
+                                </li>
+                            </volist>
+                        </ul>
+                    </notempty>
+                    <span class="btn btn-pink btn-icon" onclick="Display()">重新上传</span>
+                    <div id="dis_show" style="display:none;">
+                        <span id="fujian" class="fujian" style="width: auto;"></span>
+                    </div>
+                    <script type="text/javascript">
+                        function Display()
+                        {
+                            var divD = document.getElementById("dis_show");
+                            if(divD.style.display=="none")
+                            {
+                                divD.style.display = "block";
+                            }
+                            else
+                            {
+                                divD.style.display = "none";
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div class="mail-single-attachments">
+                    <h3>
+                        <i class="fa-bookmark-o"></i>
+                        标签
+                    </h3>
+
+                    <ul class="list-unstyled list-inline">
+                        <notempty name="user_resource['tag_city']">
+                            <volist name=":explode(',',$user_resource['tag_city'])" id="cvo">
+                                <li><span class="label label-success">#{$cvo}#</span></li>
+                            </volist>
+                        </notempty>
+                        <volist name=":explode(',',$user_resource['tag_major'])" id="dat_vo">
+                            <volist name="major" id="major_vo">
+                                <if condition="$major_vo['id'] eq $dat_vo">
+                                    <li><span class="label label-warning">#{$major_vo.delimiter}{$major_vo.major_name}#</span></li>
+                                </if>
+                            </volist>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+                <div class="form-group">
+                    <div id="img_ids"></div>
+                    <input type="hidden" name="res_id" value="{$user_resource.id}"/>
+                    <button type="submit" class="btn btn-blue">保存修改</button>
+                    <button type="reset" class="btn btn-white">重置</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<script type="text/javascript">
+
+    //实例化编辑器
+    var ue = UE.getEditor('container',
+            {
+                initialFrameHeight:400,
+                //elementPathEnabled:false,
+                toolbars: [['source','undo', 'redo','justifyleft','justifyright','justifycenter','imagecenter','simpleupload','insertimage', 'link','unlink','removeformat']],
+            });
+</script>
+<include file="Public/footer"/>

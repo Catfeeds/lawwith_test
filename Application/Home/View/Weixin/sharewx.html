@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>WeUI Test</title>
+        <!-- 引入 WeUI -->
+        <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+        <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    </head>
+    <body>
+    <!--{$jsapi_ticket}-->
+    <!--<br>-->
+    <!--{$signature}-->
+    <!--<br>-->
+    <!--{$timestamp}-->
+    <!--<br>-->
+    <!--{$noncestr}-->
+    <!--<br>-->
+    <!--{$url}-->
+        <script type="text/javascript">
+            wx.config({
+                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: 'wx19d9c412f2c743f1', // 必填，公众号的唯一标识
+                timestamp: "{$timestamp}", // 必填，生成签名的时间戳
+                nonceStr: "{$noncestr}", // 必填，生成签名的随机串
+                signature: "{$signature}",// 必填，签名，见附录1
+                jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQZone','chooseImage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+
+            wx.error(function(res){
+                // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+            });
+
+            wx.ready(function(){
+                wx.onMenuShareAppMessage({
+                    title: '测试分享到朋友', // 分享标题
+                    desc: '分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致', // 分享描述
+                    link: 'http://www.downtonhd.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: 'http://img.mukewang.com/56e10d9c0001e83306000338-240-135.jpg', // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('分享成功');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('取消分享');
+                    }
+                });
+
+                wx.onMenuShareTimeline({
+                    title: '测试分享到朋友圈', // 分享标题
+                    link: 'http://www.downtonhd.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: 'http://img.mukewang.com/56e10d9c0001e83306000338-240-135.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('分享成功');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('取消分享');
+                    }
+                });
+
+                wx.onMenuShareQZone({
+                    title: '测试分享到QQ空间', // 分享标题
+                    desc: '分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致', // 分享描述
+                    link: 'http://www.downtonhd.com', // 分享链接
+                    imgUrl: 'http://img.mukewang.com/56e10d9c0001e83306000338-240-135.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('分享成功');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('取消分享');
+                    }
+                });
+            });
+
+            wx.checkJsApi({
+               jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQZone','chooseImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+               success: function(res) {
+                   // 以键值对的形式返回，可用的api值true，不可用为false
+                   // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+               }
+            });
+        </script>
+    </body>
+</html>

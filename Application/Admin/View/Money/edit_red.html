@@ -1,0 +1,130 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+  <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+<div class="page-title">
+
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>红包配置项管理</a>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+
+<!-- 表单主体 -->
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form id="defaultForm" method="post" class="form-horizontal" action="{:U('Money/subeditRed',array('conf_id'=>$infos['conf_id']))}">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">红包类型</label>
+                        <div class="col-lg-2">
+                            <select class="form-control" name="type" data-bv-notempty-message="请选择红包类型">
+                                <if condition="$infos.type eq 2">
+                                    <option value="{$infos.type}">求助</option>
+                                <else/>
+                                    <option value="{$infos.type}">文章</option>
+                                </if>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">操作者</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="operator" value="{$Think.session.username}" readonly/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">红包金额</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="total_amount" value="{$infos.total_amount}" readonly/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">需要点赞数</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="like_nums" value="{$infos.like_nums}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">分成比例</label>
+                        <div class="col-lg-3">
+                            <input type="text" id="pct" data-rules="{required:true}" class="form-control" name="commission" value="{$infos.commission}"/>
+                           &nbsp;<span style="color: red;">&nbsp;最多99%</span>
+                            此处为回复者分成比例
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">开始时间:</label>
+                        <div class="col-lg-3"><input type="text" name="start_time" class="calendar calendar-time" value="{$infos.start_time|date='Y-m-d H:i:s',###}" /></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">结束时间:</label>
+                        <div class="col-lg-3"><input type="text" name="end_time" class="calendar calendar-time" value="{$infos.end_time|date='Y-m-d H:i:s',###}" /></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">备注</label>
+                        <div class="col-lg-5">
+                            <textarea class="form-control autogrow" name="remark" placeholder="备注" style="min-height: 100px;">{$infos.remark}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="last">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                            <!-- <button type="button" class="btn btn-success">返回</button> -->
+                            <input class="btn btn-success" onclick="history.go(-1)" value="返回" type="button">
+                            <input type="hidden" name="conf_id" value="{$infos.conf_id}">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+<script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+<script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+<script type="text/javascript" src="__JS__/jquery.maskedinput.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#pct").mask("99%");
+    });
+</script>
+
+<!-- script start --> 
+<script type="text/javascript">
+    BUI.use('bui/calendar',function(Calendar){
+        var datepicker = new Calendar.DatePicker({
+          trigger:'.calendar-time',
+          showTime:true,
+          autoRender : true
+        });
+    });
+</script>
+<script src="__JS__/bootstrap.min.js"></script>
+<include file="Public/footer" />

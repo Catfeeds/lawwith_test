@@ -1,0 +1,892 @@
+[ 2018-09-24T03:45:51+08:00 ] 47.92.141.208 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000108s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001519s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001561s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000062s ]
+
+[ 2018-09-24T14:29:44+08:00 ] 52.53.201.78 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000122s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.001481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000061s ]
+
+[ 2018-09-24T18:47:23+08:00 ] 61.148.245.145 /app/Index/index_banner
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+SQL: SHOW COLUMNS FROM `lx_push` [ RunTime:0.000684s ]
+SQL: SELECT `cid`,`banner`,`c_type`,`author` FROM `lx_push` WHERE ( mark=1 ) ORDER BY sort, push_time desc  [ RunTime:0.000298s ]
+
+[ 2018-09-24T18:47:23+08:00 ] 61.148.245.145 /app/Index/getMajor
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_major` [ RunTime:0.000666s ]
+SQL: SELECT `id`,`major_name`,`pid` FROM `lx_major` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000288s ]
+
+[ 2018-09-24T18:47:24+08:00 ] 61.148.245.145 /app/Index/helps_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.000892s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `status` = 1 ) AND ( `type` = 2 ) LIMIT 1   [ RunTime:0.007060s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`tag_city`,`tag_major`,`imgs`,`views`,`send_time`,`tbd_id`,`inviters`,`type`,`status`,`is_nym`,`is_admin`,`is_money`,`red_status`,`redpack_id`,`is_reward`,`reward_money` FROM `lx_resource` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `is_stick` asc,`send_time` desc LIMIT 0,20   [ RunTime:0.006666s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.000450s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3044' ) LIMIT 1   [ RunTime:0.000849s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3044' )  [ RunTime:0.001952s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.000379s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3044' ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3044' ) ORDER BY time desc  [ RunTime:0.000420s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.000604s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5795' ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_log` [ RunTime:0.000434s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3044' )  [ RunTime:0.001217s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_conf` [ RunTime:0.000395s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3037' ) LIMIT 1   [ RunTime:0.000779s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3037' )  [ RunTime:0.001843s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3037' ) LIMIT 1   [ RunTime:0.000357s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3037' ) ORDER BY time desc  [ RunTime:0.000393s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5795' ) LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3037' )  [ RunTime:0.001151s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3036' ) LIMIT 1   [ RunTime:0.000781s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3036' )  [ RunTime:0.001822s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3036' ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3036' ) ORDER BY time desc  [ RunTime:0.000401s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5795' ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3036' )  [ RunTime:0.001148s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000125s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3035' ) LIMIT 1   [ RunTime:0.000794s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3035' )  [ RunTime:0.001797s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3035' ) LIMIT 1   [ RunTime:0.000345s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3035' ) ORDER BY time desc  [ RunTime:0.000382s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5788' ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3035' )  [ RunTime:0.001175s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3027' ) LIMIT 1   [ RunTime:0.000780s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3027' )  [ RunTime:0.001816s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3027' ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3027' ) ORDER BY time desc  [ RunTime:0.000393s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='24' ) LIMIT 1   [ RunTime:0.000151s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3027' )  [ RunTime:0.001155s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3025' ) LIMIT 1   [ RunTime:0.000780s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3025' )  [ RunTime:0.001822s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3025' ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3025' ) ORDER BY time desc  [ RunTime:0.000394s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3025' )  [ RunTime:0.001151s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3023' ) LIMIT 1   [ RunTime:0.000789s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3023' )  [ RunTime:0.001798s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3023' ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3023' ) ORDER BY time desc  [ RunTime:0.000385s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='24' ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3023' )  [ RunTime:0.001192s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3020' ) LIMIT 1   [ RunTime:0.000787s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3020' )  [ RunTime:0.001812s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3020' ) LIMIT 1   [ RunTime:0.000341s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3020' ) ORDER BY time desc  [ RunTime:0.000384s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3020' )  [ RunTime:0.001149s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000125s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3019' ) LIMIT 1   [ RunTime:0.000778s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3019' )  [ RunTime:0.001818s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3019' ) LIMIT 1   [ RunTime:0.000336s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3019' ) ORDER BY time desc  [ RunTime:0.000390s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.000145s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3019' )  [ RunTime:0.001150s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000140s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3018' ) LIMIT 1   [ RunTime:0.000787s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3018' )  [ RunTime:0.001804s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3018' ) LIMIT 1   [ RunTime:0.000345s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3018' ) ORDER BY time desc  [ RunTime:0.000384s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5788' ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3018' )  [ RunTime:0.001174s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3017' ) LIMIT 1   [ RunTime:0.000787s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3017' )  [ RunTime:0.001805s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3017' ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3017' ) ORDER BY time desc  [ RunTime:0.000389s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3' ) LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3017' )  [ RunTime:0.001146s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3016' ) LIMIT 1   [ RunTime:0.000779s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3016' )  [ RunTime:0.001815s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3016' ) LIMIT 1   [ RunTime:0.000337s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3016' ) ORDER BY time desc  [ RunTime:0.000388s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5788' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3016' )  [ RunTime:0.001144s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3015' ) LIMIT 1   [ RunTime:0.000789s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3015' )  [ RunTime:0.001803s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3015' ) LIMIT 1   [ RunTime:0.000345s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3015' ) ORDER BY time desc  [ RunTime:0.000380s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5788' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3015' )  [ RunTime:0.001166s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3014' ) LIMIT 1   [ RunTime:0.000785s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3014' )  [ RunTime:0.001815s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3014' ) LIMIT 1   [ RunTime:0.000337s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3014' ) ORDER BY time desc  [ RunTime:0.000381s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5793' ) LIMIT 1   [ RunTime:0.000161s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3014' )  [ RunTime:0.001157s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3013' ) LIMIT 1   [ RunTime:0.000783s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3013' )  [ RunTime:0.001824s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3013' ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3013' ) ORDER BY time desc  [ RunTime:0.000402s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='24' ) LIMIT 1   [ RunTime:0.000152s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3013' )  [ RunTime:0.001160s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3012' ) LIMIT 1   [ RunTime:0.000787s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3012' )  [ RunTime:0.001805s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3012' ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3012' ) ORDER BY time desc  [ RunTime:0.000389s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5793' ) LIMIT 1   [ RunTime:0.000166s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3012' )  [ RunTime:0.001163s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000142s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3011' ) LIMIT 1   [ RunTime:0.000792s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3011' )  [ RunTime:0.001820s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3011' ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3011' ) ORDER BY time desc  [ RunTime:0.000394s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5793' ) LIMIT 1   [ RunTime:0.000145s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3011' )  [ RunTime:0.001150s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3010' ) LIMIT 1   [ RunTime:0.000779s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3010' )  [ RunTime:0.001818s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3010' ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3010' ) ORDER BY time desc  [ RunTime:0.000460s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5793' ) LIMIT 1   [ RunTime:0.000172s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3010' )  [ RunTime:0.001425s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000149s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3009' ) LIMIT 1   [ RunTime:0.000964s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3009' )  [ RunTime:0.002180s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3009' ) LIMIT 1   [ RunTime:0.000448s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3009' ) ORDER BY time desc  [ RunTime:0.000448s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5793' ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3009' )  [ RunTime:0.001377s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3008' ) LIMIT 1   [ RunTime:0.000976s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3008' )  [ RunTime:0.001993s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3008' ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3008' ) ORDER BY time desc  [ RunTime:0.000392s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='5793' ) LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3008' )  [ RunTime:0.001202s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.000139s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.000477s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000156s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000143s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000148s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000131s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000131s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000151s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12647 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000131s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000143s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000131s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000125s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000124s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000125s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000139s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000143s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000125s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000135s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000123s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000141s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000208s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000143s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000125s ]
+NOTIC: [8] Undefined index: is_reward /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 60 行.
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: reward_money /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 61 行.
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 13002 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 51 行.
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 51 行.
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/lawwith_test/Application/App/Controller/IndexController.class.php 第 51 行.
+
+[ 2018-09-24T18:47:26+08:00 ] 61.148.245.145 /app/Search/accounts
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000101s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.000943s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_account` WHERE ( `type` = 1 ) AND ( `status` <> 2 ) LIMIT 1   [ RunTime:0.007856s ]
+SQL: SELECT `id`,`uname`,`icon`,`law`,`majors`,`work_life`,`status`,`create_at`,`specialty` FROM `lx_account` WHERE ( `type` = 1 ) AND ( `status` <> 2 ) ORDER BY id desc LIMIT 0,20   [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.000487s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='12647' ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='12647' ) LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='11896' ) LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13123' ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13122' ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='10' ) LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='11042' ) LIMIT 1   [ RunTime:0.000126s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='4721' ) LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13118' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='4564' ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13117' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='12544' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13116' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='12531' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='8603' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='10400' ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13114' ) LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='12686' ) LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='6783' ) LIMIT 1   [ RunTime:0.000187s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='2455' ) LIMIT 1   [ RunTime:0.000148s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/lawwith_test/Application/App/Controller/SearchController.class.php 第 246 行.
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/lawwith_test/Application/App/Controller/SearchController.class.php 第 246 行.
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/lawwith_test/Application/App/Controller/SearchController.class.php 第 246 行.
+
+[ 2018-09-24T18:47:29+08:00 ] 61.148.245.145 /app/Index/getMajor
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex /alidata/www/lawwith_test/Application/Common/Api/MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_major` [ RunTime:0.000676s ]
+SQL: SELECT `id`,`major_name`,`pid` FROM `lx_major` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.000302s ]
+

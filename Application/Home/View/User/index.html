@@ -1,0 +1,41 @@
+<include file="header" />
+
+<div class="userbanner ">
+    <div class="userbannerbg">
+        <div class="avt"><img src="{$thumb_img}"></div>
+        <div class="authorinfo">
+            <h1 class="usrname">{$username}</h1>
+            <p class="summary">{$remark}</p>
+        </div>
+        <a href="{:U('User/article_edit')}" class="publish-btn public-btn-red">发布文章</a>
+    </div>
+    <p class="advice-word">
+        {$remark}
+        <i class="quote"></i>
+    </p>
+</div>
+
+<div class="usrstatus">
+    <div class="usrdata">
+        <p class="data1"><span class="num">250</span><span class="name">阅读量</span></p>
+        <p class="data2"><span class="num">1</span><span class="name">文章总数</span></p>
+        <p class="data3"><span class="num">5</span><span class="name">文章回复总数</span></p>
+    </div>
+    <div class="usrstat">
+        <div class="news">
+            <p class="common-author-heading-wrap">
+                <span class="common-author-heading tit">热门文章</span>
+            </p>
+            <ul class="newslis">
+                <volist name="resource_list" id="lists">
+                    <li>
+                        <span class="top top1"></span>
+                        <a href="#">外贸培训市场爆发才刚刚开始外贸培训市场爆发才刚刚开始外贸培训市场爆发才刚刚开始外贸培训市场爆发才刚刚开始</a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<include file="footer" />

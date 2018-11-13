@@ -1,0 +1,2076 @@
+[ 2018-11-12T09:35:02+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.080000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.090000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.080000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.060000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.060000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.020000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.020000s ]
+
+[ 2018-11-12T09:35:07+08:00 ] 127.0.0.1 /index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-12T09:35:24+08:00 ] 127.0.0.1 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.020001s ]
+SQL: UPDATE `lx_user` SET `login_at`=1541986524,`loginip`='127.0.0.1' WHERE ( `id` = 4 ) [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: superadmin D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Org\Util\Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=2 and node.pid=100 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=101 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=132 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=145 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=162 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=171 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=193 and node.status=1 [ RunTime:0.020000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-12T10:14:37+08:00 ] 127.0.0.1 /Admin/Article/index
+ERR: 无法加载控制器:Article
+
+[ 2018-11-12T10:14:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T10:14:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T10:15:41+08:00 ] 127.0.0.1 /Admin/Article/index
+ERR: 无法加载控制器:Article
+
+[ 2018-11-12T10:20:23+08:00 ] 127.0.0.1 /Admin/Article/index
+ERR: 无法加载控制器:Article
+
+[ 2018-11-12T10:20:25+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T10:20:25+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T10:20:29+08:00 ] 127.0.0.1 /Admin/Article/index
+ERR: 无法加载控制器:Article
+
+[ 2018-11-12T10:20:32+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T10:20:32+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T10:20:43+08:00 ] 127.0.0.1 /Admin/Article/index
+ERR: 无法加载控制器:Article
+
+[ 2018-11-12T13:33:17+08:00 ] 127.0.0.1 /admin/recommend
+ERR: 无法加载控制器:Recommend
+
+[ 2018-11-12T13:35:36+08:00 ] 127.0.0.1 /admin/recommend
+ERR: 无法加载控制器:Recommend
+
+[ 2018-11-12T13:37:50+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T13:37:50+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T13:38:31+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T13:38:31+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T13:52:45+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T13:52:45+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:03:17+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:03:17+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:23:02+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:23:02+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:09+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:09+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:10+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:10+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:25+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:25+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:25+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:25+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:34+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:34+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:35+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:35+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:51+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:52+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:57:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:24+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:24+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:49+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:49+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:49+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:58:49+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:38+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:38+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:38+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:38+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:46+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:47+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T14:59:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:01:42+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:01:42+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:01:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:01:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:03:17+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:03:17+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:03:29+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:03:29+08:00 ] 127.0.0.1 /Public/zyUpload/core/summernote-bs4.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:05:07+08:00 ] 127.0.0.1 /Admin/Activity/maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.css
+ERR: 非法操作:maxcdn.bootstrapcdn.com
+
+[ 2018-11-12T15:07:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:07:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:08:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:08:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:13:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:13:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:22:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:22:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:25:25+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:25:25+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:25:46+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:25:46+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:25:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:25:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:26:12+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:26:12+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:27:00+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:27:01+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:27:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:27:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:27:22+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:27:22+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:29:08+08:00 ] 127.0.0.1 /Admin/dist/summernote-bs4.css
+ERR: 无法加载控制器:Dist
+
+[ 2018-11-12T15:29:08+08:00 ] 127.0.0.1 /Admin/dist/summernote-bs4.css
+ERR: 无法加载控制器:Dist
+
+[ 2018-11-12T15:29:09+08:00 ] 127.0.0.1 /Admin/dist/summernote-bs4.js
+ERR: 无法加载控制器:Dist
+
+[ 2018-11-12T15:30:26+08:00 ] 127.0.0.1 /Public/zyUpload/control/css/font/summernote.woff?dbafe969167589eda84514394d126413
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:30:26+08:00 ] 127.0.0.1 /Public/zyUpload/control/css/font/summernote.ttf?dbafe969167589eda84514394d126413
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:31:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:31:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:47:23+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:47:23+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:47:24+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:47:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:47:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:48:20+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:48:21+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:48:21+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:48:22+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:48:22+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:05+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:05+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:06+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:25+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:26+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:26+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:27+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:27+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:30+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:31+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:31+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:31+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:49:31+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:18+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:19+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:19+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:26+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:26+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:27+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:27+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:50:27+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:22+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:22+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:23+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:23+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:23+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:27+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:28+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:28+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:54:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:55:41+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:55:42+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:55:42+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:55:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:55:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:56:55+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:56:55+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/ueditor.all.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:56:56+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/lang/zh-cn/zh-cn.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:56:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:56:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:05+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/themes/default/css/ueditor.css
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:06+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/themes/iframe.css
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:06+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/php/controller.php?action=config&&noCache=1542009485846
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:07+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:07+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/third-party/codemirror/codemirror.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:07+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/third-party/codemirror/codemirror.css
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T15:58:07+08:00 ] 127.0.0.1 /Public/zyUpload/control/js/third-party/zeroclipboard/ZeroClipboard.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:02:44+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:02:44+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:04:26+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:04:26+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:04:50+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:04:50+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:15:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:15:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:22:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:22:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:22:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:22:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:25:30+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:25:30+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:25:35+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:25:35+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:25:51+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:25:51+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:26:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:26:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:28:36+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:28:36+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:29:55+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:29:55+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:30:45+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:30:45+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:32:57+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:32:57+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:40:12+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:40:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:41:30+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:41:30+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:45:16+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:45:16+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:46:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:46:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:47:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:47:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:48:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:48:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:51:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:51:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:51:53+08:00 ] 127.0.0.1 /Admin/Activity/Admin/File/uploadPicture?action=uploadPicture
+ERR: 非法操作:admin
+
+[ 2018-11-12T16:53:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:53:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:56:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:56:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:56:09+08:00 ] 127.0.0.1 /Admin/Activity/uploadPicture?action=uploadPicture
+ERR: Think\Controller:return方法不存在！
+
+[ 2018-11-12T16:56:36+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T16:56:36+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:00:18+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:00:18+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:01:40+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:01:40+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:01:57+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:01:57+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:03:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:03:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:03:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:03:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:03:58+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:03:58+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:05:03+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:05:04+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:06:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:06:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:22:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:22:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:28:32+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:28:32+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:31:18+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:31:18+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:40:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:40:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:43:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:43:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:45:16+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:45:16+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:48:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:48:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:50:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:50:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:53:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:53:29+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:57:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:57:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T17:57:41+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=uploadUediImg
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T17:57:47+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=uploadUediImg
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:00:31+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:00:31+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:00:34+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=uploadUediImg
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:04:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:04:15+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:04:17+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=uploadUediImg
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:09:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:09:39+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:09:40+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:09:40+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:09:40+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:09:40+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:09:40+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:09:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:09:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:09:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:09:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:09:48+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:09:48+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:09:48+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:10:04+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:10:04+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:10:08+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=uploadUediImg
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:10:15+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=uploadUediImg
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:12:10+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:12:10+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:12:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:34+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:12:34+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:34+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:34+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:12:34+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:34+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:35+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:12:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:12:39+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:39+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:12:49+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:12:49+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:14:29+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:14:29+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:14:29+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:14:29+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:14:30+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:14:30+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:14:30+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:15:25+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:15:25+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:15:25+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:15:25+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:15:26+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:15:26+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:15:26+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:16:05+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:16:05+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:16:06+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:16:06+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:16:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:16:06+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:16:06+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:16:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:16:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:16:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:16:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:16:12+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:16:12+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:16:12+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:16:18+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:16:18+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:18:45+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:18:45+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:19:40+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:19:41+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:41+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:42+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:42+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:19:42+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:19:42+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:19:56+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:19:56+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:19:56+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:56+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:19:56+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:19:57+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:59+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:19:59+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:19:59+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:20:00+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:20:00+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:20:00+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:20:00+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:20:05+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:20:05+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:21:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:21:38+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:21:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:21:38+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:21:39+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:21:39+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:21:39+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:21:46+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:21:46+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:21:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:21:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:21:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:21:47+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:21:47+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:21:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:21:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:22:11+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/default/css/ueditor.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:22:11+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:22:12+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:22:12+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthemes/iframe.css
+ERR: 非法操作:undefinedthemes
+
+[ 2018-11-12T18:22:12+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/codemirror/codemirror.css
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:22:12+08:00 ] 127.0.0.1 /Admin/Activity/undefinedthird-party/zeroclipboard/ZeroClipboard.js
+ERR: 非法操作:undefinedthird-party
+
+[ 2018-11-12T18:22:12+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:22:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:22:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:24:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:24:20+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:24:22+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=FileController.class
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:24:33+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:24:33+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:24:57+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:24:57+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:25:00+08:00 ] 127.0.0.1 /Admin/Activity/uploadUediImg?action=upload
+ERR: 非法操作:uploaduediimg
+
+[ 2018-11-12T18:25:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:25:24+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:26:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:26:13+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:30:37+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-12T18:30:38+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+

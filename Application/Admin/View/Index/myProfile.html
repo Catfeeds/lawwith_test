@@ -1,0 +1,139 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+        <section class="profile-env">
+
+            <div class="row">
+
+                <div class="col-sm-3">
+
+                    <!-- User Info Sidebar -->
+                    <div class="user-info-sidebar">
+                        <div id="crop-avatar" class="col-md-6">
+                            <div class="avatar-view" title="修改头像">
+                                <input type="file" id="up_myhead" name="myhead" style="display: none;">
+                        <a class="user-img" onclick="upimg();">
+                            <img src="__IMG__/user-4.png" alt="user-img" class="img-cirlce img-responsive img-thumbnail" />
+                        </a>
+                            </div>
+                            <script type="text/javascript">
+                                function upimg (){
+                                    return $('#up_myhead').click();
+                                }
+                            </script>
+                        </div>
+                        <a href="#" class="user-name">
+                            {$Think.session.username}
+                            <span class="user-status is-online"></span>
+                        </a>
+
+							<span class="user-title">
+								<foreach name="myrole" item="rol">
+                                    {$rol['remark']}&nbsp;
+                                </foreach>
+							</span>
+
+                        <hr />
+
+                        <ul class="list-unstyled user-info-list">
+                            <li>
+                                <i class="fa-home"></i>
+                                Prishtina, Kosovo
+                            </li>
+                            <li>
+                                <i class="fa-briefcase"></i>
+                                <a href="#">Laborator</a>
+                            </li>
+                            <li>
+                                <i class="fa-graduation-cap"></i>
+                                University of Bologna
+                            </li>
+                        </ul>
+
+                        <hr />
+
+                        <ul class="list-unstyled user-friends-count">
+                            <li>
+                                <span>643</span>
+                                followers
+                            </li>
+                            <li>
+                                <span>108</span>
+                                following
+                            </li>
+                        </ul>
+
+                        <button type="button" class="btn btn-success btn-block text-left">
+                            Following
+                            <i class="fa-check pull-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="col-sm-9 form-horizontal">
+
+                    <!-- User Post form and Timeline -->
+                    <form id="For_pwd" method="post" action="{:U('User/changePwd')}" >
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">旧密码</label>
+                            <div class="col-lg-5 kv-main"><input class="form-control" type="password" name="old_pwd" required data-bv-notempty-message="旧密码不能为空" data-bv-remote="true" data-bv-remote-url="{:U('User/checkPwd')}" data-bv-remote-message="密码不正确"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">新密码</label>
+                            <div class="col-lg-5 kv-main"><input class="form-control" type="password" name="pwd1" required data-bv-notempty-message="密码不能为空"  data-bv-identical="true" data-bv-identical-field="pwd2" data-bv-identical-message="密码和确认密码不一致" ></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">确认密码</label>
+                            <div class="col-lg-5 kv-main"><input class="form-control" type="password" name="pwd2" required data-bv-notempty-message="确认密码不能为空" data-bv-identical="true" data-bv-identical-field="pwd1" data-bv-identical-message="密码和确认密码不一致"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-8 col-lg-offset-4">
+                                <button type="submit" class="btn btn-primary">确认添加</button>
+                                <button type="reset" class="btn btn-white">重置</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+        <!-- Main Footer -->
+        <!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
+        <!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
+        <!-- Or class "fixed" to  always fix the footer to the end of page -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_pwd').bootstrapValidator();
+    });
+</script>
+<include file="Public/footer"/>

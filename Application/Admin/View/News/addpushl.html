@@ -1,0 +1,306 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__Date__/dateSelect.css">
+<script type="text/javascript" src="__Date__/dateSelect.js"></script>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/ueditor.all.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Ueditor/lang/zh-cn/zh-cn.js"></script>
+
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form id="Form2" method="post" class="form-horizontal" action="{:U('Content/sub_sendTopic')}" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">标题</label>
+                        <div class="col-lg-8">
+                            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa-quote-left"></i>
+                        </span>
+                                <input type="text" name="title" class="form-control" placeholder="输入标题">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">封面图片 </label>
+                        <div class="col-lg-5">
+                            <input type="file" name="title_img" />
+                        </div>
+                    </div>
+                    <div class="form-group select2 select-one">
+                        <label class="col-lg-3 control-label">文章分类</label>
+                        <div class="col-lg-5 select2-selection">
+                            <select class="form-control chzn-select" name="sort" id="s2example-1" style="width:100%;">
+                                <option value="">请选择文章分类</option>
+                                <option value="1">实务</option>
+                                <option value="2">人文</option>
+                                <option value="3">律圈</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($)
+                            {
+                                $("#s2example-1").select2({
+                                    placeholder: '请选择专业领域',
+                                    allowClear: true
+                                }).on('select2-open', function()
+                                {
+                                    // Adding Custom Scrollbar
+                                    $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                                });
+
+                            });
+                        </script>
+                        <!--<label class="col-lg-3 control-label">所属城市</label>-->
+
+                        <!--<div class="col-lg-5">-->
+                            <!--<select class="form-control" id="s2example-1" name="city_id[]" multiple>-->
+                                <!--<option></option>-->
+                                <!--<optgroup label="请选择城市">-->
+                                    <!--<volist name="city" id="cvo">-->
+                                        <!--<option value="{$cvo['cityname']}">{$cvo.cityname}</option>-->
+                                    <!--</volist>-->
+                                <!--</optgroup>-->
+                            <!--</select>-->
+
+                        <!--</div>-->
+                    </div>
+
+                    <div class="form-group">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($)
+                            {
+                                $("#s2example-2").select2({
+                                    placeholder: '请选择专业领域',
+                                    allowClear: true
+                                }).on('select2-open', function()
+                                {
+                                    // Adding Custom Scrollbar
+                                    $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                                });
+
+                            });
+                        </script>
+                        <label class="col-lg-3 control-label">专业领域 </label>
+                        <div class="col-lg-5">
+                            <select class="form-control" id="s2example-2" name="major_id[]" multiple>
+                                <option></option>
+                                <optgroup label="请选择专业领域">
+                                    <volist name="major" id="major_vo">
+                                        <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                    </volist>
+                                </optgroup>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">内容</label>
+                        <div class="col-lg-7">
+                            <!--<textarea class="form-control autogrow" name="content" placeholder="内容" style="min-height: 100px;"></textarea>-->
+                            <script id="container" name="content" type="text/plain" ></script>
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-lg-3 control-label">附件（图片）</label>-->
+                        <!--<div class="col-lg-5">-->
+                            <!--<span id="fujian" class="fujian" style="width: auto;"></span>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-lg-3 control-label">是否置顶</label>-->
+                        <!--<div class="col-xs-1">-->
+                            <!--<input type="checkbox" name="is_stick" class="iswitch iswitch-blue"  value="1">-->
+                            <!--&lt;!&ndash;<span style="font-size: small; color: #00aa00">* 开启置顶，会使排序靠前</span>&ndash;&gt;-->
+                        <!--</div>-->
+
+                        <!--<label class="col-lg-1 control-label">是否首页推荐</label>-->
+                        <!--<div class="col-xs-1">-->
+                            <!--<input type="checkbox" name="is_push" class="iswitch iswitch-turquoise" checked="checked" value="1">-->
+                            <!--&lt;!&ndash;<span style="font-size: small; color: #00aa00">* 开启推荐，自动推送到首页</span>&ndash;&gt;-->
+                        <!--</div>-->
+
+                        <!--<label class="col-lg-1 control-label">状态</label>-->
+                        <!--<div class="col-xs-1">-->
+                            <!--<input type="checkbox" name="status" class="iswitch iswitch-secondary" selected value="1">-->
+                            <!--&lt;!&ndash;<span style="font-size: small; color: #00aa00">* 状态，关闭系统将无法搜索到此数据</span>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <div id="img_ids"></div>
+                            <input type="hidden" name="type" value="3">
+                            <button type="submit" class="btn btn-primary">确认添加</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    function loadRegion(sel,type_id,selName,url){
+        jQuery("#"+selName+" option").each(function(){
+            jQuery(this).remove();
+        });
+        jQuery("<option value=0>请选择</option>").appendTo(jQuery("#"+selName));
+        if(jQuery("#"+sel).val()==0){
+            return;
+        }
+        jQuery.getJSON(url,{pid:jQuery("#"+sel).val(),type:type_id},
+                function(data){
+                    if(data){
+                        jQuery.each(data,function(idx,item){
+                            jQuery("<option value="+item.id+">"+item.cityname+"</option>").appendTo(jQuery("#"+selName));
+                        });
+                    }else{
+                        jQuery("<option value='0'>请选择</option>").appendTo(jQuery("#"+selName));
+                    }
+                }
+        );
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#Form2')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        title: {
+                            message: '标题无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '标题不能为空！'
+                                }
+//                                remote: {
+//                                    url: "{:U('Content/checkLaws')}",
+//                                    message: '律所名不可用'
+//                                }
+                            }
+                        },
+
+//                        title_img: {
+//                            message: '标题图片无效！',
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '标题图片不能为空！'
+//                                }
+//                            }
+//                        },
+
+                        content: {
+                          validators: {
+                              notEmpty: {
+                                  message: '内容不能为空！'
+                              }
+                          }
+                        },
+                        'city_id[]': {
+                            validators: {
+                                choice: {
+                                    min: 1,
+                                    max: 3,
+                                    message: '请选择1-3个城市标签！'
+                                }
+                            }
+                        },
+                        'major_id[]': {
+                            validators: {
+                                choice: {
+                                    min: 1,
+                                    max: 3,
+                                    message: '请选择1-3个专业标签！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+
+    //选择实务分类才让选择专业领域
+    $("#s2example-1").change(function(){
+
+        var select = $("#s2example-1").find("option:selected").text();
+        if(select !== '实务') {
+            //禁用下拉列表
+            $("#s2example-2").prop("disabled",true);
+            $(".tips").html('"实务"才有专业领域');
+        } else {
+            $("#s2example-2").prop("disabled",false);
+            $(".tips").empty();
+        }
+    });
+
+    $(function(){
+        var select = $("#s2example-1").find("option:selected").text();
+        if(select !== '实务') {
+            //禁用下拉列表
+            $("#s2example-2").prop("disabled",true);
+            $(".tips").html('"实务"才有专业领域');
+        } else {
+            $("#s2example-2").prop("disabled",false);
+            $(".tips").empty();
+        }
+    });
+
+    //实例化编辑器
+    var ue = UE.getEditor('container',
+            {
+                initialFrameHeight:400,
+                //elementPathEnabled:false,
+                toolbars: [['source','undo', 'redo','justifyleft','justifyright','justifycenter','imagecenter','simpleupload','insertimage','removeformat']],
+            });
+</script>
+<script src="__JS__/select2/select2.min.js"></script>
+<link rel="stylesheet" href="__JS__/select2/select2.css">
+<link rel="stylesheet" href="__JS__/select2/select2-bootstrap.css">
+<include file="Public/footer"/>

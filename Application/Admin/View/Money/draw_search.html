@@ -1,0 +1,268 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<link href="__BUI__/css/bs3/bui.css" rel="stylesheet">
+<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>提现记录管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<!-- Removing search and results count filter -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!--提现记录筛选搜索-->
+        <div class="panel-content">
+            <form id="searchForm" class="form-panel" action="{:U('Admin/Money/draw_search')}" method="post">
+                <div class="row show-grid">
+                    <div class="span16">
+                        <select name="status">
+                            <option>全部分类</option>
+                            <option value="1" selected="selected">待转账</option>
+                            <option value="2">申请不通过</option>
+                            <option value="3">交易完成</option>
+                        </select>
+                    <span>
+                        <label>转账日期范围:</label>
+                        <input name="start_time" data-tip="{text : '起始日期'}" data-rules="{required:true}" data-messages="{required:'起始日期不能为空'}" class="input-small calendar" type="text"><label>&nbsp;至&nbsp;</label>
+                        <input name="end_time" data-rules="{required:true}" data-messages="{required:'结束日期不能为空'}" class="input-small calendar" type="text">
+                    </span>
+                    </div>
+                    <div class="span8">
+                        <input type="text" name="user_name" value="转账人姓名..."/>
+                        <button type="submit" id="submit_search" class="button button-primary">查询</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--提现记录筛选搜索-->
+        <div class="album-header" style="height:40px;margin: 15px 0;background:#eee;border:1px solid #dadada;border-radius:1px;">
+            <div class="btn-box" style="margin: 5px auto auto 15px;">
+                <button class="btn btn-default btn-sm" id="subexport" >
+                    <i class="fa-cloud-download"></i>
+                    <span>下载报表</span>
+                </button>
+
+                <button class="btn btn-info btn-sm" id="">
+                    <i class="fa-list"></i>
+                    <span>结果列表</span>
+                </button>
+
+                <div class="btn btn-success btn-sm">
+                    <i class="fa-paper-plane"></i>
+                    <span>批量转账</span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped" id="del_data">
+            <thead>
+            <tr>
+                <th class="no-sorting">
+                    <input type="checkbox" class="cbr">
+                </th>
+                <th>ID</th>
+                <th>流水号</th>
+                <th>收款方支付宝账号</th>
+                <th>用户姓名</th>
+                <th>用户手机号</th>
+                <th>支付金额 (/元)</th>
+                <th>手续费 (/元)</th>
+                <th>转账日期</th>
+                <th>支付状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody class="middle-align">
+            <foreach name="data" item="vo">
+                <tr>
+                    <td>
+                        <input name="help_id" type="checkbox" class="cbr" value="{$vo.id}">
+                    </td>
+                    <td>{$vo.rd_id}</td>
+                    <td>{$vo.rd_id}</td>
+                    <td>{$vo.get_account}</td>
+                    <td name="uname" uname="{$vo.userinfo.uname}">{$vo.userinfo.uname}</td>
+                    <td name="mobile" mobile="{$vo.userinfo.mobile}">{$vo.userinfo.mobile}</td>
+                    <td><strong style="color:red">{$vo.amount}</strong></td>
+                    <td><strong>{$vo.processing}</strong></td>
+                    <td>{$vo.payment_time|date='Y-m-d H:i',###}</td>
+                    <td>
+                        <if condition="$vo.status eq 0"><span style="background:#f37b1d;padding:5px;border-radius:4px;color:white;">待转账</span>
+                            <elseif condition="$vo.status eq 1" /><span style="background:#f37b1d;padding:5px;border-radius:4px;color:white;">交易完成</span>
+                            <elseif condition="$vo.status eq 2" /><span style="background:#f37b1d;padding:5px;border-radius:4px;color:white;">申请不通过</span>
+                        </if>
+                    </td>
+                    <td>
+                        <if condition="$vo.status eq 0">
+                            <!--<a href="{:U('Money/provent',array('rd_id'=>$vo['rd_id'],'get_user'=>$vo['get_user']))}" class="btn btn-default btn-sm btn-icon icon-left provent">不通过</a>-->
+                            <span name="takemomey" rd_id="{$vo['rd_id']}" uid="{$vo.get_user}" class="btn btn-default btn-sm provent">不通过</span>
+                            <elseif condition="$vo.status eq 2" />
+                            <span class="notthrough">不通过</span>
+                        </if>
+                    </td>
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+        <div class="flickr">{$page}</div>
+    </div>
+</div>
+
+<!-- 提现申请审核 -->
+<div id="content" class="hide">
+    <form id="form" class="form-horizontal" method="post">
+        <div class="row">
+            <div class="control-group span8">
+                <label class="control-label">用户名：</label>
+                <div class="controls">
+                    <input id="uname" type="text" class="input-normal control-text" value="" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="control-group span8">
+                <label class="control-label">手机号：</label>
+                <div class="controls">
+                    <input id="mobile" type="text" class="input-normal control-text" value="" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="control-group span15">
+                <label class="control-label"><s>*</s>审核意见: </label>
+                <div class="controls control-row4">
+                    <textarea name="provent" id="provent" class="input-large" type="text"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__BUI__/js/bui-min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function()
+    {
+        var $state = $("#del_data thead input[type='checkbox']");
+
+        $("#del_data").on('draw.dt', function() {
+            cbr_replace();
+            $state.trigger('change');
+        });
+
+        // 单选框全选
+        $state.on('change', function(ev)
+        {
+            var $chcks = $("#del_data tbody input[type='checkbox']");
+            if($state.is(':checked')) {
+                $chcks.prop('checked', true).trigger('change');
+            } else {
+                $chcks.prop('checked', false).trigger('change');
+            }
+        });
+
+        //下载报表
+        $('#subexport').click(function() {
+            location.href = "{:U('Money/subexport')}";
+        });
+
+        //提现申请审核
+        $("span[name=takemomey]").click(function(){
+            BUI.use(['bui/overlay','bui/form'],function(Overlay,Form) {
+
+                var form = new Form.HForm({
+                    srcNode: '#form'
+                }).render();
+
+                var dialog = new Overlay.Dialog({
+                    width:500,
+                    height:300,
+                    closeAction:'destroy', //每次关闭dialog释放
+                    contentId:'content',    //配置DOM容器的编号
+
+                    success:function() {
+                        var r=confirm("确认发送吗? 发送之后将不可撤回!",true);
+                        var rid = $("span[name=takemomey]").attr("rd_id");
+                        var uid = $("span[name=takemomey]").attr("uid");
+                        var provent = $("textarea[name=provent]").val();
+
+                        if(provent == ''){
+                            alert('请填写不通过原因!');
+                            return false;
+                        }else{
+                            if(r) {
+                                data = {
+                                    rd_id: rid,
+                                    get_user:uid,
+                                    provent:provent,
+                                };
+                                //console.log(data);
+
+                                $.post("{:U('Admin/Money/provent')}", data, function(data){
+                                    if(data.state ==1){
+                                        alert(data.msg);
+                                        //设置按钮样式
+                                        $('span[rd_id='+rid+']').html('<span class="notthrough">不通过</span>');
+                                        $('span[rd_id='+rid+']').removeClass();
+                                        //关闭弹窗
+                                        this.close();
+                                    }else{
+                                        alert('操作失败');
+                                    }
+                                },'json');
+                                //关闭弹窗
+                                this.close();
+                            }
+                        }
+                    }
+                });
+                //弹窗表单传值
+                var uname = $('td[name=uname]').attr("uname");
+                var mobile = $('td[name=mobile]').attr("mobile");
+                $('#uname').val(uname);
+                $('#mobile').val(mobile);
+                dialog.show();
+            });
+        });
+
+        var Grid = BUI.Grid,
+                Store = BUI.Data.Store;
+
+//    var store = new Store({
+//            url : 'data.php',
+//            autoLoad:true,
+//            pageSize:10
+//        });
+
+        //创建表单，表单中的日历，不需要单独初始化
+        var form = new BUI.Form.HForm({
+            srcNode : '#searchForm'
+        }).render();
+
+        form.on('beforesubmit',function(ev) {
+            //序列化成对象
+            var obj = form.serializeToObject();
+            obj.start = 0; //返回第一页
+            store.load(obj);
+            return false;
+        });
+    });
+</script>
+<include file="Public/footer"/>

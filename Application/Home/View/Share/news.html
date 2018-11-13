@@ -1,0 +1,697 @@
+<html lang="en" class="">
+<head>
+    <title>{$data.title}</title>
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{$data.title}">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="{$data.title_img}!heading">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link href="" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="apple-touch-icon" href="">
+    <link rel="apple-touch-icon" sizes="72x72" href="">
+    <link rel="apple-touch-icon" sizes="114x114" href="">
+    <link href="//sta.36krcnd.com/36krx2016-front/static/common-67442eeb8385c04d950e.css" rel="stylesheet">
+    <link href="//sta.36krcnd.com/36krx2016-front/static/app-67442eeb8385c04d950e.css" rel="stylesheet">
+    <style>
+    .upload_app { width:100%; height:auto; margin:auto;  position:fixed; bottom:5px; overflow: hidden;}
+    /*.upload_app_img{ width:40px; height:40px; background:#ba8748; float:left; margin-left:20px;  overflow:hidden;}*/
+    /*.upload_app_img img{ width:40px;  height:auto;  }*/
+    .upload_app_btn{ width:90%; height:50px; background:#ba8748; text-align:center; margin-left: 5%;-moz-border-radius: 5px;/*Firefox*/  -webkit-border-radius: 5px;/*Safari, Chrome*/  border-radius: 5px; overflow: hidden}
+    .upload_app_btn a{ width:100%; color:#fff; height:50px; display: block; line-height:50px;  text-align:center;}
+    /*.white_content {  display: none;  position: absolute;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.5;  opacity:.50;  filter: alpha(opacity=50);   overflow: auto; position:absolute; top:0; left:0; font-size:16px; color:#fff; line-height:20px; text-align:right;}*/
+    pre {white-space: pre-wrap; word-wrap: break-word;}
+    .article-detail .h5-author-info{border-top: 1px solid #fff;border-bottom: 1px solid #fff;}
+    .article-detail .content-wrapper .author{margin-left: 15px;}
+    </style>
+</head>
+<body>
+<!--模板开始-->
+<link rel="stylesheet" href="//sta.36krcnd.com/common-module/common-header/style.css?t=1484031496876">
+<header class="common-header J_commonHeaderWrapper" data-stat-module="dingbudaohang">
+    <div class="container">
+        <!--<div class="pc-nav">-->
+            <!--<a class="logo" href="/" style="top: 0;">-->
+                <!--<img src="/Public/Home/img/logo.jpg" >-->
+            <!--</a>-->
+            <!--<div class="triggers"></div>-->
+        <!--</div>-->
+        <div class="search-mask blackhidden"></div>
+    </div>
+</header>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    $(function(){
+        var appId = $("#appid").val();
+        var timestamp = $("#timestamp").val();
+        var nonceStr = $("#nonceStr").val();
+        var signature = $("#signature").val();
+        var url = $("#url").val();
+        var title = $("#title").val();
+        var content = $("#content").val();
+        wx.config({
+            debug: false,
+            appId: appId,
+            timestamp: timestamp,
+            nonceStr: nonceStr,
+            signature: signature,
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        });
+        wx.ready(function () {
+            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+            wx.checkJsApi({
+                jsApiList: [
+                    'getNetworkType',
+                    'previewImage',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo'
+                ],
+            });
+
+            var shareData = {
+                //标题
+                title: title,
+                //摘要
+                desc: content,
+                //链接,可以换主页
+                link: url,
+                //缩略图
+                imgUrl: 'http://lx2016.oss-cn-beijing.aliyuncs.com/Logo/2016-06-23/lx_logo80.png',
+
+            };
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    });
+</script>
+<!--模板结束-->
+<div id="app">
+    <div data-reactroot="">
+        <div class="pagewrap pagewrap-full">
+            <div class="article-detail ">
+                <div class="post-wrapper">
+                    <div id="J_normal_read_5062236" class="post-detail-con-box full-reading mainlib_flex_wapper">
+                        <div class="mainlib">
+                            <div class="center_content">
+                                <div class="content-wrapper">
+                                    <div class="article-section" data-articleid="5062236" id="J_post_wrapper_5062236">
+                                        <div class="mobile_article">
+                                            <h1>{$data.title}</h1>
+                                            <div class="h5-author-info am-cf">
+                                                <div class="img-box am-fl">
+                                                    <img src="{$account.icon}">
+                                                </div>
+                                                <div class="info">
+                                                    <p class="name">
+                                                        <a href="#" target="_blank">{$account.uname}</a>
+                                                        <!--<span class="kr-tag-arrow-blue kr-size-min">-->
+                                                            <!--<span class="arrow"><em></em></span>-->
+                                                            <!--<span>{$account.position}</span>-->
+                                                        <!--</span>-->
+                                                    </p>
+                                                    <!-- <p class="intro">{$account.remark}</p> -->
+                                                </div>
+                                                <div class="author am-fl">
+                                                    <a href="#" class="am-fl"><span class="name" data-stat-click="wenzhang.zuozhexingming">{$data.username}</span></a>
+                                                    <span class="time am-fl">
+                                                        <span class="dot">&nbsp;•&nbsp;</span>
+                                                        <abbr class="time">{$data.send_time|date='Y年m月d日',###}</abbr>
+                                                    </span>
+                                                    <span class="time am-fl">
+                                                        <span class="dot">&nbsp;•&nbsp;</span>
+                                                        <abbr class="time">&nbsp;&nbsp;
+                                                            <switch name="data.sort">
+                                                                <case value="1">实务</case>
+                                                                <case value="2">人文</case>
+                                                                <case value="3">律圈</case>
+                                                            </switch>
+                                                        </abbr>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="content-font">
+                                                <div class="am-cf author-panel"></div>
+                                                <!-- <section class="headimg">
+                                                    <img src="{$data.title_img}" alt="{$data.title}">
+                                                </section> -->
+                                                <div>
+                                                    <section class="textblock">
+                                                        {$content}
+                                                    </section>
+                                                    <div class="article-footer-ad">
+                                                        <div class="plan-image plan-lazyload-box" data-adid="93" data-name="a_d_article_bottom">
+                                                            <div class="a_d_article_bottom">
+                                                                <div class="baidu_ads_cell">
+                                                                    <!--<div class="img_box_long"></div>-->
+                                                                    <span class="mark pc_mark">APP下载</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <section class="article-footer-label">
+                                                        <div>看完这篇还不够？如果你也是法律从业者，并希望得到圈内人的帮助，请在律携APP上发帖,发帖有机会获得官方奖励的红包。 律携--法律人互助、沟通的平台!</div>
+                                                    </section>
+                                                </div>
+                                                <!-- react-empty: 39 -->
+                                                <section class="ad" id="AD5062236" data-id="16">
+                                                </section>
+                                                <!--<section class="single-post-tags">-->
+                                                    <!--<span class="kr-tag-gray">宪法</span>-->
+                                                    <!--<span class="kr-tag-gray">婚姻法</span>-->
+                                                    <!--<span class="kr-tag-gray">交通法</span>-->
+                                                    <!--<span class="kr-tag-gray">民营法</span>-->
+                                                    <!--<span class="kr-tag-gray">证券法</span>-->
+                                                    <!--<span class="kr-tag-gray">民法通则</span>-->
+                                                    <!--<span class="kr-tag-gray">产权法</span>-->
+                                                <!--</section>-->
+                                                <div class="fav-wrapper">
+                                                    <div class="common-post-like-wrapper">
+                                                        <a class="post-pc-like">
+                                                            <span class="icon-ic_like">
+                                                            </span>
+                                                            <span style="margin-left: 4px;">
+                                                                <!-- react-text: 54 -->
+                                                                {$data.likes}赞
+                                                                <!-- /react-text -->
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="h5-author-info am-cf">
+                                                    <div class="img-box am-fl">
+                                                        <img src="{$account.icon}">
+                                                    </div>
+                                                    <div class="info">
+                                                        <p class="name">
+                                                            <if >
+                                                            <a href="#" target="_blank">{$account.uname}</a>
+                                                            <span class="kr-tag-arrow-blue kr-size-min">
+                                                                <span class="arrow"><em></em></span>
+                                                                <span>{$account.position}</span>
+                                                            </span>
+                                                        </p>
+                                                        <p class="intro">
+                                                            {$account.remark}
+                                                        </p>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="mobile_article">
+                                        </div>
+                                        <!--<div class="related-articles-h5">-->
+                                            <!--<h4>相关文章</h4>-->
+                                            <!--<div class="list">-->
+                                                <!--<div class="each-cell am-cf">-->
+                                                    <!--<div class="img-box">-->
+                                                        <!--<a href="#" target="_blank" style="background-image: url(&quot;https://pic.36krcnd.com/avatar/201701/12171238/9ba3p2injh7qhrp4.jpg;);">-->
+                                                        <!--</a>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="info">-->
+                                                        <!--<p class="name">-->
+                                                            <!--<a target="_blank" href="/p/5061876.html?from=related">-->
+                                                                <!--新加坡物流科技初创公司 Ezyhaul 获得种子轮融资，扩大东南亚市场-->
+                                                            <!--</a>-->
+                                                        <!--</p>-->
+                                                        <!--<p class="note">-->
+																	<!--<span>-->
+																		<!--文-->
+																	<!--</span>-->
+																	<!--<span>-->
+																		<!--/-->
+																	<!--</span>-->
+                                                            <!--<a target="_blank" href="/user/205034">-->
+                                                                <!--sykee-->
+                                                            <!--</a>-->
+                                                        <!--</p>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                                <div class="post-detail-plan-bottom">
+                                    <div class="plan-image plan-lazyload-box" data-adid="73" data-name="a_d_bd_div">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightlib cover_css">
+                            <div class="pad_inner">
+                                <div class="author-info">
+                                    <!-- react-empty: 236 -->
+                                    <!-- react-empty: 237 -->
+                                    <!-- react-empty: 238 -->
+                                    <div class="role-writer padding-wrapper right-author">
+                                        <div class="author-avatar">
+                                            <!--<a href="#" target="_blank" data-stat-click="youcezuozhe.touxiang.1790414937"-->
+                                               <!--class="pointer" style="background-image: url(&quot;https://pic.36krcnd.com/avatar/201611/21070157/uns8ga2cnyzn3z4c.jpg!480&quot;);">-->
+                                            <!--</a>-->
+                                        </div>
+                                        <div class="author-info">
+                                            <a class="name pointer" href="" target="_blank" data-stat-click="youcezuozhe.mingcheng.1790414937">
+                                                法律在线
+                                            </a>
+													<span class="kr-tag-arrow-blue kr-size-min">
+														<span class="arrow">
+															<em>
+                                                            </em>
+														</span>
+														<span>
+															特邀作者
+														</span>
+													</span>
+                                        </div>
+                                        <div class="author-desc">
+                                            这个作者有点忙，还没写简介
+                                        </div>
+                                        <div class="post-count">
+													<span class="icon-article">
+													</span>
+													<span>
+														<!-- react-text: 252 -->
+														共发表
+                                                        <!-- /react-text -->
+                                                        <!-- react-text: 253 -->
+														14
+                                                        <!-- /react-text -->
+                                                        <!-- react-text: 254 -->
+														篇
+                                                        <!-- /react-text -->
+													</span>
+                                        </div>
+                                        <div class="post-list">
+                                            <h4>
+                                                最近文章
+                                            </h4>
+                                            <ul class="list">
+                                                <li data-stat-click="articles.latestnews.1790414937.5061743">
+                                                    <p class="title">
+                                                        <a href="/p/5061743.html?from=authorlatest" target="_blank">
+                                                            过去的一年，酒水饮料行业有啥趋势？可不只是“消费升级”那么简单
+                                                        </a>
+                                                    </p>
+                                                    <p class="note am-cf">
+																<span class="time am-fl">
+																	2017-01-11 22:30
+																</span>
+																<span class="tag am-fr">
+																	行业新闻
+																</span>
+                                                    </p>
+                                                </li>
+                                                <li data-stat-click="articles.latestnews.1790414937.5061311">
+                                                    <p class="title">
+                                                        <a href="/p/5061311.html?from=authorlatest" target="_blank">
+                                                            新一代“职业打假人”：欲望和正义交织，他们的路还能走多远？
+                                                        </a>
+                                                    </p>
+                                                    <p class="note am-cf">
+																<span class="time am-fl">
+																	2017-01-06 23:43
+																</span>
+																<span class="tag am-fr">
+																	行业新闻
+																</span>
+                                                    </p>
+                                                </li>
+                                                <li data-stat-click="articles.latestnews.1790414937.5060505">
+                                                    <p class="title">
+                                                        <a href="/p/5060505.html?from=authorlatest" target="_blank">
+                                                            阿里CEO张勇：每个企业都要走向数据公司，才能走向新零售
+                                                        </a>
+                                                    </p>
+                                                    <p class="note am-cf">
+																<span class="time am-fl">
+																	2016-12-28 14:52
+																</span>
+																<span class="tag am-fr">
+																	技能GET
+																</span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <section class="enter-report">
+                                            <a data-stat-click="youcezuozhe.xunqiubaodao" rel="nofollow" href="/user/1790414937"
+                                               target="_blank">
+                                                阅读更多文章，狠戳这里
+                                            </a>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="plan-image plan-lazyload-box" data-adid="15" data-name="right_ad_img1">
+                                </div>
+                                <div>
+                                </div>
+                                <div class="plan-image plan-lazyload-box" data-adid="33" data-name="right_ad_img2">
+                                </div>
+                                <!-- react-empty: 192 -->
+                                <div class="pin-wrapper" style="height: 0px;">
+                                    <div class="custom-pin-wrapper" style="width: 320px;">
+                                        <div>
+                                            <div class="guess-posts-list">
+                                                <h4>
+                                                    拓展阅读
+                                                </h4>
+                                                <ul>
+                                                    <li class="top" data-index="1">
+                                                        <a href="/p/5054272.html?from=related" target="_blank" class="item" data-stat-click="articles.related.1">
+																	<span class="desc">
+																		利润率超出业界平均水平3倍之多，中通赴美IPO拟融资15亿美元
+																	</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="top" data-index="2">
+                                                        <a href="/p/5054631.html?from=related" target="_blank" class="item" data-stat-click="articles.related.2">
+																	<span class="desc">
+																		六问中通快递美国IPO：一场风花雪月的事？
+																	</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="top" data-index="3">
+                                                        <a href="/p/5060274.html?from=related" target="_blank" class="item" data-stat-click="articles.related.3">
+																	<span class="desc">
+																		新海股份更名韵达股份，民营快递公司纷纷“圈钱”上市，背后有什么逻辑和问题？
+																	</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="top" data-index="4">
+                                                        <a href="/p/5060898.html?from=related" target="_blank" class="item" data-stat-click="articles.related.4">
+																	<span class="desc">
+																		快递行业都是百亿级企业，“上市潮”未结束，“整合潮”或将至？
+																	</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="top" data-index="5">
+                                                        <a href="/p/5061202.html?from=related" target="_blank" class="item" data-stat-click="articles.related.5">
+																	<span class="desc">
+																		收费甚微的快递柜仍在布局，但丰巢想靠融资25亿提前收割市场
+																	</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="top" data-index="6">
+                                                        <a href="/p/5061876.html?from=related" target="_blank" class="item" data-stat-click="articles.related.6">
+																	<span class="desc">
+																		新加坡物流科技初创公司 Ezyhaul 获得种子轮融资，扩大东南亚市场
+																	</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="sponsor" style="display: none;">
+                                            <h5><span>赞助商</span></h5>
+                                            <ul class="am-list am-list-static">
+                                                <li>
+                                                </li>
+                                                <li>
+                                                </li>
+                                                <li>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="next-post-wrapper show">
+                                            <h4>
+                                                下一篇
+                                            </h4>
+                                            <div class="item" data-stat-click="articles.next">
+                                                <a href="/p/5061603.html?from=next" class="title" target="_blank">
+                                                    开始了！2017年将是虚拟助手真正开战的一年
+                                                </a>
+                                                <div class="tags-list">
+                                                    <i class="icon-tag">
+                                                    </i>
+															<span>
+																<a href="/tag/%E7%A1%AC%E4%BB%B6" target="_blank">
+                                                                    硬件
+                                                                </a>
+																<span>
+																	，
+																</span>
+															</span>
+															<span>
+																<a href="/tag/%E4%BA%9A%E9%A9%AC%E9%80%8A" target="_blank">
+                                                                    亚马逊
+                                                                </a>
+																<span>
+																	，
+																</span>
+															</span>
+															<span>
+																<a href="/tag/%E5%BE%AE%E8%BD%AF" target="_blank">
+                                                                    微软
+                                                                </a>
+															</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-detail" style="position: relative; z-index: 1111;">
+            <!-- react-empty: 213 -->
+            <div class="">
+            </div>
+            <div class="only-article " style="height: 736px;">
+                <div class="center-content">
+                    <div class="content-wrapper">
+                        <div class="loading_article">
+                            <div>
+                                <div class="circle">
+                                    <i class="icon-loading">
+                                    </i>
+                                </div>
+                                <b>
+                                    加载中
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="//sta.36krcnd.com/36krx2016-front/static/dll-56000603d2a86ded033a-bundle.js">
+</script>
+<div style="top: 0px; left: 0px; visibility: hidden; position: absolute; width: 1px; height: 1px;">
+    <iframe style="height:0px; width:0px;" src="https://qiyukf.com/sdk/res/delegate.html?1484722510422">
+    </iframe>
+</div>
+<div class="layer-2" id="YSF-BTN-HOLDER" style="display: none;">
+    <div id="YSF-CUSTOM-ENTRY-2">
+        <img src="https://qiyukf.com/sdk/res/kefu/custom/2.png">
+    </div>
+			<span id="YSF-BTN-CIRCLE">
+			</span>
+    <div id="YSF-BTN-BUBBLE">
+        <div id="YSF-BTN-CONTENT">
+        </div>
+				<span id="YSF-BTN-ARROW">
+				</span>
+				<span id="YSF-BTN-CLOSE">
+				</span>
+    </div>
+</div>
+
+<!--模板开始-->
+<link rel="stylesheet" href="//sta.36krcnd.com/common-module/common-footer/footer.css">
+<footer class="common-footer">
+    <div class="sections">
+        <section class="link-section">
+            <h3>打造法律人的移动平台</h3>
+            <div class="links">
+                <a href="#" rel="nofollow">
+                    关于律携
+                </a>
+                |
+                <a href="#" rel="nofollow">
+                    实务
+                </a>
+                |
+                <a href="#" rel="nofollow">
+                    人文
+                </a>
+                |
+                <a href="#" rel="nofollow">
+                    律圈
+                </a>
+                <span id="clientDownload">
+                    |
+                    <a href="http://download.36kr.com/" rel="nofollow">
+                        客户端下载
+                    </a>
+                </span>
+            </div>
+            <div class="worktime">
+                工作时间：周一到周五 10:00-19:00
+            </div>
+        </section>
+        <section class="qr-section">
+            <h3>
+                律携APP下载
+            </h3>
+            <img class="qr" data-src="//pic.36krcnd.com/avatar/201612/07071825/57rrbw8czufu0hqm.png"
+                 alt="">
+            <div>
+                iPhone &amp; Android
+            </div>
+        </section>
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <div class="copyright">
+                <span class="mobile-hide">
+                    本站由
+                    <a href="http://www.aliyun.com" rel="nofollow" target="_blank">
+                        <img data-src="//sta.36krcnd.com/36krhome-dev/images/logos/aliyunfooter.png"
+                             alt="阿里云" style="height: 12px;vertical-align: middle;margin-right: -10px;margin-left: 10px;position: relative;top: -2px;">
+                    </a>
+                </span>
+                <span class="law">
+                    © 2015~2017 律携 | 京ICP备12031756号
+                    <span class="mobile-hide">
+                        |
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020581"
+                           target="_blank">
+                            京公网安备11010802020581号
+                        </a>
+                    </span>
+                </span>
+                <br>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<script>
+    (function() {
+        var imgLazyLoadTimer = null;
+        var setLazyImage = function() {
+            $(window).off("scroll.img");
+            $(window).on("scroll.img",
+                    function() {
+                        var $img = $("img[data-src]");
+                        if (imgLazyLoadTimer) {
+                            clearTimeout(imgLazyLoadTimer);
+                        }
+                        imgLazyLoadTimer = setTimeout(function() {
+                                    $img.each(function(i, el) {
+                                        var dataSrc = $(this).attr("data-src");
+                                        if (dataSrc && !el.src) {
+                                            var top = $(this).offset().top;
+                                            var wT = $(window).scrollTop();
+                                            var wH = $(window).height();
+                                            if (top < (wT + wH) && (top - wT > 0)) {
+                                                el.src = dataSrc;
+                                            }
+                                        }
+                                        if (el.src && dataSrc && (el.src !== dataSrc)) {
+                                            el.src = dataSrc;
+                                        }
+                                    });
+                                },
+                                200);
+                    });
+            setTimeout(function() {
+                        $(window).trigger("scroll");
+                    },
+                    0);
+        };
+        var setFn = function() {
+            if ($) {
+                setLazyImage();
+            } else {
+                setTimeout(setFn, 200);
+            }
+        };
+        /*        *确保js渲染页面渲染完之后,才执行页脚的图片加载        **/
+        setTimeout(setFn, 200);
+    })()
+</script>
+<script src="//sta.36krcnd.com/common-module/common-footer/footer-statics.js">
+</script>
+<!--模板结束-->
+<script>
+    "undefined" != typeof ReactDOM && "undefined" != typeof props && "undefined" != typeof locationnal && ReactDOM.render(App(props, locationnal), document.getElementById("app"))
+</script>
+<script>
+    !
+            function(e, t, a, n, r) {
+                e[n] = e[n] || [],
+                        e[n].push({
+                            "gtm.start": (new Date).getTime(),
+                            event: "gtm.js"
+                        });
+                var g = t.getElementsByTagName(a)[0],
+                        m = t.createElement(a),
+                        s = "dataLayer" != n ? "&l=" + n: "";
+                m.async = !0,
+                        m.src = "//www.googletagmanager.com/gtm.js?id=" + r + s,
+                        g.parentNode.insertBefore(m, g)
+            } (window, document, "script", "dataLayer", "GTM-T28QVW")
+</script>
+<script type="text/javascript" id="">
+    (function() {
+        var e = "https:" == location.protocol ? "https://": "http://",
+                g = e + "uluai.com.cn/cmp",
+                h = 5006,
+                e = function() {
+                    function e(a, b) {
+                        b && (a.addEventListener ? a.onload = b: a.onreadystatechange = function() {
+                            a.readyState in {
+                                loaded: 1,
+                                complete: 1
+                            } && (a.onreadystatechange = null, b())
+                        })
+                    }
+                    function k(a, b, f) {
+                        var d = c.createElement("script");
+                        d.type = "text/javascript";
+                        d.async = !0;
+                        d.src = a;
+                        e(d, b);
+                        f && (d.onerror = f);
+                        a = d;
+                        b = c.getElementsByTagName("script")[0] || c.body || c.head;
+                        b.parentNode.insertBefore(a, b)
+                    }
+                    var c = document;
+                    k(g + "/cmp.api?r\x3d" + encodeURIComponent(c.referrer || "") + "\x26s\x3d" + h + "\x26u\x3d" + encodeURIComponent(c.location.href));
+                    window._ycnt_cb = function(a, b) {}
+                };
+        e()
+    })();
+</script>
+ <include file="Public/foot"/>
+</body>
+</html>

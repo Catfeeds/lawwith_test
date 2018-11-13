@@ -1,0 +1,59 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li><a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a></li>
+            <li><a>内容管理</a></li>
+            <li class="active"><strong>{$meta_title}</strong></li>
+        </ol>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content">
+                <div class="tab-pane active" id="home-3">
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead><tr>
+                                <th>缩略图</th>
+                                <th>类型</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr></thead>
+                            <tbody class="middle-align">
+                                <volist name="data" id="vo">
+                                    <tr>
+                                        <td><img src="{$vo.banner}" width="135px" height="85px"></td>
+                                        <td>
+                                            <switch name="vo.c_type">
+                                            <case value="1">帖子</case>
+                                            <case value="2">求助</case>
+                                            <case value="3">活动</case>
+                                            <case value="4">视频/直播</case>
+                                            <case value="5">律所</case>
+                                            <case value="6">用户</case>
+                                            </switch>
+                                        </td>
+                                        <td>{$vo.push_time|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <a href="javascript:if(confirm('确定要删除吗?'))location='/Admin/Push/deleteBanner?id=' + {$vo['id']}" class="btn btn-pink btn-sm btn-icon icon-left">下架banner图</a>
+                                        </td>
+                                    </tr>
+                                </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="Public/footer" />

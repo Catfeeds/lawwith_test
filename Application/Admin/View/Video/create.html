@@ -1,0 +1,220 @@
+<include file="Public/main" />
+<include file="Public/header"/>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>用户管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">视频管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <table class="hrPageTable table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>视频名称</th>
+                <th>上传进度</th>
+                <th>上传速度</th>
+                <th>上传状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="videoId"></td>
+                <td id="videoProgress"></td>
+                <td id="videoSpeed"></td>
+                <td id="videoStatus"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <input type="button" class="uploadBtn" id="uploadBtn" value="开始上传" />
+            <input type="button" class="uploadBtn" id='fileSelecter' value="添加视频" />
+            <span style="font-size: small; color: #00aa00">* 视频单次上传大小不能超过1G</span>
+        </div>
+        <script type="text/javascript" src="__JS__/html5Upload.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                //添加视频
+                $("#fileSelecter").addFile({
+                    addFile: function (data) { //添加文件时的回调
+                        $("#videoId").html(data.data.fileName);
+                        $("#videoProgress").html("0");
+                        $("#videoSpeed").html("0");
+                        $("#videoStatus").html("等待上传");
+                    },
+                    addFileError: function (data) { //添加文件时发生错误的回调
+                        alert("错误码：" + data.code + ";错误消息：" + data.msg);
+                    }
+                });
+
+                //开始上传
+                $("#uploadBtn").upload({
+                    uploadInitUrl: "{:U('Video/uploadInit')}",//初始化上传地址
+                    uploadProgress: function (data) { //进度回调
+                        $("#videoProgress").html(data.progress);
+                        $("#videoSpeed").html(data.speed);
+                        $("#videoStatus").html("上传中");
+                    },
+                    uploadFinish: function (data) { //上传完成回调
+                        $("#videoProgress").html("100%");
+                        $("#videoSpeed").html("0");
+                        $("#videoStatus").html("已上传");
+                    },
+                    uploadError: function (data) { //上传错误回调
+                        $("#videoStatus").html("上传错误！错误码：" + data.code + ";错误消息：" + data.msg);
+                    },
+                    uploadAbort:function(data){ //中断
+
+                    }
+                });
+            });
+        </script>
+        <div class="panel-body form-horizontal">
+            <form id="For_video" action="{:U('Video/submitCreate')}" method="post" enctype="multipart/form-data">
+                <div id="vidoe_info"></div>
+                <input type="hidden" name="vidoe_info" value="">
+                <!--视频信息-->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">封面图片</label>
+                    <div class="col-lg-5 kv-main">
+                        <input class="form-control" type="file" name="imgs">
+                        <span style="font-size: small; color: #00aa00">* 图片的大小500kb,宽：600px  高253px</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">标题</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="title"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">专业领域 </label>
+                    <div class="col-lg-5">
+                        <select class="form-control" name="major_id">
+                            <option value="" selected>请选择专业领域</option>
+                            <volist name="major_tree" id="major_vo">
+                                <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">视频分类</label>
+                    <div class="col-lg-5">
+                        <select class="form-control" name="cate_id">
+                            <option value="" selected>请选择视频分类</option>
+                            <volist name="cate_tree" id="cate">
+                                <option value="{$cate['cate_id']}">{$cate.cate_name}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">视频描述</label>
+                    <div class="col-lg-5"><textarea class="form-control autogrow" name="describe" style="min-height: 100px;"></textarea></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">收费/免费</label>
+                    <div class="col-lg-5 kv-main"><input class="form-control" type="text" name="amount" placeholder="0元免费/大于0收费，单位/元"></div>
+                </div>
+                <!--主讲人信息-->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">主讲人 </label>
+                    <div class="col-lg-5">
+                        <select class="form-control" name="speaker">
+                            <option value="" selected>请选择主讲人</option>
+                            <volist name="account_list" id="account_vo">
+                                <option value="{$account_vo['id']}">{$account_vo.uname}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">主讲人简介</label>
+                    <div class="col-lg-5"><textarea class="form-control autogrow" name="speaker_info" style="min-height: 100px;"></textarea></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <button type="submit" class="btn btn-success">确认保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_video')
+            .bootstrapValidator({
+                message: '这个值无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    major_id: {
+                        message: '专业标签无效！',
+                        validators: {
+                            notEmpty: {
+                                message: '专业标签不能为空！'
+                            }
+                        }
+                    },
+                    cate_id: {
+                        message: '专业标签无效！',
+                        validators: {
+                            notEmpty: {
+                                message: '分类id不能为空！'
+                            }
+                        }
+                    },
+                    cost: {
+                        message: '专业标签无效！',
+                        validators: {
+                            notEmpty: {
+                                message: '收费金额不能为空！'
+                            }
+                        }
+                    },
+                    imgs: {
+                        validators: {
+                            notEmpty: {
+                                message: '封面图片不能为空！'
+                            }
+                        }
+                    },
+                    title: {
+                        validators: {
+                            notEmpty: {
+                                message: '标题不能为空！'
+                            }
+                        }
+                    },
+                    describe: {
+                        validators: {
+                            notEmpty: {
+                                message: '描述不能为空！'
+                            }
+                        }
+                    }
+                }
+            })
+    });
+</script>
+<include file="Public/footer"/>

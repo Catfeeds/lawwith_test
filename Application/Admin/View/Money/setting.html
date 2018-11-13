@@ -1,0 +1,112 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+        <ol class="breadcrumb bc-1">
+            <li><a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a></li>
+            <li><a>红包设置管理</a></li>
+        </ol>
+    </div>
+
+</div>
+
+<!-- Removing search and results count filter -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="album-header">
+            <a href="{:U('Money/add_red')}" class="btn btn-secondary btn-icon" style="color:#fff;"><span>新建红包</span><i class="fa-plus"></i></a>
+        </div>
+        <table class="table table-bordered table-striped" id="del_data">
+            <thead>
+            <tr>
+                <th class="no-sorting">
+                    <input type="checkbox" class="cbr">
+                </th>
+                <th>红包类型</th>
+                <th>金额</th>
+                <th>需点赞数</th>
+                <th>分成比例</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody class="middle-align">
+            <foreach name="res" item="vo">
+                <tr>
+                    <td>
+                        <input name="red_id" type="checkbox" class="cbr" value="{$vo.id}">
+                    </td>
+                    <td>
+                        <if condition="$vo.type eq 2">
+                            <span class="label label-success">求助</span>
+                        <else/>
+                            <span class="label label-blue">文章</span>
+                        </if>
+                    </td>
+                    <td>{$vo.total_amount}</td>
+                    <td>{$vo.like_nums}</td>
+                    <td>{$vo.commission}</td>
+                    <td>{$vo.start_time|date='Y-m-d H:i:s',###}</td>
+                    <td>{$vo.end_time|date='Y-m-d H:i:s',###}</td>
+                    <td>
+                        <if condition="$vo['status'] eq 1">开启<else />过期</if>
+                    </td>
+                    <td>
+                        <!-- <a href="{:U('Money/del_conf',array('id'=>$vo['id']))}"  class="btn btn-danger btn-sm btn-icon icon-left">
+                            删除
+                        </a> -->
+                        <if condition="$vo['status'] eq 1">
+                        <a href="{:U('Money/suspendred',array('conf_id'=>$vo['conf_id']))}" class="btn btn-danger btn-sm btn-icon icon-left ">
+                            暂停
+                        </a>
+                        <else />
+                        <a href="{:U('Money/suspendred',array('conf_id'=>$vo['conf_id']))}" class="btn btn-secondary btn-sm btn-icon icon-left">
+                            开启
+                        </a>
+                        </if>
+                        <!--<a href="{:U('Content/sendTopic',array('mid'=>$vo['id']))}" class="btn btn-purple btn-sm btn-icon icon-left">-->
+                            <!--编辑-->
+                        <!--</a>-->
+                        <a href="{:U('Money/edit_red',array('conf_id'=>$vo['conf_id']))}" class="btn btn-info btn-sm btn-icon icon-left">编辑</a>
+                        <a href="{:U('Money/del_conf',array('conf_id'=>$vo['conf_id']))}" name="red_del" class="btn btn-danger btn-sm btn-icon icon-left" rid="{$vo.conf_id}">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+        <div class="flickr">{$page}</div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function()
+    {
+//        $("a[name=red_del]").click(function(){
+//            var r = confirm('确定删除吗?',true);
+//            ids = $(this).attr('rid');
+//            data = {
+//                ids:ids
+//            }
+//            if(r) {
+//                var url = "{:U('Money/del_conf')}";
+//                $.post(url,data,function(result){
+//                    alert(result);
+//                    if(result.state == 1){
+//                        alert(result);
+//                        location.href = "{:U('Money/setting_red')}";
+//                    }
+//                }, 'json');
+//            }
+//
+//        });
+    });
+</script>
+<include file="Public/footer" />

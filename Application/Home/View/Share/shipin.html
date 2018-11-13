@@ -1,0 +1,41 @@
+<include file="Public/head"/>
+	<div class="dys_djsp"><!--dys_djsp-->
+        {$data.video_path}
+        <div class="dys_fanhui"><a href="#"><img src="__SHARE__/images/dys_fanhui.png"></a></div>
+    </div><!--dys_djsp-->
+    <div class="ship_til oh">
+    	<div class="ship_til01 fl" style="line-height:25px; padding: 5px 0;">{$data.title}</div>
+        <div class="ship_til02 fr"><img src="__SHARE__/images/sp_icon01.jpg"></div>
+        <div class="ship_til02 fr"><img src="__SHARE__/images/sp_icon02.jpg"></div>
+    </div>
+    <div class="qz_bdy">
+        <div class="qz_nr">{$data.remark}</div>
+    </div>
+    <div class="hz_cet oh" style="border-bottom:1px solid #d6d6d6;">
+        <div class="hz_cetlef fl" style="color:#c68950;">
+            <volist name="majors" id="tag">
+                <if condition="$tag['id'] eq $data.tags">
+                    {$tag.major_name}
+                </if>
+            </volist>
+        </div>
+        <div class="hz_cetrig fr"><span><img src="__SHARE__/images/hz_icon02.jpg"></span>{$data.commt_sums.counts|default=0}</div>
+        <div class="hz_cetrig fr"><span><img src="__SHARE__/images/hz_icon01.jpg"></span>{$data.views|default=0}</div>
+    </div>
+    <div class="hd_pl">
+    	<div class="hd_pltil oh">
+        	<div class="hd_pltillef fl">视频评论（{$data.commt_sums.counts|default=0}）</div>
+            <!--<div class="hd_pltilrig fr"><a href="#">发表评论</a></div>-->
+        </div>
+    </div>
+    <foreach name="data.comm_list" item="comm_dat">
+        <div class="hd_plnr oh">
+            <div class="hd_plnrtx fl"><img src="{$comm_dat.icon}"></div>
+            <div class="hd_plnrwz oh fl">
+                <div class="hd_plnrwz01 fl">{$comm_dat.uname}</div>
+                <div class="hd_plnrwz02 fl">{$comm_dat.content}</div>
+            </div>
+            <div class="hd_plnrsj fl">{$comm_dat.ctime|date='Y-m-d H:i',###}</div>
+        </div>
+    </foreach>
+    <include file="Public/foot"/>

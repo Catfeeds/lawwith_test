@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright (c) 2017. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <title>Title</title>
+</head>
+<body>
+昵称：{$nickname}<br>
+图像：<img src="{$headimgurl}" alt="" width="150px" height="150px">
+<br>
+城市：{$info.country} {$info.province} {$info.city}
+<br>
+关注时间：{$info.subscribe_time|date='Y-m-d',###}
+<br>
+unionid: {$info.unionid}
+<br>
+备注：{$info.remark}
+</body>
+</html>

@@ -1,0 +1,214 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<!-- Removing search and results count filter -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="search-form input-group col-xs-3 pull-right">
+            <input type="text" name="nickname" value="{:I('nickname')}" class="form-control search-input" placeholder="请输入标题名称&hellip;">
+            <a class="input-group-addon" href="javascript:;" id="search" url="{:U('help_list')}">
+                <i class="linecons-search"></i>
+            </a>
+        </div>
+        <div class="album-header">
+            <!--<button class="btn btn-white btn-icon" onclick="sendTopic()" >-->
+                <!--<span>发布</span>-->
+                <!--<i class="fa-plus"></i>-->
+            <!--</button>-->
+            <div class="btn btn-danger" id="del_data">
+                <span>删除</span>
+                <i class="el-trash"></i>
+            </div>
+        </div>
+        <script type="text/javascript">
+            jQuery(document).ready(function($)
+            {
+                // Replace checkboxes when they appear
+                var $state = $("#del_data thead input[type='checkbox']");
+
+                $("#del_data").on('draw.dt', function()
+                {
+                    cbr_replace();
+
+                    $state.trigger('change');
+                });
+
+                // Script to select all checkboxes
+                $state.on('change', function(ev)
+                {
+                    var $chcks = $("#del_data tbody input[type='checkbox']");
+
+                    if($state.is(':checked'))
+                    {
+                        $chcks.prop('checked', true).trigger('change');
+                    }
+                    else
+                    {
+                        $chcks.prop('checked', false).trigger('change');
+                    }
+                });
+
+                //获取选中选项的值
+                $("#del_data").click(function() {
+                    var valArr = new Array;
+                    var r=confirm("确定要删除吗，删除之后将不可恢复!");
+                    if (r)
+                    {
+                        $('input[name="help_id"]:checked').each(function(i) {
+                            valArr[i] = $(this).val();
+                        });
+                        var vals = valArr.join(',');
+                        if (vals == ''){
+                            alert('请选择要操作的数据');
+                        }else {
+                            // alert(vals);
+                            data = {
+                                get_id : vals
+                            }
+                            var pUrl = "{:U('Content/delPosts')}";
+                            $.post(pUrl, data, function(data){
+                                if(data.state == 1){
+                                    alert(data.msg);
+                                    location.href = "{:U('Content/help_list')}";
+                                }else{
+                                    alert("操作失败");
+                                }
+                            }, 'json');
+                        }
+                    }else {
+                        return false;
+                    }
+                });
+            });
+        </script>
+        <table class="table table-bordered table-striped" id="del_data">
+            <thead>
+            <tr>
+                <th class="no-sorting">
+                    <input type="checkbox" class="cbr">
+                </th>
+                <th>求助</th>
+                <th>发布者</th>
+                <th>查看</th>
+                <th>回复</th>
+                <th>收藏</th>
+                <th>发布时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody class="middle-align">
+            <foreach name="data" item="vo">
+                <tr>
+                    <td>
+                        <input name="help_id" type="checkbox" class="cbr" value="{$vo.id}">
+                    </td>
+                    <td>
+                        #{$vo.title|msubstr=0,40,"utf-8",true}#
+                        <if condition="$vo['is_stick'] eq 1">
+                            <span class="label label-blue">置顶</span>
+                        </if>
+                        <if condition="$vo['is_push'] eq 1">
+                            <span class="label label-success">首页推荐</span>
+                        </if>
+                        <!--<span class="label label-red">热门</span>-->
+                    </td>
+                    <td><if condition="$vo['author'] eq 0">官方<else/>{$vo['author_info']['uname']}</if></td>
+                    <td><if condition="$vo['views'] eq 0"><span class="badge badge-default">{$vo.views}</span><else /><span class="badge badge-purple">{$vo.views}</span></if></td>
+                    <td><if condition="$vo['comment_sums']['counts'] eq 0"><span class="badge badge-default">{$vo.comment_sums.counts}</span><else /><span class="badge badge-red">{$vo.comment_sums.counts}</span></if></td>
+                    <td><if condition="$vo['favorite_sums']['counts'] eq 0"><span class="badge badge-default">{$vo.favorite_sums.counts}</span><else /><span class="badge badge-secondary">{$vo.favorite_sums.counts}</span></if></td>
+                    <td>{$vo.send_time|date='Y-m-d H:i',###}</td>
+                    <td>
+                        <if condition="$vo['status'] eq 1">正常<else />禁止</if>
+                    </td>
+                    <td>
+                        <if condition="$vo['is_stick'] eq 1">
+                            <a href="{:U('Content/changeStick',array('is_stick'=>lx_encrypt(2),'mid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(2)))}" class="btn btn-orange btn-sm btn-icon icon-left">
+                                取消置顶
+                            </a>
+                            <else />
+                            <a href="{:U('Content/changeStick',array('is_stick'=>lx_encrypt(1),'mid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(2)))}" class="btn btn-blue btn-sm btn-icon icon-left">
+                                置顶
+                            </a>
+                        </if>
+                        <if condition="$vo['is_push'] eq 1">
+                            <a href="{:U('Content/changePush',array('is_push'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id'])))}" class="btn btn-pink btn-sm btn-icon icon-left">取消推荐</a>
+                            <else />
+                            <a href="{:U('Content/addPush',array('cid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(2)))}" class="btn btn-turquoise btn-sm btn-icon icon-left">推荐</a>
+                        </if>
+                        <if condition="$vo['status'] eq 1">
+                            <a href="{:U('Content/changeTopic',array('status'=>lx_encrypt(0),'mid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(2)))}" onclick="return del_confirm()" class="btn btn-danger btn-sm btn-icon icon-left">
+                                删除
+                            </a>
+                            <else />
+                            <a href="{:U('Content/changeTopic',array('status'=>lx_encrypt(1),'mid'=>lx_encrypt($vo['id']),'t'=>lx_encrypt(2)))}" class="btn btn-secondary btn-sm btn-icon icon-left">
+                                恢复
+                            </a>
+                        </if>
+                        <!--<a href="{:U('Content/sendTopic',array('mid'=>$vo['id']))}" class="btn btn-purple btn-sm btn-icon icon-left">-->
+                            <!--编辑-->
+                        <!--</a>-->
+                        <a href="{:U('Content/viewsTopic',array('mid'=>lx_encrypt($vo['id'])))}" class="btn btn-info btn-sm btn-icon icon-left">
+                            详情
+                        </a>
+                    </td>
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+        <div class="flickr">{$page}</div>
+    </div>
+</div>
+<script type="text/javascript">
+    function sendTopic(){
+        window.location.href = "{:U('Content/sendTopic',array('type'=>lx_encrypt(2)))}";
+    }
+</script>
+<script type="text/javascript">
+    //搜索功能
+    $("#search").click(function(){
+        var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        window.location.href = url;
+    });
+    //回车搜索
+    $(".search-input").keyup(function(e){
+        if(e.keyCode === 13){
+            $("#search").click();
+            return false;
+        }
+    });
+</script>
+<include file="Public/footer"/>

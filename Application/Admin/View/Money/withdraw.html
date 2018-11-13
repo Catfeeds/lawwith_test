@@ -1,0 +1,238 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<link href="__BUI__/css/bs3/bui.css" rel="stylesheet">
+<link href="__BUI__/css/bs3/dpl.css" rel="stylesheet">
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>提现记录管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!--提现记录筛选搜索-->
+        <div class="panel-content">
+            <!--<form id="searchForm" class="form-panel" action="" method="post">-->
+                <!--<div class="row show-grid">-->
+                <!--<div class="span16">-->
+                    <!--<select name="status">-->
+                        <!--<option>全部分类</option>-->
+                        <!--<option value="1" selected="selected">待转账</option>-->
+                        <!--<option value="2">申请不通过</option>-->
+                        <!--<option value="3">交易完成</option>-->
+                    <!--</select>-->
+                    <!--<span>-->
+                        <!--<label>转账日期范围:</label>-->
+                        <!--<input name="start_time" data-tip="{text : '起始日期'}" data-rules="{required:true}" data-messages="{required:'起始日期不能为空'}" class="input-small calendar" type="text"><label>&nbsp;至&nbsp;</label>-->
+                        <!--<input name="end_time" data-tip="{text : '结束日期'}" data-rules="{required:true}" data-messages="{required:'结束日期不能为空'}" class="input-small calendar" type="text">-->
+                    <!--</span>-->
+                <!--</div>-->
+                <!--<div class="span8">-->
+                    <!--<input type="text" name="user_name"/>-->
+                    <!--<button type="submit" id="submit_search" class="button button-primary">查询</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--</form>-->
+        </div>
+        <!--提现记录筛选搜索-->
+           <!--<div class="album-header" style="height:40px;margin: 15px 0;background:#eee;border:1px solid #dadada;border-radius:1px;">-->
+               <!--<div class="btn-box" style="margin: 5px auto auto 15px;">-->
+                    <!--<button class="btn btn-success btn-sm" id="subexport" >-->
+                        <!--<i class="fa-cloud-download"></i>-->
+                        <!--<span>导出报表</span>-->
+                    <!--</button>-->
+                   <!--&lt;!&ndash;<button type="submit" class="btn btn-success btn-sm" id="sub_data"><i class="fa-paper-plane"></i>批量转账</button>&ndash;&gt;-->
+               <!--</div>-->
+            <!--</div>-->
+            <button class="btn btn-white btn-icon" onclick="subexport()" >
+                <span>导出报表</span>
+                <i class="fa-plus"></i>
+            </button>
+            <div class="search-form input-group col-xs-3 pull-right">
+                <input type="text" name="mobile" value="{:I('mobile')}" class="form-control search-input"
+                       placeholder="请输入用户手机号&hellip;">
+                <a class="input-group-addon" href="javascript:;" id="search" url="{:U('withdraw')}"><i class="linecons-search"></i></a>
+            </div>
+            <table class="table table-bordered table-striped" id="del_data">
+                <thead>
+                <tr>
+                    <th>流水号</th>
+                    <th>用户姓名</th>
+                    <th>收款账号(支付宝)</th>
+                    <th>总金额</th>
+                    <th>付款金额</th>
+                    <th>手续费</th>
+                    <th>提现申请日期</th>
+                    <th>提现状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody class="middle-align">
+                <foreach name="data" item="vo">
+                    <tr id="list">
+                        <td>{$vo.record_sn}</td>
+                        <td><a href="{:U('User/audit_identity',array('uid'=>lx_encrypt($vo['uid'])))}">{$vo.user_name}</a></td>
+                        <td>{$vo.withdraw_account}</td>
+                        <td><strong style="color:red">{$vo.total_money}</strong></td>
+                        <td><strong style="color:red">{$vo.money}</strong></td>
+                        <td><strong>{$vo.process}</strong></td>
+                        <td>{$vo.create_date|date='Y-m-d H:i',###}</td>
+                        <td>
+                            <if condition="$vo.status eq 0">
+                                <span style="background:#4169E1;padding:5px;border-radius:4px;color:white;">待转账</span>
+                            <elseif condition="$vo.status eq 1" />
+                                <span style="background:#f37b1d;padding:5px;border-radius:4px;color:white;">交易完成</span>
+                            <elseif condition="$vo.status eq 2" />
+                                <span style="background:#6B8E23;padding:5px;border-radius:4px;color:white;">拒绝</span>
+                            </if>
+                        </td>
+                        <td id="withdrow">
+                            <if condition="$vo.status eq 0">
+                                <button class="btn btn-default btn-sm provent" onclick="{ if(confirm('确定拒绝吗?'))location.href='provent?withdrawal_id={$vo['id']}'}">拒绝</button>
+                            <elseif condition="$vo.status eq 2" />
+                                <span class="notthrough provent">不通过</span>
+                            </if>
+                            <if condition="$vo.status eq 0">
+                                <button class="btn btn-default btn-sm provent" onclick="{ if(confirm('确定去付款吗?'))location.href='transfer?withdrawal_id={$vo['id']}'}">确认转款</button>
+                            <elseif condition="$vo.status eq 1" />
+                                <span class="notthrough" style="color:#f37b1d;">已转账</span>
+                            </if>
+                        </td>
+                    </tr>
+                </foreach>
+
+                </tbody>
+            </table>
+        <div class="flickr">{$page}</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="__BUI__/js/bui-min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function()
+{
+    var Grid = BUI.Grid, Store = BUI.Data.Store;
+
+    //创建表单，表单中的日历，不需要单独初始化
+    var form = new BUI.Form.HForm({
+        srcNode : '#searchForm'
+    }).render();
+
+    form.on('beforesubmit',function(ev) {
+        //序列化成对象
+        var obj = form.serializeToObject();
+        obj.start = 0; //返回第一页
+        store.load(obj);
+        return false;
+    });
+
+    //搜索功能
+    $("#search").click(function(){
+        var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        window.location.href = url;
+    });
+
+    //回车搜索
+    $(".search-input").keyup(function(e){
+        if(e.keyCode === 13){
+            $("#search").click();
+            return false;
+        }
+    });
+
+    //改变全选标记
+    var $state = $("#del_data thead input[type='checkbox']");
+    $("#del_data").on('draw.dt', function()
+    {
+        cbr_replace();
+        $state.trigger('change');
+    });
+
+    //全选
+    $state.on('change', function(ev)
+    {
+        var $chcks = $("#del_data tbody input[type='checkbox']");
+
+        if($state.is(':checked')) {
+            $chcks.prop('checked', true).trigger('change');
+        }else{
+            $chcks.prop('checked', false).trigger('change');
+        }
+    });
+
+    //获取选中选项的值,导出excel表格
+    $("#subexport").click(function() {
+        var valArr = new Array;
+        var r=confirm("请仔细核对提现名单，将不可撤销!");
+        if (r)
+        {
+            $('input[name="checkbox"]:checked').each(function(i) {
+                valArr[i] = $(this).val();
+            });
+
+            var vals = valArr.join(',');
+
+            if (vals == ''){
+                alert('请选择要操作的数据');
+            }else {
+
+                //alert(vals);
+                $.ajax({
+                    url: "{:U('Money/subexport')}",
+                    dataType: "json",
+                    data: {rd_id: vals},
+                    type: post,
+                    async: true,
+                    beforeSend: function () {
+                        $("body").showLoading();
+                    },
+                    //下面就是获取到的下载地址，直接通过document.location函数获取下载
+                    success: function (output) {
+
+                        $("body").hideLoading();
+                        alert(output.url);
+                        document.location.href = ("/Data/tmp" + output.url);
+
+                    },
+
+                    error: function () {
+                        $("body").hideLoading();
+                        sweetAlert("错误", "导出excel出错!", "error");
+                    },
+                });
+            }
+        }else {
+            return false;
+        }
+    });
+});
+
+function subexport(){
+    window.location.href = '{:U("Money/subexport")}';
+}
+</script>
+<include file="Public/footer"/>

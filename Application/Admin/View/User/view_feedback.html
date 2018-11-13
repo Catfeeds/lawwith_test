@@ -1,0 +1,162 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>用户管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">用户列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<section class="profile-env">
+    <div class="row">
+        <div class="col-sm-10">
+            <!-- User timeline stories -->
+            <section class="user-timeline-stories">
+                <!-- Timeline Story Type: Check-in -->
+                <article class="timeline-story">
+                    <i class="fa-pin block-icon"></i>
+                    <!-- User info -->
+                    <header>
+                        <a href="{:U('User/audit_identity',array('uid'=>lx_encrypt($data['acc_id'])))}" class="user-img">
+                            <empty name="data.icon">
+                                <img src="http://lx2016.oss-cn-beijing.aliyuncs.com/Logo/2016-06-23/lx_logo80.png" title="{$data.uname}" alt="{$data.uname}" class="img-responsive img-circle" />
+                            <else/>
+                                <img src="{$data.icon}" title="{$data.uname}" alt="{$data.uname}" class="img-responsive img-circle" />
+                            </empty>
+                        </a>
+
+                        <div class="user-details">
+                            <h4><a href="{:U('User/audit_identity',array('uid'=>lx_encrypt($data['acc_id'])))}"><strong>{$data.uname}</strong></a></h4>
+                            <time>{$data.send_time|date='Y-m-d H:i',###}</time>
+                            <input type="hidden" class="msgid" value="{$data.id}">
+                        </div>
+
+                    </header>
+
+                    <div class="story-content">
+                        <div type="button" class="form-group"><pre style="min-height: 350px">{$data.content}</pre></div>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" uid="{$data.acc_id}" onclick="reply()">回复用户</button>
+                        <button class="btn btn-default" onclick="history.go(-1)">返回</button>
+
+                        <!-- Story Comments -->
+                        <ul class="list-unstyled story-comments">
+                            <volist name="replyData" id="vo">
+                            <li>
+                                <div class="story-comment" style="margin-bottom: 25px">
+                                    <a class="comment-user-img">
+                                        <img src="http://lx2016.oss-cn-beijing.aliyuncs.com/Logo/2016-06-23/lx_logo80.png" title="{$data.uname}" alt="{$data.uname}" class="img-responsive img-circle" />
+                                    </a>
+                                    <div class="story-comment-content">
+                                        <span class="story-comment-user-name">律携管理员<time>{$vo.reply_time|date="Y-m-d H:i:s"}</time></span>
+                                        <span>{$vo.reply_content}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            </volist>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</section>
+<include file="Public/footer"/>
+<script type="text/javascript">
+    function change_status(){
+        window.location.href = "{:U('User/change_audit',array('sta'=>lx_encrypt(1),'u'=>lx_encrypt($data['id'])))}";
+    }
+
+    function reply() {
+        $(document).ready(function(){
+            $('#exampleModal').on('shown.bs.modal', function (e) {
+                // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+                $(this).css('display', 'block');
+                var modalHeight=$(window).height() / 2 - $('#exampleModal .modal-dialog').height() / 2;
+                $(this).find('.modal-dialog').css({
+                    'margin-top': modalHeight
+                });
+            });
+        });
+    }
+
+    function checkForm() {
+        var uid = $('.btn-success').attr('uid');
+        var msgid = $('.msgid').val();
+        var content = $('#message-text').val();
+
+        if (!uid) {
+            alert('用户ID不能为空！');
+            return false;
+        }
+        if(content == ''){
+            alert('请输入消息内容');
+            return false;
+        }
+        $.ajax({
+            url: "{:U('User/replyFeedback')}",
+            data:{uid:uid,msg_id:msgid,content:content},
+            type: "post",
+            beforeSend:function() {
+                $(".submit-button").html("正在处理...");
+                return true;
+            },
+            success:function(response) {
+
+                if(response == 'success') {
+                    //$("#tip").html("<span style='color:blueviolet'>恭喜，" +msg+ "成功！</span>");
+                    $(".submit-button").html('确认发送');
+                    $('#exampleModal').modal('hide');
+                    $('#message-text').val('');
+
+                    var msgReplyHtml = '';
+                    msgReplyHtml += '<div class="story-comment" style="margin-bottom: 25px">';
+                    msgReplyHtml += '<a class="comment-user-img">';
+                    msgReplyHtml += '<img src="http://lx2016.oss-cn-beijing.aliyuncs.com/Logo/2016-06-23/lx_logo80.png" title="{$data.uname}" alt="{$data.uname}" class="img-responsive img-circle" />';
+                    msgReplyHtml += '</a>';
+                    msgReplyHtml += '<div class="story-comment-content">';
+                    msgReplyHtml += '<span class="story-comment-user-name">律携管理员<time>'+ formatTime(new Date()) +'</time></span>';
+                    msgReplyHtml += '<span>'+ content +'</span>';
+                    msgReplyHtml += '</div></div></div>';
+                    $('.story-comments').prepend(msgReplyHtml);
+                } else {
+                    //$("#tip").html("<span style='color:red'>失败，请重试</span>");
+                    alert('操作失败:' + response);
+                }
+            },
+            error:function() {
+                alert('请求出错');
+            }
+        });
+
+        return false;
+    }
+
+    //格式化时间戳
+    function formatTime(_time){
+        var year = _time.getFullYear();
+        var month = _time.getMonth()+1<10 ? "0"+(_time.getMonth()+1) : _time.getMonth()+1;
+        var day = _time.getDate()<10 ? "0"+_time.getDate() : _time.getDate();
+        var hour = _time.getHours()<10 ? "0"+_time.getHours() : _time.getHours();
+        var minute = _time.getMinutes()<10 ? "0"+_time.getMinutes() : _time.getMinutes();
+        return year+"-"+month+"-"+day+" "+hour+":"+minute;
+    }
+</script>

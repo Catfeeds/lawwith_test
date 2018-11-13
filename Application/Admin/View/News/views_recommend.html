@@ -1,0 +1,273 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<link href="__BUI__/css/bs3/dpl.css" rel="stylesheet">
+<link href="__BUI__/css/bs3/bui.css" rel="stylesheet">
+
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">资讯推荐列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+</div>
+<section class="profile-env">
+
+    <div class="row">
+        <div class="col-sm-11">
+            <!-- User timeline stories -->
+            <section class="user-timeline-stories">
+
+                <!-- Timeline Story Type: Status -->
+                <article class="timeline-story">
+
+                    <i class="fa-paper-plane-empty block-icon"></i>
+
+                    <!-- User info -->
+                    <header>
+                        <h3><i class="fa-rss"></i>{$info.title}</h3>
+                        <a class="user-img">
+                            <empty name="info['author_info']['icon']">
+                                <img src="__IMG__/user-4.png" alt="user-img" class="img-responsive img-circle" />
+                            <else/>
+                                <img src="{$info.author_info.icon}" alt="user-img" class="img-responsive img-circle" />
+                            </empty>
+                        </a>
+                        <div class="user-details">
+                            <empty name="info['author']">
+                                <span><strong>{$Think.session.username}</strong></span>
+                                <!-- <input type="hidden" id="info_uid" name="uid" value="{$info_vo['uid']}"> -->
+                            <else/>
+                                <span><strong>{$info.author_info.uname}</strong></span>
+                                <input type="hidden" id="info_uid" name="uid" value="{$info.author_info['uid']}">
+                            </empty>
+                            <time>{$info.send_time|date='Y-m-d H:i',###}<if condition="$info['is_money'] eq 1">
+                                <span style="padding-left: 15px;color: #ff3b2f;">获得{$info['author_amount']}元求助奖励红包</span>
+                            </if></time>
+                        </div>
+                    </header>
+                    <div class="story-content">
+                        <notempty name="info['title_img']">
+                            <div class="col-header-options" align="center">
+                                <a class="base-padding">
+                                    <img style="width: auto;height: 200px;" src="{$info.title_img}" alt="album-image" class="img-responsive" title="标题图片"/>
+                                </a>
+                            </div>
+                        </notempty>
+
+                        <div class="mail-single-body">
+                            <!--<p>{$info.content}</p>-->
+                            <div class="form-group">
+                                <textarea class="form-control wysihtml5" data-stylesheet-url="__JS__/wysihtml5/lib/css/wysiwyg-color.css" name="sample_wysiwyg" id="sample_wysiwyg">{$info.content}</textarea>
+                            </div>
+                        </div>
+
+                        <ul class="list-unstyled list-inline">
+                            <notempty name="info['imgs']">
+                                <volist name=":explode(',',$info['imgs'])" id="vo_img">
+                                    <li class="col-2">
+                                        <a>
+                                            <img style="width: 200px;height: 150px;" src="{$vo_img|img_path}" alt="album-image" class="img-responsive" />
+                                        </a>
+                                    </li>
+                                </volist>
+                            </notempty>
+                        </ul>
+
+                        <ul class="list-unstyled list-inline">
+                            <notempty name="info.tag_city">
+                                <volist name=":explode(',',$info['tag_city'])" id="dat_cit">
+                                    <li><span class="label label-success">#{$dat_cit}#</span></li>
+                                </volist>
+                            </notempty>
+                            <volist name=":explode(',',$info['tag_major'])" id="dat_vo">
+                                <volist name="major" id="major_vo">
+                                    <if condition="$major_vo['id'] eq $dat_vo">
+                                        <li><span class="label label-warning">#{$major_vo.delimiter}{$major_vo.major_name}#</span></li>
+                                    </if>
+                                </volist>
+                            </volist>
+                        </ul>
+
+                        <!-- Story Options Links -->
+                        <div class="story-options-links">
+                            <a>
+                                <i class="linecons-eye"></i>
+                                浏览
+                                <span>({$info.views})</span>
+                            </a>
+
+                            <a>
+                                <i class="linecons-heart"></i>
+                                收藏
+                                <span>({$info.favorite_sums.counts})</span>
+                            </a>
+
+                            <a>
+                                <i class="linecons-comment"></i>
+                                评论
+                                <span>({$info.comment_sums.counts})</span>
+                            </a>
+                            <!-- 发红包按钮 -->
+                            <if condition="$info['post_amount'] eq null">
+                                <input id="btn-author" type="button" value="发红包" class="btn btn-warning" uid="{$info.author}" onclick="postAuthorMoney(this)">
+                            <else/>
+                                <button type="button" class="btn btn-warning" disabled>已获得官方{$info.post_amount}元指定奖励</button>
+                            </if>
+                            <!-- 发红包按钮 -->
+                            <!--<button type="button" name="author_amount" class="btn btn-warning" onclick="postCommentMoney())">发红包</button>-->
+                            <!--<button type="button" class="btn btn-warning" id="btnShow" onclick="getID({$info.author})">发红包</button>-->
+                            <input id="res_id" name="res_id" type="hidden" value="{$info.id}">
+
+                        </div>
+
+                        <!-- Story Comments -->
+                        <ul class="list-unstyled story-comments">
+                            <foreach name="info['comment_info']" item="info_vo">
+                                <li>
+                                    <div class="story-comment">
+                                        <a class="comment-user-img">
+                                            <php>
+                                                if(empty(user_info($info_vo['uid'],'icon'))){
+                                                    echo '<img src="__IMG__/default_head.png" alt="user-img" class="img-circle img-responsive" />';
+                                                }else {
+                                                    echo '<img src="'.user_info($info_vo['uid'],'icon').'" alt="user-img" class="img-circle img-responsive" />';
+                                                }
+                                            </php>
+                                        </a>
+                                        <div class="story-comment-content">
+                                            <span class="story-comment-user-name">
+                                                {$info_vo['uid']|user_info='uname'}
+                                                <time>{$info_vo.time|date='Y-m-d H:i',###}</time>
+                                            </span>
+                                            <p>{$info_vo.comm_content}</p>
+                                        </div>
+                                        <!-- Story Options Links -->
+                                        <div class="story-options-links">
+                                            <a>
+                                                <i class="el-thumbs-up"></i>
+                                                点赞
+                                                <span>({$info_vo.likes})</span>
+                                            </a>
+
+                                            <a>
+                                                <i class="el-thumbs-down"></i>
+                                                踩
+                                                <span>({$info_vo.dislikes})</span>
+                                            </a>
+
+                                            <if condition="$info['type'] eq 2">
+                                                <if condition="$info['tbd_id'] neq $info_vo['id']">
+                                                    <a href="{:U('Content/del_comment',array('t'=>lx_encrypt(1),'cid'=>lx_encrypt($info_vo['id'])))}" onclick="return del_confirm()">
+                                                        <i class="el-trash"></i>
+                                                        删除
+                                                    </a>
+                                                </if>
+                                                <if condition="($info['author'] eq 0) AND ($info['tbd_id'] eq 0)">
+                                                    <a href="{:U('Content/adoptHelp',array('cid'=>$info_vo['id'],'rid'=>$info['id']))}">
+                                                        <i class="linecons-star"></i>
+                                                        采纳回答
+                                                    </a>
+                                                <elseif condition="$info['tbd_id'] eq $info_vo['id']"/>
+                                                    <span class="btn btn-pink btn-icon">已采纳</span>
+                                                </if>
+                                                <else/>
+                                                <a href="{:U('Content/del_comment',array('t'=>lx_encrypt(1),'cid'=>lx_encrypt($info_vo['id'])))}" onclick="return del_confirm()">
+                                                    <i class="el-trash"></i>
+                                                    delete
+                                                </a>
+                                            </if>
+                                        </div>
+                                    </div>
+                                </li>
+                                <hr/>
+                            </foreach>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+    </div>
+</section>
+
+<!-- 发红包模态弹窗 -->
+<div id="content" class="hide">
+    <form id="form" class="form-horizontal" method="post" action="{:U('Money/postMoney')}">
+        <div class="row">
+            <div class="control-group span8">
+                <label class="control-label"><s>*</s>红包金额:  </label>
+                <div class="controls">
+                    <input id="amounts" name="amount" class="input-normal control-text" data-rules="{number:true}" value="" type="text" placeholder="请填写正确的金额数">&nbsp;<span>&nbsp;元</span>
+                </div>
+                <!--<p>此选项涉及资金金额,请填写正确的数字</p>-->
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript" src="__BUI__/js/bui-min.js"></script>
+<script type="text/javascript" src="__BUI__/js/config-min.js"></script>
+<script type="text/javascript" src="__JS__/jquery.maskedinput.js"></script>
+<script type="text/javascript">
+//给指定作者发红包
+function postAuthorMoney(obj){
+    BUI.use(['bui/overlay','bui/form'],function(Overlay,Form) {
+        var form = new Form.HForm({
+            srcNode: '#form'
+        }).render();
+
+        var dialog = new Overlay.Dialog({
+            title:'给指定用户发红包',
+            width:500,
+            height:250,
+            closeAction:'destroy', //每次关闭dialog释放
+            contentId:'content',    //配置DOM容器的编号
+            // 确认是否发送红包
+            success:function() {
+                var r=confirm("确认发送吗? 发送之后将不可撤回!",true);
+
+                var id =$('#res_id').val();
+                var uids=$(obj).attr('uid');
+                var post_amount =$('#amounts').val();
+
+                if(r) {
+                    data = {
+                        id:id,
+                        uid : uids,
+                        post_amount: post_amount
+                    };
+                    //console.log(data);
+                    var pUrl = "{:U('Admin/Money/postAuthorMoney')}";
+                    $.post(pUrl, data, function(data){
+                    }, 'json');
+                    $("#btn-author").attr("disabled","disabled");
+                    $("#btn-author").val('已获得官方'+post_amount+'元指定奖励');
+                    this.close();
+                }
+                this.close();
+            }
+        });
+        dialog.show();
+    });
+}
+</script>
+
+<include file="Public/footer"/>

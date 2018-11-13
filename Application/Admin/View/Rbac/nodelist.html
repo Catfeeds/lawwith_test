@@ -1,0 +1,104 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap.min.css"/>
+<style>
+    .app{
+        width:94%;
+        height:auto;
+        overflow:hidden;
+        margin:20px auto;
+        padding:10px 20px;
+    }
+    .app dl{
+        margin:10px 0;
+        height:auto;
+        overflow:hidden;
+    }
+    .app dl dt{
+        display:blick;
+        height:36px;
+        line-height:36px;
+        background:#e6e6e6;
+        text-index:10px;
+        padding:0 10px;
+    }
+    .app dl dd{
+        float:left;
+        margin:0 10px;
+        padding:10px 15px;
+    }
+</style>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li>
+                <a>管理权限</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<!-- Responsive Table -->
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <button class="btn btn-white btn-icon fa-plus" onclick="addNode()" >
+                    <span>创建节点</span>
+                </button>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+                    <foreach name="node" item="app">
+                        <div class="app">
+                            <p>{$app.title} <a href="{:U('Rbac/addNode', array('pid' => $app['id'], 'level' => 2))}" class="btn btn-info btn-xs">添加控制器</a></p>
+
+                            <foreach name="app.child" item="action">
+                                <dl>
+                                    <dt style="color:#f00;">
+                                        {$action.title}
+                                        <a href="{:U('Rbac/addNode', array('pid' => $action['id'], 'level' => 3))}" class="btn btn-info btn-xs">添加方法</a>
+                                        <a href="{:U('Rbac/delNode?pid='.$action['id'])}" onclick="return del_confirm()" class="btn btn-danger btn-xs">删除</a>
+                                    </dt>
+                                    <foreach name="action.child" item="method">
+                                        <dd>
+                                            <span>{$method.title}</span>
+                                            <a href="{:U('Rbac/delNode?pid='.$method['id'])}" onclick="return del_confirm()" class="btn btn-danger btn-xs">删除</a>
+                                        </dd>
+                                    </foreach>
+                                </dl>
+
+                            </foreach>
+                        </div>
+                    </foreach>
+
+                </div>
+
+                <script type="text/javascript">
+                    function addNode(){
+                        window.location.href = "{:U('Rbac/addNode')}";
+                    }
+                </script>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<include file="Public/footer"/>

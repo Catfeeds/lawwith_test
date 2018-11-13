@@ -1,0 +1,92 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" href="__CSS__/bootstrapValidator.css"/>
+<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="panel panel-default">
+
+    <div class="panel-body">
+
+        <form id="defaultForm" method="post" class="form-horizontal" action="{:U('Ad/upData')}">
+
+            <!--<div class="form-group">-->
+                <!--<label class="col-lg-3 control-label">图片 </label>-->
+                <!--<div class="col-lg-5">-->
+                    <!--<input type="file" class="form-control" name="up_img">-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <label class="col-lg-3 control-label">链接</label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" name="url" placeholder="输入链接地址">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">标题</label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" name="title" placeholder="输入链接标题">
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="col-lg-3 control-label">描述</label>-->
+                <!--<div class="col-lg-5">-->
+                    <!--<textarea class="form-control autogrow" name="describe" placeholder="输入链接描述" style="min-height: 80px;"></textarea>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                    <button type="submit" class="btn btn-success">保存</button>
+                    <button type="reset" class="btn btn-white">重置</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#defaultForm')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+//                        up_img: {
+//                            message: '图片无效！',
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '图片不能为空！'
+//                                }
+//                            }
+//                        },
+                        url: {
+                            validators: {
+                                notEmpty: {
+                                    message: '链接地址不能为空！'
+                                },
+                                regexp: {
+                                    regexp: /^(https|http|ftp|rtsp|mms):\/\/([_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+))*$/,
+                                    message: '请输入有效的链接地址！'
+                                }
+                            }
+                        },
+                        title: {
+                            validators: {
+                                notEmpty: {
+                                    message: '标题不能为空！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+<include file="Public/footer"/>

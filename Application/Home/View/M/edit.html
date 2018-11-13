@@ -1,0 +1,207 @@
+<include file="header" />
+<script type="text/javascript" src="__ASTYLE__/js/jquery-1.10.2.min.js"></script>
+<!-- 引用初始化JS -->
+<script type="text/javascript" charset="utf-8" src="__EDITOR__/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__EDITOR__/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__EDITOR__/lang/zh-cn/zh-cn.js"></script>
+
+    <div class="main-publish">
+        <h1 class="common-author-heading-wrap">
+            <span class="common-author-heading">文章发布</span>
+        </h1>
+        <div class="main-left"><!--主体左侧开始-->
+            <div class="main-left-li"><a href="{:U('M/index')}">首页</a></div>
+            <div class="main-left-li"><a href="{:U('M/article')}">已发布</a></div>
+            <div class="main-left-li"><a href="{:U('M/add')}">新发布</a></div>
+            <!--<div class="main-left-li"><a href="{:U('M/article_drafts')}">草稿箱</a></div>-->
+        </div>
+        <div class="mainR">
+            <form id="Form2" method="post" action="{:U('M/edit')}" enctype="multipart/form-data">
+                <div class="edit_body">
+                    <!-- 文章标题 -->
+                    <input type="text" name="title" id="title" class="edit_title" required="required" value="{$article.title}">
+                    <!-- 加载编辑器的容器 -->
+                    <script id="container" name="content" type="text/plain">{$content}</script>
+                </div>
+                <!--专业领域列表-->
+                <div class="mainRCity">
+                    <div class="form-group select2 select-one">
+                        <label class="col-lg-3 control-label">文章分类</label>
+                        <div class="col-lg-5 select2-selection">
+                            <select class="form-control chzn-select" name="sort" id="s2example-1" style="width:100%;">
+                                <option value="">请选择文章分类</option>
+                                <option value="1" <if condition="$article['sort'] eq 1">selected="selected"</if> >实务</option>
+                                <option value="2" <if condition="$article['sort'] eq 2">selected="selected"</if> >人文</option>
+                                <option value="3" <if condition="$article['sort'] eq 3">selected="selected"</if> >律圈</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group select2 select-two">
+                        <label class="col-lg-3 control-label">专业领域 </label>
+                        <span class="tips" style="color: red;margin-left: 10px"></span>
+                        <div class="form-group select2 select-one">
+                            <div class="col-lg-5 select2-selection">
+                                <select class="form-control chzn-select" name="major_id" id="s2example-2"
+                                        style="width:100%;">
+                                    <option value="" selected>请选择专业领域</option>
+                                    <volist name=":explode(',', $article['tag_major'])" id="tag">
+                                        <volist name="major" id="major_vo">
+                                            <if condition="$major_vo['id'] eq $article['tag_major']">
+                                                <option value="{$major_vo['id']}" selected>{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                                <else/>
+                                                <option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>
+                                            </if>
+                                        </volist>
+                                    </volist>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--上传附件开始-->
+                <div class="form-group imgUp">
+                    <div class="col-lg-5"><a href="javascript:" class="file"><input id="up_logo" type="file" name="title_img"/></a>
+                        <div id="preview">
+                        <img id="imghead" src="{$article.title_img}" title="">
+                    </div>
+                    </div>
+                    <p style="font-size: small; color: #00aa00">* 图片的大小500kb,宽：564px,高：319px</p>
+                </div>
+                <div class="form-group submit-input">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <div id="img_ids"></div>
+                        <input type="hidden" name="author" value="{$Think.session.app_id}"/>
+                        <input type="hidden" name="rid" value="{$article.id}"/>
+                        <input class="submit-button fb" type="button" value="发表">
+                        <!--<input class="submit-button cg" type="submit" value="保存草稿">-->
+                        <button class="submit-button cg" onclick="self.location=document.referrer;">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <include file="footer" />
+</div>
+<script src="/Public/Admin/js/showIMG.js"></script>
+<script src="__ASTYLE__/js/select2/select2.min.js"></script>
+<link rel="stylesheet" href="__ASTYLE__/js/select2/select2.css">
+<link rel="stylesheet" href="__ASTYLE__/js/select2/select2-bootstrap.css">
+<script type="text/javascript" src="__ASTYLE__/js/bootstrapValidator.js"></script>
+<!--<script type="text/javascript" src="__ASTYLE__/js/bootstrap.min.js"></script>-->
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#Form2')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        title: {
+                            message: '标题无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '标题不能为空！'
+                                }
+//                            remote: {
+//                                url: "{:U('Content/checkLaws')}",
+//                                message: '律所名不可用'
+//                            }
+                            }
+                        },
+
+//                        title_img: {
+//                            message: '标题图片无效！',
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '标题图片不能为空！'
+//                                }
+//                            }
+//                        },
+
+                        content: {
+                            validators: {
+                                notEmpty: {
+                                    message: '内容不能为空！'
+                                }
+                            }
+                        },
+                        'major_id[]': {
+                            validators: {
+                                choice: {
+                                    min: 1,
+                                    max: 3,
+                                    message: '请选择1-3个专业标签！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+
+    //footer定位最底部
+    $('.footer').css("position","relative");
+
+    //文章分类下拉框
+    $("#s2example-1").select2({
+        placeholder: '请选择文章分类',
+        allowClear: true
+    }).on('select2-open', function()
+    {
+        $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+    });
+
+    //专业领域下拉框
+    $("#s2example-2").select2({
+        placeholder: '请选择专业领域',
+        allowClear: true
+    }).on('select2-open', function(){
+        // Adding Custom Scrollbar
+        //$(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+    });
+
+    //选择实务分类才让选择专业领域
+    $("#s2example-1").change(function(){
+
+        var select = $("#s2example-1").find("option:selected").text();
+        if(select !== '实务') {
+            //禁用下拉列表
+            $("#s2example-2").prop("disabled",true);
+            $(".tips").html('"实务"才有专业领域');
+        } else {
+            $("#s2example-2").prop("disabled",false);
+            $(".tips").empty();
+        }
+    });
+
+    $(function(){
+        var select = $("#s2example-1").find("option:selected").text();
+        if(select !== '实务') {
+            //禁用下拉列表
+            $("#s2example-2").prop("disabled",true);
+            $(".tips").html('"实务"才有专业领域');
+        } else {
+            $("#s2example-2").prop("disabled",false);
+            $(".tips").empty();
+        }
+    });
+
+    //图片上传
+    $(function () {
+        $('#btn_logo').click(function(){
+            $('#up_logo').click();
+        });
+    });
+
+    //实例化编辑器
+    var ue = UE.getEditor('container', {
+        initialFrameHeight:400,
+        initialFrameWidth:820,
+        toolbars: [['source','undo', 'redo','justifyleft','justifyright','justifycenter','imagecenter','simpleupload','insertimage', 'removeformat']],
+    });
+</script>
+<script type="text/javascript" charset="utf-8" src="__HOME__/js/scripts.js"></script>

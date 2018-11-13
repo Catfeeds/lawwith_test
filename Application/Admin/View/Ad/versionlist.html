@@ -1,0 +1,62 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap.min.css"/>
+<link rel="stylesheet" href="__CSS__/page.css"/>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="album-header">
+            <button class="btn btn-white btn-icon" onclick="addVersion()" >
+                <span>发布版本
+                </span>
+                <i class="fa-plus"></i>
+            </button>
+        </div>
+        <table class="table table-bordered table-striped" id="example-2">
+            <thead>
+            <tr>
+                <th>版本号</th>
+                <th>识别号</th>
+                <th>更新概括</th>
+                <th>更新时间</th>
+            </tr>
+            </thead>
+
+            <tbody class="middle-align">
+                <tr>
+                    <td>{$data.version_name}</td>
+                    <td>{$data.version_code}</td>
+                    <td>{$data.description}</td>
+                    <td><empty name="data.create_date"><else />{$data.create_date|date='Y-m-d H:i:s',###}</empty></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    function addVersion(){
+        window.location.href = "{:U('Ad/addVersion')}";
+    }
+</script>
+<include file="Public/footer"/>

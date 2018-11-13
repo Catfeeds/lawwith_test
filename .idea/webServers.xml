@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d99ff797-d86f-4987-92ff-8bfbad60ac61" name="lawyerWith" url="http://139.129.39.101">
+        <fileTransfer host="139.129.39.101" port="22" rootFolder="/var/www/html/lawwith" accessType="SFTP" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

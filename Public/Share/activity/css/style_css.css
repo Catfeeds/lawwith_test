@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document - downton*/
+html,body{ margin:0; padding:0; font-family:"微软雅黑"; background:#10101f; overflow-x:hidden;}
+html::-webkit-scrollbar{display: none;}
+a{ text-decoration:none;}
+.fl{ float:left;}
+.fr{ float:right;}
+.cr{ clear:both;}
+ul{ margin:0; padding:0; list-style:none;}
+li{ margin:0; padding:0; list-style:none;}
+ol{ margin:0; padding:0}
+h2,h3,h4{ margin:0; padding:0;}
+input{ font-family:"微软雅黑"; background:none; border:none; }
+.dis_yc{ display:none;}
+.dis_xs{ display:block;}
+img a{ border:0; border:none;}
+/***********************-----------------------------详情页-----------------------------***********************/
+.ActivityBox{ width:100%; height:auto; overflow:hidden;}
+.Top{ width:100%; height:auto; overflow:hidden; background:url(../images/TopBJ.png) no-repeat; background-size:cover;}
+.Top1{ width:90%; height:auto; margin:auto;}
+.Top1 img{ width:100%; height:auto;}
+.Top2{ width:90%; height:auto; margin:5px auto;}
+.Top2 img{ width:100%; height:auto;}
+.Top3{ width:70%; font-size:16px; margin:15px auto; height:auto; line-height:2.1em; text-align:center; color:#FFF; border:1px solid #08cdb2;
+-moz-border-radius: 20px;/*Firefox*/
+-webkit-border-radius: 20px;/*Safari, Chrome*/
+border-radius: 20px;}
+.Top3 span{ color:#ffd33c;}
+.Top4{ width:90%; height:auto; overflow:hidden; margin:50px auto; background:url(../images/Top3.png) no-repeat bottom; background-size:100%;}
+.Top4_number{ width:65%; margin:auto;}
+/*.Top4_numberL{ color:#FFF; border-right:1px solid #ffd33c; margin-right:6px; padding-right:6px;}*/
+.Top4_numberR{ width:75%; height:auto;}
+/*.Top4_numberR input{ width:100%; color:#ffd33c; letter-spacing:1px; font-size:16px; background:none; border:none; border:0;}*/
+.Top4_numberBoder{ width:75%; height:auto; line-height:10px; overflow:hidden; margin:auto;}
+.Top4_numberBoder img{ width:100%; height:auto;}
+.Top4_password{ width:75%; height:auto; overflow:hidden; margin:20px auto;}
+.Top4_passwordL{ width:60%;}
+.Top4_passwordL1{ width:100%; height:auto;}
+/*.Top4_passwordL1 input{ width:100%; color:#ffd33c; letter-spacing:1px; font-size:16px; background:none; border:none; border:0;}*/
+.Top4_passwordL2{ width:100%; height:auto; line-height:10px; overflow:hidden; margin:auto;}
+.Top4_passwordL2 img{ width:100%; height:auto;}
+.Top4_passwordR{ background:#333e4d; width:35%; overflow:hidden; border:1px solid #06bebc;
+-moz-border-radius: 6px;/*Firefox*/
+-webkit-border-radius: 6px;/*Safari, Chrome*/
+border-radius: 6px;}
+.Top4_passwordR input{ width:100%; text-align:center; color:#FFF; line-height:2.0em;}
+/*.Top4_button{ width:200px; margin:0 auto 50px auto; height:37px; background:url(../images/Top6.png) no-repeat; background-size:cover;}*/
+.submit-button{ width:200px; margin:0 auto 50px auto; height:37px; background:url(../images/download-button.png) no-repeat; background-size:cover;}
+.Top4_button input{ width:100%; height:37px;}
+.Top5{ width:90%; height:auto; margin:auto;}
+.Top5 img{ width:100%; height:auto;}
+.Catalog{ width:100%; height:auto; overflow:hidden; margin-top:30px;}
+.Catalog_Bt{ width:100%; height:26px; background:url(../images/Catalog1.png) repeat-x;  margin:auto;}
+.Catalog_BtTxt{ width:55%; margin:auto; background:#10101f; height:26px; line-height:26px; text-align:center; color:#FFF; letter-spacing:2px; font-size:16px;}
+.Catalog_Img{ width:25%; height:auto; margin:20px auto 0 auto;}
+.Catalog_Img img{ width:100%; height:auto;}
+.Catalog_Nr{ width:90%; margin:auto; line-height:1.5em; color:#FFF; text-align:center;}
+.Catalog_NrPage{ margin-top:20px;}
+.Catalog_NrPage span{ color:#fed23c;}
+.bottom{ width:90%; height:auto; line-height:1.0; margin:50px auto 80px auto; color:#FFF; font-size:14px; text-align:center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

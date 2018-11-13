@@ -1,0 +1,320 @@
+<include file="Public/main"/>
+
+<include file="Public/header"/>
+<link rel="stylesheet" href="__Date__/dateSelect.css">
+<!--<link href="__BUI__/css/bs3/dpl.css" rel="stylesheet">-->
+<link href="__BUI__/css/bs3/bui.css" rel="stylesheet">
+<script type="text/javascript" src="__Date__/dateSelect.js"></script>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<!-- 引用控制层插件样式 -->
+<link rel="stylesheet" href="__upIMG__/control/css/zyUpload.css" type="text/css">
+<!--<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>-->
+<!-- 引用核心层插件 -->
+<script src="__upIMG__/core/zyFile.js"></script>
+<!-- 引用控制层插件 -->
+<script src="__upIMG__/control/js/zyUpload.js"></script>
+<!-- 引用初始化JS -->
+<script src="__upIMG__/core/lanrenzhijia.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>内容管理</a>
+            </li>
+            <li>
+                <a href="#" onClick="javascript :history.back(-1);">活动列表</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form id="Form2" method="post" class="form-horizontal" action="{:U('Content/sub_sendActivity')}" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">标题</label>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa-quote-left"></i>
+                        </span>
+                                <input type="text" name="title" class="form-control" placeholder="输入标题">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">标题图片 </label>
+                        <div class="col-lg-5">
+                            <input type="file" name="title_img" />
+                            <span style="font-size: small; color: #00aa00">* 图片的大小500kb,宽：564px,高：319px</span>
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-lg-3 control-label">所属城市</label>-->
+                        <!--<div class="col-lg-5">-->
+                            <!--<select class="form-control" name="city_id">-->
+                                <!--<foreach name="city" item="cvo">-->
+                                    <!--<option value="{$cvo.id}">{$cvo.cityname}</option>-->
+                                <!--</foreach>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="form-group">-->
+                        <!--此处删除了JS代码-->
+                        <!--<label class="col-lg-3 control-label">专业领域 </label>-->
+                        <!--<div class="col-lg-5">-->
+                            <!--<select class="form-control" id="s2example-2" name="major_id[]" multiple>-->
+                                <!--<option></option>-->
+                                <!--<optgroup label="请选择专业领域">-->
+                                    <!--<volist name="major" id="major_vo">-->
+                                        <!--<option value="{$major_vo['id']}">{$major_vo.delimiter}{$major_vo.major_name}</option>-->
+                                    <!--</volist>-->
+                                <!--</optgroup>-->
+                            <!--</select>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">承办单位</label>
+                        <div class="col-lg-5">
+                            <input type="text" name="host_unit" class="form-control" placeholder="默认为个人"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">限制人数</label>
+                        <div class="col-lg-2">
+                            <div class="input-group spinner" data-step="1">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-gray" data-type="decrement">-</button>
+                                </span>
+                                <input type="text" class="form-control text-center" name="numbs" value="99" onkeyup="value=value.replace(/[^\d]/g,'')"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-gray" data-type="increment">+</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">活动方式</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="a_type" value="1">
+                            线下活动
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="a_type" value="2" checked>
+                            线上活动
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">活动地址</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" placeholder="默认为线上活动" name="address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">人均费用</label>
+                        <div class="col-lg-3">
+                            <div class="input-group">
+                                <span class="input-group-addon">¥</span>
+                                <input type="text" class="form-control" name="price" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="默认为免费">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">活动时间</label>
+                        <div class="col-lg-5">
+                            <input type="text" name="event_time" id="field-5" class="form-control daterange" data-time-picker="true" data-time-picker-increment="5" data-format="MM/DD/YYYY h:mm A" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">截止时间</label>
+                        <div class="col-lg-2">
+                            <input type="text" name="deadline" class="form-control calendar calendar-time" data-mask="datetime" />
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">内容</label>
+                        <div class="col-lg-5">
+                            <textarea class="form-control autogrow" name="content" placeholder="内容" style="min-height: 100px;"></textarea>
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-lg-3 control-label">附件（图片）</label>-->
+                        <!--<div class="col-lg-5">-->
+                            <!--<span id="fujian" class="fujian" style="width: auto;"></span>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group">
+                        <!--<label class="col-lg-3 control-label">是否置顶</label>-->
+                        <!--<div class="col-xs-1">-->
+                            <!--<input type="checkbox" name="is_stick" class="iswitch iswitch-blue" checked="checked" value="1">-->
+                            <!--&lt;!&ndash;<span style="font-size: small; color: #00aa00">* 开启置顶，会使排序靠前</span>&ndash;&gt;-->
+                        <!--</div>-->
+
+                        <label class="col-lg-3 control-label">是否首页推荐</label>
+                        <div class="col-xs-1">
+                            <input type="checkbox" name="is_push" class="iswitch iswitch-turquoise" checked="checked" value="1">
+                            <!--<span style="font-size: small; color: #00aa00">* 开启推荐，自动推送到首页</span>-->
+                        </div>
+
+                        <label class="col-lg-1 control-label">状态</label>
+                        <div class="col-xs-1">
+                            <input type="checkbox" name="status" class="iswitch iswitch-secondary" checked="checked" value="1">
+                            <!--<span style="font-size: small; color: #00aa00">* 状态，关闭系统将无法搜索到此数据</span>-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <div id="img_ids"></div>
+                            <button type="submit" class="btn btn-primary">确认添加</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="__BUI__/js/bui-min.js"></script>
+<script type="text/javascript" src="__BUI__/js/config-min.js"></script>
+<script type="text/javascript" src="__JS__/jquery.maskedinput.js"></script>
+<script type="text/javascript">
+    BUI.use('bui/calendar',function(Calendar){
+        var datepicker = new Calendar.DatePicker({
+            trigger:'.calendar-time',
+            showTime:true,
+            autoRender : true
+        });
+    });
+</script>
+<script type="text/javascript">
+    function loadRegion(sel,type_id,selName,url){
+        jQuery("#"+selName+" option").each(function(){
+            jQuery(this).remove();
+        });
+        jQuery("<option value=0>请选择</option>").appendTo(jQuery("#"+selName));
+        if(jQuery("#"+sel).val()==0){
+            return;
+        }
+        jQuery.getJSON(url,{pid:jQuery("#"+sel).val(),type:type_id},
+                function(data){
+                    if(data){
+                        jQuery.each(data,function(idx,item){
+                            jQuery("<option value="+item.id+">"+item.cityname+"</option>").appendTo(jQuery("#"+selName));
+                        });
+                    }else{
+                        jQuery("<option value='0'>请选择</option>").appendTo(jQuery("#"+selName));
+                    }
+                }
+        );
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#Form2')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        title: {
+                            message: '标题无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '标题不能为空！'
+                                }
+//                                remote: {
+//                                    url: "{:U('Content/checkLaws')}",
+//                                    message: '律所名不可用'
+//                                }
+                            }
+                        },
+
+                        title_img: {
+                            message: '标题图片无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '标题图片不能为空！'
+                                }
+                            }
+                        },
+
+                        numbs : {
+                            message: '限制人数无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '限制人数不能为空！'
+                                }
+                            }
+                        },
+
+                        type: {
+                            message: '活动方式无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '活动方式不能为空！'
+                                }
+                            }
+                        },
+
+                        event_time: {
+                            message: '活动时间无效！',
+                            validators: {
+                                notEmpty: {
+                                    message: '活动时间不能为空！'
+                                }
+                            }
+                        },
+
+                        content: {
+                            validators: {
+                                notEmpty: {
+                                    message: '内容不能为空！'
+                                }
+                            }
+                        }
+                    }
+                })
+    });
+</script>
+
+<link rel="stylesheet" href="__JS__/daterangepicker/daterangepicker-bs3.css">
+<script src="__JS__/moment.min.js"></script>
+<script src="__JS__/daterangepicker/daterangepicker.js"></script>
+<include file="Public/footer"/>

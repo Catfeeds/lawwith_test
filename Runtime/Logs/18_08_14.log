@@ -1,0 +1,237 @@
+[ 2018-08-14T09:27:25+08:00 ] 222.129.107.79 /app/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T09:27:25+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4018' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4018' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4018' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4018' ) LIMIT 1  
+
+[ 2018-08-14T09:27:36+08:00 ] 222.129.107.79 /app/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T09:27:36+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4006' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4006' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4006' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4006' ) LIMIT 1  
+
+[ 2018-08-14T09:36:58+08:00 ] 222.129.107.79 /app/Detail/video
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T09:42:06+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-08-14T09:42:06+08:00 ] 222.129.107.79 /app/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T09:52:19+08:00 ] 222.129.107.79 /app/Detail/video
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T11:42:28+08:00 ] 222.129.107.79 /app/Detail/video
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT 0,10  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `lx_train` SET `views`=views+1 WHERE ( id= )
+
+[ 2018-08-14T13:16:57+08:00 ] 222.129.107.79 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T13:16:57+08:00 ] 222.129.107.79 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-08-14T13:22:24+08:00 ] 222.129.107.79 /App/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T13:22:24+08:00 ] 222.129.107.79 /App/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-08-14T13:48:53+08:00 ] 222.129.107.79 /app/Detail/video
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT 0,10  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `lx_train` SET `views`=views+1 WHERE ( id= )
+
+[ 2018-08-14T13:51:31+08:00 ] 222.129.107.79 /app/Detail/video
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT 0,10  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `lx_train` SET `views`=views+1 WHERE ( id= )
+
+[ 2018-08-14T14:42:20+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:42:20+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:42:21+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:42:21+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:42:21+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:44:50+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:44:50+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:44:50+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:44:50+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T14:44:50+08:00 ] 222.129.107.79 /app/detail/video_list_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`title_img`,`is_money`,`amount` FROM `lx_train` WHERE ( `cate_id` = 0 ) AND ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `create_at` desc,`views` desc LIMIT 0,  
+
+[ 2018-08-14T15:27:08+08:00 ] 222.129.107.79 /app/Detail/video
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_train` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY ctime desc LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT lx_train_comment.id as cid,`uid`,`vid`,`content`,`ctime`,`is_nym`,`uname`,`icon`,`type` FROM `lx_train_comment` INNER JOIN lx_account ON lx_train_comment.uid = lx_account.id  WHERE ( vid= ) ORDER BY ctime desc LIMIT 0,10  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `lx_video` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `lx_train` SET `views`=views+1 WHERE ( id= )
+
+[ 2018-08-14T16:21:42+08:00 ] 222.129.107.79 /app/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T16:21:42+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-08-14T16:21:44+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4028' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4028' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4027' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4027' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4027' ) LIMIT 1  
+
+[ 2018-08-14T16:22:32+08:00 ] 222.129.107.79 /app/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T16:22:32+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-08-14T16:28:03+08:00 ] 222.129.107.79 /app/Detail/posts_back
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `lx_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2018-08-14T16:28:03+08:00 ] 222.129.107.79 /app/Detail/comment_posts_v4
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='4026' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='4026' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='4026' ) LIMIT 1  
+
+[ 2018-08-14T17:20:55+08:00 ] 222.129.107.79 /app/Index/recommend
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `object_id`,`type`,`title`,`thumb_img`,`channel_id`,`is_cost`,`amount` FROM `lx_recommend` WHERE ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `stick_date` desc,`push_date` desc LIMIT 0,  
+
+[ 2018-08-14T17:21:28+08:00 ] 222.129.107.79 /app/Index/recommend
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `object_id`,`type`,`title`,`thumb_img`,`channel_id`,`is_cost`,`amount` FROM `lx_recommend` WHERE ( `status` = 1 ) AND ( `is_private` = 1 ) ORDER BY `stick_date` desc,`push_date` desc LIMIT 0,  
+
+[ 2018-08-14T17:38:29+08:00 ] 222.129.107.79 /App/RedPackage/sendPersonBonus
+ERR: Think\Controller:setOrderSn方法不存在！
+
+[ 2018-08-14T17:38:47+08:00 ] 222.129.107.79 /App/RedPackage/sendGroupBonus
+ERR: Think\Controller:setOrderSn方法不存在！
+
+[ 2018-08-14T18:07:55+08:00 ] 222.129.107.79 /app/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418075557958164',0,5795,null,1534241275)
+
+[ 2018-08-14T18:08:04+08:00 ] 222.129.107.79 /app/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418080457953134',0,5795,null,1534241284)
+
+[ 2018-08-14T18:10:34+08:00 ] 222.129.107.79 /App/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418103457956080',0,5795,null,1534241434)
+
+[ 2018-08-14T18:16:43+08:00 ] 222.129.107.79 /app/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418164334549021',0,3454,null,1534241803)
+
+[ 2018-08-14T18:16:54+08:00 ] 222.129.107.79 /app/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418165434548459',0,3454,null,1534241814)
+
+[ 2018-08-14T18:40:36+08:00 ] 222.129.107.79 /App/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418403657957303',0,5795,null,1534243236)
+
+[ 2018-08-14T18:54:44+08:00 ] 222.129.107.79 /app/test/test
+ERR: 无法加载控制器:Test
+
+[ 2018-08-14T18:54:51+08:00 ] 222.129.107.79 /app/test/crypt
+ERR: 无法加载控制器:Test
+
+[ 2018-08-14T18:55:05+08:00 ] 222.129.107.79 /app/test/crypt
+ERR: 无法加载控制器:Test
+
+[ 2018-08-14T18:55:46+08:00 ] 222.129.107.79 /app/order/createOrder
+ERR: 1048:Column 'amount' cannot be null
+ [ SQL语句 ] : INSERT INTO `lx_order_train` (`record_sn`,`video_id`,`user_id`,`amount`,`create_date`) VALUES ('2018081418554616017',115,1,null,1534244146)
+

@@ -1,0 +1,115 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<link rel="stylesheet" href="__CSS__/bootstrap.min.css"/>
+<script type="text/javascript">
+    // Sample Javascript code for this page
+    jQuery(document).ready(function($)
+    {
+        // Delete Modal
+        $('.gallery-env a[data-action="trash"]').on('click', function(ev)
+        {
+            ev.preventDefault();
+            $("#gallery-image-delete-modal").modal('show');
+        });
+
+    });
+</script>
+<div class="page-title">
+
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li>
+                <a>管理权限</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<!-- Responsive Table -->
+<section class="gallery-env">
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <button class="btn btn-white btn-icon" onclick="addUser()" >
+                    <span>新建用户</span>
+                    <i class="fa-plus"></i>
+                </button>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+                    <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>角色（用户组）</th>
+                            <th>创建时间</th>
+                            <th>更新时间</th>
+                            <th>最后登录IP</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="user" item="vo">
+                        <tr>
+                            <th>{$vo.username}</th>
+                            <td>
+                                <foreach name="vo.role" item="value">
+                                    {$value.name} ({$value.remark})<br />
+                                </foreach>
+                            </td>
+                            <td>{$vo.created_at|date='Y-m-d H:i:s',###}</td>
+                            <td>{$vo.login_at|date='Y-m-d H:i:s',###}</td>
+                            <td>{$vo.loginip}</td>
+                            <td>
+                                <if condition="$vo['status'] eq 1">
+                                    <span class="label btn-success">正常</span>
+                                    <else/>
+                                    <span class="label btn-primary">关闭</span>
+                                </if>
+                            </td>
+                            <td>
+                                <if condition="$vo['username'] eq C('RBAC_SUPERADMIN')">
+                                    <!--<button class="btn btn-pink ">无操作</button>-->
+                                    <span class="label label-danger">无操作</span>
+                                <else/>
+                                    <a href="{:U('editUser',array('uid'=>lx_encrypt($vo['id'])))}" class="btn btn-info btn-sm btn-icon icon-left">
+                                        <li class="fa-pencil"></li>
+                                    </a>
+                                    <a href="{:U('delUser',array('uid'=>lx_encrypt($vo['id'])))}" onclick="return del_confirm()" class="btn btn-danger btn-sm btn-icon icon-left">
+                                        <li class="fa-trash-o"></li>
+                                    </a>
+                                </if>
+                            </td>
+                        </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <script type="text/javascript">
+
+                    function addUser(){
+                        window.location.href = "{:U('Rbac/addUser')}";
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<include file="Public/footer"/>

@@ -1,0 +1,60 @@
+<include file="Public/head"/>
+
+	<!--<header>-->
+    	<!--<div class="xinxi_fh"><a href="#"><img src="__SHARE__/images/xinxi_fh.jpg"></a></div>-->
+        <!--<div class="xinxi_mid">个人名片</div>-->
+    <!--</header>-->
+    <div class="xinxi_bar">
+    	<div class="xinxi_bartx">
+            <notempty name="data.logo">
+                <img src="{$data.logo}">
+                <else/>
+                <img src="__SHARE__/images/default.png">
+            </notempty>
+        </div>
+        <div class="xinxi_name">{$data.law_name}</div>
+        <div class="xinxi_zy">
+            <if condition="$data['province'] eq $data['city']">
+                <span>{$data.province}</span>
+                <span>{$data.town}</span>
+                <else/>
+                <span>{$data.province}</span>
+                <span>{$data.city}</span>
+            </if>
+        </div>
+    </div>
+    <div class="xq_bdy">
+    	<div class="xq_nrexp">律所地址：<span>{$data.address}</span></div>
+        <div class="xq_nrexp">联系电话：<span>{$data.phone}</span></div>
+        <div class="xq_nrexp">电子邮箱：<span>{$data.email}</span></div>
+        <div class="xq_nrexp">律所简介：<pre>{$data.profile}</pre></div>
+    </div>
+    <div class="xq_gl">
+    	<div class="xq_gltil">管理员</div>
+        <notempty name="data.admin_info">
+            <div class="xq_gly oh">
+                <div class="xq_gly01 fl">
+                    <notempty name="data.admin_info.icon">
+                        <img width="60px;" height="60px;" src="{$data.admin_info.icon}">
+                        <else/>
+                        <img width="60px;" height="60px;" src="__SHARE__/images/default.png">
+                    </notempty>
+                </div>
+                <div class="xq_gly02 fl">{$data['admin_info']['uname']}</div>
+                <!--<div class="xq_gly03 fr"><a>加为好友</a></div>-->
+            </div>
+            <else/>
+            <span>暂无</span>
+        </notempty>
+        <div class="xq_gltil">律所成员</div>
+        <div class="xq_cy oh">
+            <foreach name="data['user_info']" item="user">
+                <notempty name="user.icon">
+                    <div class="xq_cyexp fl"><img src="{$user.icon}"></div>
+                    <else/>
+                    <div class="xq_cyexp fl"><img src="__SHARE__/images/default.png"></div>
+                </notempty>
+            </foreach>
+        </div>
+    </div>
+<include file="Public/foot"/>

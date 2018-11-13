@@ -1,0 +1,204 @@
+<include file="Public/main"/>
+<include file="Public/header"/>
+<script type="text/javascript" src="__JS__/bootstrapValidator.js"></script>
+<div class="page-title">
+    <div class="title-env">
+        <h1 class="title">{$meta_title}</h1>
+        <p class="description">{$meta_describe}</p>
+    </div>
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
+            </li>
+            <li>
+                <a>系统设置</a>
+            </li>
+            <li class="active">
+                <strong>{$meta_title}</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{$meta_decribe}</h3>
+                <!--<div class="panel-options">-->
+                    <!--<a href="#" data-toggle="panel">-->
+                        <!--<span class="collapse-icon">&ndash;</span>-->
+                        <!--<span class="expand-icon">+</span>-->
+                    <!--</a>-->
+                    <!--<a href="#" data-toggle="remove">-->
+                        <!--&times;-->
+                    <!--</a>-->
+                <!--</div>-->
+            </div>
+            <div class="panel-body">
+
+                <form method="post" id="For_email" action="{:U('Index/sub_email')}" role="form" class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮件发件人名称</label>
+
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="linecons-user"></i></span>
+                                <input type="text" class="form-control" name="email_title" placeholder="如：律携官方" value="{$data.email_title}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-separator"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮件服务器地址</label>
+
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="linecons-globe"></i></span>
+                                <input type="text" class="form-control" placeholder="如：smtp.163.com" name="email_host" value="{$data.email_host}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-separator"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮箱地址</label>
+
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="email" class="form-control" placeholder="如：xxx@163.com" name="email_name" value="{$data.email_name}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-separator"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮箱账号</label>
+
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="linecons-mail"></i>
+                                </span>
+                                <input type="email" class="form-control" placeholder="如：xxx@163.com" name="email_user" value="{$data.email_user}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-separator"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮箱密码</label>
+
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="linecons-lock"></i>
+                                </span>
+                                <input type="password" name="email_pwd" class="form-control" placeholder="邮箱密码或授权密码" value="{$data.email_pwd|lx_decrypt}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group-separator"></div>-->
+
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-sm-2 control-label">测试内容</label>-->
+
+                        <!--<div class="col-sm-10">-->
+
+                            <!--<div class="input-group">-->
+                                <!--<input type="text" class="form-control no-left-border form-focus-info" name="test_content" value="{$data.test_content}">-->
+                                <!--<span class="input-group-btn">-->
+                                    <!--<button class="btn btn-info" type="button">测试发送</button>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group-separator"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block">
+                            保存配置
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#For_email')
+                .bootstrapValidator({
+                    message: '这个值无效',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        email_title: {
+                            validators: {
+                                notEmpty: {
+                                    message: '发件人名称不能！'
+                                }
+                            }
+                        },
+                        email_host: {
+                            validators: {
+                                notEmpty: {
+                                    message: '邮件服务器地址不能为空！'
+                                }
+                            }
+                        },
+                        email_name: {
+                            validators: {
+                                notEmpty: {
+                                    message: '邮箱地址不能为空！'
+                                }
+                            }
+                        },
+
+                        email_user: {
+                            validators: {
+                                notEmpty: {
+                                    message: '邮箱账号不能为空！'
+                                }
+                            }
+                        },
+
+                        email_pwd: {
+                            validators: {
+                                notEmpty: {
+                                    message: '邮箱密码不能为空！'
+                                }
+                            }
+                        },
+
+//                        test_content: {
+//                            validators: {
+//                                notEmpty: {
+//                                    message: '测试内容不能为空！'
+//                                }
+//                            }
+//                        }
+                    }
+                })
+    });
+</script>
+<include file="Public/footer"/>
