@@ -11,6 +11,7 @@ namespace Admin\Controller;
 use Think\Controller;
 use Common\Api\JPush;
 use Common\Api\Category;
+use Common\Api\letvCloud;
 
 class UserController extends AdminController {
 
@@ -231,9 +232,47 @@ class UserController extends AdminController {
         $uid   = lx_decrypt(I('get.uid'));
         $model = D('App/AccountRelation');
         $data  = $model->relation(true)->where('id='.$uid)->find();
+        $resourceModel = M('resource_comment');
 
+           $comm = $resourceModel->alias('rc')
+            ->field('r.id,r.title')
+            ->join('left join lx_resource  as r on rc.rid = r.id')
+            ->where('rc.uid='.$uid)
+            ->group('rc.rid')
+            ->order("time DESC")
+            ->select();
+        if($comm != null){
+            foreach($comm as &$value){
+                $array = array(
+                    'rid'=>$value['id'],
+                    'uid'=>$uid
+                    );
+                $content = $resourceModel->alias('rc')
+                    ->field('id,content,type,likes,dislikes,tbd,time')
+                    ->where($array)
+                    ->order("time DESC")
+                    ->select();
+                    foreach($content as &$val){
+                        if($val['type'] == 1){
+                            $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                            $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                            $type = 'js';  //接口类型
+                            $auto_play = 0; //是否自动播放
+                            $width = 250;  //播放器宽度
+                            $height = 100; //播放器高度
+                            $letv = new LetvCloud;
+                            $val['content']
+                                = $letv->videoGetPlayinterface($uu, video_info($val['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+                        }
+                    }
+                $value['commentInfo']=$content;
+            }
+        }
+
+        $data['com'] = $comm;
         M('Account')->where('id='.$uid)->setField('is_review',1);
         $this->assign('data',$data);
+//        dump($data); exit;
         $this->meta_title = '用户信息';
         $this->display('shenhe');
     }

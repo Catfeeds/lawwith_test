@@ -24,4 +24,6 @@ class AccountRelationModel extends RelationModel
             'mapping_fields' => 'id, name, remark',	//显示的字段
         ),
     );
+
+
 }

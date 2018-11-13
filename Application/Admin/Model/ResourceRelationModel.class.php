@@ -40,7 +40,7 @@ class ResourceRelationModel extends RelationModel
             'relation_foreign_key' => 'uid',
             'relation_table' => 'lx_resource_comment',
             'relation_tableB' => 'lx_account',
-            'mapping_fields' => 'a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount',
+            'mapping_fields' => 'a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,a.type',
             'mapping_fieldsB' => 'b.icon',
             'mapping_name' => 'comment_info'
         ),
@@ -90,7 +90,15 @@ class ResourceRelationModel extends RelationModel
             'mapping_name' => 'redpacks_conf',
             //'mapping_fields' => 'redpack_id,total_amount,like_nums,end_time,start_time',
         ),
-
+        //此贴是否解决
+        'is_help' => array(
+            'mapping_type' => self::HAS_ONE,
+            'class_name' => 'resource_comment',
+            'foreign_key' => 'rid',
+            'condition' => 'tbd = 1',
+            'mapping_fields' => 'count(id) as counts',
+            'mapping_name' => 'is_help'
+        ),
     );
 
 }

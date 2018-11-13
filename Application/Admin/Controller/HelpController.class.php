@@ -9,6 +9,7 @@ namespace Admin\Controller;
 
 use Common\Api\Category;
 use Think\Controller;
+use Common\Api\letvCloud;
 
 class HelpController extends AdminController
 {
@@ -37,10 +38,11 @@ class HelpController extends AdminController
         $lists = $model
             ->relation(true)
             ->where($where)
-            ->field('id,title,author,views,send_time,status,is_push,is_stick')
+            ->field('id,title,author,views,send_time,status,is_push,is_stick,is_reward,reward_money')
             ->order('send_time desc')
             ->limit($Page->firstRow . ',' . $Page->listRows)
             ->select();
+
         $this->assign('data', $lists);
         $this->assign('page', $show);
         $this->meta_title = '求助列表';
@@ -62,9 +64,23 @@ class HelpController extends AdminController
             $this->error('此页面不存在!');
             $this->redirect('index');
         }
+
         $this->major = Category::toLevel($data, "ㄴ"); //专业标签
         $this->content = htmlspecialchars_decode($article['content']);
-//        dump($article);exit; //注:select返回的数据 但是只需要也只返回了一条数据 所以直接返回 array[0]                      z
+
+        foreach($article[0]['comment_info'] as &$val){
+            if($val['type'] == 1){
+                $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                $type = 'js';  //接口类型
+                $auto_play = 0; //是否自动播放
+                $width = 250;  //播放器宽度
+                $height = 100; //播放器高度
+                $letv = new LetvCloud;
+                $val['comm_content']
+                    = $letv->videoGetPlayinterface($uu, video_info($val['comm_content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+            }
+        }
         $this->assign('info', $article[0]);
         $this->meta_title = '查看详情';
         $this->display();
