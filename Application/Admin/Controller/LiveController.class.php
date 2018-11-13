@@ -288,6 +288,12 @@ class LiveController extends AdminController {
     {
         $id = I('get.id');
         $getData = M('Live')->where('id='.$id)->find();
+        //根据直播间id来查询直播间的订单金额
+        $getMoney = M('OrderLive')->where('live_id='.$id)->sum('amount');
+        $subQuery = M('OrderLive')->where('status = 1')->select(false);
+        $subQ = M()->field('a.icon,a.uname,a.mobile,b.create_date')->table('lx_account a')->join('left join ('.$subQuery.')b on a.id = b.user_id')->where('b.live_id = '.$id)->select();
+        $getData['amount'] = $getMoney['s'];
+        $getData['account']=$subQ;
         $this->assign('data',$getData);
         $this->meta_title = '直播间详情';
         $this->display('detail');
