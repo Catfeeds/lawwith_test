@@ -144,6 +144,7 @@ class ActivityController extends AdminController
         if($info) {
             $return['status'] = 1;
             $return = array_merge($info['title_img'], $return);
+            $return = array_merge($info['head_img'],$return);
         }
         else {
             $return['status'] = 0;
@@ -151,7 +152,8 @@ class ActivityController extends AdminController
         }
         $data = array(
             'title'     => I('post.title'),     //标题
-            'imgs'      => $return['path'],       //标题图片
+            'imgs'      => $info['title_img']['path'],       //标题图片
+            'head_img' =>  $info['head_img']['path'],          //详情头图
             'address'   => I('post.address'),     //活动地址
             'number'    => I('post.numbs'),        //限制人数
             'type'      => I('post.a_type'),       //活动方式
@@ -188,9 +190,17 @@ class ActivityController extends AdminController
         if(empty($id)) {
             $this->error('未找到这个网页');
         }
-
-        $data_info = D('ActivityRelation')->relation(true)->where('id=' . $id)->find();
-        $this->assign('info', $data_info);
+        $data_info = D('ActivityRelation')->relation(true)->where('id=' . $id)->select();
+        if ($data_info[0]['is_money'] == 1){
+            $temp = M('Order_activity')->select(false);
+            $data_list = M()->field('a.uname uname,a.icon icon,b.create_date time,b.amount')->table('lx_account a')->join('left join ('.$temp.')b on a.id = b.user_id')->where('b.activity_id = '.$id)->select();
+            $data_info[0]['userList'] = $data_list;
+        }else{
+            $temp = M('Activity_part')->select(false);
+            $data_list = M()->field('a.uname uname,a.icon icon,b.time time')->table('lx_account a')->join('left join ('.$temp.')b on a.id = b.uid')->where('b.aid = '.$id)->select();
+            $data_info[0]['userList'] = $data_list;
+        }
+        $this->assign('info', $data_info[0]);
         $this->remark = htmlspecialchars_decode($data_info['remark']);
         $this->meta_title = '查看活动';
         $this->display();
