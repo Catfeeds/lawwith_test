@@ -43,8 +43,15 @@ class VideoController extends AdminController
                       ->order('create_at desc')
                       ->limit($Page->firstRow . ',' . $Page->listRows)
                       ->select();
-        //p($data);
         $this->major_list = M('Major')->where('status=1')->order('sort')->select();
+
+        foreach($data as &$value){
+            if($value['is_money'] == 1){
+                $payModel = M('order_train');
+                $payCount = $payModel -> where(['video_id'=>$value['id'],'status'=>1])->field('sum(amount)')->find();
+                $value['paySum'] = $payCount['sum(amount)'];
+            }
+        }
 //        dump($data); exit;
         $this->assign('data', $data);
         $this->assign('page', $show);

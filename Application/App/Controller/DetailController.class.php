@@ -576,4 +576,30 @@ class DetailController extends Controller
             apiReturn('1020',AJAX_TRUE,$get_dat);   //获取数据成功
         }
     }
+
+    //查询评价
+    public function evaluate_view()
+    {
+        $AesMct = new MCrypt;
+        $type = $AesMct->decrypt(urldecode(I('post.type')));      //评价类型 0好评 1差评
+        $uid = $AesMct->decrypt(urldecode(I('post.uid')));      //律师ID
+//        $type = urldecode(I('get.type'));      //评价类型 0好评 1差评
+//        $uid = urldecode(I('get.uid'));      //评价类型 0好评 1差评
+        $where = array(
+            'type' => $type,
+            'uid' => $uid
+        );
+        $model = D('EvaluateRelation');
+        $data = $model
+            ->relation(true)
+            ->where($where)
+            ->field('id,customer,uid,content,type,direct,time')
+            ->order('time desc')
+            ->select();
+        if($data == null){
+            apiReturn('1020',AJAX_TRUE,"");
+        }
+        apiReturn('1020',AJAX_TRUE,$data);
+    }
+
 }

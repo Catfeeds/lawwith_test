@@ -1,0 +1,544 @@
+[ 2018-11-14T10:21:49+08:00 ] 127.0.0.1 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.020001s ]
+SQL: UPDATE `lx_user` SET `login_at`=1542162109,`loginip`='127.0.0.1' WHERE ( `id` = 4 ) [ RunTime:0.040000s ]
+NOTIC: [8] Undefined index: superadmin D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Org\Util\Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=2 and node.pid=100 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=101 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=132 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=145 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=162 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=171 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=193 and node.status=1 [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-14T10:30:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-14T10:30:28+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-14T10:56:00+08:00 ] 127.0.0.1 /Admin/video/index
+ERR: Think\Model:filed方法不存在！
+
+[ 2018-11-14T11:10:40+08:00 ] 127.0.0.1 /Public/Jquery_Upload/jquery.form.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-14T11:10:48+08:00 ] 127.0.0.1 /Public/Jquery_Upload/jquery.form.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-14T14:07:59+08:00 ] 127.0.0.1 /App/User/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-14T14:09:45+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:10:42+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: D方法实例化没找到模型类App\Model\EvaluateModel
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:10:43+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: D方法实例化没找到模型类App\Model\EvaluateModel
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:07+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: D方法实例化没找到模型类App\Model\EvaluateRelationModel
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.015001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:08+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: D方法实例化没找到模型类App\Model\EvaluateRelationModel
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.011000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:09+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: D方法实例化没找到模型类App\Model\EvaluateRelationModel
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:09+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: D方法实例化没找到模型类App\Model\EvaluateRelationModel
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.020001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:16+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.015001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:16+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:17+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.020000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:11:17+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.015001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:13:57+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:13:58+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.020001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:13:59+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.012000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:13:59+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.015001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:14:00+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:14:00+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.016001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:14:01+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.018001s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:14:01+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:15:29+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.021000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.024001s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.006000s ]
+
+[ 2018-11-14T14:16:35+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=1&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 1 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-14T14:16:43+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:17:41+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate_relation` [ RunTime:0.020000s ]
+ERR: 1146:Table 'lawwith_test.lx_evaluate_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_evaluate_relation`
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-14T14:19:30+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:21:53+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.009000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:23:07+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 3 ) ORDER BY time desc  [ RunTime:0.020000s ]
+
+[ 2018-11-14T14:23:49+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 3 ) ORDER BY time desc  [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:23:55+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 1 ) ORDER BY time desc  [ RunTime:0.020000s ]
+
+[ 2018-11-14T14:23:58+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.016001s ]
+
+[ 2018-11-14T14:28:21+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542176901) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+ERR: Think\Model:update方法不存在！
+
+[ 2018-11-14T14:28:48+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542176928) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+ERR: Think\Model:update方法不存在！
+
+[ 2018-11-14T14:29:23+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 628 行.
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542176963) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+ERR: Think\Model:update方法不存在！
+
+[ 2018-11-14T14:29:34+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542176974) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+ERR: Think\Model:update方法不存在！
+
+[ 2018-11-14T14:33:35+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177214) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: UPDATE `lx_account` SET `direct_time`=123 WHERE ( `id` = 2 ) [ RunTime:0.010001s ]
+
+[ 2018-11-14T14:33:44+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177224) [ RunTime:0.026001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015000s ]
+SQL: UPDATE `lx_account` SET `direct_time`=123 WHERE ( `id` = 2 ) [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:34:02+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010001s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177242) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: UPDATE `lx_account` SET `direct_time`=123 WHERE ( `id` = 2 ) [ RunTime:0.020000s ]
+
+[ 2018-11-14T14:34:26+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177265) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: UPDATE `lx_account` SET `direct_time`=0 WHERE ( `id` = 2 ) [ RunTime:0.016001s ]
+
+[ 2018-11-14T14:34:54+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177294) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Model.class.php 第 252 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 280 行.
+NOTIC: [8] Undefined variable: set D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 293 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 293 行.
+SQL: UPDATE `lx_account` SET  WHERE ( `id` = 2 ) [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ( `id` = 2 )' at line 1
+ [ SQL语句 ] : UPDATE `lx_account` SET  WHERE ( `id` = 2 )
+
+[ 2018-11-14T14:36:27+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177386) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+NOTIC: [8] Undefined variable: set D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 293 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 293 行.
+SQL: UPDATE `lx_account` SET  WHERE ( `id` = 2 ) [ RunTime:0.017000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ( `id` = 2 )' at line 1
+ [ SQL语句 ] : UPDATE `lx_account` SET  WHERE ( `id` = 2 )
+
+[ 2018-11-14T14:36:48+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177408) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+NOTIC: [8] Undefined variable: set D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 293 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 293 行.
+SQL: UPDATE `lx_account` SET  WHERE ( `id` = 2 ) [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ( `id` = 2 )' at line 1
+ [ SQL语句 ] : UPDATE `lx_account` SET  WHERE ( `id` = 2 )
+
+[ 2018-11-14T14:37:11+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,123,1542177431) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020001s ]
+SQL: UPDATE `lx_account` SET `direct_time`=123 WHERE ( `id` = 2 ) [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:37:19+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.014001s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,1231111,1542177438) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: UPDATE `lx_account` SET `direct_time`=1231111 WHERE ( `id` = 2 ) [ RunTime:0.011001s ]
+
+[ 2018-11-14T14:37:23+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,1231111,1542177443) [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: UPDATE `lx_account` SET `direct_time`=1231111 WHERE ( `id` = 2 ) [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:46:00+08:00 ] 127.0.0.1 /App/Detail/evaluate_add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: INSERT INTO `lx_evaluate` (`customer`,`uid`,`content`,`type`,`direct`,`time`) VALUES (1,2,'内容',0,1231111,1542177960) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: UPDATE `lx_account` SET `direct_time`=direct_time+1231111 WHERE ( `id` = 2 ) [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:47:05+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 0 ) ORDER BY time desc  [ RunTime:0.008000s ]
+
+[ 2018-11-14T14:47:07+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 0 ) ORDER BY time desc  [ RunTime:0.015001s ]
+
+[ 2018-11-14T14:47:14+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 0 ) ORDER BY time desc  [ RunTime:0.023000s ]
+
+[ 2018-11-14T14:47:18+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 0 ) ORDER BY time desc  [ RunTime:0.016000s ]
+
+[ 2018-11-14T14:47:39+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.021000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.024001s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.008000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-14T14:47:59+08:00 ] 127.0.0.1 /App/Detail/evaluate_view/?type=0&uid=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_evaluate` [ RunTime:0.016001s ]
+SQL: SELECT `id`,`customer`,`uid`,`content`,`type`,`direct`,`time` FROM `lx_evaluate` WHERE ( `type` = 0 ) AND ( `uid` = 2 ) ORDER BY time desc  [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
+

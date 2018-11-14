@@ -1,139 +1,1 @@
-<include file="Public/main" />
-<link rel="stylesheet" href="__CSS__/page.css"/>
-<include file="Public/header"/>
-<div class="page-title">
-    <div class="title-env">
-        <h1 class="title">{$meta_title}</h1>
-        <p class="description">{$meta_describe}</p>
-    </div>
-    <div class="breadcrumb-env">
-
-        <ol class="breadcrumb bc-1">
-            <li>
-                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>
-            </li>
-            <li>
-                <a>内容管理</a>
-            </li>
-            <li class="active">
-                <strong>{$meta_title}</strong>
-            </li>
-        </ol>
-
-    </div>
-
-</div>
-<div class="row">
-    <div class="album-header">
-        <button class="btn btn-success btn-icon" onclick="addLive()" >
-            <span>新建频道</span>
-        </button>
-    </div>
-    <table class="table table-bordered table-striped" id="train_list">
-        <thead>
-        <tr>
-            <th>频道名称</th>
-            <th>缩略图</th>
-            <th>主播</th>
-            <th>专业领域</th>
-            <th>创建时间</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody class="middle-align">
-            <foreach name="data" item="vo">
-                <tr>
-                    <td class="col-lg-2"><span>{$vo.name}</span>
-                        <if condition="$vo.is_private eq 0">
-                        <span class="btn btn-pink btn-sm btn-icon">不公开</span></if>
-                    </td>
-                    <td><notempty name="vo.thumb_img"><img src="{$vo.thumb_img}" width="200px;" height="140px;"><else/>暂无</notempty></td>
-                    <td><span>{$vo.mobile}</span></td>
-                    <td>
-                        <volist name=":explode(',',$vo['tag_major'])" id="dat_vo">
-                            <volist name="majors" id="major_vo">
-                                <if condition="$major_vo['id'] eq $dat_vo">
-                                    <span>【{$major_vo.major_name}】</span>
-                                </if>
-                            </volist>
-                        </volist>
-                    </td>
-                    <td><span>{$vo.ctime|date='Y-m-d H:i',###}</span></td>
-                    <td>
-                    <span>
-                        &nbsp;&nbsp;
-                        <a href="{:U('Live/chatRoomDetail',array('id'=>$vo['id']))}">详情</a>
-                        &nbsp;&nbsp;
-                        <a href="/home/chat/index" target="_blank">聊天室</a>
-                        &nbsp;&nbsp;
-                        <a href="{:U('Live/chatRoomUpdate',array('id'=>$vo['id']))}">编辑</a>
-                        &nbsp;&nbsp;
-                        <if condition="$vo['status'] eq 1">
-                            <a href="{:U('Live/channelStop',array('roomid'=>lx_encrypt($vo['roomid']),'status'=>0))}">结束直播</a>
-                        <else/>
-                            <a href="{:U('Live/channelStop',array('roomid'=>lx_encrypt($vo['roomid']),'status'=>1))}" style="color: #ff2600">恢复直播</a>
-                        </if>
-                        &nbsp;&nbsp;
-                        <if condition="$vo['is_recommend'] eq 0">
-                        <a href="{:U('Live/channelRecommend',array('$channel_id'=>lx_encrypt($vo['id']), 'is_recommend'=>1) )}">
-                            推荐到精选</a>
-                        <else/>
-                            <a href="{:U('Live/channelRecommend',array('$channel_id'=>lx_encrypt($vo['id']),'is_recommend'=>0) )}">取消推荐到精选</a>
-                        </if>
-                        &nbsp;&nbsp;
-                        <if condition="$vo['is_push'] eq 0">
-                        <a href="{:U('Push/addPush',array('id'=>lx_encrypt($vo['id']), 't'=>lx_encrypt(7) ))}">
-                            推荐到首页</a>
-                        <else/>
-                            <a href="{:U('Live/cancelPush',array('id'=>lx_encrypt($vo['id']),'is_push'=>0) )}">
-                                取消推荐到首页</a>
-                        </if>
-                        &nbsp;&nbsp;
-                        <a href="{:U('Live/sendMsg',array('id'=>$vo['id']))}">发送到群</a>
-                        <!--<a href="javascript:void(0)" onclick="channelDelete()" id="channel-delete" cid="{$vo['cid']}"-->
-                            <!--status="{$vo.status}">删除</a>-->
-                    </span>
-                    </td>
-                </tr>
-            </foreach>
-        </tbody>
-    </table>
-    <div class="flickr">{$page}</div>
-</div>
-<script type="text/javascript">
-    function addLive(){
-        window.location.href = "{:U('Live/channelCreate')}";
-    }
-
-    function channelDelete() {
-        var status = $("#channel-delete").attr("status");
-        var cid = $("#channel-delete").val();
-        console.log(status);
-        if(status == '1'){
-            alert(status);
-            //alert('直播还未结束,不得删除。若直播已结束，请先点击结束直播，再删除');
-            return false;
-        }
-
-        $.ajax({
-            type:"post",
-            dataType:"json",
-            async: true,
-            url:"{:U('Live/channelDelete')}",
-            data:{cid: cid},
-            success:function(data){
-                if(data.status == 0) {
-                    $(".error").html(data.msg);
-                }
-
-                if(data.status == 1){
-                    $("#btn-submit").alert(data);
-                }
-            },
-            error:function(){
-                console.log('请求失败');
-            }
-        });
-    }
-</script>
-<include file="Public/footer" />
+<include file="Public/main" /><link rel="stylesheet" href="__CSS__/page.css"/><include file="Public/header"/><div class="page-title">    <div class="title-env">        <h1 class="title">{$meta_title}</h1>        <p class="description">{$meta_describe}</p>    </div>    <div class="breadcrumb-env">        <ol class="breadcrumb bc-1">            <li>                <a href="{:U('Index/index')}"><i class="fa-home"></i>首页</a>            </li>            <li>                <a>内容管理</a>            </li>            <li class="active">                <strong>{$meta_title}</strong>            </li>        </ol>    </div></div><div class="row">    <div class="album-header">        <button class="btn btn-success btn-icon" onclick="addLive()" >            <span>新建频道</span>        </button>    </div>    <table class="table table-bordered table-striped" id="train_list">        <thead>        <tr>            <th>频道名称</th>            <th>缩略图</th>            <th>主播</th>            <th>专业领域</th>            <th>创建时间</th>            <th>操作</th>        </tr>        </thead>        <tbody class="middle-align">            <foreach name="data" item="vo">                <tr onclick="location.href='{:U('Live/chatRoomDetail',array('id'=>$vo['id']))}'">                    <td class="col-lg-2"><span>{$vo.name}</span>                        <if condition="$vo.is_private eq 0">                        <span class="btn btn-pink btn-sm btn-icon">不公开</span></if>                    </td>                    <td><notempty name="vo.thumb_img"><img src="{$vo.thumb_img}" width="200px;" height="140px;"><else/>暂无</notempty></td>                    <td><span>{$vo.mobile}</span></td>                    <td>                        <volist name=":explode(',',$vo['tag_major'])" id="dat_vo">                            <volist name="majors" id="major_vo">                                <if condition="$major_vo['id'] eq $dat_vo">                                    <span>【{$major_vo.major_name}】</span>                                </if>                            </volist>                        </volist>                    </td>                    <td><span>{$vo.ctime|date='Y-m-d H:i',###}</span></td>                    <td>                    <span>                        &nbsp;&nbsp;                        <a href="{:U('Live/chatRoomDetail',array('id'=>$vo['id']))}">详情</a>                        &nbsp;&nbsp;                        <a href="/home/chat/index" target="_blank">聊天室</a>                        &nbsp;&nbsp;                        <a href="{:U('Live/chatRoomUpdate',array('id'=>$vo['id']))}">编辑</a>                        &nbsp;&nbsp;                        <if condition="$vo['status'] eq 1">                            <a href="{:U('Live/channelStop',array('roomid'=>lx_encrypt($vo['roomid']),'status'=>0))}">结束直播</a>                        <else/>                            <a href="{:U('Live/channelStop',array('roomid'=>lx_encrypt($vo['roomid']),'status'=>1))}" style="color: #ff2600">恢复直播</a>                        </if>                        &nbsp;&nbsp;                        <if condition="$vo['is_recommend'] eq 0">                        <a href="{:U('Live/channelRecommend',array('$channel_id'=>lx_encrypt($vo['id']), 'is_recommend'=>1) )}">                            推荐到精选</a>                        <else/>                            <a href="{:U('Live/channelRecommend',array('$channel_id'=>lx_encrypt($vo['id']),'is_recommend'=>0) )}">取消推荐到精选</a>                        </if>                        &nbsp;&nbsp;                        <if condition="$vo['is_push'] eq 0">                        <a href="{:U('Push/addPush',array('id'=>lx_encrypt($vo['id']), 't'=>lx_encrypt(7) ))}">                            推荐到首页</a>                        <else/>                            <a href="{:U('Live/cancelPush',array('id'=>lx_encrypt($vo['id']),'is_push'=>0) )}">                                取消推荐到首页</a>                        </if>                        &nbsp;&nbsp;                        <a href="{:U('Live/sendMsg',array('id'=>$vo['id']))}">发送到群</a>                        <!--<a href="javascript:void(0)" onclick="channelDelete()" id="channel-delete" cid="{$vo['cid']}"-->                            <!--status="{$vo.status}">删除</a>-->                    </span>                    </td>                </tr>            </foreach>        </tbody>    </table>    <div class="flickr">{$page}</div></div><script type="text/javascript">    function addLive(){        window.location.href = "{:U('Live/channelCreate')}";    }    function channelDelete() {        var status = $("#channel-delete").attr("status");        var cid = $("#channel-delete").val();        console.log(status);        if(status == '1'){            alert(status);            //alert('直播还未结束,不得删除。若直播已结束，请先点击结束直播，再删除');            return false;        }        $.ajax({            type:"post",            dataType:"json",            async: true,            url:"{:U('Live/channelDelete')}",            data:{cid: cid},            success:function(data){                if(data.status == 0) {                    $(".error").html(data.msg);                }                if(data.status == 1){                    $("#btn-submit").alert(data);                }            },            error:function(){                console.log('请求失败');            }        });    }</script><include file="Public/footer" />

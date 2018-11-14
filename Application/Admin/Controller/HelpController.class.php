@@ -81,6 +81,7 @@ class HelpController extends AdminController
                     = $letv->videoGetPlayinterface($uu, video_info($val['comm_content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
             }
         }
+//        dump($article[0]);exit;
         $this->assign('info', $article[0]);
         $this->meta_title = '查看详情';
         $this->display();

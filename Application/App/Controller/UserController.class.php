@@ -1155,4 +1155,31 @@ class UserController extends BasicController
             apiReturn('1023', AJAX_FALSE);
         }
     }
+
+    //新添直连评价
+    public function evaluate_add()
+    {
+        $AesMct = new MCrypt;
+        $customer = $AesMct->decrypt(urldecode(I('post.customer')));      //评价人ID
+        $uid = $AesMct->decrypt(urldecode(I('post.uid')));      //被评价人ID
+        $content = $AesMct->decrypt(urldecode(I('post.content')));      //评价内容
+        $type = $AesMct->decrypt(urldecode(I('post.type')));      //评价类型 0好评 1差评
+        $direct = $AesMct->decrypt(urldecode(I('post.direct')));      //直连时间  单位/秒
+
+        $data = array(
+            'customer'        => $customer,
+            'uid'       => $uid,
+            'content'     => $content,
+            'type'  => $type,
+            'direct' => $direct,
+            'time' => time()
+        );
+        if(M('evaluate')->add($data)) {     //添加评价记录
+            M('account')->where(['id'=>$uid])->setInc('direct_time',$direct); //给被评价人更新连接时长
+            apiReturn('1024', AJAX_TRUE);    // 添加成功
+        } else {
+            apiReturn('1023', AJAX_FALSE);
+        }
+    }
+
 }
