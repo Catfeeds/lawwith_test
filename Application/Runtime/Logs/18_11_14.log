@@ -542,3 +542,15 @@ SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
 SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.020000s ]
 SQL: SELECT `id`,`icon` FROM `lx_account` WHERE ( 1=1 AND id='1' ) LIMIT 1   [ RunTime:0.010000s ]
 
+[ 2018-11-14T16:19:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-14T16:19:52+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
