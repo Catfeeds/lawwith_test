@@ -193,7 +193,7 @@ class ActivityController extends AdminController
         $data_info = D('ActivityRelation')->relation(true)->where('id=' . $id)->select();
         if ($data_info[0]['is_money'] == 1){
             $temp = M('Order_activity')->select(false);
-            $data_list = M()->field('a.uname uname,a.icon icon,b.create_date time,b.amount')->table('lx_account a')->join('left join ('.$temp.')b on a.id = b.user_id')->where('b.activity_id = '.$id)->select();
+            $data_list = M()->field('a.uname uname,a.icon icon,b.create_date time,b.amount')->table('lx_account a')->join('left join ('.$temp.')b on a.id = b.user_id')->where('b.activity_id = '.$id.' and b.status=1')->select();
             $data_info[0]['userList'] = $data_list;
         }else{
             $temp = M('Activity_part')->select(false);
