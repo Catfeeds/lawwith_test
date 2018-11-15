@@ -1181,5 +1181,4 @@ class UserController extends BasicController
             apiReturn('1023', AJAX_FALSE);
         }
     }
-
 }
