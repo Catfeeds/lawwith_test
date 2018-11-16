@@ -14,9 +14,10 @@ use Common\Api\MCrypt;
 class LoginController extends Controller
 {
     //获取验证码
-    public function sendCode() {
+    public function login() {
         $AesMcrypt = new MCrypt;
-        $accid     = $AesMcrypt->decrypt(urldecode(I('post.tel')));
+        $accid     = $AesMcrypt->decrypt(urldecode(I('get.tel')));
+//        $accid     = I('get.tel');
         $cache_tel = S('send_tel');
         $yunxin    = new ChatApi;
 
@@ -70,22 +71,90 @@ class LoginController extends Controller
 
 
     //校验短信验证码
-    public function checkSMS() {
+    public function checkSMS()
+    {
         $AesMcrypt = new MCrypt; //调用AES加密接口
-        $yunxin    = new ChatApi;  //调用云信接口
-        $p_accid   = urldecode(I('post.tel')); //过滤手机号加密字符
-        $p_code    = urldecode(I('post.code')); //过滤验证码加密字符
-        $accid     = $AesMcrypt->decrypt($p_accid);
-        $code      = $AesMcrypt->decrypt($p_code);
-        $res       = $yunxin->verifycode($accid, $code); //实例化校验短信验证码
-        if($res['code'] == 200) {
-            apiReturn('1002', AJAX_TRUE); //校验验证码成功
-        } else {
-            apiReturn('1003', AJAX_FALSE, '验证码验证失败'); //校验失败
+        $yunxin = new ChatApi;  //调用云信接口
+        $p_accid = urldecode(I('get.tel')); //过滤手机号加密字符
+        $p_code = urldecode(I('get.code')); //过滤验证码加密字符
+        $accid = $AesMcrypt->decrypt($p_accid);
+        $code = $AesMcrypt->decrypt($p_code);
+//        $accid = urldecode(I('get.tel')); //过滤手机号加密字符
+//        $code = urldecode(I('get.code')); //过滤验证码加密字符
+//        $accid = $AesMcrypt->decrypt($p_accid);
+//        $code = $AesMcrypt->decrypt($p_code);
+        $res = $yunxin->verifycode($accid, $code); //实例化校验短信验证码
+        if ($res['code'] == 200) {
+            $where = array('mobile' => $accid);
+            $model = D('AccountRelation');
+            $data = $model->relation(true)->where($where)->field('id,mobile,passwd,token,type,province,tag_citys,majors,law,is_hide')->find();
+            if (empty($data['mobile'])) {
+
+                    //判断用户是否已经存在云信
+                    $token = $yunxin->createUserId($accid);
+                    if ($token['code'] == 200) {
+                        $data = [
+                            'mobile' => $token['info']['accid'],
+                            'token' => $token['info']['token'],
+                            'create_at' => time(),
+                        ];
+                    } else {
+                        //如果用户已经存在云信，更新用户token并更新本地数据
+                        $toke = $yunxin->updateUserToken($accid);
+                        if ($toke['code'] !== 200) {
+                            apiReturn('1011', AJAX_FALSE);
+                        }
+                        $data = [
+                            'mobile' => $toke['info']['accid'],
+                            'token' => $toke['info']['token'],
+                            'create_at' => time(),
+                        ];
+                    }
+                    if ($uid = M('Account')->add($data)) {
+                        D('Wallet')->addUserWallet(array('uid' => $uid));
+
+                        //标记邀请账号已激活
+                        if ($refer_id = M('Invite')->where('mobile=' . $accid)->getField('refer_id')) {
+                            M('Invite')->where('mobile=' . $accid)->save(
+                                [
+                                    'is_actived' => '1',
+                                    'actived_time' => $_SERVER["REQUEST_TIME"]
+                                ]);
+
+                            //给邀请者发推送通知
+                            $invite_mobile = user_info($refer_id, 'mobile');
+                            $count = M('Invite')->where(['refer_id' => $refer_id, 'is_actived' => '1'])->count();
+                            $alias['alias'] = explode(',', $invite_mobile);
+                            send_message_push('all', $alias, '您已成功邀请' . $count . '人');
+                        }
+                        $user_info = $model->relation(true)->where($where)->field('id,mobile,passwd,token,type,province,tag_citys,majors,law,is_hide')->find();
+                        $res['is_user'] = false;
+                        $res['user_info'] = $user_info;
+                        apiReturn('1004', AJAX_TRUE, $res);  //注册成功
+                    }else{
+                        apiReturn('1003', AJAX_FALSE, '注册失败,请重试');
+                    }
+                } else {
+                    $user = array(
+                        'token' => $data['token'], //用户唯一标识
+                        'role' => $data['type'], //用户身份标识
+                        'uid' => $data['id'], //用户id
+                        'province' => $data['province'], //所在省（直辖市）
+                        'citys' => $data['tag_citys'],  //城市标签
+                        'majors' => $data['majors'], //专业标签
+                        'is_hide' => $data['is_hide'], //是否隐藏
+                        'law' => $data['law'],    //律所id
+                        'law_info' => $data['law_info'] //律所信息
+                    );
+                }
+                $res['is_user'] = true;
+                $res['user_info'] = $user;
+                apiReturn('1004', AJAX_TRUE,$res); //校验验证码成功
+            } else {
+                apiReturn('1003', AJAX_FALSE, '验证码验证失败'); //校验失败
+            }
+
         }
-
-    }
-
 
     //获取验证码,参数未加密版本
     public function sendValidateCode() {
@@ -195,39 +264,39 @@ class LoginController extends Controller
     /**
      * 用户登陆
      */
-    public function login() {
-        $mcrypt   = new MCrypt;
-        $acid     = $mcrypt->decrypt(urldecode(I('post.tel'))); //手机号码
-        $password = $mcrypt->decrypt(urldecode(I('post.password'))); //登陆密码
-
-        if(empty($acid)) {
-            apiReturn('1005', AJAX_FALSE, '手机号不能为空');
-        }
-
-        $where = array('mobile' => $acid);
-        $model = D('AccountRelation');
-        $data
-               = $model->relation(true)->where($where)->field('id,mobile,passwd,token,type,province,tag_citys,majors,law,is_hide')->find();
-        if(empty($data['mobile'])) {
-            apiReturn('1006', AJAX_FALSE, '您还没有未注册，请注册后登录');
-        }
-        if($password == $data['passwd']) {
-            $user = array(
-                'token'    => $data['token'], //用户唯一标识
-                'role'     => $data['type'], //用户身份标识
-                'uid'      => $data['id'], //用户id
-                'province' => $data['province'], //所在省（直辖市）
-                'citys'    => $data['tag_citys'],  //城市标签
-                'majors'   => $data['majors'], //专业标签
-                'is_hide'  => $data['is_hide'], //是否隐藏
-                'law'      => $data['law'],    //律所id
-                'law_info' => $data['law_info'] //律所信息
-            );
-            apiReturn('1010', AJAX_TRUE, $user);
-        } else {
-            apiReturn('1011', AJAX_FALSE, '密码不正确，请重试或找回密码');
-        }
-    }
+//    public function login() {
+//        $mcrypt   = new MCrypt;
+//        $acid     = $mcrypt->decrypt(urldecode(I('post.tel'))); //手机号码
+//        $password = $mcrypt->decrypt(urldecode(I('post.password'))); //登陆密码
+//
+//        if(empty($acid)) {
+//            apiReturn('1005', AJAX_FALSE, '手机号不能为空');
+//        }
+//
+//        $where = array('mobile' => $acid);
+//        $model = D('AccountRelation');
+//        $data
+//               = $model->relation(true)->where($where)->field('id,mobile,passwd,token,type,province,tag_citys,majors,law,is_hide')->find();
+//        if(empty($data['mobile'])) {
+//            apiReturn('1006', AJAX_FALSE, '您还没有未注册，请注册后登录');
+//        }
+//        if($password == $data['passwd']) {
+//            $user = array(
+//                'token'    => $data['token'], //用户唯一标识
+//                'role'     => $data['type'], //用户身份标识
+//                'uid'      => $data['id'], //用户id
+//                'province' => $data['province'], //所在省（直辖市）
+//                'citys'    => $data['tag_citys'],  //城市标签
+//                'majors'   => $data['majors'], //专业标签
+//                'is_hide'  => $data['is_hide'], //是否隐藏
+//                'law'      => $data['law'],    //律所id
+//                'law_info' => $data['law_info'] //律所信息
+//            );
+//            apiReturn('1010', AJAX_TRUE, $user);
+//        } else {
+//            apiReturn('1011', AJAX_FALSE, '密码不正确，请重试或找回密码');
+//        }
+//    }
 
 
     /**

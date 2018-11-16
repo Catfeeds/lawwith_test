@@ -697,3 +697,169 @@ NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\
 NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
 NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
 
+[ 2018-11-16T14:50:31+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:my_comment
+
+[ 2018-11-16T15:53:02+08:00 ] 127.0.0.1 /App/Login/logion?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:logion
+
+[ 2018-11-16T15:53:26+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] unserialize(): Error at offset 0 of 21 bytes D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 104 行.
+
+[ 2018-11-16T15:54:01+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=9838
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.020000s ]
+NOTIC: [2] json_decode() expects parameter 1 to be string, object given D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ChatApi.class.php 第 56 行.
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.013000s ]
+SQL: INSERT INTO `lx_account` (`mobile`,`token`,`create_at`) VALUES ('15354215474','5b6071aff93dd0280ab13523bea6413f',1542354841) [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_wallet` (`uid`) VALUES (5802) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_invite` [ RunTime:0.010000s ]
+SQL: SELECT `refer_id` FROM `lx_invite` WHERE ( mobile=15354215474 ) LIMIT 1   [ RunTime:0.024000s ]
+
+[ 2018-11-16T15:57:24+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-16T15:57:50+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-16T15:58:16+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-16T15:58:52+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-16T15:59:17+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=9838
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-16T15:59:49+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=1265
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.011001s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.020000s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: law_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\LoginController.class.php 第 146 行.
+
+[ 2018-11-16T16:00:09+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=1265
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.023001s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: law_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\LoginController.class.php 第 146 行.
+
+[ 2018-11-16T16:00:49+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=1265
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [2] json_decode() expects parameter 1 to be string, object given D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ChatApi.class.php 第 56 行.
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_account` (`mobile`,`token`,`create_at`) VALUES ('15354215474','6285f9a9ab0ededca880c5c52db382e3',1542355249) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.022000s ]
+SQL: INSERT INTO `lx_wallet` (`uid`) VALUES (5803) [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `lx_invite` [ RunTime:0.016001s ]
+SQL: SELECT `refer_id` FROM `lx_invite` WHERE ( mobile=15354215474 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-16T16:01:45+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=1265
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.024001s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.016001s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='0' ) LIMIT 1   [ RunTime:0.016000s ]
+NOTIC: [8] Undefined index: law_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\LoginController.class.php 第 146 行.
+
+[ 2018-11-16T16:20:04+08:00 ] 127.0.0.1 /App/Login/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-16T16:30:17+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-16T16:30:35+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=3086
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [2] json_decode() expects parameter 1 to be string, object given D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ChatApi.class.php 第 56 行.
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_account` (`mobile`,`token`,`create_at`) VALUES ('15354215474','4fbc19f82a6e56c275ce20b6328aec2b',1542357035) [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_wallet` (`uid`) VALUES (5804) [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_invite` [ RunTime:0.023001s ]
+SQL: SELECT `refer_id` FROM `lx_invite` WHERE ( mobile=15354215474 ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.010000s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='0' ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-16T16:49:02+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-16T16:49:38+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=9629
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.010000s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='0' ) LIMIT 1   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: law_info D:\phpStudy\WWW\lawwith_test\Application\App\Controller\LoginController.class.php 第 147 行.
+
+[ 2018-11-16T16:50:52+08:00 ] 127.0.0.1 /App/Login/checkSMS?tel=15354215474&code=9629
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020001s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [2] json_decode() expects parameter 1 to be string, object given D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ChatApi.class.php 第 56 行.
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.012001s ]
+SQL: INSERT INTO `lx_account` (`mobile`,`token`,`create_at`) VALUES ('15354215474','515a934f80729a6629ad5867591a1ce0',1542358251) [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.020000s ]
+SQL: INSERT INTO `lx_wallet` (`uid`) VALUES (5805) [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_invite` [ RunTime:0.020000s ]
+SQL: SELECT `refer_id` FROM `lx_invite` WHERE ( mobile=15354215474 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`mobile`,`passwd`,`token`,`type`,`province`,`tag_citys`,`majors`,`law`,`is_hide` FROM `lx_account` WHERE ( `mobile` = '15354215474' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.020000s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+
