@@ -21,6 +21,7 @@ class DetailController extends Controller
         $cid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
 	    $is_read = I('post.is_read');
 
+	    //获取求助帖子的id
 	    if(empty($cid)) apiReturn('1022',AJAX_FALSE,'缺少必要参数');
 
 	    //回复列表是否已读
@@ -35,11 +36,14 @@ class DetailController extends Controller
             $data['is_help'] = false; //未解决
         }
 
+        //根据帖子的id去查询
 	    $model1 = D('ResourceRelation');
-	    $data = $model1->relation(true)
+        $tempData = $model1->relation(true)
 	        ->where('id='.$cid)
 	        ->field('id,title,content,author,tag_major,imgs,views,send_time,tbd_id,type,status,is_nym,is_admin,is_money,red_status,redpack_id,author_amount,post_amount,likes,is_reward,reward_money')
-	        ->find();
+	        ->select();
+
+        $data = array_merge($data,$tempData[0]);
 
 	    //当前用户是否点赞
 	    $data['my_id'] = session('my_id');
@@ -142,7 +146,11 @@ class DetailController extends Controller
 		$nowPage = I('post.nowpage'); //页码
 		$num = I('post.num');    //每页显示条数
 		$uid = session('my_id');    //当前用户id
-		$model = D('ResourceComment');
+
+        $width = I('post.width');
+        $height = I('post.height');
+
+        $model = D('ResourceComment');
 		$order = ['tbd' => 'desc', 'time' => 'desc'];
 
 		if(!empty($pid)){
@@ -159,11 +167,25 @@ class DetailController extends Controller
 		$arr = array();
 		foreach($data as $k => $v){
 			foreach($v as $m => $n){
-				$arr[$k][$m] = $n;
-				$arr[$k]['my_id'] = $uid;   //当前用户id
-				$arr[$k]['sums_page'] = intval(ceil($count/$num));;   //数据总页数
+			    $arr[$k][$m] = $n;
+                $arr[$k]['my_id'] = $uid;   //当前用户id
+                $arr[$k]['sums_page'] = intval(ceil($count/$num));   //数据总页数
 
-				//未登录状态，是否点过赞为0
+                //是否为视频回复
+                if($arr[$k]['type'] == 1){
+                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                    $type = 'url';  //接口类型
+                    $auto_play = 0; //是否自动播放
+                    $letv = new LetvCloud;
+                    //获取视频
+                    $arr[$k]['content']
+                        = $letv->videoGetPlayinterface($uu, video_info($n['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+                    //获取视频截图
+//                    $arr[$k]['image'] = $letv->imageGet(video_info($arr[$k]['content'], 'video_id'), $imageSize);
+                }
+
+                //未登录状态，是否点过赞为0
 				if (empty($uid)) {
 					$arr[$k]['user_like']['counts'] = "0";
 					$arr[$k]['user_dislike']['counts'] = "0";
@@ -187,6 +209,10 @@ class DetailController extends Controller
 		$nowPage = I('post.nowpage'); //页码
 		$num = I('post.num');    //每页显示条数
 
+        $width = I('post.width');   //播放器宽度
+        $height = I('post.height'); //播放器高度
+        $imageSize = I('post.imageSize'); //视频截图尺寸
+
 		$model = D('ResourceComment');
 		$order = ['tbd' => 'desc', 'time' => 'desc'];
 
@@ -207,7 +233,21 @@ class DetailController extends Controller
 				$arr[$k]['my_id'] = $uid;   //当前用户id
 				$arr[$k]['sums_page'] = intval(ceil($count/$num));;   //数据总页数
 
-				//未登录状态，是否点过赞为0
+                //回复是否为视频回复
+                if($arr[$k]['type'] == 1){
+                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                    $type = 'url';  //接口类型
+                    $auto_play = 0; //是否自动播放
+                    $letv = new LetvCloud;
+                    //获取视频
+                    $arr[$k]['content']
+                        = $letv->videoGetPlayinterface($uu, video_info($n['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+//                    //获取视频截图
+//                    $arr[$k][$m]['image'] = $letv->imageGet(video_info($arr[$k][$m]['content'], 'video_id'), $imageSize);
+                }
+
+                //未登录状态，是否点过赞为0
 				if (empty($uid)) {
 					$arr[$k]['user_like']['counts'] = "0";
 					$arr[$k]['user_dislike']['counts'] = "0";
@@ -239,10 +279,27 @@ class DetailController extends Controller
     public function comment_detail()
     {
         $commentId = I('get.comment_id');
-        if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
-        $comment = M('resoource_comment')->where(array('id'=>$commentId))->find();
+        //获取播放器宽和长
+        $width = I('get.width');
+        $height = I('get.height');
 
-        apiReturn('200', AJAX_TRUE, $comment);
+        if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
+//        $comment = M('resource_comment')->where(array('id'=>$commentId))->find();
+        $getUser = M('Account')->select(false);
+        $data = M()->table('resouce_comment a')->join('left join '.$getUser.'b on a.uid = b.id')->where(array('a.id'=>$commentId))->select();
+        foreach($data as &$k){
+            if ($k['type'] == 1){
+                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                    $type = 'url';  //接口类型
+                    $auto_play = 0; //是否自动播放
+                    $letv = new LetvCloud;
+                    //获取视频
+                    $k['content']
+                        = $letv->videoGetPlayinterface($uu, video_info($k['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+            }
+        }
+        apiReturn('200', AJAX_TRUE, $data);
     }
 
     //律所详情

@@ -67,7 +67,8 @@ class IndexController extends Controller
     }
 
 
-    //首页banner推荐  推送类别 1.帖子 2.求助 3.活动 4.视频 5.律所 6.用户 7直播
+    // 旧的: 1.帖子 2.求助 3.活动 4.视频 5.律所 6.用户 7直播
+    //新的: 首页banner推荐 推送类别1.求助 2.免费直播 3.免费视频 4.活动 5.文章 6.律所 7.律师 8.学者 9.法务
     public function index_banner()
     {
         $data = M('Push')->where('mark=1')->field('cid,banner,c_type,author')->order('sort, push_time desc')->select();
