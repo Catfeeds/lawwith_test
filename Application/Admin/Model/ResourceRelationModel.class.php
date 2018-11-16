@@ -70,7 +70,7 @@ class ResourceRelationModel extends RelationModel
             'class_name' => 'account',
             'foreign_key' => 'author',
             'mapping_name' => 'author_info',
-            'mapping_fields' => 'id,uname,mobile,icon,law,company,position,school,type,status'
+            'mapping_fields' => 'id,uname,mobile,icon,law,company,position,school,type,status,credit'
         ),
 
         //红包信息
