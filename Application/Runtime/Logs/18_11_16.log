@@ -1,0 +1,699 @@
+[ 2018-11-16T09:53:12+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_activity` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`title`,`address`,`number`,`price`,`star_time`,`end_time`,`views`,`status`,`send_time`,`imgs`,`type`,`author`,`deadline`,`is_money`,`amount` FROM `lx_activity` WHERE ( `status` <> 0 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,   [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`address`,`number`,`price`,`star_time`,`end_time`,`views`,`status`,`send_time`,`imgs`,`type`,`author`,`deadline`,`is_money`,`amount` FROM `lx_activity` WHERE ( `status` <> 0 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ApiPage.class.php 第 61 行.
+
+[ 2018-11-16T09:53:26+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_activity` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`address`,`number`,`price`,`star_time`,`end_time`,`views`,`status`,`send_time`,`imgs`,`type`,`author`,`deadline`,`is_money`,`amount` FROM `lx_activity` WHERE ( `status` <> 0 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,10   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='212' )  [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `lx_activity_favorite` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='212' )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_part` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='212' )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='211' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='211' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='211' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.019000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='178' )  [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.010001s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='178' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='178' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='177' )  [ RunTime:0.021000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='177' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='177' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='176' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='176' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='176' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='175' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='175' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='175' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='173' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='173' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='173' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='172' )  [ RunTime:0.020001s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='172' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='172' )  [ RunTime:0.021000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='169' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='169' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='169' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='168' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='168' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='168' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+
+[ 2018-11-16T10:09:54+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_relation` [ RunTime:0.020000s ]
+ERR: 1146:Table 'lawwith_test.lx_activity_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_activity_relation`
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity_relation` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_activity_relation' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_activity_relation` WHERE ( `status` <> 0 ) LIMIT 1  
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-16T10:10:16+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: D方法实例化没找到模型类.\Model\ActivityRelationModel
+SQL: SHOW COLUMNS FROM `lx_activity_relation` [ RunTime:0.020000s ]
+ERR: 1146:Table 'lawwith_test.lx_activity_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_activity_relation`
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity_relation` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_activity_relation' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_activity_relation` WHERE ( `status` <> 0 ) LIMIT 1  
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-16T10:10:17+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: D方法实例化没找到模型类.\Model\ActivityRelationModel
+SQL: SHOW COLUMNS FROM `lx_activity_relation` [ RunTime:0.020000s ]
+ERR: 1146:Table 'lawwith_test.lx_activity_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_activity_relation`
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity_relation` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.010000s ]
+ERR: 1146:Table 'lawwith_test.lx_activity_relation' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_activity_relation` WHERE ( `status` <> 0 ) LIMIT 1  
+ERR: Think\Model:relation方法不存在！
+
+[ 2018-11-16T10:12:10+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_activity` [ RunTime:0.012000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`address`,`number`,`price`,`star_time`,`end_time`,`views`,`status`,`send_time`,`imgs`,`type`,`author`,`deadline`,`is_money`,`amount` FROM `lx_activity` WHERE ( `status` <> 0 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,10   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='212' )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_favorite` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='212' )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_part` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='212' )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='211' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='211' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='211' )  [ RunTime:0.010000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.021000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='178' )  [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.011001s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='178' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='178' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='177' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='177' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.022000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='177' )  [ RunTime:0.010000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='176' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='176' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='176' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='175' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='175' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='175' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='173' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='173' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='173' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='172' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='172' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='172' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.022000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='169' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='169' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='169' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uid`,content as comm_content,`likes`,`dislikes`,`time` FROM `lx_activity_comment` WHERE ( 1=1 AND aid='168' )  [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_favorite` WHERE ( 1=1 AND aid='168' )  [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_part` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `uid`,`time` FROM `lx_activity_part` WHERE ( 1=1 AND aid='168' )  [ RunTime:0.020000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status`,`company` FROM `lx_account` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+
+[ 2018-11-16T10:12:22+08:00 ] 127.0.0.1 /App/detail/activity_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_activity` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_activity` WHERE ( `status` <> 0 ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`title`,`address`,`number`,`price`,`star_time`,`end_time`,`views`,`status`,`send_time`,`imgs`,`type`,`author`,`deadline`,`is_money`,`amount` FROM `lx_activity` WHERE ( `status` <> 0 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,10   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_activity_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='212' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='211' ) LIMIT 1   [ RunTime:0.024000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='178' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='177' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='176' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='175' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='173' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='172' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='169' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_activity_comment` WHERE ( 1=1 AND aid='168' ) LIMIT 1   [ RunTime:0.010000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 568 行.
+
+[ 2018-11-16T10:58:36+08:00 ] 127.0.0.1 /App/detail/my_comment
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= )  [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= ) 
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1  
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,   [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` de' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ApiPage.class.php 第 61 行.
+
+[ 2018-11-16T10:58:49+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=1 )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('137','193','229','234','236') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.021000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('137','193','229','234','236') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,   [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('137','193','229','234','236') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ApiPage.class.php 第 61 行.
+
+[ 2018-11-16T10:59:24+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=1&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=1 )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('137','193','229','234','236') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('137','193','229','234','236') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+
+[ 2018-11-16T10:59:32+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=2&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=2 )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('132','146','147','148','248','781','792','796') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('132','146','147','148','248','781','792','796') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+
+[ 2018-11-16T10:59:36+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=401&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=401 )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('128','524','535') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('128','524','535') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+
+[ 2018-11-16T10:59:47+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=309&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.014000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=309 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1  
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` de' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5  
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+
+[ 2018-11-16T11:00:04+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=511&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=511 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('259') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('259') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.010000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+
+[ 2018-11-16T11:00:33+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.022000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020001s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.022000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 762 行.
+
+[ 2018-11-16T14:03:34+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:my_comment
+
+[ 2018-11-16T14:06:16+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= )  [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= ) 
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1  
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,   [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` de' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ApiPage.class.php 第 61 行.
+
+[ 2018-11-16T14:06:23+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.015001s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= )  [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= ) 
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1  
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,   [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` de' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ApiPage.class.php 第 61 行.
+
+[ 2018-11-16T14:06:24+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= )  [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid= ) 
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.010000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1  
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Think\Db.class.php 第 498 行.
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,   [ RunTime:0.020000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` de' at line 1
+ [ SQL语句 ] : SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN () ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,  
+NOTIC: [2] Division by zero D:\phpStudy\WWW\lawwith_test\Application\Common\Api\ApiPage.class.php 第 61 行.
+
+[ 2018-11-16T14:06:39+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.024001s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.008000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.020001s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.011000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.024001s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 759 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 759 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 759 行.
+
+[ 2018-11-16T14:06:58+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.020000s ]
+
+[ 2018-11-16T14:12:00+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.011000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+SQL: SELECT `content`,`time`,`is_nym` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 767 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+
+[ 2018-11-16T14:13:31+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.022000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.012000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+
+[ 2018-11-16T14:14:01+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=100
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,100   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.018001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.024000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.015001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.016001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.009001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+
+[ 2018-11-16T14:14:14+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=20
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.011001s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,20   [ RunTime:0.020000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+
+[ 2018-11-16T14:14:15+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=20
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,20   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.021000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+
+[ 2018-11-16T14:14:26+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=2&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.024001s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 5,5   [ RunTime:0.017001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+
+[ 2018-11-16T14:14:30+08:00 ] 127.0.0.1 /App/detail/my_comment?tid=6&nowpage=1&num=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT DISTINCT  `rid` FROM `lx_resource_comment` WHERE ( uid=6 )  [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.020000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`title`,`send_time`,`views`,`tag_major`,`imgs`,`status` FROM `lx_resource` WHERE ( `id` IN ('129','135','139','150','168','176','179','182','184','186','190','192','200','241','242','259','265','274','279','282','284','287','299','308','310','312','313','317','342','348','356','358','365','367','369','371','393','395','397','453','460','474','484','546','554','567','568','588','614','643','683','684','707','710','719','720','722','738','755','756','781','783','801','839','887','909','910','914','921','974','977','983','991','992','1005','1007','1077','1141','1142','1192','1212','1241','1247','1256','1257','1258','1264','1313','1314','1315','1386','1462','1465','1467','1514','1515','1653','1659','1683','1726','1758','1759','1798','1813','1835','1853','1906','1975','2005','2017','2096','2097','2463','2466','2554','2629','2738','2741','2743','2744','2747','2754','2760','2764','2765','2769','2770','2838','3763','3931') ) AND ( `type` = 3 ) AND ( `status` = 1 ) ORDER BY `send_time` desc,`views` desc LIMIT 0,5   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2466' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='2463' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2466 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.010000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.020000s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.017001s ]
+SQL: SELECT `content`,`time`,`is_nym`,`type` FROM `lx_resource_comment` WHERE ( `uid` = 6 ) AND ( `rid` = 2463 ) ORDER BY time desc LIMIT 3   [ RunTime:0.006000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 761 行.
+

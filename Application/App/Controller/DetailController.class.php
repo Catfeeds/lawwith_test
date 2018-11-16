@@ -539,8 +539,10 @@ class DetailController extends Controller
 
     //活动列表
     public function activity_list() {
-        $nowPage = I('post.nowpage');   //页码
-        $num = I('post.num');   //每页条数
+        $AesMct = new MCrypt;
+
+        $nowPage = $AesMct->decrypt(urldecode(I('get.nowpage')));   //页码
+        $num = $AesMct->decrypt(urldecode(I('get.num')));   //每页条数
         $where = array('status' => array('neq',0));
         $order = array(
             'send_time'=>'desc',
@@ -548,7 +550,7 @@ class DetailController extends Controller
         );
         //数据分页
         $config = array(
-            'tablename' => 'Admin/ActivityRelation', // 表名
+            'tablename' => 'ActivityRelation', // 表名
             'relation'  => true, // 关联条件
             'where'     => $where, //条件
             'order'     => $order, // 排序
@@ -583,23 +585,132 @@ class DetailController extends Controller
         $AesMct = new MCrypt;
         $type = $AesMct->decrypt(urldecode(I('post.type')));      //评价类型 0好评 1差评
         $uid = $AesMct->decrypt(urldecode(I('post.uid')));      //律师ID
-//        $type = urldecode(I('get.type'));      //评价类型 0好评 1差评
-//        $uid = urldecode(I('get.uid'));      //评价类型 0好评 1差评
+        $nowPage = $AesMct->decrypt(urldecode(I('post.nowpage')));   //页码
+        $num = $AesMct->decrypt(urldecode(I('post.num')));   //每页条数
+//        $nowPage =I('post.nowpage');   //页码
+//        $num =I('post.num');   //每页条数
+//        $type = I('post.type');      //评价类型 0好评 1差评
+//        $uid = I('post.uid');      //律师ID
         $where = array(
             'type' => $type,
             'uid' => $uid
         );
-        $model = D('EvaluateRelation');
-        $data = $model
-            ->relation(true)
-            ->where($where)
-            ->field('id,customer,uid,content,type,direct,time')
-            ->order('time desc')
-            ->select();
-        if($data == null){
-            apiReturn('1020',AJAX_TRUE,"");
+        $order = array(
+            'time'=>'desc'
+        );
+        $config = array(
+            'tablename' => 'EvaluateRelation', // 表名
+            'relation'  => true, // 关联条件
+            'where'     => $where, //条件
+            'order'     => $order, // 排序
+            'page'      => $nowPage,  // 页码，默认为首页
+            'num'       => $num,  // 每页条数
+            'field'     => 'id,customer,uid,content,type,direct,time'
+        );
+
+        $page = new ApiPage($config);
+        $data = $page->get(); //获取分页数据
+        if($data['now_page']==0)
+        {
+            apiReturn('1019',AJAX_FALSE);   //获取数据失败
+        }else {
+            $get_dat = array();
+            foreach ($data as $k => $v) {
+                foreach ($v as $m => $n) {
+                    $get_dat[$k][$m] = $n;
+                    if(session('my_id')) {
+                        $get_dat[$k]['my_id'] = session('my_id');   //写入当前用户id
+                    }
+                    $get_dat[$k]['sums_page'] = $data['total_page'];    //总页数
+                }
+            }
+            apiReturn('1020',AJAX_TRUE,$get_dat);   //获取数据成功
         }
-        apiReturn('1020',AJAX_TRUE,$data);
     }
+
+
+
+//    //用户资料
+//    public function user_info()
+//    {
+//        $AesMct = new MCrypt;
+////        $uid = $AesMct->decrypt(urldecode(I('post.uid'))); //用户id
+////        $type = $AesMct->decrypt(urldecode(I('post.type')));    //参数类型 默认用户id 1标识手机号码
+//        $uid =urldecode(I('post.uid')); //用户id
+//        $type =urldecode(I('post.type'));    //参数类型 默认用户id 1标识手机号码
+//
+//        if(empty($uid)) {
+//            $where = array(
+//                'id' => session('my_id')
+//            );
+//        } elseif(intval($type) == 1) {
+//            $where = array(
+//                'mobile' => $uid
+//            );
+//        } else {
+//            $where = array(
+//                'id' => $uid
+//            );
+//        }
+//        $model = D('AccountRelation');
+//        $res = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,bj_img,remark,email,birth,province,city,town,tag_citys,specialty,majors,work_life,law,lawyer_num,company,position,school,hight_diploma,education,professional,prize,price,type,create_at,up_time,status,num_img,is_hide,direct_price,case_price,direct_time')->select();
+//        $data = $res[0];
+//        $num = date('y', time()) - date('y', $data['up_time']);
+//        $data['years'] = $data['work_life'] + $num;     //执业年限
+//        $data['my_id'] = session('my_id');
+//
+//        $resourceModel = M('resource_comment');
+//        $comm = $resourceModel->alias('rc')
+//            ->field('r.id,r.title')
+//            ->join('left join lx_resource  as r on rc.rid = r.id')
+//            ->where(['rc.uid'=>$data['id'],'rc.tbd'=>1,'r.status'=>1])
+//            ->group('rc.rid')
+//            ->order("time DESC")
+//            ->select();
+//        if($comm != null){
+//            foreach($comm as &$value){
+//                $array = array(
+//                    'rid'=>$value['id'],
+//                    'uid'=>$data['id'],
+//                    'rc.tbd'=>1 //查询优质回答
+//                );
+//                $content = $resourceModel->alias('rc')
+//                    ->field('id,content,type,likes,dislikes,tbd,time')
+//                    ->where($array)
+//                    ->order("time DESC")
+//                    ->select();
+//                foreach($content as &$val){
+//                    if($val['type'] == 1){
+//                        $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+//                        $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+//                        $type = 'url';  //接口类型
+//                        $auto_play = 1; //是否自动播放
+////                        $width = $AesMct->decrypt(urldecode(I('post.width')));  //播放器宽度
+////                        $height = $AesMct->decrypt(urldecode(I('post.height'))); //播放器高度
+//                        $width = $AesMct->I('post.width');  //播放器宽度
+//                        $height = $AesMct->I('post.height'); //播放器高度
+//                        $letv = new LetvCloud;
+//                        $val['content']
+//                            = $letv->videoGetPlayinterface($uu, video_info($val['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+//                    }
+//
+//                    $commentCount = $resourceModel
+//                        ->field('count(id) as count')
+//                        ->where('pid='.$val['id'])
+//                        ->find();
+//                    $val['commentCount'] = $commentCount;
+//                }
+//
+//                $value['commentInfo']=$content;
+//            }
+//        }
+//        $data['goodContent'] = $comm;
+////        if(!empty($comm)){
+////            $data['goodContent'] = $comm;
+////        }else{
+////            $data['goodContent'] = '';
+////        }
+//        apiReturn('1020', AJAX_TRUE, $data);
+//    }
 
 }

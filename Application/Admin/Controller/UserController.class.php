@@ -234,13 +234,13 @@ class UserController extends AdminController {
         $data  = $model->relation(true)->where('id='.$uid)->find();
         $resourceModel = M('resource_comment');
 
-           $comm = $resourceModel->alias('rc')
-            ->field('r.id,r.title')
-            ->join('left join lx_resource  as r on rc.rid = r.id')
-            ->where('rc.uid='.$uid)
-            ->group('rc.rid')
-            ->order("time DESC")
-            ->select();
+       $comm = $resourceModel->alias('rc')
+        ->field('r.id,r.title')
+        ->join('left join lx_resource  as r on rc.rid = r.id')
+        ->where('rc.uid='.$uid)
+        ->group('rc.rid')
+        ->order("time DESC")
+        ->select();
         if($comm != null){
             foreach($comm as &$value){
                 $array = array(

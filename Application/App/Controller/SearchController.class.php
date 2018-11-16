@@ -185,7 +185,7 @@ class SearchController extends Controller
 //                    $map['price'] = $price;
 //                }
                 $map['_logic'] = 'and';
-                $filed = 'id,uname,icon,law,majors,work_life,status,create_at,specialty';     //查询数据字段
+                $filed = 'id,uname,icon,law,majors,work_life,status,create_at,specialty,direct_time';     //查询数据字段
                 break;
             case 2:     //法务
                 $map['type'] = 2;
@@ -275,7 +275,7 @@ class SearchController extends Controller
                 $map['uname'] =  array('like','%'.$key_word.'%');   //模糊匹配用户姓名
                 $map['type']  = $type;  //用户身份
                 $map['status'] = array('neq',2);    //可用的用户
-                $filed = 'id,uname,icon,law,majors,work_life,status,create_at,specialty';     //查询数据字段
+                $filed = 'id,uname,icon,law,majors,work_life,status,create_at,specialty,direct_time';     //查询数据字段
                 break;
             case 2:
                 $map['uname'] =  array('like','%'.$key_word.'%');   //模糊匹配用户姓名
