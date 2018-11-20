@@ -279,27 +279,31 @@ class DetailController extends Controller
     public function comment_detail()
     {
         $commentId = I('get.comment_id');
-        //获取播放器宽和长
-        $width = I('get.width');
-        $height = I('get.height');
-
+//        //获取播放器宽和长
+//        $width = I('get.width');
+//        $height = I('get.height');
+//
+//        if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
+////        $comment = M('resource_comment')->where(array('id'=>$commentId))->find();
+//        $getUser = M('Account')->select(false);
+//        $data = M()->table('lx_resource_comment a')->join('left join '.$getUser.' b on a.uid = b.id')->where(array('a.id'=>$commentId))->find();
+//        foreach($data as &$k){
+//            if ($k['type'] == 1){
+//                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+//                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+//                    $type = 'url';  //接口类型
+//                    $auto_play = 0; //是否自动播放
+//                    $letv = new LetvCloud;
+//                    //获取视频
+//                    $k['content']
+//                        = $letv->videoGetPlayinterface($uu, video_info($k['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+//            }
+//        }
+//        apiReturn('200', AJAX_TRUE, $data);
         if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
-//        $comment = M('resource_comment')->where(array('id'=>$commentId))->find();
-        $getUser = M('Account')->select(false);
-        $data = M()->table('resouce_comment a')->join('left join '.$getUser.'b on a.uid = b.id')->where(array('a.id'=>$commentId))->select();
-        foreach($data as &$k){
-            if ($k['type'] == 1){
-                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
-                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
-                    $type = 'url';  //接口类型
-                    $auto_play = 0; //是否自动播放
-                    $letv = new LetvCloud;
-                    //获取视频
-                    $k['content']
-                        = $letv->videoGetPlayinterface($uu, video_info($k['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
-            }
-        }
-        apiReturn('200', AJAX_TRUE, $data);
+        $comment = M('resource_comment')->where(array('id'=>$commentId))->select();
+
+        apiReturn('200', AJAX_TRUE, $comment);
     }
 
     //律所详情
