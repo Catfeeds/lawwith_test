@@ -1,0 +1,168 @@
+[ 2018-11-20T10:56:52+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_order_call` [ RunTime:0.016000s ]
+SQL: INSERT INTO `lx_order_call` (`record_sn`,`lawer_id`,`user_id`,`amount`,`status`,`call_duration`,`create_date`) VALUES ('2018112010565212772',3,1,'0.02',1,123456,1542682612) [ RunTime:0.019002s ]
+SQL: SHOW COLUMNS FROM `lx_order` [ RunTime:0.016000s ]
+SQL: INSERT INTO `lx_order` (`order_id`,`user_id`,`record_sn`,`order_type`,`amount`,`status`,`create_date`) VALUES (6,1,'2018112010565212772','call','0.02',1,1542682612) [ RunTime:0.018002s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.016000s ]
+SQL: SELECT * FROM `lx_wallet` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet_log` [ RunTime:0.016001s ]
+NOTIC: [8] Use of undefined constant amount - assumed 'amount' D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 830 行.
+SQL: SHOW COLUMNS FROM `lx_wallet_log` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_wallet_log` (`record_sn`,`uid`,`change_money`,`money`,`remark`,`create_time`,`display`) VALUES ('2018112010565212772',1,'0.02',-0.08,'',1542682612,1) [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_record_log` [ RunTime:0.016001s ]
+NOTIC: [8] Use of undefined constant amount - assumed 'amount' D:\phpStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 834 行.
+SQL: SHOW COLUMNS FROM `lx_record_log` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_record_log` (`record_sn`,`user_id`,`money`,`trade_type`,`trade_rource`,`type`,`pay_type`,`pay_status`,`pay_time`) VALUES ('2018112010565212772',1,'amount',2,0,9,4,1,1542682612) [ RunTime:0.015001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money-0.02 WHERE ( `uid` = 1 ) [ RunTime:0.018001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+0.02 WHERE ( `uid` = 3 ) [ RunTime:0.019001s ]
+
+[ 2018-11-20T13:28:22+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.065004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.052003s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.052003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T13:28:37+08:00 ] 127.0.0.1 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.016000s ]
+SQL: UPDATE `lx_user` SET `login_at`=1542691717,`loginip`='127.0.0.1' WHERE ( `id` = 4 ) [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: superadmin D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Org\Util\Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.016000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=2 and node.pid=100 and node.status=1 [ RunTime:0.016001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=101 and node.status=1 [ RunTime:0.016001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=132 and node.status=1 [ RunTime:0.016001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=145 and node.status=1 [ RunTime:0.016001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=162 and node.status=1 [ RunTime:0.016001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=171 and node.status=1 [ RunTime:0.016001s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=193 and node.status=1 [ RunTime:0.016001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T14:24:33+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T14:24:37+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T14:24:59+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T14:25:59+08:00 ] 127.0.0.1 /App/Login/login?tel=15354215474
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-11-20T15:06:16+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:06:43+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:06:46+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:06:47+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:06:48+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T15:06:48+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T15:08:14+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T15:12:00+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-11-20T15:13:01+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T15:13:59+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:14:29+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-11-20T15:14:30+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:14:31+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:15:27+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:15:58+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-20T15:16:09+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-20T15:18:59+08:00 ] 127.0.0.1 /App/Login/login?tel=7ViItQPvAd9Hxidl2MofrlwDqukZkAyFpwEIlhHolJ3FhbsliqZ2F6KwDTN0w%2Fas
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\phpStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+

@@ -106,7 +106,7 @@ class OrderController extends BasicController
             'amount'      => $amount,
             'create_date' => $_SERVER["REQUEST_TIME"],
         ];
-        $result = M('order_train')->add($data);
+        $result = M('order_live')->add($data);
         if(!$result) {
             return false;
         }
@@ -139,7 +139,7 @@ class OrderController extends BasicController
             'amount'      => $amount,
             'create_date' => $_SERVER["REQUEST_TIME"],
         ];
-        $result = M('order_train')->add($data);
+        $result = M('order_activity')->add($data);
         if(!$result) {
             return false;
         }
@@ -151,6 +151,56 @@ class OrderController extends BasicController
 
         return ['order_id' => $orderId, 'order_sn' => $orderSn];
     }
+
+    /**
+     * @param $lawerId
+     * @param $userId
+     * @param $amount
+     * @return array|bool
+     */
+    public function createUserCallOrder($lawerId, $userId, $amount,$callDuration)
+    {
+        $orderSn = $this->uniqueOrderSn($userId);
+        $data = [
+            'record_sn'   => $orderSn,
+            'lawer_id' => $lawerId,
+            'user_id'     => $userId,
+            'amount'      => $amount,
+            'status'      => 1,
+            'call_duration' =>$callDuration,
+            'create_date' => $_SERVER["REQUEST_TIME"],
+        ];
+        $result = M('order_call')->add($data);
+        if(!$result) {
+            return false;
+        }
+
+        $data = [
+            'order_id'    => $result,
+            'record_sn'   => $orderSn,
+            'order_type'  => 'call',
+            'amount'      => $amount,
+            'status'      => 1,
+            'create_date' => $_SERVER["REQUEST_TIME"]
+        ];
+        if($orderId = M('order')->add($data)) {
+            $user = M('wallet')->where(['uid' => $userId])->find(); // 减用户的余额
+            //插入钱包变动记录
+            D('WalletLog')->addWalletRecord($orderSn, $userId,$amount, $user['money'] - amount, '',
+                $_SERVER["REQUEST_TIME"], 1);
+            $payType = 9;
+
+            D('RecordLog')->addRecordLog($orderSn, $userId, $amount, 2, 0, $payType, 4, 1,
+                $_SERVER['REQUEST_TIME']);
+            return $orderId;
+        } else {
+            return false;
+        }
+
+        return ['order_id' => $orderId, 'order_sn' => $orderSn];
+    }
+
+
 
 
     /**
@@ -238,6 +288,66 @@ class OrderController extends BasicController
             apiReturn('504', AJAX_FALSE, '创建订单失败');
         }
     }
+
+    /**
+     * 提交视频直连订单接口(不需要验证重复提交订单)
+     * @return bool
+     */
+    public function createCallOrder()
+    {
+        $mcrypt = new MCrypt();
+        $userId = $mcrypt->decrypt(urldecode(I('post.user_id')));
+        $type = 'call';
+        $objectId = $mcrypt->decrypt(urldecode(I('post.object_id'))); //律师ID
+        $call_duration = $mcrypt->decrypt(urldecode(I('post.call_duration'))); //直连时长 单位秒
+        $amount = $mcrypt->decrypt(urldecode(I('post.amount'))); //直连总计费
+        if(empty($userId) || empty($type) || empty($objectId)) {
+            apiReturn('503', AJAX_FALSE, '参数不能为空');
+        }
+
+        //获取对象金额
+        $object = $this->getAmount($type, $objectId);
+
+        if(empty($object)) {
+            apiReturn('505', AJAX_FALSE, '律师信息不存在');
+        }
+
+        if($object['type'] != 1){
+            apiReturn('508', AJAX_FALSE, '此用户不是律师身份,无直连权限');
+        }
+
+        if(empty($amount)) {
+            apiReturn('507', AJAX_FALSE, '直连总收费不能为空');
+        }
+
+        if($object['status'] != 1){
+            apiReturn('509', AJAX_FALSE, '该律师账户未通过审核');
+        }
+
+        if($object['is_review'] != 1){
+            apiReturn('510', AJAX_FALSE, '律师认证未通过审核');
+        }
+
+        $data = M('account')->where(['id' => $userId])->find();
+
+        if(empty($data)){
+            apiReturn('511', AJAX_FALSE, '找不到该用户');
+        }
+
+        $order = $this->createUserCallOrder($objectId, $userId, $amount, $call_duration);
+
+        if($order) {
+            $User = M('wallet');
+            $User->where(['uid' => $userId])->setDec('money',$amount); // 减用户的余额
+            $User->where(['uid' => $objectId])->setInc('money',$amount); // 加律师的余额
+            apiReturn('200', AJAX_TRUE);
+        } else {
+            apiReturn('504', AJAX_FALSE, '创建订单失败');
+        }
+
+
+
+    }
     
 
     /**
@@ -251,15 +361,17 @@ class OrderController extends BasicController
      */
     protected function validateOrder($userId, $type, $objectId)
     {
-        $where = ['user_id' => $userId, 'video_id' => $objectId, 'status' => 0];
         switch($type) {
             case 'video':
+                $where = ['user_id' => $userId, 'video_id' => $objectId, 'status' => 0];
                 $order = M('order_train')->where($where)->find();
                 break;
             case 'live':
+                $where = ['user_id' => $userId, 'live_id' => $objectId, 'status' => 0];
                 $order = M('order_live')->where($where)->find();
                 break;
             case 'activity':
+                $where = ['user_id' => $userId, 'activity_id' => $objectId, 'status' => 0];
                 $order = M('order_activity')->where($where)->find();
                 break;
             default:
@@ -323,6 +435,9 @@ class OrderController extends BasicController
             case 'activity':
                 $order = M('order_activity')->where($where)->find();
                 break;
+            case 'call':
+                $order = M('order_call')->where($where)->find();
+                break;
             default:
                 return false;
                 break;
@@ -352,6 +467,9 @@ class OrderController extends BasicController
                 break;
             case 'activity':
                 $data = M('activity')->where($where)->find();
+                break;
+            case 'call':
+                $data = M('account')->where($where)->find();
                 break;
             default:
                 return false;
@@ -394,6 +512,9 @@ class OrderController extends BasicController
                 break;
             case 'activity':
                 $result = M('order_activity')->where($where)->setField('status', 1);
+                break;
+            case 'call':
+                $result = M('order_call')->where($where)->setField('status', 1);
                 break;
             default:
                 return false;

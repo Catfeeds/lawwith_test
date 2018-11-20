@@ -1,0 +1,106 @@
+[ 2018-11-19T16:33:42+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.045003s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.036002s ]
+
+[ 2018-11-19T16:35:05+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+
+[ 2018-11-19T16:35:32+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+ERR: Think\Controller:uniqueOrderSn方法不存在！
+
+[ 2018-11-19T16:35:56+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_order_call` [ RunTime:0.017001s ]
+SQL: INSERT INTO `lx_order_call` (`record_sn`,`lawer_id`,`user_id`,`amount`,`status`,`call_duration`,`create_date`) VALUES ('2018111916355617486',3,1,'0.02',1,123456,1542616556) [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_order` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order` (`order_id`,`record_sn`,`order_type`,`amount`,`status`,`create_date`) VALUES (1,'2018111916355617486','call','0.02',1,1542616556) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.017001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money-0.02 WHERE ( `uid` = 1 ) [ RunTime:0.018001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+0.02 WHERE ( `uid` = 3 ) [ RunTime:0.017001s ]
+
+[ 2018-11-19T16:36:22+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_order_call` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order_call` (`record_sn`,`lawer_id`,`user_id`,`amount`,`status`,`call_duration`,`create_date`) VALUES ('2018111916362215620',3,1,'0.02',1,123456,1542616582) [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_order` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order` (`order_id`,`record_sn`,`order_type`,`amount`,`status`,`create_date`) VALUES (2,'2018111916362215620','call','0.02',1,1542616582) [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.016001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money-0.02 WHERE ( `uid` = 1 ) [ RunTime:0.017001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+0.02 WHERE ( `uid` = 3 ) [ RunTime:0.019001s ]
+
+[ 2018-11-19T16:36:29+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.016000s ]
+SQL: SHOW COLUMNS FROM `lx_order_call` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order_call` (`record_sn`,`lawer_id`,`user_id`,`amount`,`status`,`call_duration`,`create_date`) VALUES ('2018111916362913596',3,1,'0.02',1,123456,1542616589) [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_order` [ RunTime:0.014001s ]
+SQL: INSERT INTO `lx_order` (`order_id`,`record_sn`,`order_type`,`amount`,`status`,`create_date`) VALUES (3,'2018111916362913596','call','0.02',1,1542616589) [ RunTime:0.020001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.016001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money-0.02 WHERE ( `uid` = 1 ) [ RunTime:0.019001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+0.02 WHERE ( `uid` = 3 ) [ RunTime:0.018001s ]
+
+[ 2018-11-19T16:36:38+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `lx_order_call` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order_call` (`record_sn`,`lawer_id`,`user_id`,`amount`,`status`,`call_duration`,`create_date`) VALUES ('2018111916363811583',3,1,'0.01',1,123456,1542616598) [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_order` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order` (`order_id`,`record_sn`,`order_type`,`amount`,`status`,`create_date`) VALUES (4,'2018111916363811583','call','0.01',1,1542616598) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.015000s ]
+SQL: UPDATE `lx_wallet` SET `money`=money-0.01 WHERE ( `uid` = 1 ) [ RunTime:0.018001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+0.01 WHERE ( `uid` = 3 ) [ RunTime:0.017001s ]
+
+[ 2018-11-19T16:38:13+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_order_call` [ RunTime:0.016001s ]
+SQL: INSERT INTO `lx_order_call` (`record_sn`,`lawer_id`,`user_id`,`amount`,`status`,`call_duration`,`create_date`) VALUES ('2018111916381215656',3,1,'0.01',1,123456,1542616692) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_order` [ RunTime:0.016000s ]
+SQL: INSERT INTO `lx_order` (`order_id`,`user_id`,`record_sn`,`order_type`,`amount`,`status`,`create_date`) VALUES (5,1,'2018111916381215656','call','0.01',1,1542616692) [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_wallet` [ RunTime:0.016001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money-0.01 WHERE ( `uid` = 1 ) [ RunTime:0.017001s ]
+SQL: UPDATE `lx_wallet` SET `money`=money+0.01 WHERE ( `uid` = 3 ) [ RunTime:0.017001s ]
+
+[ 2018-11-19T16:53:09+08:00 ] 127.0.0.1 /App/Detail/createCallOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `lx_account` WHERE ( `id` = 1120154 ) LIMIT 1   [ RunTime:0.016001s ]
+

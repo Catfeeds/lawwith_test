@@ -16,11 +16,11 @@ class LoginController extends Controller
     //获取验证码
     public function login() {
         $AesMcrypt = new MCrypt;
-        $accid     = $AesMcrypt->decrypt(urldecode(I('get.tel')));
+        $accid = $AesMcrypt->decrypt(urldecode(I('get.tel')));
 //        $accid     = I('get.tel');
         $cache_tel = S('send_tel');
         $yunxin    = new ChatApi;
-
+        echo $cache_tel;
         if(empty($cache_tel)) {
             S('send_tel', $accid, 60);
             //发送短息验证码，并获取返回数据
@@ -127,29 +127,44 @@ class LoginController extends Controller
                             $alias['alias'] = explode(',', $invite_mobile);
                             send_message_push('all', $alias, '您已成功邀请' . $count . '人');
                         }
-                        $user_info = $model->relation(true)->where($where)->field('id,mobile,passwd,token,type,province,tag_citys,majors,law,is_hide')->find();
-                        $res['is_user'] = false;
-                        $res['user_info'] = $user_info;
-                        apiReturn('1004', AJAX_TRUE, $res);  //注册成功
+                        $user_info = $model->relation(true)->where($where)->field('id,mobile,token,type,province,tag_citys,majors,law,is_hide')->find();
+                        $user = array(
+                            'token' => $user_info['token'], //用户唯一标识
+                            'role' => $user_info['type'], //用户身份标识
+                            'uid' => $user_info['id'], //用户id
+                            'province' => $user_info['province'], //所在省（直辖市）
+                            'citys' => $user_info['tag_citys'],  //城市标签
+                            'majors' => $user_info['majors'], //专业标签
+                            'is_hide' => $user_info['is_hide'], //是否隐藏
+                            'law' => $user_info['law'],    //律所id
+                            'law_info' => $user_info['law_info'] //律所信息
+                        );
+                        $user['is_user'] = false;
+                        apiReturn('1004', AJAX_TRUE, $user);  //注册成功
                     }else{
                         apiReturn('1003', AJAX_FALSE, '注册失败,请重试');
                     }
                 } else {
-                    $user = array(
-                        'token' => $data['token'], //用户唯一标识
-                        'role' => $data['type'], //用户身份标识
-                        'uid' => $data['id'], //用户id
-                        'province' => $data['province'], //所在省（直辖市）
-                        'citys' => $data['tag_citys'],  //城市标签
-                        'majors' => $data['majors'], //专业标签
-                        'is_hide' => $data['is_hide'], //是否隐藏
-                        'law' => $data['law'],    //律所id
-                        'law_info' => $data['law_info'] //律所信息
-                    );
+                    $toke = $yunxin->updateUserToken($accid); //更新用户token
+                    if(M('Account')->where(['mobile'=>$accid])->save(['token'=>$toke['info']['token']])){
+                           $user = array(
+                               'token' => $toke['info']['token'], //用户唯一标识
+                               'role' => $data['type'], //用户身份标识
+                               'uid' => $data['id'], //用户id
+                               'province' => $data['province'], //所在省（直辖市）
+                               'citys' => $data['tag_citys'],  //城市标签
+                               'majors' => $data['majors'], //专业标签
+                               'is_hide' => $data['is_hide'], //是否隐藏
+                               'law' => $data['law'],    //律所id
+                               'law_info' => $data['law_info'] //律所信息
+                           );
+                           $user['is_user'] = true; //登陆成功
+                           apiReturn('1004', AJAX_TRUE,$user); //校验验证码成功
+                   }else{
+                         apiReturn('1005', AJAX_FALSE, '更新用户Token失败'); //校验失败
+                   }
                 }
-                $res['is_user'] = true;
-                $res['user_info'] = $user;
-                apiReturn('1004', AJAX_TRUE,$res); //校验验证码成功
+
             } else {
                 apiReturn('1003', AJAX_FALSE, '验证码验证失败'); //校验失败
             }

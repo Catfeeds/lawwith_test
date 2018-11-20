@@ -686,13 +686,13 @@ class UserController extends BasicController
     public function create_law()
     {
         $AesMcrypt = new MCrypt;    //调用AES加密接口
-        $law_name = $AesMcrypt->decrypt(urldecode(I('law_name')));      //律所名称
-        $data['phone'] = $AesMcrypt->decrypt(urldecode(I('law_phone')));     //律所电话
-        $data['address'] = $AesMcrypt->decrypt(urldecode(I('law_address')));   //律所详细地址
-        $data['province'] = $AesMcrypt->decrypt(urldecode(I('province')));   //省
-        $data['city'] = $AesMcrypt->decrypt(urldecode(I('city')));   //市
-        $data['town'] = $AesMcrypt->decrypt(urldecode(I('town')));   //区
-        $data['profile'] = $AesMcrypt->decrypt(urldecode(I('profile')));   //律所详情
+        $law_name = $AesMcrypt->decrypt(urldecode(I('post.law_name')));      //律所名称
+        $data['phone'] = $AesMcrypt->decrypt(urldecode(I('post.law_phone')));     //律所电话
+        $data['address'] = $AesMcrypt->decrypt(urldecode(I('post.law_address')));   //律所详细地址
+        $data['province'] = $AesMcrypt->decrypt(urldecode(I('post.province')));   //省
+        $data['city'] = $AesMcrypt->decrypt(urldecode(I('post.city')));   //市
+        $data['town'] = $AesMcrypt->decrypt(urldecode(I('post.town')));   //区
+        $data['profile'] = $AesMcrypt->decrypt(urldecode(I('post.profile')));   //律所详情
         $data['regtime'] = time();  //加入时间
         $data['law_name'] = $law_name;
         if($res = M('Laws')->where("law_name='$law_name'")->select()) {
