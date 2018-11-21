@@ -1272,17 +1272,5 @@ class UserController extends BasicController
         }
     }
 
-    //给律师添加直连时长
-    public function direct_add(){
-        $AesMct = new MCrypt();
-        $uid = $AesMct->decrypt(urldecode(I('get.uid'))); //律师ID
-        $direct = $AesMct->decrypt(urldecode(I('get.direct'))); //直连时长
 
-        //给律师添更新直连时长
-        if( M('account')->where(['id'=>$uid])->setInc('direct_time',$direct)){
-            apiReturn('2000', AJAX_TRUE);
-        }else{
-            apiReturn('2001', AJAX_FALSE);
-        }
-    }
 }
