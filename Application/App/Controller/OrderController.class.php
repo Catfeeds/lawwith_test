@@ -345,8 +345,6 @@ class OrderController extends BasicController
             apiReturn('504', AJAX_FALSE, '创建订单失败');
         }
 
-
-
     }
     
 

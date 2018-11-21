@@ -1265,10 +1265,24 @@ class UserController extends BasicController
             'time' => time()
         );
         if(M('evaluate')->add($data)) {     //添加评价记录
-            M('account')->where(['id'=>$uid])->setInc('direct_time',$direct); //给被评价人更新连接时长
+//            M('account')->where(['id'=>$uid])->setInc('direct_time',$direct); //给被评价人更新连接时长
             apiReturn('1024', AJAX_TRUE);    // 添加成功
         } else {
             apiReturn('1023', AJAX_FALSE);
+        }
+    }
+
+    //给律师添加直连时长
+    public function direct_add(){
+        $AesMct = new MCrypt();
+        $uid = $AesMct->decrypt(urldecode(I('get.uid'))); //律师ID
+        $direct = $AesMct->decrypt(urldecode(I('get.direct'))); //直连时长
+
+        //给律师添更新直连时长
+        if( M('account')->where(['id'=>$uid])->setInc('direct_time',$direct)){
+            apiReturn('2000', AJAX_TRUE);
+        }else{
+            apiReturn('2001', AJAX_FALSE);
         }
     }
 }
