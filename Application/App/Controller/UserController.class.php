@@ -99,25 +99,25 @@ class UserController extends BasicController
 
                 //获取所有数据
                 $data = array(
-                    'type'          => $role,
-                    'uname'         => $p_name,
-                    'icon'          => $p_icon,
-                    'bj_img'        => $bj_img,
-                    'gender'        => $p_sex,
-                    'province'      => $province,
-                    'city'          => $city,
-                    'town'          => $town,
-                    'specialty'     => $p_major,
-                    'work_life'     => $p_years,
-                    'lawyer_num'    => $p_number,
-                    'price'         => $p_price,
-                    'prize'         => $p_prize,
-                    'professional'  => $p_professional,
-                    'education'     => $p_education,
-                    'hight_diploma' => $p_diploma,
-                    'birth'         => $p_age,
-                    'remark'        => $p_remark,
-                    'up_time'       => time(),
+                    'type'          => $role,       //type代表律师还是法务或者学者
+                    'uname'         => $p_name,     //律师名称
+                    'icon'          => $p_icon,     //头像
+                    'bj_img'        => $bj_img,     //北京图片
+                    'gender'        => $p_sex,      //性别
+                    'province'      => $province,   //省
+                    'city'          => $city,       //城市
+                    'town'          => $town,       //区
+                    'specialty'     => $p_major,    //专业领域
+                    'work_life'     => $p_years,    //执业年限
+                    'lawyer_num'    => $p_number,   //执业证号
+                    'price'         => $p_price,    //价格区间
+                    'prize'         => $p_prize,    //专业奖项
+                    'professional'  => $p_professional, //执业经历
+                    'education'     => $p_education,    //教育背景
+                    'hight_diploma' => $p_diploma,      //学历
+                    'birth'         => $p_age,          //年龄
+                    'remark'        => $p_remark,       //个人介绍
+                    'up_time'       => time(),          //修改时间
                 );
                 if(!empty($p_law)) {
                     $data['law'] = $p_law;
@@ -198,20 +198,20 @@ class UserController extends BasicController
                 break;
             case 2:         //法务
                 $data = array(
-                    'type'          => $role,
-                    'uname'         => $p_name,
-                    'icon'          => $p_icon,
-                    'bj_img'        => $bj_img,
-                    'gender'        => $p_sex,
-                    'province'      => $province,
-                    'city'          => $city,
-                    'town'          => $town,
-                    'specialty'     => $p_major,
-                    'position'      => $p_job,
-                    'company'       => $p_firm,
-                    'birth'         => $p_age,
-                    'hight_diploma' => $p_diploma,
-                    'remark'        => $p_remark,
+                    'type'          => $role,   //身份
+                    'uname'         => $p_name, //名称
+                    'icon'          => $p_icon, //头像
+                    'bj_img'        => $bj_img, //北京图片
+                    'gender'        => $p_sex,  //性别
+                    'province'      => $province,   //所在城市
+                    'city'          => $city,   //城市
+                    'town'          => $town,   //县
+                    'specialty'     => $p_major,    //专业领域
+                    'position'      => $p_job,  //职务
+                    'company'       => $p_firm, //所属公司
+                    'birth'         => $p_age,  //年龄
+                    'hight_diploma' => $p_diploma, //学历
+                    'remark'        => $p_remark,   //个人介绍
                     'up_time'       => time(),
                 );
 

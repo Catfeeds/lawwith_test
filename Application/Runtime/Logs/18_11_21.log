@@ -1,0 +1,1068 @@
+[ 2018-11-21T09:25:50+08:00 ] 127.0.0.1 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.016662s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.015719s ]
+SQL: UPDATE `lx_user` SET `login_at`=1542763550,`loginip`='127.0.0.1' WHERE ( `id` = 4 ) [ RunTime:0.029653s ]
+NOTIC: [8] Undefined index: superadmin D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Library\Org\Util\Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.016666s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=2 and node.pid=100 and node.status=1 [ RunTime:0.016321s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=101 and node.status=1 [ RunTime:0.016218s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=132 and node.status=1 [ RunTime:0.015708s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=145 and node.status=1 [ RunTime:0.016174s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=162 and node.status=1 [ RunTime:0.015900s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=171 and node.status=1 [ RunTime:0.016087s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=193 and node.status=1 [ RunTime:0.015997s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001053s ]
+
+[ 2018-11-21T10:41:36+08:00 ] 127.0.0.1 /app/User/user_info
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012660s ]
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+NOTIC: [2] mdecrypt_generic(): An empty string was passed D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 35 行.
+NOTIC: [2] preg_match(): Null byte in regex D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Common\Api\MCrypt.class.php 第 54 行.
+
+[ 2018-11-21T10:42:04+08:00 ] 127.0.0.1 /app/User/user_info
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016952s ]
+SQL: SELECT `id`,`uname`,`mobile`,`gender`,`icon`,`bj_img`,`remark`,`email`,`birth`,`province`,`city`,`town`,`tag_citys`,`specialty`,`majors`,`work_life`,`law`,`lawyer_num`,`company`,`position`,`school`,`hight_diploma`,`education`,`professional`,`prize`,`price`,`type`,`create_at`,`up_time`,`status`,`num_img`,`is_hide`,`direct_price`,`case_price`,`direct_time` FROM `lx_account` WHERE ( `mobile` = '5806' )  [ RunTime:0.015984s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016236s ]
+NOTIC: [8] Undefined index: id D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\UserController.class.php 第 449 行.
+SQL: SELECT r.id,r.title FROM lx_resource_comment rc left join lx_resource  as r on rc.rid = r.id  WHERE ( rc.uid = null ) AND ( rc.tbd = 1 ) AND ( r.status = 1 ) GROUP BY rc.rid ORDER BY time DESC  [ RunTime:0.015653s ]
+
+[ 2018-11-21T10:42:47+08:00 ] 127.0.0.1 /app/User/user_info
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017151s ]
+SQL: SELECT `id`,`uname`,`mobile`,`gender`,`icon`,`bj_img`,`remark`,`email`,`birth`,`province`,`city`,`town`,`tag_citys`,`specialty`,`majors`,`work_life`,`law`,`lawyer_num`,`company`,`position`,`school`,`hight_diploma`,`education`,`professional`,`prize`,`price`,`type`,`create_at`,`up_time`,`status`,`num_img`,`is_hide`,`direct_price`,`case_price`,`direct_time` FROM `lx_account` WHERE ( `mobile` = '5781' )  [ RunTime:0.016292s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016066s ]
+NOTIC: [8] Undefined index: id D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\UserController.class.php 第 449 行.
+SQL: SELECT r.id,r.title FROM lx_resource_comment rc left join lx_resource  as r on rc.rid = r.id  WHERE ( rc.uid = null ) AND ( rc.tbd = 1 ) AND ( r.status = 1 ) GROUP BY rc.rid ORDER BY time DESC  [ RunTime:0.015592s ]
+
+[ 2018-11-21T10:43:28+08:00 ] 127.0.0.1 /app/User/user_info
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016845s ]
+SQL: SELECT `id`,`uname`,`mobile`,`gender`,`icon`,`bj_img`,`remark`,`email`,`birth`,`province`,`city`,`town`,`tag_citys`,`specialty`,`majors`,`work_life`,`law`,`lawyer_num`,`company`,`position`,`school`,`hight_diploma`,`education`,`professional`,`prize`,`price`,`type`,`create_at`,`up_time`,`status`,`num_img`,`is_hide`,`direct_price`,`case_price`,`direct_time` FROM `lx_account` WHERE ( `mobile` = '18501174476' )  [ RunTime:0.016241s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.016612s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13122' ) LIMIT 1   [ RunTime:0.015975s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016457s ]
+SQL: SELECT r.id,r.title FROM lx_resource_comment rc left join lx_resource  as r on rc.rid = r.id  WHERE ( rc.uid = '5781' ) AND ( rc.tbd = 1 ) AND ( r.status = 1 ) GROUP BY rc.rid ORDER BY time DESC  [ RunTime:0.015750s ]
+
+[ 2018-11-21T10:45:03+08:00 ] 127.0.0.1 /app/User/user_info
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017089s ]
+SQL: SELECT `id`,`uname`,`mobile`,`gender`,`icon`,`bj_img`,`remark`,`email`,`birth`,`province`,`city`,`town`,`tag_citys`,`specialty`,`majors`,`work_life`,`law`,`lawyer_num`,`company`,`position`,`school`,`hight_diploma`,`education`,`professional`,`prize`,`price`,`type`,`create_at`,`up_time`,`status`,`num_img`,`is_hide`,`direct_price`,`case_price`,`direct_time`,`integral`,`credit`,`wallet` FROM `lx_account` WHERE ( `mobile` = '18501174476' )  [ RunTime:0.016497s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.017368s ]
+SQL: SELECT `law_name`,`uadmin` FROM `lx_laws` WHERE ( lx_laws.status=1 AND id='13122' ) LIMIT 1   [ RunTime:0.015598s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016416s ]
+SQL: SELECT r.id,r.title FROM lx_resource_comment rc left join lx_resource  as r on rc.rid = r.id  WHERE ( rc.uid = '5781' ) AND ( rc.tbd = 1 ) AND ( r.status = 1 ) GROUP BY rc.rid ORDER BY time DESC  [ RunTime:0.015719s ]
+
+[ 2018-11-21T14:15:55+08:00 ] 127.0.0.1 /app/Detail/posts_back
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.012196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024956s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.017670s ]
+NOTIC: [2] count() expects at least 1 parameter, 0 given D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 32 行.
+NOTIC: [4096] Object of class Think\Model could not be converted to string D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.016832s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`tag_major`,`imgs`,`views`,`send_time`,`tbd_id`,`type`,`status`,`is_nym`,`is_admin`,`is_money`,`red_status`,`redpack_id`,`author_amount`,`post_amount`,`likes`,`is_reward`,`reward_money` FROM `lx_resource` WHERE ( id=1141 )  [ RunTime:0.015666s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016293s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='1141' ) LIMIT 1   [ RunTime:0.016378s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.016077s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='1141' ) LIMIT 1   [ RunTime:0.015827s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='1141' ) ORDER BY time desc  [ RunTime:0.016228s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016638s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='759' ) LIMIT 1   [ RunTime:0.015423s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_log` [ RunTime:0.016280s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='1141' )  [ RunTime:0.016847s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_conf` [ RunTime:0.015031s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.015316s ]
+SQL: SHOW COLUMNS FROM `lx_likes` [ RunTime:0.015795s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_likes` WHERE ( `rid` = 1141 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015336s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.015844s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource_favorite` WHERE ( `rid` = 1141 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015737s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.015859s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12661 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015259s ]
+SQL: SHOW COLUMNS FROM `lx_picture` [ RunTime:0.015439s ]
+SQL: SELECT `path` FROM `lx_picture` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.015335s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.015766s ]
+SQL: UPDATE `lx_resource` SET `views`=views+1 WHERE ( id=1141 ) [ RunTime:0.015501s ]
+
+[ 2018-11-21T14:20:05+08:00 ] 127.0.0.1 /app/Detail/posts_back
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.017146s ]
+NOTIC: [2] count() expects at least 1 parameter, 0 given D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 32 行.
+NOTIC: [4096] Object of class Think\Model could not be converted to string D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.016691s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`tag_major`,`imgs`,`views`,`send_time`,`tbd_id`,`type`,`status`,`is_nym`,`is_admin`,`is_money`,`red_status`,`redpack_id`,`author_amount`,`post_amount`,`likes`,`is_reward`,`reward_money` FROM `lx_resource` WHERE ( id=1141 )  [ RunTime:0.015785s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016186s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='1141' ) LIMIT 1   [ RunTime:0.016143s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.015820s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='1141' ) LIMIT 1   [ RunTime:0.015727s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='1141' ) ORDER BY time desc  [ RunTime:0.016075s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016445s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='759' ) LIMIT 1   [ RunTime:0.016026s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_log` [ RunTime:0.016133s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='1141' )  [ RunTime:0.016969s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_conf` [ RunTime:0.015505s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.015610s ]
+SQL: SHOW COLUMNS FROM `lx_likes` [ RunTime:0.015743s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_likes` WHERE ( `rid` = 1141 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015518s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.016214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource_favorite` WHERE ( `rid` = 1141 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.015508s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.015915s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12661 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015241s ]
+SQL: SHOW COLUMNS FROM `lx_picture` [ RunTime:0.014956s ]
+SQL: SELECT `path` FROM `lx_picture` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.015332s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.016359s ]
+SQL: UPDATE `lx_resource` SET `views`=views+1 WHERE ( id=1141 ) [ RunTime:0.015085s ]
+
+[ 2018-11-21T14:22:32+08:00 ] 127.0.0.1 /app/Detail/comment_posts_v4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016403s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource_comment` WHERE ( `rid` = 1141 ) AND ( `pid` = 0 ) LIMIT 1   [ RunTime:0.016689s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( `rid` = 1141 ) AND ( `pid` = 0 ) ORDER BY `tbd` desc,`time` desc LIMIT 0,10   [ RunTime:0.018465s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016075s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.015179s ]
+SQL: SHOW COLUMNS FROM `lx_comm_like` [ RunTime:0.015020s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2065' ) LIMIT 1   [ RunTime:0.029675s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2065' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2065' ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_comm_dislike` [ RunTime:0.016583s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2065' ) LIMIT 1   [ RunTime:0.017687s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2065' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2065' ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.015801s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2065' ) LIMIT 1   [ RunTime:0.016247s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.016013s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2018' ) LIMIT 1   [ RunTime:0.015665s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2018' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2018' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2018' ) LIMIT 1   [ RunTime:0.015420s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2018' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2018' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2018' ) LIMIT 1   [ RunTime:0.016199s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='2475' ) LIMIT 1   [ RunTime:0.015228s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2005' ) LIMIT 1   [ RunTime:0.015334s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2005' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2005' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2005' ) LIMIT 1   [ RunTime:0.015320s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2005' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2005' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2005' ) LIMIT 1   [ RunTime:0.015726s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='4069' ) LIMIT 1   [ RunTime:0.015569s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2000' ) LIMIT 1   [ RunTime:0.015232s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2000' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2000' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2000' ) LIMIT 1   [ RunTime:0.015508s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2000' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2000' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2000' ) LIMIT 1   [ RunTime:0.016117s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3898' ) LIMIT 1   [ RunTime:0.015328s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1998' ) LIMIT 1   [ RunTime:0.015181s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1998' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1998' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1998' ) LIMIT 1   [ RunTime:0.015362s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1998' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1998' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='1998' ) LIMIT 1   [ RunTime:0.016344s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='749' ) LIMIT 1   [ RunTime:0.015301s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1997' ) LIMIT 1   [ RunTime:0.015180s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1997' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1997' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1997' ) LIMIT 1   [ RunTime:0.014882s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1997' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1997' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='1997' ) LIMIT 1   [ RunTime:0.016363s ]
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: author_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 261 行.
+NOTIC: [8] Undefined index: user_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 264 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: author_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 261 行.
+NOTIC: [8] Undefined index: user_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 264 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: author_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 261 行.
+NOTIC: [8] Undefined index: user_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 264 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: author_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 261 行.
+NOTIC: [8] Undefined index: user_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 264 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: author_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 261 行.
+NOTIC: [8] Undefined index: user_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 264 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: author_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 261 行.
+NOTIC: [8] Undefined index: user_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 264 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 241 行.
+
+[ 2018-11-21T14:23:12+08:00 ] 127.0.0.1 /app/Detail/comment_posts
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+ERR: 非法操作:comment_posts
+
+[ 2018-11-21T14:23:28+08:00 ] 127.0.0.1 /app/Detail/commte_posts
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010762s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016603s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource_comment` WHERE ( `rid` = 1141 ) LIMIT 1   [ RunTime:0.016459s ]
+SQL: SELECT * FROM `lx_resource_comment` WHERE ( `rid` = 1141 ) ORDER BY `tbd` desc,`time` desc LIMIT 0,10   [ RunTime:0.017522s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016209s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.015544s ]
+SQL: SHOW COLUMNS FROM `lx_comm_like` [ RunTime:0.016277s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2065' ) LIMIT 1   [ RunTime:0.015390s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2065' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2065' ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_comm_dislike` [ RunTime:0.016155s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2065' ) LIMIT 1   [ RunTime:0.014998s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2065' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2065' ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.017407s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2065' ) LIMIT 1   [ RunTime:0.017151s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.015689s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2018' ) LIMIT 1   [ RunTime:0.015568s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2018' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2018' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2018' ) LIMIT 1   [ RunTime:0.015457s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2018' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2018' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2018' ) LIMIT 1   [ RunTime:0.016000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='2475' ) LIMIT 1   [ RunTime:0.015491s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2005' ) LIMIT 1   [ RunTime:0.015097s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2005' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2005' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2005' ) LIMIT 1   [ RunTime:0.014886s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2005' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2005' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2005' ) LIMIT 1   [ RunTime:0.016390s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='4069' ) LIMIT 1   [ RunTime:0.015160s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2000' ) LIMIT 1   [ RunTime:0.013945s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2000' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='2000' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2000' ) LIMIT 1   [ RunTime:0.015010s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='2000' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='2000' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='2000' ) LIMIT 1   [ RunTime:0.016143s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='3898' ) LIMIT 1   [ RunTime:0.015462s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1998' ) LIMIT 1   [ RunTime:0.015312s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1998' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1998' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1998' ) LIMIT 1   [ RunTime:0.015454s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1998' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1998' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='1998' ) LIMIT 1   [ RunTime:0.016114s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`type`,`status` FROM `lx_account` WHERE ( 1=1 AND id='749' ) LIMIT 1   [ RunTime:0.015565s ]
+SQL: SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1997' ) LIMIT 1   [ RunTime:0.015174s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1997' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_like` WHERE ( lx_comm_like.uid= AND comm_id='1997' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1997' ) LIMIT 1   [ RunTime:0.014969s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND comm_id='1997' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT count(*) as counts FROM `lx_comm_dislike` WHERE ( lx_comm_dislike.uid= AND comm_id='1997' ) LIMIT 1  
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND pid='1997' ) LIMIT 1   [ RunTime:0.016158s ]
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+NOTIC: [8] Undefined index: type D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\DetailController.class.php 第 177 行.
+
+[ 2018-11-21T18:08:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-21T18:08:43+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-21T18:09:41+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016915s ]
+
+[ 2018-11-21T18:09:43+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001268s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016612s ]
+
+[ 2018-11-21T18:09:44+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001266s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.018304s ]
+
+[ 2018-11-21T18:09:45+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017868s ]
+
+[ 2018-11-21T18:09:46+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.030708s ]
+
+[ 2018-11-21T18:09:46+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016698s ]
+
+[ 2018-11-21T18:09:47+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016700s ]
+
+[ 2018-11-21T18:09:47+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.014967s ]
+
+[ 2018-11-21T18:09:48+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016066s ]
+
+[ 2018-11-21T18:09:48+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001516s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016129s ]
+
+[ 2018-11-21T18:09:49+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016698s ]
+
+[ 2018-11-21T18:09:49+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016550s ]
+
+[ 2018-11-21T18:09:50+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015464s ]
+
+[ 2018-11-21T18:09:50+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016536s ]
+
+[ 2018-11-21T18:09:51+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017937s ]
+
+[ 2018-11-21T18:09:51+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016153s ]
+
+[ 2018-11-21T18:09:52+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017126s ]
+
+[ 2018-11-21T18:09:52+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016690s ]
+
+[ 2018-11-21T18:09:53+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016242s ]
+
+[ 2018-11-21T18:09:53+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015691s ]
+
+[ 2018-11-21T18:09:54+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.027867s ]
+
+[ 2018-11-21T18:09:54+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016690s ]
+
+[ 2018-11-21T18:09:54+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016326s ]
+
+[ 2018-11-21T18:09:55+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015150s ]
+
+[ 2018-11-21T18:09:55+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016584s ]
+
+[ 2018-11-21T18:09:56+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.018190s ]
+
+[ 2018-11-21T18:09:56+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001411s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016617s ]
+
+[ 2018-11-21T18:09:57+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016387s ]
+
+[ 2018-11-21T18:09:57+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016576s ]
+
+[ 2018-11-21T18:09:58+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016952s ]
+
+[ 2018-11-21T18:09:58+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.027413s ]
+
+[ 2018-11-21T18:09:59+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016586s ]
+
+[ 2018-11-21T18:09:59+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016885s ]
+
+[ 2018-11-21T18:10:00+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016943s ]
+
+[ 2018-11-21T18:10:00+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017536s ]
+
+[ 2018-11-21T18:10:00+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017489s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:01+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017679s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:01+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015283s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:02+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016855s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:02+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016792s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:03+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017413s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:03+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016162s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:04+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017072s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:04+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.014791s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:05+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016903s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:05+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000720s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016375s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:06+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016472s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:06+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016383s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:07+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016602s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:07+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016615s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:08+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016544s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:08+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016949s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:08+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016804s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:09+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016530s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:09+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015625s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:10+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016497s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:10+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007473s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016542s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:11+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016728s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:11+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016569s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:12+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001327s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015930s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:12+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015315s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:13+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007222s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016448s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:14+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016708s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:14+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000952s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016578s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:15+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016141s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:17+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017331s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:19+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016086s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:10:20+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001313s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016549s ]
+NOTIC: [8] Array to string conversion D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\Admin\Controller\VideoController.class.php 第 226 行.
+
+[ 2018-11-21T18:15:06+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.017073s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015029s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698990,'d009ed9db8','http://101.236.14.72/api/slice/fileUpload?token=u-EJAMoSh-w5scaezHkapZATtwHobgmOtvqCebPT9Ote5Zv3MJogDXehn8iUKqevFMY_eWDjSz6xg_jiypN7hl6qEY5ToyjKSGcmRn3TVA8HUABgKDNoQyLzCcQX_3jZVphH55vuWj93HGN8dltDS40GVQUfyuitbz_g_OVuFWsziDlWcfYleeQfQHMZVvgb-DU4jQQcrLwxL4ayP71PQwY9bOL_xkMqE6K4aFgEhySs-BvjyqsQXxdu1e-1r1k8_bJxBcE7bDyivtBQxuf2We60I5KScO_n3KXwBrD_nvDAwN0UWokMyQwrFCGg24rMRyGPFGbeIRv9T1plBb_Ai8-5yWz6Gq7j0wl2SY4CzGN9wK0CLHTSSquymdzzvD0eOq9f83ZLWvTSOXfqe5yHEWl9A5qScc-0kUFu-a6mphLxye8kRAask_EhQvQJlcPVdpNoKN_QGaFC7iU08O9wXH5f-wBQQYYfUiD8_FNtxpHwBtsuHi0BNvbZ2og2bmjDU-iu8hlZVyupGSCbKMUoWzGyv_2-Mn4NBtSM82cRoFLvZQA6sSPiXKg4kTFX4Ih1pc1TzbKS198qh_KuSMg6wkPe1WVAB10J9kCNyq5vGAZpJ09Jf5rMixqO_fWwb6RtSB-FuOZIbdQ~&fmt=cjson','','u-EJAMoSh-w5scaezHkapZATtwHobgmOtvqCebPT9Ote5Zv3MJogDXehn8iUKqevFMY_eWDjSz6xg_jiypN7hl6qEY5ToyjKSGcmRn3TVA8HUABgKDNoQyLzCcQX_3jZVphH55vuWj93HGN8dltDS40GVQUfyuitbz_g_OVuFWsziDlWcfYleeQfQHMZVvgb-DU4jQQcrLwxL4ayP71PQwY9bOL_xkMqE6K4aFgEhySs-BvjyqsQXxdu1e-1r1k8_bJxBcE7bDyivtBQxuf2We60I5KScO_n3KXwBrD_nvDAwN0UWokMyQwrFCGg24rMRyGPFGbeIRv9T1plBb_Ai8-5yWz6Gq7j0wl2SY4CzGN9wK0CLHTSSquymdzzvD0eOq9f83ZLWvTSOXfqe5yHEWl9A5qScc-0kUFu-a6mphLxye8kRAask_EhQvQJlcPVdpNoKN_QGaFC7iU08O9wXH5f-wBQQYYfUiD8_FNtxpHwBtsuHi0BNvbZ2og2bmjDU-iu8hlZVyupGSCbKMUoWzGyv_2-Mn4NBtSM82cRoFLvZQA6sSPiXKg4kTFX4Ih1pc1TzbKS198qh_KuSMg6wkPe1WVAB10J9kCNyq5vGAZpJ09Jf5rMixqO_fWwb6RtSB-FuOZIbdQ~',1,1542795306) [ RunTime:0.017584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001110s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001189s ]
+
+[ 2018-11-21T18:15:08+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001443s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016109s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016511s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698991,'e17a393986','http://101.236.14.85/api/slice/fileUpload?token=nvGO39ICBidh3ypcBvnvZxhAyDrOk01wMoqRNQ_tt1fJfQgBDHmP1YUWIIMI9hlHDN-lr947CAPUzhEBSUapoeLfv52aTEXIguZHEh3epDUl1n4dBy4rUA1eB04AAffWlSfJH_ytI2_ABP5nMdS5jCum38kNtOwdKc-t7zwZCxz4x9zXFPOW03TCswZk2b7RwCj0X6ZTyOIlFl_oF50Eu6nNMHnXkCPVXyVF28wIYWwmZpyMrVdJVBF3_tVDV6nftQO9bJXD5XYCw6m5-bHj6z4O_waHsOpBdEE8wJHLZfv6-dpZ6ph5C0wgsi3aoeQDBXs6_U_RGNMKudJLqUnCFjiFK_yZsJULjrPwfmzhgygpd6trrrtunObdViRlMH7aC9L-choZPTuod1zREV6yfMgTdoJ1DD3Mi66_4KDkUl1m77aFIdAreG86_1A_QgaZyEdpp_fM_XI49yTA_X7Z-QxyMne_nSopphZmXO-0k6ZQNrU_LWq54kmPywrmmEwT8igeFD96ptW0KTdcuY1uBMuqJ-srHbGPa20lVm98v7_933Tnqb_BFhqyz95L-GL1KXFylXXveKxg-KBNRj9tuVqBbH6Wkd9R5pA6tR9p2-mcAQtJoKIo8pdNvODlvlURl9CODR6nS90~&fmt=cjson','','nvGO39ICBidh3ypcBvnvZxhAyDrOk01wMoqRNQ_tt1fJfQgBDHmP1YUWIIMI9hlHDN-lr947CAPUzhEBSUapoeLfv52aTEXIguZHEh3epDUl1n4dBy4rUA1eB04AAffWlSfJH_ytI2_ABP5nMdS5jCum38kNtOwdKc-t7zwZCxz4x9zXFPOW03TCswZk2b7RwCj0X6ZTyOIlFl_oF50Eu6nNMHnXkCPVXyVF28wIYWwmZpyMrVdJVBF3_tVDV6nftQO9bJXD5XYCw6m5-bHj6z4O_waHsOpBdEE8wJHLZfv6-dpZ6ph5C0wgsi3aoeQDBXs6_U_RGNMKudJLqUnCFjiFK_yZsJULjrPwfmzhgygpd6trrrtunObdViRlMH7aC9L-choZPTuod1zREV6yfMgTdoJ1DD3Mi66_4KDkUl1m77aFIdAreG86_1A_QgaZyEdpp_fM_XI49yTA_X7Z-QxyMne_nSopphZmXO-0k6ZQNrU_LWq54kmPywrmmEwT8igeFD96ptW0KTdcuY1uBMuqJ-srHbGPa20lVm98v7_933Tnqb_BFhqyz95L-GL1KXFylXXveKxg-KBNRj9tuVqBbH6Wkd9R5pA6tR9p2-mcAQtJoKIo8pdNvODlvlURl9CODR6nS90~',1,1542795308) [ RunTime:0.017642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2018-11-21T18:15:09+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015483s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015151s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698992,'718e738c9e','http://101.236.14.78/api/slice/fileUpload?token=FU1KDoQ0rAlpwCO2SRYeI3l8OfBvyZdSCh1ICwpEddiF5-sd0bpBOFGKQdTI9dItxV735DpvQ3mp5YIcDoIzv4ISUe4lTYmnZTGEFl9JxXO72jg3mJzvhac-s-8NifaPqK5_KqX-O75kUkLrMHWIhTg4tnpYXAWaANoBRc2ZU288OeVbIEu_FMrSrci8zEPTXZWX5j0rSMe9dw-FDjcMIF1lfGmxSrWlhOrh3bD-370NDs36ygVNEo0HzBWbnZEoYK3ztX7YZDnVpyCQY8gJLgHL0uXCsfOqZlWkQOCy_mfCszO6b89HgsOyMf6TtesbJ9Bh5lc3NiJNpMaItIyhttU4JDdbNIGqXeGCjPMNuQK7waqHRA-nZzAar9OnytDlBofyle6Y4qmrbZrMFY3LrDDRHnGELWMqNGQ9xkRE1sw5vuXBpadl6cyIWitN_u4HshBRQbTx_OhUCoSgoWr4uuBICmV9jIoIEydTT-Q7AQBPyqxhcaCMz8NTrygg3Z99gXB1q6HWw5HViA-T92YGtijhtKljfgFAXnSEctVSKn6MIwwvWH89bciDE9XOjqEFCaiX2Ebd0lfs5Fs7GH_yV4LwvZ4--0ZU9gyTtO9GAPF0wD0r-25rYaLkKggjN3hPaqbWwEzAO7s~&fmt=cjson','','FU1KDoQ0rAlpwCO2SRYeI3l8OfBvyZdSCh1ICwpEddiF5-sd0bpBOFGKQdTI9dItxV735DpvQ3mp5YIcDoIzv4ISUe4lTYmnZTGEFl9JxXO72jg3mJzvhac-s-8NifaPqK5_KqX-O75kUkLrMHWIhTg4tnpYXAWaANoBRc2ZU288OeVbIEu_FMrSrci8zEPTXZWX5j0rSMe9dw-FDjcMIF1lfGmxSrWlhOrh3bD-370NDs36ygVNEo0HzBWbnZEoYK3ztX7YZDnVpyCQY8gJLgHL0uXCsfOqZlWkQOCy_mfCszO6b89HgsOyMf6TtesbJ9Bh5lc3NiJNpMaItIyhttU4JDdbNIGqXeGCjPMNuQK7waqHRA-nZzAar9OnytDlBofyle6Y4qmrbZrMFY3LrDDRHnGELWMqNGQ9xkRE1sw5vuXBpadl6cyIWitN_u4HshBRQbTx_OhUCoSgoWr4uuBICmV9jIoIEydTT-Q7AQBPyqxhcaCMz8NTrygg3Z99gXB1q6HWw5HViA-T92YGtijhtKljfgFAXnSEctVSKn6MIwwvWH89bciDE9XOjqEFCaiX2Ebd0lfs5Fs7GH_yV4LwvZ4--0ZU9gyTtO9GAPF0wD0r-25rYaLkKggjN3hPaqbWwEzAO7s~',1,1542795309) [ RunTime:0.020720s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001019s ]
+
+[ 2018-11-21T18:15:11+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=c96Qpx7Psmt2crJRMiN_0165-467acb9e-8b889572-653383c4-7c22_q22_hd.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016552s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016849s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698993,'0e700914fb','http://101.236.14.88/api/slice/fileUpload?token=KMP3EmPV4CWfyY2uRgNRW_BogpZKSi9bd_JCKoVtVui62VQ6IcQ_e0-2alXOmo_Fzbj0PIG4XxlmIfQrlo-hDVi09GzcAlSpnFS6HLeCRHv82Dd_PLAgRB0uhCf77vPIYJA63p-XuQe4cgnNKVrFrJuY7_TJNzds86V6t2PAdaFUgJdJ7IEGUpkvabFhl7Wc_q_0l3e22oR7l_WHhK228SA0mooYwjHycxqwruFs-37Aqs4sror7XSQrvzI3NfHm4V9Cfgoih_ObSEo4T0JKuDLdD8S6IpucCgzgkFobj23_m9cnGjqm5DJbsjzHzptziuw2DtgU-MQ20DDJybJwnYf_hlTR9cgliMW9DaqnDDFQAIk62nZ90TGk7sA_3-awsvrwjZIRyx1-kf2WzU9wQXOEJp9UwoJSO5BsZ1HltCGHoFzUPCQZ3ELJMoVcR9glxQvxZERA70SbQpSbRe00RGy1LMMqsdUhoQYQxL-QTgCzmpvWeYcPAnikR-GPa2Kl87wwDW-UO_O9J2itY-EGVQWEGwWsOtXQ9n8t4lXpVqo7D-lWOvvpsmOHdHlehhk6ui20uhNND0CSbGnqsS_vnrAED6wFkVIWIvG1wYMc3S6zez1OdFravf2dI8E0zJw2yfqCWU1hpwI~&fmt=cjson','','KMP3EmPV4CWfyY2uRgNRW_BogpZKSi9bd_JCKoVtVui62VQ6IcQ_e0-2alXOmo_Fzbj0PIG4XxlmIfQrlo-hDVi09GzcAlSpnFS6HLeCRHv82Dd_PLAgRB0uhCf77vPIYJA63p-XuQe4cgnNKVrFrJuY7_TJNzds86V6t2PAdaFUgJdJ7IEGUpkvabFhl7Wc_q_0l3e22oR7l_WHhK228SA0mooYwjHycxqwruFs-37Aqs4sror7XSQrvzI3NfHm4V9Cfgoih_ObSEo4T0JKuDLdD8S6IpucCgzgkFobj23_m9cnGjqm5DJbsjzHzptziuw2DtgU-MQ20DDJybJwnYf_hlTR9cgliMW9DaqnDDFQAIk62nZ90TGk7sA_3-awsvrwjZIRyx1-kf2WzU9wQXOEJp9UwoJSO5BsZ1HltCGHoFzUPCQZ3ELJMoVcR9glxQvxZERA70SbQpSbRe00RGy1LMMqsdUhoQYQxL-QTgCzmpvWeYcPAnikR-GPa2Kl87wwDW-UO_O9J2itY-EGVQWEGwWsOtXQ9n8t4lXpVqo7D-lWOvvpsmOHdHlehhk6ui20uhNND0CSbGnqsS_vnrAED6wFkVIWIvG1wYMc3S6zez1OdFravf2dI8E0zJw2yfqCWU1hpwI~',1,1542795311) [ RunTime:0.023343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000676s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2018-11-21T18:16:54+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015508s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016223s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698995,'3f221e1d11','http://101.236.14.93/api/slice/fileUpload?token=pauEuqunIWCy_FhWvbaFo-ISKU8Pafrb85cOw23_fxA_NX8-Mkgyb1B2XU24m26fWpIoj2f_XVoNOKsWmkViqdITbc_sHRX6pjKphrVQmsV0WvYyJAw-ICZCAaHohlxi_QIh19JjHC4hbIJJh3UB1emvqk9ow4bbljA-CsvZzUD0P6oz7OYue2oa4MKlxXYb0n7odr2sMg3QtTZBmopmcvc4hjQqxra0M3nQ81L8LTFy-TZ_QgkUh24kiZfqMW9WIHQOpEoyM4vPoBrMZwBU76vI4SktJBaYiBVI0CcErgbO0CvvKhRSv5-1PqmJBLCIExjhWb8n7kCp2K2ga6HL3iiFKaCNEju4xVMT5oNU3jO9VBM08gsojTS880R9SUeUPH1y3fStn96rb5vEWcBLcrD2Lru4M4cQP39IV1ibfym0i5ktQfslP8dFKR9VUaGFrAVxfFoKKv5a-dQRZrL2NAzEJFtaxaaCf9Otjg5wXKTrf7gCOh_AoeE3Lw1k4N13RA0AvibBpkLyxhoqS1Gcx-tQ1ZN5ZbXMojkhElOHuPnJXnFPDllg1P6AXd4~&fmt=cjson','','pauEuqunIWCy_FhWvbaFo-ISKU8Pafrb85cOw23_fxA_NX8-Mkgyb1B2XU24m26fWpIoj2f_XVoNOKsWmkViqdITbc_sHRX6pjKphrVQmsV0WvYyJAw-ICZCAaHohlxi_QIh19JjHC4hbIJJh3UB1emvqk9ow4bbljA-CsvZzUD0P6oz7OYue2oa4MKlxXYb0n7odr2sMg3QtTZBmopmcvc4hjQqxra0M3nQ81L8LTFy-TZ_QgkUh24kiZfqMW9WIHQOpEoyM4vPoBrMZwBU76vI4SktJBaYiBVI0CcErgbO0CvvKhRSv5-1PqmJBLCIExjhWb8n7kCp2K2ga6HL3iiFKaCNEju4xVMT5oNU3jO9VBM08gsojTS880R9SUeUPH1y3fStn96rb5vEWcBLcrD2Lru4M4cQP39IV1ibfym0i5ktQfslP8dFKR9VUaGFrAVxfFoKKv5a-dQRZrL2NAzEJFtaxaaCf9Otjg5wXKTrf7gCOh_AoeE3Lw1k4N13RA0AvibBpkLyxhoqS1Gcx-tQ1ZN5ZbXMojkhElOHuPnJXnFPDllg1P6AXd4~',1,1542795414) [ RunTime:0.018097s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2018-11-21T18:16:55+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016577s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016162s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698996,'1416200fa3','http://101.236.14.73/api/slice/fileUpload?token=NUpR7rxzFkBEirBRGicdLWp-fyY0jgsEb60ca2cYQOuKypjVje1R3L0aThy1mDiiFHPTVwdICpSfq_2REnxKGgxSrR_S0h-ervEzWEzVL1R66ac2ztugknjBGYomhGLKJVb8tTycaKwwSzzczMWGE9hNYo5uOGIVrThJ9EnVaAJhzV1nsrS4ePNXngqK21u84o5k8nBdhiXaBqnTk_j0QPH25ZHS_hvC37LKkjR3ZHUyS_QOCFBQuV5DdpjOrodFdHRYyKPPZX-bz3irZRFMTjtQAqgddVTA4KnyqGnnXc0lfA5VI4Nq8C6FSIr8Zq65TuwaEY0YZD9qXgGXtTCKd4ZXBcSgsz7_r-oh22XfDXHKrw3pfHdek2PGIJGJLkMntx0BG2Kj-HfhjcEb4wsh5ej6_pBaIJU_L8OfGiGHXBnWMtzgiDlU504mOpdFqPbv-jUFzW_xdH8z9pEaJMaAHUxrdLwwv2YT3wmEibrlHhS3i2sZ4odiMc4v7EaoHYQq2x8sF9iVRVLwduS1uC7SwFph64BVudhFaQkl2V6wZlgs3KHiLeUd6DS0FHw~&fmt=cjson','','NUpR7rxzFkBEirBRGicdLWp-fyY0jgsEb60ca2cYQOuKypjVje1R3L0aThy1mDiiFHPTVwdICpSfq_2REnxKGgxSrR_S0h-ervEzWEzVL1R66ac2ztugknjBGYomhGLKJVb8tTycaKwwSzzczMWGE9hNYo5uOGIVrThJ9EnVaAJhzV1nsrS4ePNXngqK21u84o5k8nBdhiXaBqnTk_j0QPH25ZHS_hvC37LKkjR3ZHUyS_QOCFBQuV5DdpjOrodFdHRYyKPPZX-bz3irZRFMTjtQAqgddVTA4KnyqGnnXc0lfA5VI4Nq8C6FSIr8Zq65TuwaEY0YZD9qXgGXtTCKd4ZXBcSgsz7_r-oh22XfDXHKrw3pfHdek2PGIJGJLkMntx0BG2Kj-HfhjcEb4wsh5ej6_pBaIJU_L8OfGiGHXBnWMtzgiDlU504mOpdFqPbv-jUFzW_xdH8z9pEaJMaAHUxrdLwwv2YT3wmEibrlHhS3i2sZ4odiMc4v7EaoHYQq2x8sF9iVRVLwduS1uC7SwFph64BVudhFaQkl2V6wZlgs3KHiLeUd6DS0FHw~',1,1542795415) [ RunTime:0.018143s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000582s ]
+
+[ 2018-11-21T18:16:57+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016442s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016417s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698997,'13bcedf897','http://101.236.14.93/api/slice/fileUpload?token=LjJAiZcHz7xx30TGrZipvb0b0PeV76tq8r32LlUyqp5p4ujVDiv9oTN_5oOtkHy1twluyo4yBgVesMVwLVykEvfZrH5kfG_4FLmUdw3df2Zv-nnXff83DFSSiTyEFD9Z3zT7_mWw22Cp6UwYJhKM682auuQGKMFDzepWva7nftPWY0CWHv4mryXLM2Uv6j7HQJ_eL_oN631FrvfHzE-w8digo5fTkFjXFNyTo_scc_k1DBDRM42oCsZ6JReOKSl-jHtM7t5SbfGOYo0O7mePZdQb1_lJVLb5WU_WvqCpszYUtXBLjBovLdFN4Ck3L-n-ZHa7m9ZLIVIi19Yxd-HlARnaBwMx5sHtgGTkQSjXXVE28sZlQz1GSXwhbBb92grF6NlL53xiEqnEawm1iaOwiAoAXdZN8P0SvhhMs1efyGdukOEHFzYyQZTef53XhsyW1tjvpIzACBvXCnulr51LPyGjmg0G5ZPu23OTbPKb6Nye22-u0pB12ap1cEO_0oTR0SkFke-q8yN1KVcxlboijeAq0MAo3ZYCbmd0A7X6_lXS5LVDuApmDnyIMrY~&fmt=cjson','','LjJAiZcHz7xx30TGrZipvb0b0PeV76tq8r32LlUyqp5p4ujVDiv9oTN_5oOtkHy1twluyo4yBgVesMVwLVykEvfZrH5kfG_4FLmUdw3df2Zv-nnXff83DFSSiTyEFD9Z3zT7_mWw22Cp6UwYJhKM682auuQGKMFDzepWva7nftPWY0CWHv4mryXLM2Uv6j7HQJ_eL_oN631FrvfHzE-w8digo5fTkFjXFNyTo_scc_k1DBDRM42oCsZ6JReOKSl-jHtM7t5SbfGOYo0O7mePZdQb1_lJVLb5WU_WvqCpszYUtXBLjBovLdFN4Ck3L-n-ZHa7m9ZLIVIi19Yxd-HlARnaBwMx5sHtgGTkQSjXXVE28sZlQz1GSXwhbBb92grF6NlL53xiEqnEawm1iaOwiAoAXdZN8P0SvhhMs1efyGdukOEHFzYyQZTef53XhsyW1tjvpIzACBvXCnulr51LPyGjmg0G5ZPu23OTbPKb6Nye22-u0pB12ap1cEO_0oTR0SkFke-q8yN1KVcxlboijeAq0MAo3ZYCbmd0A7X6_lXS5LVDuApmDnyIMrY~',1,1542795417) [ RunTime:0.017954s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000525s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2018-11-21T18:16:58+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001406s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016794s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.015470s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48698998,'d1b22a8e29','http://101.236.14.89/api/slice/fileUpload?token=y-mBOU-dU-zLqm3keRxPuu70lwiNXRxXdnVwR7Vm3VHrVJARDkwYrN2arwo3_-1gW_fkc0VXZCqVW0WfTUPmuXcOD4SP5WyRP5MzDOxgrZKde2aEvfbIpZrv7fjtyBWUMe_T6WnL0wyI8y2FUIY74hTXAFwawMeteLkHEn6-52p4OieNErjFd4uiQNeaXtB546QVCeDtSymT5MGSqK8ywBC98O6AlamzxnFnuHBVGQPzuhhYS0nLEFGvv3U0lbmUU3X2ZNX0pnnPdrzvrNKq3b5GA33yz3-oumvj_ziL7d1iFR2kBBiOGVsyW5OxK5AvJOKn_baeh9j-C3tNK9lTY1weh1S6jIxPOUiLzyAMP2EcbIzy5SadtZyKt82uotELOLEbZt3kZMgXqK36ByswjrSGn5NdVjDgKPDPdYf1LjTfkqngVuBF0PC6IjNVyB3QE59fk5qEjV0geMideG1Jd2KYi41fQmDYbyanYRuP_7_5MKrUatvkos5PDeIET8UsbjOlaZ2cn2wqQYJ4OlvE_uDOULAr83xX_XgcNOKaCsU5hi6Q19Uz3ThH6Sw~&fmt=cjson','','y-mBOU-dU-zLqm3keRxPuu70lwiNXRxXdnVwR7Vm3VHrVJARDkwYrN2arwo3_-1gW_fkc0VXZCqVW0WfTUPmuXcOD4SP5WyRP5MzDOxgrZKde2aEvfbIpZrv7fjtyBWUMe_T6WnL0wyI8y2FUIY74hTXAFwawMeteLkHEn6-52p4OieNErjFd4uiQNeaXtB546QVCeDtSymT5MGSqK8ywBC98O6AlamzxnFnuHBVGQPzuhhYS0nLEFGvv3U0lbmUU3X2ZNX0pnnPdrzvrNKq3b5GA33yz3-oumvj_ziL7d1iFR2kBBiOGVsyW5OxK5AvJOKn_baeh9j-C3tNK9lTY1weh1S6jIxPOUiLzyAMP2EcbIzy5SadtZyKt82uotELOLEbZt3kZMgXqK36ByswjrSGn5NdVjDgKPDPdYf1LjTfkqngVuBF0PC6IjNVyB3QE59fk5qEjV0geMideG1Jd2KYi41fQmDYbyanYRuP_7_5MKrUatvkos5PDeIET8UsbjOlaZ2cn2wqQYJ4OlvE_uDOULAr83xX_XgcNOKaCsU5hi6Q19Uz3ThH6Sw~',1,1542795418) [ RunTime:0.018058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000533s ]
+
+[ 2018-11-21T18:17:07+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-21T18:17:07+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-21T18:25:56+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016684s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016237s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699002,'ff722d5905','http://101.236.14.72/api/slice/fileUpload?token=NJf3V0OxuevJ2ekJ2MgCStZ_R6iUNp5g-seWbl_ZuXGjKOAxJHaKqv_sHtv6FHaT8XWrz279jWlvk_X-BDV78bTXN1BYs1jFr6N5vbGN78sfvPoX2ytVNiKISF9BGbN24ulz4iOgtpeNiM3NI0YIOyR5aF07OCG7rDcs_E8RID01JiYoWg7M5XeO3KLouC6F1CAW_xIw_nHIEbzffH1ODsnnhhkFv7HxqgnzpuPCvCm2hW9tJb-mhyNMWsu22HfJgSfBa9MZjMBXEyjxsfaWulqIYCJ_bSCxxNsaiK00iyNgYUz1EGfU7Iutoojn_Xi0H-fHGhy7CiIDZvZVqwSaCvlMKmmF8Je2du9vN6uL5sRfSXrL08nMeK5dXBeDrh7poh8ZiBQT5T5XIhiuxn3qcuVE0CXKMPs_3OtW43I4CQ0Pad9LEZQbEnv8k5D9tb-6kAZekCJUMI0vC9Lo_37z_rp-L_6L044u9rGIDkDbp9usT9PB9eC0opbfiFzdC-LAlWVKoe-_ZHAAdonNZVWLk6hirKni69sW0dsppNNQVg57s4TSkq_c3kzx-3I~&fmt=cjson','','NJf3V0OxuevJ2ekJ2MgCStZ_R6iUNp5g-seWbl_ZuXGjKOAxJHaKqv_sHtv6FHaT8XWrz279jWlvk_X-BDV78bTXN1BYs1jFr6N5vbGN78sfvPoX2ytVNiKISF9BGbN24ulz4iOgtpeNiM3NI0YIOyR5aF07OCG7rDcs_E8RID01JiYoWg7M5XeO3KLouC6F1CAW_xIw_nHIEbzffH1ODsnnhhkFv7HxqgnzpuPCvCm2hW9tJb-mhyNMWsu22HfJgSfBa9MZjMBXEyjxsfaWulqIYCJ_bSCxxNsaiK00iyNgYUz1EGfU7Iutoojn_Xi0H-fHGhy7CiIDZvZVqwSaCvlMKmmF8Je2du9vN6uL5sRfSXrL08nMeK5dXBeDrh7poh8ZiBQT5T5XIhiuxn3qcuVE0CXKMPs_3OtW43I4CQ0Pad9LEZQbEnv8k5D9tb-6kAZekCJUMI0vC9Lo_37z_rp-L_6L044u9rGIDkDbp9usT9PB9eC0opbfiFzdC-LAlWVKoe-_ZHAAdonNZVWLk6hirKni69sW0dsppNNQVg57s4TSkq_c3kzx-3I~',1,1542795956) [ RunTime:0.017567s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000970s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016634s ]
+
+[ 2018-11-21T18:25:58+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016914s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016774s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699003,'23cdd48388','http://101.236.14.78/api/slice/fileUpload?token=xC9KHIROLnlL79fwPqn_cPFFmap0NYYggQ5wNOB-E4hElQgMSyBzmWcc9RoOF1Q9ToQc505DY89jLF_FJWjs-1Q_oC1ZozPiqPhKUSWUXKVqbFKGQi2RQXf2oAR0tPA8T-ffA_xoKYRZL-dRupnaeFDiV47NguQJyTdQaVYQB_l_zNuUoSMhjq5jKYlIv0t-n3ioDV182G6L5SKoly9C0JyAFjquT6LzpIDsc6Yjh1p7uAIOKlKCB3yfUmImwHqYR13rtE5fYl4hnUWhMLFPlpblOhmqID6mc3oQq8GIa5TF45p3xw2xXpcqhgQbew6fb4yfOclqrNCPCnbb_JrIsYqEih-jAqCA3YvvcnHTYnNpHpmS2d9UUm7GFl28RVjWbZ84Z_sN_WulCDU5Ka3eO2pXVZ0O8VcQx2IWKTFa96G11UYDF3HNqbDBFVMcGAiiyfqOJwvTDOYePKtJ7fcpQ_4iuzjQnPXAQhOa1hxViAWmMdIHW-6exd6jyTB1Pn5tv4U2B5L3E0e-2Cs--tPwMwNeE56dAOFuUJsHEDBGTz0y_Wg-4QciLXoqTTI~&fmt=cjson','','xC9KHIROLnlL79fwPqn_cPFFmap0NYYggQ5wNOB-E4hElQgMSyBzmWcc9RoOF1Q9ToQc505DY89jLF_FJWjs-1Q_oC1ZozPiqPhKUSWUXKVqbFKGQi2RQXf2oAR0tPA8T-ffA_xoKYRZL-dRupnaeFDiV47NguQJyTdQaVYQB_l_zNuUoSMhjq5jKYlIv0t-n3ioDV182G6L5SKoly9C0JyAFjquT6LzpIDsc6Yjh1p7uAIOKlKCB3yfUmImwHqYR13rtE5fYl4hnUWhMLFPlpblOhmqID6mc3oQq8GIa5TF45p3xw2xXpcqhgQbew6fb4yfOclqrNCPCnbb_JrIsYqEih-jAqCA3YvvcnHTYnNpHpmS2d9UUm7GFl28RVjWbZ84Z_sN_WulCDU5Ka3eO2pXVZ0O8VcQx2IWKTFa96G11UYDF3HNqbDBFVMcGAiiyfqOJwvTDOYePKtJ7fcpQ_4iuzjQnPXAQhOa1hxViAWmMdIHW-6exd6jyTB1Pn5tv4U2B5L3E0e-2Cs--tPwMwNeE56dAOFuUJsHEDBGTz0y_Wg-4QciLXoqTTI~',1,1542795958) [ RunTime:0.018226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001058s ]
+
+[ 2018-11-21T18:25:59+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016559s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.017365s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699004,'c5f297b8a7','http://101.236.14.95/api/slice/fileUpload?token=dU8OTGKlzlJbvPSB5JibWVOJsap8UYuv0jf0C77hDJcbfryJyN-QYqSB70ttoxfh6R70dUWkouJbZywkBtvEusLrh19E2pFkHG5MkJukPJW_39q2JbqIBFGrTsTVdvjNwPucObSfyDOvmHpmOckx66HdrUIIDg85WtGaZsSdfn636NpgdnuRsr7PIp-IoFv_llDx6rtxz44FxFQ6nSlyiTGYlm7QvQmnw0fIKpNSeCSSDy5L5viYJThn1ELN26Xoktu9RTKZmdVS-_6mRppKo9YzCbcT1HSFbjhzzyJ4EU5b4xBRALaxkvoDhVDPIbNPLnN6WjEtfc38U8oW-LPNyqhJiEY7TYfg6JqV4ZBvrRcHtwckk58r8MtG9wgxNNbkX5dLRHOdpiMTzXDjsgN2pOB_QATmb7cdiAemw5jaPJl7b1n_K73yk9yodd6_LSwjt7hENPXMUV9HXp9rliNj8_MAu4o_iTvXOGIC_5LSIwvqazO7o6YBKtEDC_WrC32cBL7J--etDznG9uzcNcSVLDJuTqbCg-Feqhg0l_dtmOT78VST0fvS6IXixR0~&fmt=cjson','','dU8OTGKlzlJbvPSB5JibWVOJsap8UYuv0jf0C77hDJcbfryJyN-QYqSB70ttoxfh6R70dUWkouJbZywkBtvEusLrh19E2pFkHG5MkJukPJW_39q2JbqIBFGrTsTVdvjNwPucObSfyDOvmHpmOckx66HdrUIIDg85WtGaZsSdfn636NpgdnuRsr7PIp-IoFv_llDx6rtxz44FxFQ6nSlyiTGYlm7QvQmnw0fIKpNSeCSSDy5L5viYJThn1ELN26Xoktu9RTKZmdVS-_6mRppKo9YzCbcT1HSFbjhzzyJ4EU5b4xBRALaxkvoDhVDPIbNPLnN6WjEtfc38U8oW-LPNyqhJiEY7TYfg6JqV4ZBvrRcHtwckk58r8MtG9wgxNNbkX5dLRHOdpiMTzXDjsgN2pOB_QATmb7cdiAemw5jaPJl7b1n_K73yk9yodd6_LSwjt7hENPXMUV9HXp9rliNj8_MAu4o_iTvXOGIC_5LSIwvqazO7o6YBKtEDC_WrC32cBL7J--etDznG9uzcNcSVLDJuTqbCg-Feqhg0l_dtmOT78VST0fvS6IXixR0~',1,1542795959) [ RunTime:0.018508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001052s ]
+
+[ 2018-11-21T18:26:01+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=1.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016057s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.017877s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699005,'0a8138a07b','http://101.236.14.86/api/slice/fileUpload?token=HcGYfJHmBlgqZg2YbCJCex8FsTw39DnFLLFdL4P-wb827SoXJmA9RkJdNVyE2cmc9goCHcfs4nG5_boczcIBXH_7A4caT-IeCzBFErYgCZvzouvE2RHGninUdYZ9WHoK6OiH07fk4jnGb_uCOAz1EfXmYuBGpnmvD1w8r9qguYzkJ91oz2UM36PYafgFmbJsQAqhhRmtQZgKcbdMvYey4OebZetywsPErYYQWkvd6paWVnxJNzZRmrweu3VglGeAwD1BZGm2bjAHL-V47a_dlaB45enkW6cxxMTIHMLwXcvv_96LUnrvpla6Uk4aFX_uvsS_OhO2tMqY2yAACrBKTGxMIO0QENAsKgvfTitm7Cw46Dc0lpBdzY05KLp2zAkxhqMacVr8Ys3LwSJVYJcLdkQWj0Da3I52Hr_Nc2yKMOharaaLysH5BSIyyQgSdNKQTDf-ujV6HTQzEAxUzL74J9_ip00LemuqcVK2RDCsySxD6fTQK6Gmt2WKXYodZWdiS2drXj26ikCmFizAb5sXp5rdwJf6Bljv85hsphiDL3cdzzl-WdyBwz_Nnm0~&fmt=cjson','','HcGYfJHmBlgqZg2YbCJCex8FsTw39DnFLLFdL4P-wb827SoXJmA9RkJdNVyE2cmc9goCHcfs4nG5_boczcIBXH_7A4caT-IeCzBFErYgCZvzouvE2RHGninUdYZ9WHoK6OiH07fk4jnGb_uCOAz1EfXmYuBGpnmvD1w8r9qguYzkJ91oz2UM36PYafgFmbJsQAqhhRmtQZgKcbdMvYey4OebZetywsPErYYQWkvd6paWVnxJNzZRmrweu3VglGeAwD1BZGm2bjAHL-V47a_dlaB45enkW6cxxMTIHMLwXcvv_96LUnrvpla6Uk4aFX_uvsS_OhO2tMqY2yAACrBKTGxMIO0QENAsKgvfTitm7Cw46Dc0lpBdzY05KLp2zAkxhqMacVr8Ys3LwSJVYJcLdkQWj0Da3I52Hr_Nc2yKMOharaaLysH5BSIyyQgSdNKQTDf-ujV6HTQzEAxUzL74J9_ip00LemuqcVK2RDCsySxD6fTQK6Gmt2WKXYodZWdiS2drXj26ikCmFizAb5sXp5rdwJf6Bljv85hsphiDL3cdzzl-WdyBwz_Nnm0~',1,1542795961) [ RunTime:0.017685s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2018-11-21T18:26:38+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=gasdf.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016555s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016169s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699006,'8d16f8ec4a','http://101.236.14.88/api/slice/fileUpload?token=3Ls1QPwN5PFJgc26UCxtjLBiADJwfX6Fdkym2VI6kyE3yngxE1gV-Sgtzx5Un3LVd_1njuDkQYPcXKbiRjIIwhzdakEY7GFOkdwmgUJElimkgAjbGBu_Ej2mUER9xnyDZKmrlnFXd5j2BqstK5ebvy5j3FmQDyiVh6_EuW61YUDkYJdT7zlqbqF_o3anNQ2qZx0dMCZouGeCr2vJ_lcAh1NnV9Io_HDNjlb4_0NggjRCiuiY6UNkon0PjvFcIOnMGCH1wU-WlN2LUmR5DlCHuKctUOSWP6dPVAieP1Z7mppjFD5aWoH28clMkupeMihRF45T2XMuAWnfyRVgwn8h-tT7TMr10LbX1rEC9p9xX-qS8eVDJsTDzQfL79W6vMx-YxlSdbrB325u18EO4aJo5UAAZPx7Oj-Lx9iUh_EZuOhfJK_T3rM7xgLZk6M35b20TPqp4XydldXEsO0R0HMyg4WuuT9MpLnlw49KaM9T-Upx-2DArzCp_qWgmwO-0GktsB8GC8-r7l1vHh9gQxs6CcJrwLBriSmW7acvYCnwBkkvj1iRNOc_LthGM5I8vXxe&fmt=cjson','','3Ls1QPwN5PFJgc26UCxtjLBiADJwfX6Fdkym2VI6kyE3yngxE1gV-Sgtzx5Un3LVd_1njuDkQYPcXKbiRjIIwhzdakEY7GFOkdwmgUJElimkgAjbGBu_Ej2mUER9xnyDZKmrlnFXd5j2BqstK5ebvy5j3FmQDyiVh6_EuW61YUDkYJdT7zlqbqF_o3anNQ2qZx0dMCZouGeCr2vJ_lcAh1NnV9Io_HDNjlb4_0NggjRCiuiY6UNkon0PjvFcIOnMGCH1wU-WlN2LUmR5DlCHuKctUOSWP6dPVAieP1Z7mppjFD5aWoH28clMkupeMihRF45T2XMuAWnfyRVgwn8h-tT7TMr10LbX1rEC9p9xX-qS8eVDJsTDzQfL79W6vMx-YxlSdbrB325u18EO4aJo5UAAZPx7Oj-Lx9iUh_EZuOhfJK_T3rM7xgLZk6M35b20TPqp4XydldXEsO0R0HMyg4WuuT9MpLnlw49KaM9T-Upx-2DArzCp_qWgmwO-0GktsB8GC8-r7l1vHh9gQxs6CcJrwLBriSmW7acvYCnwBkkvj1iRNOc_LthGM5I8vXxe',1,1542795998) [ RunTime:0.018130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2018-11-21T18:26:39+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=gasdf.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.015670s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016098s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699007,'89fbde12f4','http://101.236.14.76/api/slice/fileUpload?token=iU2A-nGQJRoOSHEdciOaKVG0j_wkmYmXyPzE1CF-j-8uMm66DLDUwnc-wSwLz6HYrGlab2m-6k9qBbiHZzdzwW4S-3NCOf37C07iR0Qc_KKc-V8fGJjnPMbAlyromVnD3xPJWCeiH2E7vf7NFihTWQMydwp1OpIjXN5b4mGjVOj9q-1PA-E8HlbKRrNM8rGJWRQldZM0wj752zy_4PewCZok2gSXeBCbvV6TasbhUu7RxF8MpF_ptcABMXbL-pFlG1l1ySum-Vz5gYBef-fubLklEH9DshLv8KW4_mJL_QCs-2lxqFNydjaStC9dNK2Ur8x4rOJ6PQfeI490Djpf-pgzwF2KEHuoFpThTm9XR8B0KJY-WHeX2hfkRZQyi5xTLecMPOxN8L0_Bh9konrC6h-IEUPa436CQAzIRD7WKqxmmLWg4-8kqoS08JYlmh-yEihsH0LlqLrFtND0YCLkEFI98PMkADW0pCY5wEdZg3KJOufTqU7zgXwrFZua3cbtMhpr6n1xjLvOYfqyl4g5Xyqr7vAOJCr0AO_IDIyJJV0ICAfbND-GYqsXmHE1GiRx&fmt=cjson','','iU2A-nGQJRoOSHEdciOaKVG0j_wkmYmXyPzE1CF-j-8uMm66DLDUwnc-wSwLz6HYrGlab2m-6k9qBbiHZzdzwW4S-3NCOf37C07iR0Qc_KKc-V8fGJjnPMbAlyromVnD3xPJWCeiH2E7vf7NFihTWQMydwp1OpIjXN5b4mGjVOj9q-1PA-E8HlbKRrNM8rGJWRQldZM0wj752zy_4PewCZok2gSXeBCbvV6TasbhUu7RxF8MpF_ptcABMXbL-pFlG1l1ySum-Vz5gYBef-fubLklEH9DshLv8KW4_mJL_QCs-2lxqFNydjaStC9dNK2Ur8x4rOJ6PQfeI490Djpf-pgzwF2KEHuoFpThTm9XR8B0KJY-WHeX2hfkRZQyi5xTLecMPOxN8L0_Bh9konrC6h-IEUPa436CQAzIRD7WKqxmmLWg4-8kqoS08JYlmh-yEihsH0LlqLrFtND0YCLkEFI98PMkADW0pCY5wEdZg3KJOufTqU7zgXwrFZua3cbtMhpr6n1xjLvOYfqyl4g5Xyqr7vAOJCr0AO_IDIyJJV0ICAfbND-GYqsXmHE1GiRx',1,1542795999) [ RunTime:0.017767s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2018-11-21T18:26:41+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=gasdf.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016630s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016322s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699008,'b35eadece9','http://101.236.14.91/api/slice/fileUpload?token=0TXDWYVfiiHWFW2YL4qS7nk_2KM-CaSaRcaFlHetRZv3_7AdbcPM3jf7J6KTX3tqSUFgzxs8JT-q3MCF3Cnt8Vth8wSM1_qpKZcIqIHwiF2tn4AY8CRP5RZkUJmAtggugB2RoS1TuuavJaHOFn_ppranYPwwr6OuSAL4x3zWPa_3LWXJlpTGBoVZiW6xe_k7fneML4r0PcHRp2c8tfXyRkLkF5ROj7AUK7IqqcfnzowOK0pVKj6jal1aMIlA6phhlSb7Qm3tYZaqfy5SyPMon3916OYQhT6iBUwA6czUfMvKV8b7hopnxtPGvUL5eUdGvCpM1FOFsVjetECzo6kz3NaKSVH99as8OWVDPhHp1vh54C0m4b2upAo8LT-FBGRktS7TnoZP8zXpKViWcFygovzzfJ8zR3Cjn8vLUhRYQEjM58B0XDrvcHQGaHGyFyfpwTCXYuYzGShgZmS4PcDQpiDJIJExH9yW5nHQtNgvtqJHw7UvMSH9PR_cu0QWGGEXzJwzdxQfUd2zoQNZVaSSeNkl5k0W05ll2VG4JgIoDb0tIVS1BwpkuPO67VwCK_V9&fmt=cjson','','0TXDWYVfiiHWFW2YL4qS7nk_2KM-CaSaRcaFlHetRZv3_7AdbcPM3jf7J6KTX3tqSUFgzxs8JT-q3MCF3Cnt8Vth8wSM1_qpKZcIqIHwiF2tn4AY8CRP5RZkUJmAtggugB2RoS1TuuavJaHOFn_ppranYPwwr6OuSAL4x3zWPa_3LWXJlpTGBoVZiW6xe_k7fneML4r0PcHRp2c8tfXyRkLkF5ROj7AUK7IqqcfnzowOK0pVKj6jal1aMIlA6phhlSb7Qm3tYZaqfy5SyPMon3916OYQhT6iBUwA6czUfMvKV8b7hopnxtPGvUL5eUdGvCpM1FOFsVjetECzo6kz3NaKSVH99as8OWVDPhHp1vh54C0m4b2upAo8LT-FBGRktS7TnoZP8zXpKViWcFygovzzfJ8zR3Cjn8vLUhRYQEjM58B0XDrvcHQGaHGyFyfpwTCXYuYzGShgZmS4PcDQpiDJIJExH9yW5nHQtNgvtqJHw7UvMSH9PR_cu0QWGGEXzJwzdxQfUd2zoQNZVaSSeNkl5k0W05ll2VG4JgIoDb0tIVS1BwpkuPO67VwCK_V9',1,1542796001) [ RunTime:0.018337s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001040s ]
+
+[ 2018-11-21T18:26:42+08:00 ] 127.0.0.1 /Admin/Video/uploadInit?video_name=gasdf.mp4&uploadtype=1&file_size=4651641
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001312s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent D:\WorkSpace\PHPStudy\WWW\lawwith_test\ThinkPHP\Common\functions.php 第 1092 行.
+SQL: SHOW COLUMNS FROM `lx_train` [ RunTime:0.016751s ]
+SQL: SHOW COLUMNS FROM `lx_video` [ RunTime:0.016419s ]
+SQL: INSERT INTO `lx_video` (`video_id`,`video_unique`,`upload_url`,`progress_url`,`token`,`uploadtype`,`upload_time`) VALUES (48699009,'d7837a25fd','http://101.236.14.83/api/slice/fileUpload?token=oNFw-KjkEWM3_VWsuEG6cdP64AHT5X6ivcPEcwYenHTUTrGkAZsxvrzLQMnKVAPJjaXlXdeUprKGMjCBIefn9zDdMxWnSQTEvPwlf9QvorM04RpOuNEUYvHiEjUy9sMyfz5dguQKUwQeuACRgAiv7jV7Wwkltfl5pnHaljOLfH1oAVIyGRM7A07pYc8QLrpvvvgk0XIkkHYZeTiA_2RJIHTa_p0xBUSSCTTi_0Gq0ruIn_ES60G-LAOBt_1J8aFcjMA6j8bCwMN_8jhWba5plK4N1u63kGYfnCj8ZvEKIpI5bkOV2etaPIQWKSVEETfal498B51cEKNaVR3u7Mh7Vze-zoM50cgKNXdbs3rOtcu16G695ex7UENU6pQK5qCFj3eV-qS772AZ1s_sOxQFkWc8BJuNHTVN0T6jggVbjYKJQiVRE8-KQd9GvEfLLRtaOK65VCl4v92cjhLesgaIf16_f1iy9V8SqpzFfMQ1z1YyrUdF67LZUKF7nmpdNVZFH1IYNglLb69V-yYLyvd_HlzRkiD26GAkgOSg3nj0A82zQAClrd4pOPDYlpnARFMv&fmt=cjson','','oNFw-KjkEWM3_VWsuEG6cdP64AHT5X6ivcPEcwYenHTUTrGkAZsxvrzLQMnKVAPJjaXlXdeUprKGMjCBIefn9zDdMxWnSQTEvPwlf9QvorM04RpOuNEUYvHiEjUy9sMyfz5dguQKUwQeuACRgAiv7jV7Wwkltfl5pnHaljOLfH1oAVIyGRM7A07pYc8QLrpvvvgk0XIkkHYZeTiA_2RJIHTa_p0xBUSSCTTi_0Gq0ruIn_ES60G-LAOBt_1J8aFcjMA6j8bCwMN_8jhWba5plK4N1u63kGYfnCj8ZvEKIpI5bkOV2etaPIQWKSVEETfal498B51cEKNaVR3u7Mh7Vze-zoM50cgKNXdbs3rOtcu16G695ex7UENU6pQK5qCFj3eV-qS772AZ1s_sOxQFkWc8BJuNHTVN0T6jggVbjYKJQiVRE8-KQd9GvEfLLRtaOK65VCl4v92cjhLesgaIf16_f1iy9V8SqpzFfMQ1z1YyrUdF67LZUKF7nmpdNVZFH1IYNglLb69V-yYLyvd_HlzRkiD26GAkgOSg3nj0A82zQAClrd4pOPDYlpnARFMv',1,1542796002) [ RunTime:0.017745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001042s ]
+
+[ 2018-11-21T18:27:08+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-11-21T18:27:08+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+ERR: 无法加载控制器:Public
+

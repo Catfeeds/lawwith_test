@@ -10,6 +10,7 @@ namespace App\Controller;
 use Common\Api\MCrypt;
 use Common\Api\ApiPage;
 use Common\Api\JPush;
+use Common\Api\letvCloud;
 
 class ContentController extends BasicController
 {
@@ -675,17 +676,41 @@ class ContentController extends BasicController
     //回复帖子
     public function comment_posts() {
         $AesMct  = new MCrypt;
+        $letv = new letvCloud;
         $uid     = session('my_id');    //用户id
         $rid     = $AesMct->decrypt(urldecode(I('post.rid'))); //帖子id
         $pid     = $AesMct->decrypt(urldecode(I('post.pid'))); //帖子id
-        $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
+//        $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
         $is_nym  = $AesMct->decrypt(urldecode(I('post.is_nym')));    //是否匿名 1是
-        $type  = $AesMct->decrypt(urldecode(I('post.type')));    //文字0 视频1
+        $types  = $AesMct->decrypt(urldecode(I('post.type')));    //文字0 视频1
+//        $token = urldecode(I('post.token'));
+        $file_size = I('post.file_size');
 
-        if($type == 0){
+        if($types == 0){
             $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
-        }elseif($type == 1){
-            $content = session("video_sid"); //获取上传视频后存储在session中的video_id
+        }elseif($types == 1){
+            $content = I('post.content');
+//            if(empty($content)) {
+//                $content = '律携视频';
+//            }
+            $client_ip = get_client_ip($type = 0);
+//            $file_size = isset($_POST['file_size']) ? intval($_POST['file_size']) : 0;
+//            $uploadtype = isset($_POST['uploadtype']) ? intval($_POST['uploadtype']) : 0;
+
+//            if(isset($token) && !empty($token)) {
+//                echo $letv_info = $letv->videoUploadResume($token, $uploadtype); //视频文件断点续传
+//            } else {
+            $letv_info = $letv->videoUploadInit($content, $client_ip, $file_size, 1); //视频上传
+//            }
+
+            $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式
+            $video_data['data']['upload_time'] = time(); //插入数据库，添加时间字段
+            if($video_data['code'] == 0) { //判断返回数据的状态码是否为成功，并插入数据库
+                $id = M('Video')->add($video_data['data']);
+                $content = $id;
+            }else{
+                apiReturn('1026', AJAX_FALSE, "");
+            }
         }
 
         if(empty($rid) || empty($content)) {
@@ -1506,35 +1531,4 @@ class ContentController extends BasicController
         apiReturn('1024', AJAX_TRUE, $returnData);
     }
 
-    //上传视频初始化
-    public function uploadInit() {
-        $letv = new letvCloud;
-        $video_name = trim(I('get.video_name'));
-
-        if(empty($video_name)) {
-            $video_name = '律携视频';
-        }
-
-        $client_ip = get_client_ip($type = 0);
-        $file_size = isset($_GET['file_size']) ? intval($_GET['file_size']) : 0;
-        $uploadtype = isset($_GET['uploadtype']) ? intval($_GET['uploadtype']) : 0;
-
-        if(isset($_GET['token']) && !empty(trim($_GET['token']))) {
-            $token = trim($_GET['token']);
-            echo $letv_info = $letv->videoUploadResume($token, $uploadtype); //视频文件断点续传
-        } else {
-            echo $letv_info = $letv->videoUploadInit($video_name, $client_ip, $file_size, $uploadtype); //视频上传
-        }
-
-        $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式
-        $video_data['data']['upload_time'] = time(); //插入数据库，添加时间字段
-//        apiReturn('1030', AJAX_TRUE,$video_data);
-        if($video_data['code'] == 0) { //判断返回数据的状态码是否为成功，并插入数据库
-            $id = M('Video')->add($video_data['data']);
-            session('video_sid', $id); //保存数据id到session
-            apiReturn('1025', AJAX_TRUE, "");
-        }else{
-            apiReturn('1026', AJAX_FALSE, "");
-        }
-    }
 }
