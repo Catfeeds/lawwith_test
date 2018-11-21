@@ -434,7 +434,7 @@ class UserController extends BasicController
             );
         }
         $model = D('AccountRelation');
-        $res = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,bj_img,remark,email,birth,province,city,town,tag_citys,specialty,majors,work_life,law,lawyer_num,company,position,school,hight_diploma,education,professional,prize,price,type,create_at,up_time,status,num_img,is_hide,direct_price,case_price,direct_time')->select();
+        $res = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,bj_img,remark,email,birth,province,city,town,tag_citys,specialty,majors,work_life,law,lawyer_num,company,position,school,hight_diploma,education,professional,prize,price,type,create_at,up_time,status,num_img,is_hide,direct_price,case_price,direct_time,integral,credit,wallet')->select();
         $data = $res[0];
         $num = date('y', time()) - date('y', $data['up_time']);
         $data['years'] = $data['work_life'] + $num;     //执业年限
