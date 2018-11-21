@@ -1265,10 +1265,12 @@ class UserController extends BasicController
             'time' => time()
         );
         if(M('evaluate')->add($data)) {     //添加评价记录
-            M('account')->where(['id'=>$uid])->setInc('direct_time',$direct); //给被评价人更新连接时长
+//            M('account')->where(['id'=>$uid])->setInc('direct_time',$direct); //给被评价人更新连接时长
             apiReturn('1024', AJAX_TRUE);    // 添加成功
         } else {
             apiReturn('1023', AJAX_FALSE);
         }
     }
+
+
 }

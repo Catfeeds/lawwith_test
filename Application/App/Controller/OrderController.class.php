@@ -340,12 +340,11 @@ class OrderController extends BasicController
             $User = M('wallet');
             $User->where(['uid' => $userId])->setDec('money',$amount); // 减用户的余额
             $User->where(['uid' => $objectId])->setInc('money',$amount); // 加律师的余额
+            M('account')->where(['id'=>$objectId])->setInc('direct_time',$call_duration); //给律师加直连时长
             apiReturn('200', AJAX_TRUE);
         } else {
             apiReturn('504', AJAX_FALSE, '创建订单失败');
         }
-
-
 
     }
     
