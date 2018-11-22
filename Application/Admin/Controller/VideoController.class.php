@@ -22,7 +22,6 @@ class VideoController extends AdminController
     //视频管理
     public function index() {
         $nickname = I('nickname');
-        $where['status'] = array('neq', 0);
         $where['title'] = array('like', '%' . (string)$nickname . '%');
         $where['type'] = 1;    //1视频 2直播
         $model = D('TrainRelation');
@@ -148,6 +147,9 @@ class VideoController extends AdminController
         $data['video_path']
             = $letv->videoGetPlayinterface($uu, video_info($data['video_id'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
         $imgs_str = $letv->imageGet(video_info($data['video_id'], 'video_id'), $size);
+
+//        $letv_status = $letv->videoGet(video_info($data['video_id'],'video_id')); //视频上传状态
+//        dump($letv_status); exit;
         $imgs_arr = json_decode($imgs_str, true);
         $data['imgs_cap'] = $imgs_arr['data'];
         $data1 = M('Major')->where('status=1')->order('sort')->select();
@@ -414,4 +416,23 @@ class VideoController extends AdminController
 
         return true;
     }
+
+    /**
+     * 更改视频状态
+     *
+     * @return [status]
+     */
+    public function editStatus() {
+        $id = lx_decrypt(I('get.id'));
+
+        $status = lx_decrypt(I('get.status'));
+
+        $state = $this->model->where('id=' . $id)->setField('status', $status);
+        if($state) {
+                $this->redirect('index');
+        } else {
+            $this->error('更改状态失败');
+        }
+    }
+
 }

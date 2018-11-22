@@ -411,8 +411,32 @@ class UserController extends BasicController
         }
     }
 
-    //用户资料
+
+    //个人资料
     public function user_info()
+    {
+        $id = session('my_id');
+        if(empty($id)){
+            apiReturn('1020', AJAX_FALSE, '请登录后查看个人资料');
+        }else{
+            $where = array(
+                'id' => session('my_id')
+            );
+        }
+
+
+        $model = D('AccountRelation');
+        $data = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,prize,price,type,create_at,up_time,status,num_img,is_hide,credit,integral')->find();
+
+        $num = date('y', time()) - date('y', $data['up_time']);
+        $data['years'] = $data['work_life'] + $num;     //执业年限
+        $data['my_id'] = session('my_id');
+
+        apiReturn('1020', AJAX_TRUE, $data);
+    }
+
+    //他人资料
+    public function other_info()
     {
         $AesMct = new MCrypt;
         $uid = $AesMct->decrypt(urldecode(I('post.uid'))); //用户id

@@ -689,7 +689,6 @@ class ContentController extends BasicController
         if($types == 0){
             $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
         }elseif($types == 1){
-            $content = I('post.content');
 //            if(empty($content)) {
 //                $content = '律携视频';
 //            }
@@ -700,10 +699,11 @@ class ContentController extends BasicController
 //            if(isset($token) && !empty($token)) {
 //                echo $letv_info = $letv->videoUploadResume($token, $uploadtype); //视频文件断点续传
 //            } else {
-            $letv_info = $letv->videoUploadInit($content, $client_ip, $file_size, 1); //视频上传
+            $letv_info = $letv->videoUploadInit($_FILES['content']['name'], $client_ip, $file_size, 1); //视频上传
 //            }
 
             $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式
+            exit(json_encode($video_data)); exit;
             $video_data['data']['upload_time'] = time(); //插入数据库，添加时间字段
             if($video_data['code'] == 0) { //判断返回数据的状态码是否为成功，并插入数据库
                 $id = M('Video')->add($video_data['data']);
@@ -712,6 +712,8 @@ class ContentController extends BasicController
                 apiReturn('1026', AJAX_FALSE, "");
             }
         }
+
+        exit(json_encode($video_data)); exit;
 
         if(empty($rid) || empty($content)) {
             apiReturn('1030', AJAX_FALSE, '缺少必要参数');
