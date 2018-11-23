@@ -139,7 +139,6 @@ class VideoController extends AdminController
         $height = 300; //播放器高度
         $size = '160_120'; //截图尺寸，每种尺寸各有8张图。 有以下尺寸供选择：100_100、200_200、300_300、120_90、128_96
         $letv = new LetvCloud;
-
         $id = I('get.vid');
         $model = D('TrainRelation');
         $res = $model->relation(true)->where('id=' . $id)->select();

@@ -415,6 +415,7 @@ class UserController extends BasicController
     //个人资料
     public function user_info()
     {
+
         $id = session('my_id');
         if(empty($id)){
             apiReturn('1020', AJAX_FALSE, '请登录后查看个人资料');
@@ -424,97 +425,18 @@ class UserController extends BasicController
             );
         }
 
-
         $model = D('AccountRelation');
-        $data = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,prize,price,type,create_at,up_time,status,num_img,is_hide,credit,integral')->find();
-
-        $num = date('y', time()) - date('y', $data['up_time']);
-        $data['years'] = $data['work_life'] + $num;     //执业年限
-        $data['my_id'] = session('my_id');
-
-        apiReturn('1020', AJAX_TRUE, $data);
-    }
-
-    //他人资料
-    public function other_info()
-    {
-        $AesMct = new MCrypt;
-        $uid = $AesMct->decrypt(urldecode(I('post.uid'))); //用户id
-        $type = $AesMct->decrypt(urldecode(I('post.type')));    //参数类型 默认用户id 1标识手机号码
-//        $uid =urldecode(I('post.uid')); //用户id
-//        $type =urldecode(I('post.type'));    //参数类型 默认用户id 1标识手机号码
-
-        if(empty($uid)) {
-            $where = array(
-                'id' => session('my_id')
-            );
-        } elseif(intval($type) == 1) {
-            $where = array(
-                'mobile' => $uid
-            );
-        } else {
-            $where = array(
-                'id' => $uid
-            );
-        }
-        $model = D('AccountRelation');
-        $res = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,bj_img,remark,email,birth,province,city,town,tag_citys,specialty,majors,work_life,law,lawyer_num,company,position,school,hight_diploma,education,professional,prize,price,type,create_at,up_time,status,num_img,is_hide,direct_price,case_price,direct_time,integral,credit,wallet')->select();
+        $res = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,bj_img,remark,email,birth,province,city,town,tag_citys,specialty,majors,work_life,law,lawyer_num,company,position,school,hight_diploma,education,professional,prize,price,type,create_at,up_time,status,num_img,is_hide,direct_price,case_price,direct_time,integral,credit,is_review,wallet,online_status')->select();
         $data = $res[0];
         $num = date('y', time()) - date('y', $data['up_time']);
         $data['years'] = $data['work_life'] + $num;     //执业年限
-        $data['my_id'] = session('my_id');
 
-        $resourceModel = M('resource_comment');
-        $comm = $resourceModel->alias('rc')
-            ->field('r.id,r.title')
-            ->join('left join lx_resource  as r on rc.rid = r.id')
-            ->where(['rc.uid'=>$data['id'],'rc.tbd'=>1,'r.status'=>1])
-            ->group('rc.rid')
-            ->order("time DESC")
-            ->select();
-        if($comm != null){
-            foreach($comm as &$value){
-                $array = array(
-                    'rid'=>$value['id'],
-                    'uid'=>$data['id'],
-                    'rc.tbd'=>1 //查询优质回答
-                );
-                $content = $resourceModel->alias('rc')
-                    ->field('id,content,type,likes,dislikes,tbd,time')
-                    ->where($array)
-                    ->order("time DESC")
-                    ->select();
-                foreach($content as &$val){
-                    if($val['type'] == 1){
-                        $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
-                        $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
-                        $type = 'url';  //接口类型
-                        $auto_play = 1; //是否自动播放
-                        $width = $AesMct->decrypt(urldecode(I('post.width')));  //播放器宽度
-                        $height = $AesMct->decrypt(urldecode(I('post.height'))); //播放器高度
-                        $letv = new LetvCloud;
-                        $val['content']
-                            = $letv->videoGetPlayinterface($uu, video_info($val['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
-                    }
-
-                    $commentCount = $resourceModel
-                        ->field('count(id) as count')
-                        ->where('pid='.$val['id'])
-                        ->find();
-                    $val['commentCount'] = $commentCount;
-                }
-
-                $value['commentInfo']=$content;
-            }
-        }
-        $data['goodContent'] = $comm;
-//        if(!empty($comm)){
-//            $data['goodContent'] = $comm;
-//        }else{
-//            $data['goodContent'] = '';
-//        }
+//        $money = M('wallet');
+//        $wallet = $money->where(['uid'=>$id])->find();
+//        $data['money'] = $wallet['money'];
         apiReturn('1020', AJAX_TRUE, $data);
     }
+
 
     //上传头像
     public function uploadPicture()
@@ -730,7 +652,7 @@ class UserController extends BasicController
         }
     }
 
-    //我的提问
+    //我(他)的提问
     public function my_question()
     {
         $tid = I('post.tid');   //别人id
@@ -753,12 +675,12 @@ class UserController extends BasicController
         //数据分页
         $config = array(
             'tablename' => 'Admin/ResourceRelation', // 表名
-            'relation'  => true, // 关联条件
+            'relation'  => 'comment_sums', // 关联条件
             'order'     => $order, // 排序
             'where'     => $where,  //条件
             'page'      => $nowPage,  // 页码，默认为首页
             'num'       => $num,  // 每页条数
-            'field'     => 'id,title,send_time,views,tag_major,imgs,status'
+            'field'     => 'id,title,content,title_img,send_time,views,tag_major,imgs,status,likes,is_reward,reward_money'
         );
         $page = new ApiPage($config);
         $data = $page->get(); //获取分页数据
@@ -784,12 +706,20 @@ class UserController extends BasicController
 
         $tid =$AesMct->decrypt(urldecode(I('post.tid')));   //别人id
 //        $tid = I('post.tid');   //别人id
-
+        $width = I('post.width');
+        $height = I('post.height');
+        $imageSize = $width.'_'.$height; //截图比例
         if(empty($tid)) {
             $uid = session('my_id');    //用户id
         } else {
             $uid = $tid;
         }
+        $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+        $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+        $type = 'url';  //接口类型
+        $auto_play = 1; //是否自动播放
+        $letv = new LetvCloud;
+
         $nowPage = I('post.nowpage'); //页码
         $num = I('post.num');    //每页显示条数
         $model = M('Resource_comment');
@@ -811,7 +741,7 @@ class UserController extends BasicController
             'where'     => $where,  //条件
             'page'      => $nowPage,  // 页码，默认为首页
             'num'       => $num,  // 每页条数
-            'field'     => 'id,title,author,send_time,views,tag_major,imgs,status'
+            'field'     => 'id,title,title_img,send_time,views,tag_major,imgs,likes,status,is_reward,reward_money'
         );
         $page = new ApiPage($config);
         $data = $page->get(); //获取分页数据
@@ -827,19 +757,16 @@ class UserController extends BasicController
                 foreach($v as $m => $n) {
                     $get_dat[ $k ][ $m ] = $n;
                     $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
-//                    $get_dat[ $k ]['comm_list'] = M('Resource_comment')->where($where1)->order('time desc')->limit(3)->field('content,time,tbd,is_nym,type')->select();
-                    $res = M('Resource_comment')->where($where1)->order('time desc')->limit(3)->field('content,time,likes,tbd,is_nym,type')->select();
+                    $get_dat[ $k ]['comm_list'] = M('Resource_comment')->where($where1)->order('time desc')->limit(3)->field('content,time,tbd,is_nym,type')->select();
+                    $res = M('Resource_comment')->where($where1)->order('time desc')->limit(3)->field('id,content,time,likes,tbd,is_nym,type')->select();
                     foreach($res as &$val){
                         if($val['type'] == 1){
-                            $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
-                            $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
-                            $type = 'url';  //接口类型
-                            $auto_play = 1; //是否自动播放
-                            $width = $AesMct->decrypt(urldecode(I('post.width')));  //播放器宽度
-                            $height = $AesMct->decrypt(urldecode(I('post.height'))); //播放器高度
-                            $letv = new LetvCloud;
+                            $imgs_str = $letv->imageGet(video_info($val['content'], 'video_id'), $imageSize);
                             $val['content']
                                 = $letv->videoGetPlayinterface($uu, video_info($val['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+                            $imgs_arr = json_decode($imgs_str, true);
+
+                            $val['img'] = $imgs_arr['data']['img1'];
                         }
                     }
                     $get_dat[ $k ]['comm_list'] = $res;
@@ -1296,5 +1223,27 @@ class UserController extends BasicController
         }
     }
 
+    /**
+     * 更改在线状态
+     */
+    public function editOnline(){
+        $id = session('my_id');
+        $AesMct = new MCrypt;
+        $online_status = $AesMct->decrypt(urldecode(I('post.online_status')));     //1在线 2不在线
+        if(empty($id)){
+            apiReturn('1020', AJAX_FALSE, '请登录后查看再更改在线状态');
+        }else{
+            $where = array(
+                'id' => $id
+            );
+        }
+        $model = M('Account');
+        $res = $model->where($where)->setField('online_status', $online_status);
+        if($res){
+            apiReturn("2000", AJAX_TRUE);
+        }else{
+            apiReturn("2001", AJAX_FALSE, '更新状态失败');
+        }
 
+    }
 }

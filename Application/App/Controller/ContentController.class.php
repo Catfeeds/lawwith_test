@@ -700,6 +700,7 @@ class ContentController extends BasicController
 //                echo $letv_info = $letv->videoUploadResume($token, $uploadtype); //视频文件断点续传
 //            } else {
             $letv_info = $letv->videoUploadInit($_FILES['content']['name'], $client_ip, $file_size, 1); //视频上传
+
 //            }
 
             $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式

@@ -689,4 +689,135 @@ class DetailController extends Controller
         }
     }
 
+
+
+    //他人资料
+    public function other_info()
+    {
+        $AesMct = new MCrypt;
+        $uid = $AesMct->decrypt(urldecode(I('post.uid'))); //用户id
+        $type = $AesMct->decrypt(urldecode(I('post.type')));    //参数类型 默认用户id 1标识手机号码
+        $width = I('post.width');  //播放器宽度
+        $height =I('post.height'); //播放器高度
+//        $uid =urldecode(I('post.uid')); //用户id
+//        $type =urldecode(I('post.type'));    //参数类型 默认用户id 1标识手机号码
+
+        if(intval($type) == 1) {
+            $where = array(
+                'mobile' => $uid
+            );
+        } else {
+            $where = array(
+                'id' => $uid
+            );
+        }
+
+        $model = D('AccountRelation');
+        $res = $model->relation(true)->where($where)->field('id,uname,mobile,gender,icon,bj_img,remark,email,birth,province,city,town,tag_citys,specialty,majors,work_life,law,lawyer_num,company,position,school,hight_diploma,education,professional,prize,price,type,create_at,up_time,status,num_img,is_hide,direct_price,case_price,direct_time,integral,credit,is_review,online_status')->select();
+        $data = $res[0];
+        $num = date('y', time()) - date('y', $data['up_time']);
+        $data['years'] = $data['work_life'] + $num;     //执业年限
+        $data['my_id'] = session('my_id');
+
+        $resourceModel = M('resource_comment');
+        $comm = $resourceModel->alias('rc')
+            ->field('r.id,r.title')
+            ->join('left join lx_resource  as r on rc.rid = r.id')
+            ->where(['rc.uid'=>$data['id'],'rc.tbd'=>1,'r.status'=>1])
+            ->group('rc.rid')
+            ->order("time DESC")
+            ->select();
+        if($comm != null){
+            foreach($comm as &$value){
+                $array = array(
+                    'rid'=>$value['id'],
+                    'uid'=>$data['id'],
+                    'rc.tbd'=>1 //查询优质回答
+                );
+                $content = $resourceModel->alias('rc')
+                    ->field('id,content,type,likes,dislikes,tbd,time')
+                    ->where($array)
+                    ->order("time DESC")
+                    ->select();
+                foreach($content as &$val){
+                    if($val['type'] == 1){
+                        $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                        $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                        $type = 'url';  //接口类型
+                        $auto_play = 1; //是否自动播放
+                        $letv = new LetvCloud;
+                        $val['content']
+                            = $letv->videoGetPlayinterface($uu, video_info($val['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+                    }
+
+                    $commentCount = $resourceModel
+                        ->field('count(id) as count')
+                        ->where('pid='.$val['id'])
+                        ->find();
+                    $val['commentCount'] = $commentCount;
+                }
+
+                $value['commentInfo']=$content;
+            }
+        }
+        $data['goodContent'] = $comm;
+//        if(!empty($comm)){
+//            $data['goodContent'] = $comm;
+//        }else{
+//            $data['goodContent'] = '';
+//        }
+        apiReturn('1020', AJAX_TRUE, $data);
+    }
+
+
+
+    public function helpTome()
+    {
+        $uid = 5806;
+        $nowPage = I('post.nowpage');
+        $num = I('post.num');
+        $where = array(
+            '_string' => "FIND_IN_SET($uid, inviters)",
+            'type'    => 2,
+            '_logic'  => 'and'
+        );
+        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,status';
+        $order = array(
+            'send_time' => 'desc'
+        );
+        //数据分页
+        $config = array(
+            'tablename' => 'Admin/ResourceRelation', // 表名
+            'where'     => $where,    // 查询条件
+            'relation'  =>  array('comment_sums','author_info'),      // 关联条件
+            'field'     => $filed,
+            'order'     => $order,
+            'page'      => $nowPage,  // 页码，默认为首页
+            'num'       => $num       // 每页条数
+        );
+        $page = new ApiPage($config);
+        $data = $page->get(); //获取分页数据
+        if($nowPage == 0) {
+            apiReturn('1019', AJAX_FALSE);   //获取数据失败
+        } else {
+            $get_dat = array();
+            foreach($data as $k => $v) {
+                foreach($v as $m => $n) {
+                    $get_dat[ $k ][ $m ] = $n;
+                    $get_dat[ $k ]['my_id'] = session('my_id');   //写入当前用户id
+                    $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
+                    //if(!empty($data[$k]['author_info']['law'])){
+                    //    $condit = array(
+                    //        'id' => $data[$k]['author_info']['law'],
+                    //        'status' => 1
+                    //    );
+                    //    $law_name = M('Laws')->where($condit)->getField('law_name');
+                    //    $get_dat[$k]['author_info']['law_name'] = $law_name;
+                    //}
+                }
+            }
+            apiReturn('1020', AJAX_TRUE, $get_dat);   //获取数据成功
+        }
+    }
+
 }

@@ -51,7 +51,7 @@ class PushMsgController extends BasicController
             'type'    => 2,
             '_logic'  => 'and'
         );
-        $filed = 'id,title,author,imgs,send_time,tbd_id,is_nym,status';
+        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,status';
         $order = array(
             'send_time' => 'desc'
         );
@@ -59,7 +59,7 @@ class PushMsgController extends BasicController
         $config = array(
             'tablename' => 'Admin/ResourceRelation', // 表名
             'where'     => $where,    // 查询条件
-            'relation'  => true,      // 关联条件
+            'relation'  => array('comment_sums','author_info'),      // 关联条件
             'field'     => $filed,
             'order'     => $order,
             'page'      => $nowPage,  // 页码，默认为首页
