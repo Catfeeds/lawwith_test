@@ -680,19 +680,21 @@ class ContentController extends BasicController
         $uid     = session('my_id');    //用户id
         $rid     = $AesMct->decrypt(urldecode(I('post.rid'))); //帖子id
         $pid     = $AesMct->decrypt(urldecode(I('post.pid'))); //帖子id
-//        $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
         $is_nym  = $AesMct->decrypt(urldecode(I('post.is_nym')));    //是否匿名 1是
         $types  = $AesMct->decrypt(urldecode(I('post.type')));    //文字0 视频1
-//        $token = urldecode(I('post.token'));
-        $file_size = I('post.file_size');
+//        $types = I('post.type');
+//        $is_nym = I('post.is_nym');
+//        $pid = I('post.pid');
+//        $rid = I('post.rid');
+
 
         if($types == 0){
             $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
         }elseif($types == 1){
-//            if(empty($content)) {
-//                $content = '律携视频';
-//            }
+            //文件大小
+            $file_size = I('post.file_size');
             $client_ip = get_client_ip($type = 0);
+<<<<<<< HEAD
 //            $file_size = isset($_POST['file_size']) ? intval($_POST['file_size']) : 0;
 //            $uploadtype = isset($_POST['uploadtype']) ? intval($_POST['uploadtype']) : 0;
 
@@ -702,20 +704,21 @@ class ContentController extends BasicController
             $letv_info = $letv->videoUploadInit($_FILES['content']['name'], $client_ip, $file_size, 1); //视频上传
 
 //            }
+=======
+            //获取客户端的ip跟地址
+            $letv_info = $letv->videoUploadInit($_FILES['content']['name'], $client_ip,$file_size , 0); //视频上传
+>>>>>>> c21708bb19fcea827ab665caaddc7a207497af13
 
             $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式
-            exit(json_encode($video_data)); exit;
             $video_data['data']['upload_time'] = time(); //插入数据库，添加时间字段
             if($video_data['code'] == 0) { //判断返回数据的状态码是否为成功，并插入数据库
                 $id = M('Video')->add($video_data['data']);
                 $content = $id;
-            }else{
+                session('video_sid', $id); //保存数据id到session
+            } else{
                 apiReturn('1026', AJAX_FALSE, "");
             }
         }
-
-        exit(json_encode($video_data)); exit;
-
         if(empty($rid) || empty($content)) {
             apiReturn('1030', AJAX_FALSE, '缺少必要参数');
         }
@@ -729,9 +732,9 @@ class ContentController extends BasicController
             'pid'     => $pid,
             'content' => $content,
             'is_nym'  => $is_nym,
+            'type'    => $types,
             'time'    => $_SERVER["REQUEST_TIME"]
         );
-
         if(M('Resource_comment')->add($data)) {
             $ctype = M('Resource')->where('id=' . $rid)->field('title,type,author')->find();
 
@@ -755,7 +758,8 @@ class ContentController extends BasicController
             $push  = A('PushMsg');
             $push->sendPush('all', $alias, $n_content, 'http', $m_txt);
 
-            apiReturn('1030', AJAX_TRUE);
+            $array['upload_url'] = $video_data['data']['upload_url'];
+            apiReturn('1030', AJAX_TRUE,$array);
         } else {
             apiReturn('1023', AJAX_FALSE);
         }

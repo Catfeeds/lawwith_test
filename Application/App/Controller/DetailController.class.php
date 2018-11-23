@@ -180,7 +180,7 @@ class DetailController extends Controller
                     $letv = new LetvCloud;
                     //获取视频
                     $arr[$k]['content']
-                        = $letv->videoGetPlayinterface($uu, video_info($n['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+                        = $letv->videoGetPlayinterface($uu, video_info($v['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
                     //获取视频截图
 //                    $arr[$k]['image'] = $letv->imageGet(video_info($arr[$k]['content'], 'video_id'), $imageSize);
                 }
@@ -211,7 +211,7 @@ class DetailController extends Controller
 
         $width = I('post.width');   //播放器宽度
         $height = I('post.height'); //播放器高度
-        $imageSize = I('post.imageSize'); //视频截图尺寸
+        $imageSize = I('post.image_size'); //视频截图尺寸
 
 		$model = D('ResourceComment');
 		$order = ['tbd' => 'desc', 'time' => 'desc'];
@@ -241,10 +241,13 @@ class DetailController extends Controller
                     $auto_play = 0; //是否自动播放
                     $letv = new LetvCloud;
                     //获取视频
-                    $arr[$k]['content']
-                        = $letv->videoGetPlayinterface($uu, video_info($n['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
-//                    //获取视频截图
-//                    $arr[$k][$m]['image'] = $letv->imageGet(video_info($arr[$k][$m]['content'], 'video_id'), $imageSize);
+//                    $arr[$k]['content'] = 'http://yuntv.letv.com/bcloud.html?uu=dwbppqvkxs&pu=a2ee3b5de4&vu='.video_info($v['content'], 'video_unique').'&width='.$width.'&height='.$height;
+                    //获取视频截图
+                    $image = $letv->imageGet(video_info($v['content'], 'video_id'), $imageSize);
+                    $tmp_image = json_decode($image,true);
+                    $arr[$k]['image'] =$tmp_image['data']['img1'];
+                    $arr[$k]['content'] = $letv->videoGetPlayinterface($uu, video_info($v['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+
                 }
 
                 //未登录状态，是否点过赞为0
@@ -279,31 +282,32 @@ class DetailController extends Controller
     public function comment_detail()
     {
         $commentId = I('get.comment_id');
-//        //获取播放器宽和长
-//        $width = I('get.width');
-//        $height = I('get.height');
-//
-//        if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
-////        $comment = M('resource_comment')->where(array('id'=>$commentId))->find();
-//        $getUser = M('Account')->select(false);
-//        $data = M()->table('lx_resource_comment a')->join('left join '.$getUser.' b on a.uid = b.id')->where(array('a.id'=>$commentId))->find();
-//        foreach($data as &$k){
-//            if ($k['type'] == 1){
-//                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
-//                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
-//                    $type = 'url';  //接口类型
-//                    $auto_play = 0; //是否自动播放
-//                    $letv = new LetvCloud;
-//                    //获取视频
-//                    $k['content']
-//                        = $letv->videoGetPlayinterface($uu, video_info($k['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
-//            }
-//        }
-//        apiReturn('200', AJAX_TRUE, $data);
+        //获取播放器宽和长
+        $width = I('get.width');
+        $height = I('get.height');
+        $imageSize = I('get.image_size');
         if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
-        $comment = M('resource_comment')->where(array('id'=>$commentId))->select();
+        $comment = M('resource_comment')->where(array('id'=>$commentId))->find();
+        if ($comment['type'] == 1){
+                $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                $type = 'url';  //接口类型
+                $auto_play = 0; //是否自动播放
+                $letv = new LetvCloud;
+            $image = $letv->imageGet(video_info($comment['content'], 'video_id'), "300_300");
+            $tmp_image = json_decode($image,true);
+            $comment['image'] =$image;
+                //获取视频
+            $comment['content']
+                    = $letv->videoGetPlayinterface($uu, video_info($comment['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+
+        }
 
         apiReturn('200', AJAX_TRUE, $comment);
+//        if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
+//        $comment = M('resource_comment')->where(array('id'=>$commentId))->select();
+//
+//        apiReturn('200', AJAX_TRUE, $comment);
     }
 
     //律所详情
