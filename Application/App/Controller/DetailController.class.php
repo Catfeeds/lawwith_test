@@ -294,13 +294,12 @@ class DetailController extends Controller
                 $type = 'url';  //接口类型
                 $auto_play = 0; //是否自动播放
                 $letv = new LetvCloud;
-            $image = $letv->imageGet(video_info($comment['content'], 'video_id'), "300_300");
-            $tmp_image = json_decode($image,true);
-            $comment['image'] =$image;
+//            $image = $letv->imageGet(video_info($comment['content'], 'video_id'), "300_300");
+//            $tmp_image = json_decode($image,true);
+//            $comment['image'] =$tmp_image['data']['img1'];
                 //获取视频
             $comment['content']
                     = $letv->videoGetPlayinterface($uu, video_info($comment['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
-
         }
 
         apiReturn('200', AJAX_TRUE, $comment);

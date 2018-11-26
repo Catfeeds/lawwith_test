@@ -680,6 +680,7 @@ class ContentController extends BasicController
         $uid     = session('my_id');    //用户id
         $rid     = $AesMct->decrypt(urldecode(I('post.rid'))); //帖子id
         $pid     = $AesMct->decrypt(urldecode(I('post.pid'))); //帖子id
+        $content     = $AesMct->decrypt(urldecode(I('post.content'))); //帖子id
         $is_nym  = $AesMct->decrypt(urldecode(I('post.is_nym')));    //是否匿名 1是
         $types  = $AesMct->decrypt(urldecode(I('post.type')));    //文字0 视频1
 //        $types = I('post.type');
@@ -688,37 +689,26 @@ class ContentController extends BasicController
 //        $rid = I('post.rid');
 
 
-        if($types == 0){
-            $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
-        }elseif($types == 1){
-            //文件大小
-            $file_size = I('post.file_size');
-            $client_ip = get_client_ip($type = 0);
-<<<<<<< HEAD
-//            $file_size = isset($_POST['file_size']) ? intval($_POST['file_size']) : 0;
-//            $uploadtype = isset($_POST['uploadtype']) ? intval($_POST['uploadtype']) : 0;
+//        if($types == 0){
+//            $content = $AesMct->decrypt(urldecode(trim(I('post.content'))));  //回复内容
+//        }else
+          if($types == 1) {
+              //文件大小
+              $file_size = I('post.file_size');
+              $client_ip = get_client_ip($type = 0);
+              //获取客户端的ip跟地址
+              $letv_info = $letv->videoUploadInit($content, $client_ip, $file_size, 0); //视频上传
+              $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式
+              $video_data['data']['upload_time'] = time(); //插入数据库，添加时间字段
+              if ($video_data['code'] == 0) { //判断返回数据的状态码是否为成功，并插入数据库
+                  $id = M('Video')->add($video_data['data']);
+                  $content = $id;
+                  session('video_sid', $id); //保存数据id到session
+              } else {
+                  apiReturn('1026', AJAX_FALSE, "");
+              }
+          }
 
-//            if(isset($token) && !empty($token)) {
-//                echo $letv_info = $letv->videoUploadResume($token, $uploadtype); //视频文件断点续传
-//            } else {
-            $letv_info = $letv->videoUploadInit($_FILES['content']['name'], $client_ip, $file_size, 1); //视频上传
-
-//            }
-=======
-            //获取客户端的ip跟地址
-            $letv_info = $letv->videoUploadInit($_FILES['content']['name'], $client_ip,$file_size , 0); //视频上传
->>>>>>> c21708bb19fcea827ab665caaddc7a207497af13
-
-            $video_data = (json_decode($letv_info, true)); //转换上传视频返回的json数据为数组格式
-            $video_data['data']['upload_time'] = time(); //插入数据库，添加时间字段
-            if($video_data['code'] == 0) { //判断返回数据的状态码是否为成功，并插入数据库
-                $id = M('Video')->add($video_data['data']);
-                $content = $id;
-                session('video_sid', $id); //保存数据id到session
-            } else{
-                apiReturn('1026', AJAX_FALSE, "");
-            }
-        }
         if(empty($rid) || empty($content)) {
             apiReturn('1030', AJAX_FALSE, '缺少必要参数');
         }
