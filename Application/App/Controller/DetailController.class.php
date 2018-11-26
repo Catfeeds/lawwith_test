@@ -656,10 +656,18 @@ class DetailController extends Controller
 //        $num =I('post.num');   //每页条数
 //        $type = I('post.type');      //评价类型 0好评 1差评
 //        $uid = I('post.uid');      //律师ID
-        $where = array(
-            'type' => $type,
-            'uid' => $uid
-        );
+
+        if(!empty($type)){
+            $where = array(
+                'type' => $type,
+                'uid' => $uid
+            );
+        }else{
+            $where = array(
+                'uid' => $uid
+            );
+        }
+
         $order = array(
             'time'=>'desc'
         );
@@ -771,57 +779,6 @@ class DetailController extends Controller
 //            $data['goodContent'] = '';
 //        }
         apiReturn('1020', AJAX_TRUE, $data);
-    }
-
-
-
-    public function helpTome()
-    {
-        $uid = 5806;
-        $nowPage = I('post.nowpage');
-        $num = I('post.num');
-        $where = array(
-            '_string' => "FIND_IN_SET($uid, inviters)",
-            'type'    => 2,
-            '_logic'  => 'and'
-        );
-        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,status';
-        $order = array(
-            'send_time' => 'desc'
-        );
-        //数据分页
-        $config = array(
-            'tablename' => 'Admin/ResourceRelation', // 表名
-            'where'     => $where,    // 查询条件
-            'relation'  =>  array('comment_sums','author_info'),      // 关联条件
-            'field'     => $filed,
-            'order'     => $order,
-            'page'      => $nowPage,  // 页码，默认为首页
-            'num'       => $num       // 每页条数
-        );
-        $page = new ApiPage($config);
-        $data = $page->get(); //获取分页数据
-        if($nowPage == 0) {
-            apiReturn('1019', AJAX_FALSE);   //获取数据失败
-        } else {
-            $get_dat = array();
-            foreach($data as $k => $v) {
-                foreach($v as $m => $n) {
-                    $get_dat[ $k ][ $m ] = $n;
-                    $get_dat[ $k ]['my_id'] = session('my_id');   //写入当前用户id
-                    $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
-                    //if(!empty($data[$k]['author_info']['law'])){
-                    //    $condit = array(
-                    //        'id' => $data[$k]['author_info']['law'],
-                    //        'status' => 1
-                    //    );
-                    //    $law_name = M('Laws')->where($condit)->getField('law_name');
-                    //    $get_dat[$k]['author_info']['law_name'] = $law_name;
-                    //}
-                }
-            }
-            apiReturn('1020', AJAX_TRUE, $get_dat);   //获取数据成功
-        }
     }
 
 }

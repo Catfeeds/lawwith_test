@@ -12,12 +12,34 @@ use Common\Api\MCrypt;
 
 class BasicController extends Controller
 {
+    /**
+     * 身份验证
+     */
+//    public function _initialize()
+//    {
+//        header("Content-Type:text/html;charset=utf-8");
+//        $AesMct = new MCrypt;
+//        $accid = $AesMct->decrypt(urldecode(I('post.accid')));    //用户
+//        $token = $AesMct->decrypt(str_replace(' ', '+', urldecode(I('post.token'))));    //用户云信标识
+//
+//        if (!check_user($accid, $token)) {
+//            apiReturn('2001', AJAX_FALSE);
+//        } else {
+//            session('accid', $accid);
+//            session('token', $token);
+//            session('my_id', check_user($accid, $token));
+//        }
+//    }
+
+    /**
+     * 本地测试,身份验证不加密
+     */
     public function _initialize()
     {
         header("Content-Type:text/html;charset=utf-8");
         $AesMct = new MCrypt;
-        $accid = $AesMct->decrypt(urldecode(I('post.accid')));    //用户
-        $token = $AesMct->decrypt(str_replace(' ', '+', urldecode(I('post.token'))));    //用户云信标识
+        $accid = I('post.accid');    //用户
+        $token = str_replace(' ', '+', urldecode(I('post.token')));    //用户云信标识
 
         if (!check_user($accid, $token)) {
             apiReturn('2001', AJAX_FALSE);

@@ -51,7 +51,7 @@ class PushMsgController extends BasicController
             'type'    => 2,
             '_logic'  => 'and'
         );
-        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,status';
+        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,is_review,status';
         $order = array(
             'send_time' => 'desc'
         );
