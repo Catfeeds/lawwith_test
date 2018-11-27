@@ -21,7 +21,7 @@ class EvaluateRelationModel extends RelationModel{
             'class_name' => 'account',
             'foreign_key' => 'customer',
             'mapping_name' => 'author_info',
-            'mapping_fields' => 'id,icon'
+            'mapping_fields' => 'id,uname,icon'
         ),
     );
 }

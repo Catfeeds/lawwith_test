@@ -19,13 +19,13 @@ class DetailController extends Controller
 
         $AesMct = new MCrypt;
         $cid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
-	    $is_read = I('post.is_read');
+        $is_read = I('post.is_read');
 
-	    //获取求助帖子的id
-	    if(empty($cid)) apiReturn('1022',AJAX_FALSE,'缺少必要参数');
+        //获取求助帖子的id
+        if(empty($cid)) apiReturn('1022',AJAX_FALSE,'缺少必要参数');
 
-	    //回复列表是否已读
-	    if ($is_read ==1) M('resource_comment')->where('rid='.$cid)->setField('status',1);
+        //回复列表是否已读
+        if ($is_read ==1) M('resource_comment')->where('rid='.$cid)->setField('status',1);
 
         //此贴是否已解决
         $is_help = M("resource_comment")->where(['rid' => $cid, 'tbd' => 1]).count();
@@ -37,48 +37,48 @@ class DetailController extends Controller
         }
 
         //根据帖子的id去查询
-	    $model1 = D('ResourceRelation');
+        $model1 = D('ResourceRelation');
         $tempData = $model1->relation(true)
-	        ->where('id='.$cid)
-	        ->field('id,title,content,author,tag_major,imgs,views,send_time,tbd_id,type,status,is_nym,is_admin,is_money,red_status,redpack_id,author_amount,post_amount,likes,is_reward,reward_money')
-	        ->select();
+            ->where('id='.$cid)
+            ->field('id,title,content,author,tag_major,imgs,views,send_time,tbd_id,type,status,is_nym,is_admin,is_money,red_status,redpack_id,author_amount,post_amount,likes,is_reward,reward_money')
+            ->select();
 
         $data = array_merge($data,$tempData[0]);
 
-	    //当前用户是否点赞
-	    $data['my_id'] = session('my_id');
-	    $data['user_likes'] = M('Likes')->where(['rid'=>$cid,'uid'=>$data['my_id']])->count();
+        //当前用户是否点赞
+        $data['my_id'] = session('my_id');
+        $data['user_likes'] = M('Likes')->where(['rid'=>$cid,'uid'=>$data['my_id']])->count();
 
-	    //当前用户是否收藏
-	    $res = M('resource_favorite')->where(['rid' => $cid, 'uid' => $data['my_id']])->count();
-		$res ? $data['is_favorite']=1 : $data['is_favorite']=2;
+        //当前用户是否收藏
+        $res = M('resource_favorite')->where(['rid' => $cid, 'uid' => $data['my_id']])->count();
+        $res ? $data['is_favorite']=1 : $data['is_favorite']=2;
 
-	    //作者所在律所名称
-	    if(!empty($data['author_info']['law'])) {
-		    $law_name = M('Laws')->where(['id' => $data['author_info']['law'], 'status' => 1])->getField('law_name');
-		    $data['author_info']['law_name'] = $law_name;
-	    }
+        //作者所在律所名称
+        if(!empty($data['author_info']['law'])) {
+            $law_name = M('Laws')->where(['id' => $data['author_info']['law'], 'status' => 1])->getField('law_name');
+            $data['author_info']['law_name'] = $law_name;
+        }
 
-	    //附件图片的路径遍历嵌入数组中
-	    $imgs_id = explode(',',$data['imgs']);
-	    foreach($imgs_id as $k => $img){
-		    $path = M('Picture')->where('id='.$img)->getField('path');
-		    $data['img_path'][$k] = $path;
-	    }
+        //附件图片的路径遍历嵌入数组中
+        $imgs_id = explode(',',$data['imgs']);
+        foreach($imgs_id as $k => $img){
+            $path = M('Picture')->where('id='.$img)->getField('path');
+            $data['img_path'][$k] = $path;
+        }
 
-	    //阅读量增加1
-	    M('Resource')->where('id='.$cid)->setInc('views');
+        //阅读量增加1
+        M('Resource')->where('id='.$cid)->setInc('views');
 
-	    //标记回复已读
-	    if(!empty(session('my_id')) && $data['author'] == session('my_id')) {
-		    M('Resource_comment')->where(array('rid' => $cid))->setField('status',1);
-	    }
+        //标记回复已读
+        if(!empty(session('my_id')) && $data['author'] == session('my_id')) {
+            M('Resource_comment')->where(array('rid' => $cid))->setField('status',1);
+        }
 
-	    if(empty($data)){
-		    apiReturn('1019',AJAX_FALSE);   //获取数据失败
-	    }else{
-		    apiReturn('1020',AJAX_TRUE,$data);  //获取数据成功
-	    }
+        if(empty($data)){
+            apiReturn('1019',AJAX_FALSE);   //获取数据失败
+        }else{
+            apiReturn('1020',AJAX_TRUE,$data);  //获取数据成功
+        }
     }
 
     //资讯详情
@@ -89,85 +89,85 @@ class DetailController extends Controller
         $model1 = D('Admin/NewsRelation');
         $data = $model1->relation(true)->where('id='.$cid)->field('id,title,content,author,tag_major,imgs,views,send_time,type,status,is_admin,is_money,post_amount,sort,likes,dislikes')->find();
 
-	    //获取数据失败返回false
-	    if(!is_array($data)) apiReturn('1019',AJAX_FALSE);
+        //获取数据失败返回false
+        if(!is_array($data)) apiReturn('1019',AJAX_FALSE);
 
         //当前用户是否收藏
-	    $data['my_id'] = session('my_id');
-	    $res = M('resource_favorite')->where(['rid' => $cid, 'uid' => $data['my_id']])->count();
-	    $res ? $data['is_favorite']=1 : $data['is_favorite']=2;
+        $data['my_id'] = session('my_id');
+        $res = M('resource_favorite')->where(['rid' => $cid, 'uid' => $data['my_id']])->count();
+        $res ? $data['is_favorite']=1 : $data['is_favorite']=2;
 
-	    //当前用户是否已点赞
-	    $user_like = M('Likes')->where(array('rid'=>$cid, 'uid'=>$data['my_id']))->count();
-	    $user_like ? $data['user_like'] = 1 : $data['user_like'] = 0;
+        //当前用户是否已点赞
+        $user_like = M('Likes')->where(array('rid'=>$cid, 'uid'=>$data['my_id']))->count();
+        $user_like ? $data['user_like'] = 1 : $data['user_like'] = 0;
 
-	    //当前用户是否已点踩
-	    $user_dislike = M('dislikes')->where(['rid' => $cid, 'uid' => session('my_id'),])->count();
-	    $user_dislike ? $data['user_dislike'] = 1 : $data['user_dislike'] = 0;
+        //当前用户是否已点踩
+        $user_dislike = M('dislikes')->where(['rid' => $cid, 'uid' => session('my_id'),])->count();
+        $user_dislike ? $data['user_dislike'] = 1 : $data['user_dislike'] = 0;
 
-	    //作者所在律所名称
-	    if(!empty($data['author_info']['law'])){
-		    $condit = array('id' => $data['author_info']['law'], 'status' => 1);
-		    $law_name = M('Laws')->where($condit)->getField('law_name');
-		    $data['author_info']['law_name'] = $law_name;
-	    }
+        //作者所在律所名称
+        if(!empty($data['author_info']['law'])){
+            $condit = array('id' => $data['author_info']['law'], 'status' => 1);
+            $law_name = M('Laws')->where($condit)->getField('law_name');
+            $data['author_info']['law_name'] = $law_name;
+        }
 
-	    //附件图片的路径遍历嵌入数组中
-	    $imgs_id = explode(',',$data['imgs']);
-	    foreach($imgs_id as $k => $img){
-		    $path = M('Picture')->where('id='.$img)->getField('path');
-		    $data['img_path'][$k] = $path;
-	    }
+        //附件图片的路径遍历嵌入数组中
+        $imgs_id = explode(',',$data['imgs']);
+        foreach($imgs_id as $k => $img){
+            $path = M('Picture')->where('id='.$img)->getField('path');
+            $data['img_path'][$k] = $path;
+        }
 
-	    //解析html标签
-	    $data['content'] = htmlspecialchars_decode($data['content']);
+        //解析html标签
+        $data['content'] = htmlspecialchars_decode($data['content']);
 
-	    //获取内容中图片url存入数组
-	    $images = array();
-	    preg_match_all('/src=\"(.*?(jpg|jpeg|gif|png))/',$data['content'],$result,PREG_PATTERN_ORDER);
-	    for ($i = 0; $i < count($result[0]); $i++) {
-		    $str = trim(substr($result[0][$i],5));
-		    array_push($images,$str);
-	    }
-	    $data['img_arr'] = $images;
-	    //正则替换所有img标签
-	    $data['content_ios'] = preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i','[#UIIMAGEVIEW#]',$data['content']);
+        //获取内容中图片url存入数组
+        $images = array();
+        preg_match_all('/src=\"(.*?(jpg|jpeg|gif|png))/',$data['content'],$result,PREG_PATTERN_ORDER);
+        for ($i = 0; $i < count($result[0]); $i++) {
+            $str = trim(substr($result[0][$i],5));
+            array_push($images,$str);
+        }
+        $data['img_arr'] = $images;
+        //正则替换所有img标签
+        $data['content_ios'] = preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i','[#UIIMAGEVIEW#]',$data['content']);
 
-	    //阅读量递增
-	    M('Resource')->where('id='.$cid)->setInc('views',1);
+        //阅读量递增
+        M('Resource')->where('id='.$cid)->setInc('views',1);
 
-	    apiReturn('1020',AJAX_TRUE,$data);  //获取数据成功
+        apiReturn('1020',AJAX_TRUE,$data);  //获取数据成功
     }
 
-	//帖子回复列表
-	public function commte_posts() {
-		$AesMct = new MCrypt;
-		$rid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
-		$nowPage = I('post.nowpage'); //页码
-		$num = I('post.num');    //每页显示条数
-		$uid = session('my_id');    //当前用户id
+    //帖子回复列表
+    public function commte_posts() {
+        $AesMct = new MCrypt;
+        $rid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
+        $nowPage = I('post.nowpage'); //页码
+        $num = I('post.num');    //每页显示条数
+        $uid = session('my_id');    //当前用户id
 
         $width = I('post.width');
         $height = I('post.height');
 
         $model = D('ResourceComment');
-		$order = ['tbd' => 'desc', 'time' => 'desc'];
+        $order = ['tbd' => 'desc', 'time' => 'desc'];
 
-		if(!empty($pid)){
-			$where = ['pid' => $pid];
-		}else{
-			$where = ['rid' => $rid];
-		}
+        if(!empty($pid)){
+            $where = ['pid' => $pid];
+        }else{
+            $where = ['rid' => $rid];
+        }
 
-		$model->_link['user_like']['condition'] = "lx_comm_like.uid=$uid";  //查询当前用户是否点赞此回复的条件
-		$model->_link['user_dislike']['condition'] = "lx_comm_dislike.uid=$uid";    //查询当前用户是否点踩此回复的条件
-		$count = $model->relation(true)->where($where)->count();   //获取回复总数据条数
-		$data = $model->relation(true)->order($order)->where($where)->page($nowPage,$num)->select();
+        $model->_link['user_like']['condition'] = "lx_comm_like.uid=$uid";  //查询当前用户是否点赞此回复的条件
+        $model->_link['user_dislike']['condition'] = "lx_comm_dislike.uid=$uid";    //查询当前用户是否点踩此回复的条件
+        $count = $model->relation(true)->where($where)->count();   //获取回复总数据条数
+        $data = $model->relation(true)->order($order)->where($where)->page($nowPage,$num)->select();
 
-		$arr = array();
-		foreach($data as $k => $v){
-			foreach($v as $m => $n){
-			    $arr[$k][$m] = $n;
+        $arr = array();
+        foreach($data as $k => $v){
+            foreach($v as $m => $n){
+                $arr[$k][$m] = $n;
                 $arr[$k]['my_id'] = $uid;   //当前用户id
                 $arr[$k]['sums_page'] = intval(ceil($count/$num));   //数据总页数
 
@@ -186,52 +186,52 @@ class DetailController extends Controller
                 }
 
                 //未登录状态，是否点过赞为0
-				if (empty($uid)) {
-					$arr[$k]['user_like']['counts'] = "0";
-					$arr[$k]['user_dislike']['counts'] = "0";
-				}
-			}
-		}
-		$data['sums_page'] = intval(ceil($count/$num));;   //数据总页数
-		if($nowPage == 0){
-			apiReturn('1019',AJAX_FALSE);   //获取数据失败
-		}else{
-			apiReturn('1020',AJAX_TRUE,$arr);  //获取数据成功
-		}
-	}
+                if (empty($uid)) {
+                    $arr[$k]['user_like']['counts'] = "0";
+                    $arr[$k]['user_dislike']['counts'] = "0";
+                }
+            }
+        }
+        $data['sums_page'] = intval(ceil($count/$num));;   //数据总页数
+        if($nowPage == 0){
+            apiReturn('1019',AJAX_FALSE);   //获取数据失败
+        }else{
+            apiReturn('1020',AJAX_TRUE,$arr);  //获取数据成功
+        }
+    }
 
-	//帖子回复列表v4
-	public function comment_posts_v4() {
-		$AesMct = new MCrypt;
-		$uid = session('my_id');    //当前用户id
-		$rid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
-		$pid = $AesMct->decrypt(urldecode(I('post.pid')));  //父级回复id
-		$nowPage = I('post.nowpage'); //页码
-		$num = I('post.num');    //每页显示条数
+    //帖子回复列表v4
+    public function comment_posts_v4() {
+        $AesMct = new MCrypt;
+        $uid = session('my_id');    //当前用户id
+        $rid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
+        $pid = $AesMct->decrypt(urldecode(I('post.pid')));  //父级回复id
+        $nowPage = I('post.nowpage'); //页码
+        $num = I('post.num');    //每页显示条数
 
         $width = I('post.width');   //播放器宽度
         $height = I('post.height'); //播放器高度
         $imageSize = I('post.image_size'); //视频截图尺寸
 
-		$model = D('ResourceComment');
-		$order = ['tbd' => 'desc', 'time' => 'desc'];
+        $model = D('ResourceComment');
+        $order = ['tbd' => 'desc', 'time' => 'desc'];
 
-		if($pid){
+        if($pid){
             $where = ['pid' => $pid];
         }else{
             $where = ['rid' => $rid, 'pid'=>0];
         }
 
-		$model->_link['user_like']['condition'] = "lx_comm_like.uid=$uid";  //查询当前用户是否点赞此回复的条件
-		$model->_link['user_dislike']['condition'] = "lx_comm_dislike.uid=$uid";    //查询当前用户是否点踩此回复的条件
-		$count = $model->relation(true)->where($where)->count();   //获取回复总数据条数
-		$data = $model->relation(true)->order($order)->where($where)->page($nowPage,$num)->select();
-		$arr = array();
-		foreach($data as $k => $v){
-			foreach($v as $m => $n){
-				$arr[$k][$m] = $n;
-				$arr[$k]['my_id'] = $uid;   //当前用户id
-				$arr[$k]['sums_page'] = intval(ceil($count/$num));;   //数据总页数
+        $model->_link['user_like']['condition'] = "lx_comm_like.uid=$uid";  //查询当前用户是否点赞此回复的条件
+        $model->_link['user_dislike']['condition'] = "lx_comm_dislike.uid=$uid";    //查询当前用户是否点踩此回复的条件
+        $count = $model->relation(true)->where($where)->count();   //获取回复总数据条数
+        $data = $model->relation(true)->order($order)->where($where)->page($nowPage,$num)->select();
+        $arr = array();
+        foreach($data as $k => $v){
+            foreach($v as $m => $n){
+                $arr[$k][$m] = $n;
+                $arr[$k]['my_id'] = $uid;   //当前用户id
+                $arr[$k]['sums_page'] = intval(ceil($count/$num));;   //数据总页数
 
                 //回复是否为视频回复
                 if($arr[$k]['type'] == 1){
@@ -251,10 +251,10 @@ class DetailController extends Controller
                 }
 
                 //未登录状态，是否点过赞为0
-				if (empty($uid)) {
-					$arr[$k]['user_like']['counts'] = "0";
-					$arr[$k]['user_dislike']['counts'] = "0";
-				}
+                if (empty($uid)) {
+                    $arr[$k]['user_like']['counts'] = "0";
+                    $arr[$k]['user_dislike']['counts'] = "0";
+                }
 
                 //
                 if(!$arr[$k]['author_reward']){
@@ -263,15 +263,15 @@ class DetailController extends Controller
                 if(!$arr[$k]['user_reward']){
                     $arr[$k]['user_reward'] = '';
                 }
-			}
-		}
-		$data['sums_page'] = intval(ceil($count/$num));;   //数据总页数
-		if($nowPage == 0){
-			apiReturn('1019',AJAX_FALSE);   //获取数据失败
-		}else{
-			apiReturn('1020',AJAX_TRUE,$arr);  //获取数据成功
-		}
-	}
+            }
+        }
+        $data['sums_page'] = intval(ceil($count/$num));;   //数据总页数
+        if($nowPage == 0){
+            apiReturn('1019',AJAX_FALSE);   //获取数据失败
+        }else{
+            apiReturn('1020',AJAX_TRUE,$arr);  //获取数据成功
+        }
+    }
 
 
     /**
@@ -289,17 +289,17 @@ class DetailController extends Controller
         if(empty($commentId)) apiReturn('403', AJAX_FALSE, '回答id不能为空');
         $comment = M('resource_comment')->where(array('id'=>$commentId))->find();
         if ($comment['type'] == 1){
-                $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
-                $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
-                $type = 'url';  //接口类型
-                $auto_play = 0; //是否自动播放
-                $letv = new LetvCloud;
+            $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+            $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+            $type = 'url';  //接口类型
+            $auto_play = 0; //是否自动播放
+            $letv = new LetvCloud;
 //            $image = $letv->imageGet(video_info($comment['content'], 'video_id'), "300_300");
 //            $tmp_image = json_decode($image,true);
 //            $comment['image'] =$tmp_image['data']['img1'];
-                //获取视频
+            //获取视频
             $comment['content']
-                    = $letv->videoGetPlayinterface($uu, video_info($comment['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+                = $letv->videoGetPlayinterface($uu, video_info($comment['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
         }
 
         apiReturn('200', AJAX_TRUE, $comment);
@@ -314,15 +314,15 @@ class DetailController extends Controller
         $AesMct = new MCrypt;
         $lid = $AesMct->decrypt(urldecode(I('post.lid')));  //律所id
 
-	    if(empty($lid)) apiReturn('1022',AJAX_FALSE,'缺少必要参数');
+        if(empty($lid)) apiReturn('1022',AJAX_FALSE,'缺少必要参数');
 
         $model = D('LawsRelation');
         $data = $model->relation(true)->where('id='.$lid)->field('id,law_name,profile,logo,bg_img,uadmin,province,city,town,address,phone,email')->find();
         $data['profile'] = strval($data['profile']);
 
         if($data){
-	        $data['my_id'] = session('my_id');
-	        apiReturn('1020',AJAX_TRUE,$data);
+            $data['my_id'] = session('my_id');
+            apiReturn('1020',AJAX_TRUE,$data);
         }else {
             apiReturn('1019',AJAX_FALSE);
         }
@@ -391,7 +391,7 @@ class DetailController extends Controller
                 'uid' => session('my_id')
             );
             $res = M('activity_favorite')->where($map)->select();   //查询当前用户是否收藏此帖子
-	        $res ? $data['is_favorite']=1 : $data['is_favorite']=2;
+            $res ? $data['is_favorite']=1 : $data['is_favorite']=2;
         }
 
         foreach($data['part_info'] as $k => $v){
@@ -425,7 +425,7 @@ class DetailController extends Controller
             $res[$k]['title_img'] = $v['banner'];
         }
 
-	    apiReturn('1020',AJAX_TRUE,$res);
+        apiReturn('1020',AJAX_TRUE,$res);
     }
 
     //视频列表
@@ -505,7 +505,7 @@ class DetailController extends Controller
                     //$get_dat[$k]['sums_page'] = $data['total_page'];
 
                     if(M('order_train')->where(['user_id'  => $userId,
-                                                'video_id' => $data[ $k ]['id']])->count() > 0) {
+                            'video_id' => $data[ $k ]['id']])->count() > 0) {
                         $returnData[ $k ]['is_pay'] = true;
                     } else {
                         $returnData[ $k ]['is_pay'] = false;
@@ -530,11 +530,11 @@ class DetailController extends Controller
 
     //视频详情
     public function video() {
-	    $AesMct = new MCrypt;
-	    $letv = new LetvCloud;
+        $AesMct = new MCrypt;
+        $letv = new LetvCloud;
         $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
         $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
-	    $data['my_id'] = session('my_id');  //当前用户id
+        $data['my_id'] = session('my_id');  //当前用户id
         $type = 'url';  //接口类型
         $auto_play = 1; //是否自动播放
         $width = I('post.width');  //播放器宽度
@@ -576,12 +576,12 @@ class DetailController extends Controller
         //未登录时帖子收藏设为空
         if(empty(session('my_id'))) $data['is_favorite'] = '';
 
-	    //查询当前用户是否收藏此帖子
-	    $map = array('vid' => $vid, 'uid' => $data['my_id']);
-	    $res = M('train_favorite')->where($map)->count();
-	    $res ? $data['is_favorite'] = 1 : $data['is_favorite'] = 2;
+        //查询当前用户是否收藏此帖子
+        $map = array('vid' => $vid, 'uid' => $data['my_id']);
+        $res = M('train_favorite')->where($map)->count();
+        $res ? $data['is_favorite'] = 1 : $data['is_favorite'] = 2;
 
-	    $data['video_path'] = $letv->videoGetPlayinterface($uu,video_info($data['video_id'],'video_unique'),$type,$pu,$auto_play,$width,$height);
+        $data['video_path'] = $letv->videoGetPlayinterface($uu,video_info($data['video_id'],'video_unique'),$type,$pu,$auto_play,$width,$height);
 
         //主讲人介绍
         if($data['speaker_info'] == null) $data['speaker_info'] = '';

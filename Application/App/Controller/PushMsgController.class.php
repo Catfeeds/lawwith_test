@@ -51,7 +51,7 @@ class PushMsgController extends BasicController
             'type'    => 2,
             '_logic'  => 'and'
         );
-        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,is_review,status';
+        $filed = 'id,title,content,author,imgs,send_time,tbd_id,is_nym,views,status,tag_major,reward_money';
         $order = array(
             'send_time' => 'desc'
         );
@@ -76,6 +76,7 @@ class PushMsgController extends BasicController
                     $get_dat[ $k ][ $m ] = $n;
                     $get_dat[ $k ]['my_id'] = session('my_id');   //写入当前用户id
                     $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
+
                     //if(!empty($data[$k]['author_info']['law'])){
                     //    $condit = array(
                     //        'id' => $data[$k]['author_info']['law'],
@@ -85,6 +86,14 @@ class PushMsgController extends BasicController
                     //    $get_dat[$k]['author_info']['law_name'] = $law_name;
                     //}
                 }
+            }
+            foreach($get_dat as &$val){
+                $model = M('major');
+                $arr = explode(',', $val['tag_major']);
+                $where['id'] = array('in',$arr);
+                $str = implode(',',$arr);
+                $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
+                $val['major'] = $res;
             }
             apiReturn('1020', AJAX_TRUE, $get_dat);   //获取数据成功
         }
