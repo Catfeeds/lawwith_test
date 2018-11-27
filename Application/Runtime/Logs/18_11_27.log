@@ -1,0 +1,88 @@
+[ 2018-11-27T10:17:18+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18600598551' ) AND ( `token` = 'f87aae2545ae969d4208894f81ee8e9a' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18600598551' ) AND ( `token` = 'f87aae2545ae969d4208894f81ee8e9a' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( id=6 )  [ RunTime:0.010000s ]
+
+[ 2018-11-27T10:18:36+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18600598551' ) AND ( `token` = 'f87aae2545ae969d4208894f81ee8e9a' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18600598551' ) AND ( `token` = 'f87aae2545ae969d4208894f81ee8e9a' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( id=6 )  [ RunTime:0.020000s ]
+
+[ 2018-11-27T10:18:49+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18600598551' ) AND ( `token` = 'f87aae2545ae969d4208894f81ee8e9a' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18600598551' ) AND ( `token` = 'f87aae2545ae969d4208894f81ee8e9a' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T10:19:23+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T10:22:25+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.013000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T10:22:28+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T10:22:29+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-27T10:22:32+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '189112930441' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-27T10:22:38+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.005001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-27T10:23:00+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
+

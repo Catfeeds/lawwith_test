@@ -43,6 +43,22 @@ class UserController extends BasicController
         }
     }
 
+    /**
+     * 检验是否已经认证身份
+     */
+    public function checkRreview(){
+        $my_id = session('my_id');
+        if(empty($my_id)){
+            apiReturn('1020', AJAX_FALSE, '请登录后查看身份认证信息');
+        }else{
+            $where = array(
+                'id' => $my_id
+            );
+        }
+        $data = M('Account')->where($where)->field('id,is_review,num_img')->find();
+        apiReturn('2000', AJAX_TRUE, $data);
+    }
+
     //信息完善
     public function myProfile()
     {

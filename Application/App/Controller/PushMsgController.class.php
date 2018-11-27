@@ -87,6 +87,7 @@ class PushMsgController extends BasicController
                     //}
                 }
             }
+            //专业标签
             foreach($get_dat as &$val){
                 $model = M('major');
                 $arr = explode(',', $val['tag_major']);
