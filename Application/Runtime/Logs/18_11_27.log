@@ -86,3 +86,125 @@ SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `tok
 SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
 SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
 
+[ 2018-11-27T11:15:49+08:00 ] 127.0.0.1 /app/Index/helps_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.018356s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( `status` = 1 ) AND ( `type` = 2 ) LIMIT 1   [ RunTime:0.022581s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`tag_city`,`tag_major`,`imgs`,`views`,`send_time`,`tbd_id`,`inviters`,`type`,`status`,`is_nym`,`is_admin`,`is_money`,`red_status`,`redpack_id`,`is_reward`,`reward_money` FROM `lx_resource` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `is_stick` asc,`send_time` desc LIMIT 0,1   [ RunTime:0.023905s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016348s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='3046' ) LIMIT 1   [ RunTime:0.016674s ]
+SQL: SHOW COLUMNS FROM `lx_comment_info` [ RunTime:0.016705s ]
+ERR: 1146:Table 'lawwith_test.lx_comment_info' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `lx_comment_info`
+SQL: SELECT a.id,a.uid,a.content as comm_content,a.likes,a.dislikes,a.tbd,a.time,a.post_amount,a.amount,a.type,b.icon FROM lx_resource_comment AS a, lx_account AS b WHERE a.uid = b.id AND a. rid='3046' [ RunTime:0.018390s ]
+SQL: SHOW COLUMNS FROM `lx_resource_favorite` [ RunTime:0.016389s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3046' ) LIMIT 1   [ RunTime:0.016291s ]
+SQL: SELECT `uid`,`time` FROM `lx_resource_favorite` WHERE ( 1=1 AND rid='3046' ) ORDER BY time desc  [ RunTime:0.016316s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.016824s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='5800' ) LIMIT 1   [ RunTime:0.016143s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_log` [ RunTime:0.016483s ]
+SQL: SELECT `rd_id`,`amount`,`payment_time`,`pay_user`,`get_user`,`type`,`commission` FROM `lx_bonus_log` WHERE ( 1=1 AND res_id='3046' )  [ RunTime:0.017141s ]
+SQL: SHOW COLUMNS FROM `lx_bonus_conf` [ RunTime:0.016413s ]
+SQL: SELECT * FROM `lx_bonus_conf` WHERE ( 1=1 AND conf_id='' ) LIMIT 1   [ RunTime:0.016174s ]
+SQL: SELECT count(id) as counts FROM `lx_resource_comment` WHERE ( tbd = 1 AND rid='3046' ) LIMIT 1   [ RunTime:0.017763s ]
+SQL: SHOW COLUMNS FROM `lx_major` [ RunTime:0.016152s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015317s ]
+SQL: SHOW COLUMNS FROM `lx_laws` [ RunTime:0.014949s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015671s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015942s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015801s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015291s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015505s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.014384s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015984s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015158s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015251s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015391s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015788s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015303s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014761s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015753s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015910s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015743s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015402s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.014741s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015878s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015827s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015873s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015931s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015836s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.014759s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015796s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.016006s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015746s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015874s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015917s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015767s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014099s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015224s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014709s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.014187s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015832s ]
+NOTIC: [8] Undefined index: is_reward D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 68 行.
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015980s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014613s ]
+NOTIC: [8] Undefined index: reward_money D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 69 行.
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.016011s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015736s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015559s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015205s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015897s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015879s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015314s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015344s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015425s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015921s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015708s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015464s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015712s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.014844s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015787s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015454s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (15) )  [ RunTime:0.015816s ]
+SQL: SELECT `law_name` FROM `lx_laws` WHERE ( `id` = 12531 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.015492s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 51 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 51 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 51 行.
+

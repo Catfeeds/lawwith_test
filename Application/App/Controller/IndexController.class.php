@@ -58,7 +58,7 @@ class IndexController extends Controller
                     $where['id'] = array('in',$arr);
                     $str = implode(',',$arr);
                     $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
-                    $get_dat[$k]['major'] = $res[''];
+                    $get_dat[$k]['major'] = $res;
 
                     if(!empty($data[ $k ]['author_info']['law'])) {
                         $condit['id'] = $data[ $k ]['author_info']['law'];
