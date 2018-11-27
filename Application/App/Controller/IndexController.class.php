@@ -34,7 +34,8 @@ class IndexController extends Controller
         $config = array(
             'tablename' => 'Admin/ResourceRelation', // 表名
             'where'     => $where, // 查询条件
-            'relation'  => true, // 关联条件
+//            'relation'  => array('author_info','comment_sums','comment_info','favorite_sums','is_help'), // 关联条件
+            'relation' => true,      //关联条件
             'order'     => $order, // 排序
             'page'      => $nowPage,  // 页码，默认为首页
             'num'       => $num,  // 每页条数
