@@ -576,10 +576,18 @@ class DetailController extends Controller
         //未登录时帖子收藏设为空
         if(empty(session('my_id'))) $data['is_favorite'] = '';
 
+<<<<<<< HEAD
         //查询当前用户是否收藏此帖子
         $map = array('vid' => $vid, 'uid' => $data['my_id']);
         $res = M('train_favorite')->where($map)->count();
         $res ? $data['is_favorite'] = 1 : $data['is_favorite'] = 2;
+=======
+	    //查询当前用户是否收藏此帖子
+	    $map = array('vid' => $vid, 'uid' => $data['my_id']);
+	    $res = M('train_favorite')->where($map)->count();
+//        $res ? $data['is_favorite'] = 1 : $data['is_favorite'] = 2;
+        $data['is_favorite'] =  $res == 1 ?1 : 2;
+>>>>>>> 41e66b58a97802aa27871ad95d1f171bfd21d807
 
         $data['video_path'] = $letv->videoGetPlayinterface($uu,video_info($data['video_id'],'video_unique'),$type,$pu,$auto_play,$width,$height);
 

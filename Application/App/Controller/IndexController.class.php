@@ -52,6 +52,14 @@ class IndexController extends Controller
                     $get_dat[ $k ][ $m ] = $n;
                     $get_dat[ $k ]['my_id'] = session('my_id');   //写入当前用户id
                     $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
+
+                    $model = M('major');
+                    $arr = explode(',', $data[$k]['tag_major']);
+                    $where['id'] = array('in',$arr);
+                    $str = implode(',',$arr);
+                    $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
+                    $get_dat[$k]['major'] = $res[''];
+
                     if(!empty($data[ $k ]['author_info']['law'])) {
                         $condit['id'] = $data[ $k ]['author_info']['law'];
                         $condit['status'] = 1;

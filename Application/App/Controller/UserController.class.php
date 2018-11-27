@@ -909,30 +909,61 @@ class UserController extends BasicController
         //收藏的帖子和收藏的求助
         $rid = M('Resource_favorite')->where('uid=' . $uid)->field('rid')->order('time desc')->select();
         foreach($rid as $k => $v) {
-            $data1[ $k ] = D('Admin/ResourceRelation')->relation(true)->where(array('id'     => $v['rid'],
-                                                                                    'status' => 1))->field('id,title,send_time,views,tag_major,type,imgs,status')->find();
-
+            $tempData = D('Admin/ResourceRelation')->relation(true)->where(array('id'     => $v['rid'],
+                                                                                    'status' => 1))->field('id,title,send_time,content,views,tag_major,type,imgs,status,reward_money')->select();
+            $data1[ $k ]['id'] = $tempData[0]['id'];
+            $data1[ $k ]['title'] = $tempData[0]['title'];
+            $data1[ $k ]['send_time'] = $tempData[0]['send_time'];
+            $data1[ $k ]['content'] = $tempData[0]['content'];
+            $data1[ $k ]['views'] = $tempData[0]['views'];
+            $data1[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+//            $data1[ $k ]['type'] = $tempData[0]['type'];
+            $data1[ $k ]['imgs'] = $tempData[0]['imgs'];
+            $data1[ $k ]['status'] = $tempData[0]['status'];
+            $data1[ $k ]['reward_money'] = $tempData[0]['reward_money'];
+            $data1[ $k ]['comment_sums']['counts'] = $tempData[0]['comment_sums']['counts'];
             // Type表示收藏对象的类型 1资讯,2求助,3活动,4视频
-            if($data1[ $k ]['type'] == 3) {
-                $data1[ $k ]['type'] = 1;
-            }
+//            if($data1[ $k ]['type'] == 3) {
+//                $data1[ $k ]['type'] = 1;
+//            }
 
-            if($data1[ $k ]['type'] == 2) {
+//            if($data1[ $k ]['type'] == 2) {
                 $data1[ $k ]['type'] = 2;
-            }
+//            }
         }
 
         //收藏的活动
         $aid = M('Activity_favorite')->where('uid=' . $uid)->field('aid')->order('time desc')->select();
         foreach($aid as $k => $v) {
-            $data2[ $k ] = D('Admin/ActivityRelation')->relation(true)->where(array('id' => $v['aid']))->field('id,title,send_time,views,status')->find();
+            $tempData = D('Admin/ActivityRelation')->relation(true)->where(array('id' => $v['aid']))->field('id,title,remark as content,send_time,views,status,imgs')->select();
+
+            $data2[ $k ]['id'] = $tempData[0]['id'];
+            $data2[ $k ]['title'] = $tempData[0]['title'];
+            $data2[ $k ]['send_time'] = $tempData[0]['send_time'];
+            $data2[ $k ]['content'] = $tempData[0]['content'];
+            $data2[ $k ]['views'] = $tempData[0]['views'];
+            $data2[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+            $data2[ $k ]['imgs'] = $tempData[0]['imgs'];
+            $data2[ $k ]['status'] = $tempData[0]['status'];
+//            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
+            $data2[ $k ]['comment_sums']['counts'] = $tempData[0]['comment_sums']['counts'];
             $data2[ $k ]['type'] = 3;
         }
 
         //收藏的视频
         $vid = M('Train_favorite')->where('uid=' . $uid)->field('vid')->order('time desc')->select();
         foreach($vid as $k => $v) {
-            $data3[ $k ] = D('Admin/TrainRelation')->relation(true)->where(array('id' => $v['vid']))->field('id,title,create_at,views,tags,status')->find();
+            $tempData = D('Admin/TrainRelation')->relation(true)->where(array('id' => $v['vid']))->field('id,title,remark as content,title_img,create_at,views,tags,status')->select();
+            $data3[ $k ]['id'] = $tempData[0]['id'];
+            $data3[ $k ]['title'] = $tempData[0]['title'];
+            $data3[ $k ]['send_time'] = $tempData[0]['send_time'];
+            $data3[ $k ]['content'] = $tempData[0]['content'];
+            $data3[ $k ]['views'] = $tempData[0]['views'];
+            $data3[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+            $data3[ $k ]['imgs'] = $tempData[0]['title_img'];
+            $data3[ $k ]['status'] = $tempData[0]['status'];
+//            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
+            $data3[ $k ]['comment_sums']['counts'] = $tempData[0]['comment_sums']['counts'];
             $data3[ $k ]['type'] = 4;
         }
 
@@ -970,37 +1001,63 @@ class UserController extends BasicController
         }
         $nowPage = I('post.nowpage');   //页码
         $num = I('post.num');   //每页条数
-        $where = array(
-            'status' => array('neq', 0),
-            'author' => $uid
-        );
-        $order = array(
-            'views'     => 'desc',
-            'send_time' => 'desc',
-        );
+//        $where = array(
+//            'status' => array('neq', 0),
+//            'author' => $uid
+//        );
+//        $order = array(
+//            'views'     => 'desc',
+//            'send_time' => 'desc',
+//        );
         //数据分页
-        $config = array(
-            'tablename' => 'Admin/ActivityRelation', // 表名
-            'relation'  => true, // 关联条件
-            'where'     => $where, //条件
-            'order'     => $order, // 排序
-            'page'      => $nowPage,  // 页码，默认为首页
-            'num'       => $num,  // 每页条数
-            'field'     => 'id,title,views,author,star_time,end_time,address,imgs,status,type,number,send_time,status'
-        );
-        $page = new ApiPage($config);
-        $data = $page->get(); //获取分页数据
+//        $config = array(
+//            'tablename' => 'Admin/ActivityRelation', // 表名
+//            'relation'  => true, // 关联条件
+//            'where'     => $where, //条件
+//            'order'     => $order, // 排序
+//            'page'      => $nowPage,  // 页码，默认为首页
+//            'num'       => $num,  // 每页条数
+//            'field'     => 'id,title,views,author,star_time,end_time,address,imgs,status,type,number,send_time,status'
+//        );
+//        $page = new ApiPage($config);
+//        $data = $page->get(); //获取分页数据
         if($nowPage == 0) {
             apiReturn('1019', AJAX_FALSE);   //获取数据失败
         } else {
-            $get_dat = array();
-            foreach($data as $k => $v) {
-                foreach($v as $m => $n) {
-                    $get_dat[ $k ][ $m ] = $n;
-                    $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
-                }
+//            $get_dat = array();
+//            foreach($data as $k => $v) {
+//                foreach($v as $m => $n) {
+//                    $get_dat[ $k ][ $m ] = $n;
+//                    $get_dat[ $k ]['sums_page'] = $data['total_page'];    //总页数
+//                }
+//            }
+            $aid = M('activity_part')->where('uid = '.$uid)->field('aid')->order('time desc')->select();
+            foreach($aid as $k => $v) {
+                $tempData = D('Admin/ActivityRelation')->relation(true)->where(array('id' => $v['aid']))->field('id,title,remark,views,author,star_time,end_time,address,imgs,status,type,number,send_time,status,joined_number')->select();
+                $data2[ $k ]['id'] = $tempData[0]['id'];
+                $data2[ $k ]['title'] = $tempData[0]['title'];
+                $data2[ $k ]['views'] = $tempData[0]['views'];
+                $data2[ $k ]['send_time'] = $tempData[0]['send_time'];
+                $data2[ $k ]['star_time'] = $tempData[0]['star_time'];
+                $data2[ $k ]['end_time'] = $tempData[0]['end_time'];
+                $data2[ $k ]['address'] = $tempData[0]['address'];
+                $data2[ $k ]['imgs'] = $tempData[0]['imgs'];
+                $data2[ $k ]['status'] = $tempData[0]['status'];
+                $data2[ $k ]['number'] = $tempData[0]['number'];
+                $data2[ $k ]['type'] = $tempData[0]['type'];
+                $data2[ $k ]['content'] = $tempData[0]['remark'];
+                $data2[$k]['author'] = $tempData[0]['author'];
+                $data2[$k]['joined_number'] = $tempData[0]['joined_number'];
+//            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
+                $data2[ $k ]['comment_sums']['counts'] = $tempData[0]['commt_sums']['counts'];
             }
-            apiReturn('1020', AJAX_TRUE, $get_dat);   //获取数据成功
+            $count = count($data2);
+            foreach($data2 as $k => $v) {
+                $data2[ $k ]['sums_page'] = intval(ceil($count / $num));   //数据总页数
+            }
+            //分页
+            $list = array_slice($data2, ($nowPage - 1) * $num, $num);
+            apiReturn('1020', AJAX_TRUE, $list);   //获取数据成功
         }
     }
 
