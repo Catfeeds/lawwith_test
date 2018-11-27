@@ -20,6 +20,13 @@ class DetailController extends Controller
         $AesMct = new MCrypt;
         $cid = $AesMct->decrypt(urldecode(I('post.cid')));  //帖子id
         $is_read = I('post.is_read');
+//        $cid = I('post.cid');
+        $uid = session('my_id');    //当前用户id
+        $nowPage = I('post.nowpage'); //页码
+        $num = I('post.num');    //每页显示条数
+        $width = I('post.width');   //播放器宽度
+        $height = I('post.height'); //播放器高度
+        $imageSize = I('post.image_size'); //视频截图尺寸
 
         //获取求助帖子的id
         if(empty($cid)) apiReturn('1022',AJAX_FALSE,'缺少必要参数');
@@ -29,13 +36,11 @@ class DetailController extends Controller
 
         //此贴是否已解决
         $is_help = M("resource_comment")->where(['rid' => $cid, 'tbd' => 1]).count();
-
         if($is_help > 0){
             $data['is_help'] = true; //已解决
         }else{
             $data['is_help'] = false; //未解决
         }
-
         //根据帖子的id去查询
         $model1 = D('ResourceRelation');
         $tempData = $model1->relation(true)
@@ -43,8 +48,56 @@ class DetailController extends Controller
             ->field('id,title,content,author,tag_major,imgs,views,send_time,tbd_id,type,status,is_nym,is_admin,is_money,red_status,redpack_id,author_amount,post_amount,likes,is_reward,reward_money')
             ->select();
 
-        $data = array_merge($data,$tempData[0]);
 
+        //回答列表
+        $model = D('ResourceComment');
+        $order = ['tbd' => 'desc', 'time' => 'desc'];
+        $where = ['rid' => $cid, 'pid'=>0];
+        $model->_link['user_like']['condition'] = "lx_comm_like.uid=$uid";  //查询当前用户是否点赞此回复的条件
+        $model->_link['user_dislike']['condition'] = "lx_comm_dislike.uid=$uid";    //查询当前用户是否点踩此回复的条件
+        $count = $model->relation(true)->where($where)->count();   //获取回复总数据条数
+        $tempdata = $model->relation(true)->order($order)->where($where)->page($nowPage,$num)->select();
+//        dump($tempdata);exit;
+        $arr = array();
+        foreach($tempdata as $k => $v){
+            foreach($v as $m => $n){
+                $arr[$k][$m] = $n;
+                $arr[$k]['my_id'] = $uid;   //当前用户id
+                $arr[$k]['sums_page'] = intval(ceil($count/$num));;   //数据总页数
+
+                //回复是否为视频回复
+                if($arr[$k]['type'] == 1){
+                    $uu = "dwbppqvkxs"; //用户唯一标识码   dwbppqvkxs
+                    $pu = "a2ee3b5de4"; //播放器唯一标识码  a2ee3b5de4
+                    $type = 'url';  //接口类型
+                    $auto_play = 0; //是否自动播放
+                    $letv = new LetvCloud;
+                    //获取视频
+//                    $arr[$k]['content'] = 'http://yuntv.letv.com/bcloud.html?uu=dwbppqvkxs&pu=a2ee3b5de4&vu='.video_info($v['content'], 'video_unique').'&width='.$width.'&height='.$height;
+                    //获取视频截图
+                    $image = $letv->imageGet(video_info($v['content'], 'video_id'), $imageSize);
+                    $tmp_image = json_decode($image,true);
+                    $arr[$k]['image'] =$tmp_image['data']['img1'];
+                    $arr[$k]['content'] = $letv->videoGetPlayinterface($uu, video_info($v['content'], 'video_unique'), $type, $pu, $auto_play, $width, $height);
+
+                }
+                //未登录状态，是否点过赞为0
+                if (empty($uid)) {
+                    $arr[$k]['user_like']['counts'] = "0";
+                    $arr[$k]['user_dislike']['counts'] = "0";
+                }
+                //
+                if(!$arr[$k]['author_reward']){
+                    $arr[$k]['author_reward'] = '';
+                }
+                if(!$arr[$k]['user_reward']){
+                    $arr[$k]['user_reward'] = '';
+                }
+            }
+        }
+//        dump($arr);exit;
+        $data = array_merge($data,$tempData[0]);
+        $data['reply_list'] = $arr;
         //当前用户是否点赞
         $data['my_id'] = session('my_id');
         $data['user_likes'] = M('Likes')->where(['rid'=>$cid,'uid'=>$data['my_id']])->count();
@@ -73,6 +126,8 @@ class DetailController extends Controller
         if(!empty(session('my_id')) && $data['author'] == session('my_id')) {
             M('Resource_comment')->where(array('rid' => $cid))->setField('status',1);
         }
+
+        $data['sums_page'] = intval(ceil($count/$num));;   //数据总页数
 
         if(empty($data)){
             apiReturn('1019',AJAX_FALSE);   //获取数据失败
@@ -658,7 +713,7 @@ class DetailController extends Controller
 //        $type = I('post.type');      //评价类型 0好评 1差评
 //        $uid = I('post.uid');      //律师ID
 
-        if(!empty($type)){
+        if($type !== ""){
             $where = array(
                 'type' => $type,
                 'uid' => $uid
