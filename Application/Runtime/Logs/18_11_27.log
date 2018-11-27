@@ -86,3 +86,100 @@ SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `tok
 SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
 SQL: SELECT `id`,`is_review`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
 
+[ 2018-11-27T11:10:25+08:00 ] 127.0.0.1 /Admin/Login/sub_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_user` [ RunTime:0.020000s ]
+SQL: SELECT * FROM `lx_user` WHERE ( `username` = 'test' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: UPDATE `lx_user` SET `login_at`=1543288224,`loginip`='127.0.0.1' WHERE ( `id` = 4 ) [ RunTime:0.020000s ]
+NOTIC: [8] Undefined index: superadmin D:\phpStudy\WWW\lawwith_test\ThinkPHP\Library\Org\Util\Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=2 and node.pid=100 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=101 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=132 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=145 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=162 and node.status=1 [ RunTime:0.020000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=171 and node.status=1 [ RunTime:0.010000s ]
+SQL: select node.id,node.name from lx_role as role,lx_role_user as user,lx_access as access ,lx_node as node where user.user_id='4' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=3 and node.pid=193 and node.status=1 [ RunTime:0.020000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-27T11:11:33+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`status`,`num_img` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T11:25:32+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-27T11:26:12+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.007001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-27T11:26:32+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.011000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T11:26:40+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.013001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.004000s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.020000s ]
+
+[ 2018-11-27T11:26:52+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.010000s ]
+
+[ 2018-11-27T11:27:41+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.020000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.020000s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.022000s ]
+
+[ 2018-11-27T11:27:52+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.015000s ]
+
+[ 2018-11-27T11:27:54+08:00 ] 127.0.0.1 /App/User/checkRreview
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.014001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '18911293044' ) AND ( `token` = '1be10ac5de2e86f752a7a8077fa32204' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `id`,`status`,`num_img`,`auth_time` FROM `lx_account` WHERE ( `id` = 8 ) LIMIT 1   [ RunTime:0.011000s ]
+

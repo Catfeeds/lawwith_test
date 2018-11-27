@@ -55,7 +55,10 @@ class UserController extends BasicController
                 'id' => $my_id
             );
         }
-        $data = M('Account')->where($where)->field('id,is_review,num_img')->find();
+        $data = M('Account')->where($where)->field('id,status,num_img,auth_time')->find();
+        if($data['num_img'] != '' && $data['auth_time'] != '' && $data['status'] == 0){
+            $data['status'] = 4; //审核中
+        }
         apiReturn('2000', AJAX_TRUE, $data);
     }
 
