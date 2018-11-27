@@ -364,7 +364,7 @@ class DetailController extends Controller
             M('Activity')->where('id='.$aid)->setField('status',2); //活动已结束
         }
         $model = D('Admin/ActivityRelation');
-        $data = $model->relation(true)->where('id='.$aid)->field('id,title,remark,address,number,price,star_time,end_time,sponsor,author,imgs,status,send_time,views,type,deadline,group,is_money,amount')->find();
+        $data = $model->relation(true)->where('id='.$aid)->field('id,title,remark,address,number,price,star_time,end_time,sponsor,author,imgs,status,send_time,views,type,deadline,group,is_money,amount')->select();
         //读取回复信息列表
         $model2 = M('activity_comment');
         $count = $model2->join('lx_account ON lx_activity_comment.uid = lx_account.id')->where('aid='.$aid)->count();
@@ -375,41 +375,41 @@ class DetailController extends Controller
             ->field('lx_activity_comment.id as cid,uid,aid,content,likes,dislikes,time,is_nym,uname,icon,type')
             ->page($nowPage,$num)
             ->select();
-        $data['sums_page'] = intval(ceil($count/$num));   //数据总页数
-        $data['comm_list'] = $data1;    //嵌入回复信息列表
+        $data[0]['sums_page'] = intval(ceil($count/$num));   //数据总页数
+        $data[0]['comm_list'] = $data1;    //嵌入回复信息列表
 
-        if($data['is_money']) {
+        if($data[0]['is_money']) {
             if(M('order_train')->where(['activity_id'=>$aid, 'user_id'=>$userId, 'status'=>1])->find()) {
                 $data['is_pay'] = 1;
             }
         }
         //未登录状态时不检测当前用户是否收藏此帖子
         if(!empty(session('my_id'))) {
-            $data['my_id'] = session('my_id');  //当前用户id
+            $data[0]['my_id'] = session('my_id');  //当前用户id
             $map = array(
                 'aid' => $aid,
                 'uid' => session('my_id')
             );
             $res = M('activity_favorite')->where($map)->select();   //查询当前用户是否收藏此帖子
-            $res ? $data['is_favorite']=1 : $data['is_favorite']=2;
+            $res ? $data[0]['is_favorite']=1 : $data[0]['is_favorite']=2;
         }
 
-        foreach($data['part_info'] as $k => $v){
+        foreach($data[0]['part_info'] as $k => $v){
             $user = M('Account')->where('id='.$v['uid'])->field('icon,uname')->find();
-            $data['part_info'][$k]['icon'] = $user['icon'];
-            $data['part_info'][$k]['uname'] = $user['uname'];
+            $data[0]['part_info'][$k]['icon'] = $user['icon'];
+            $data[0]['part_info'][$k]['uname'] = $user['uname'];
         }
 
-        if (Null == $data['deadline']) {
-            $data['deadline'] = '';
+        if (Null == $data[0]['deadline']) {
+            $data[0]['deadline'] = '';
         }
 
-        $data['remark'] = strip_tags(htmlspecialchars_decode($data['remark']));
+        $data[0]['remark'] = strip_tags(htmlspecialchars_decode($data[0]['remark']));
         if($nowPage == 0){
             apiReturn('1019',AJAX_FALSE);   //获取数据失败
         }else{
             M('Activity')->where('id='.$aid)->setInc('views');
-            apiReturn('1020',AJAX_TRUE,$data);  //获取数据成功
+            apiReturn('1020',AJAX_TRUE,$data[0]);  //获取数据成功
         }
     }
 

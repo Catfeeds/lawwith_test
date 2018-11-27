@@ -34,7 +34,8 @@ class IndexController extends Controller
         $config = array(
             'tablename' => 'Admin/ResourceRelation', // 表名
             'where'     => $where, // 查询条件
-            'relation'  => true, // 关联条件
+//            'relation'  => array('author_info','comment_sums','comment_info','favorite_sums','is_help'), // 关联条件
+            'relation' => true,      //关联条件
             'order'     => $order, // 排序
             'page'      => $nowPage,  // 页码，默认为首页
             'num'       => $num,  // 每页条数
@@ -58,7 +59,7 @@ class IndexController extends Controller
                     $where['id'] = array('in',$arr);
                     $str = implode(',',$arr);
                     $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
-                    $get_dat[$k]['major'] = $res[''];
+                    $get_dat[$k]['major'] = $res;
 
                     if(!empty($data[ $k ]['author_info']['law'])) {
                         $condit['id'] = $data[ $k ]['author_info']['law'];

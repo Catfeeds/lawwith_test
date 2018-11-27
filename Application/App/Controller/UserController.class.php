@@ -936,7 +936,15 @@ class UserController extends BasicController
             $data1[ $k ]['send_time'] = $tempData[0]['send_time'];
             $data1[ $k ]['content'] = $tempData[0]['content'];
             $data1[ $k ]['views'] = $tempData[0]['views'];
-            $data1[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+//            $data1[ $k ]['tag_major'] = ;
+
+            $model = M('major');
+            $arr = explode(',',$tempData[0]['tag_major']);
+            $where['id'] = array('in',$arr);
+            $str = implode(',',$arr);
+            $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
+            $data1[ $k ]['major'] = $res;
+
 //            $data1[ $k ]['type'] = $tempData[0]['type'];
             $data1[ $k ]['imgs'] = $tempData[0]['imgs'];
             $data1[ $k ]['status'] = $tempData[0]['status'];
@@ -950,14 +958,16 @@ class UserController extends BasicController
         //收藏的活动
         $aid = M('Activity_favorite')->where('uid=' . $uid)->field('aid')->order('time desc')->select();
         foreach($aid as $k => $v) {
-            $tempData = D('Admin/ActivityRelation')->relation('commt_sums')->where(array('id' => $v['aid']))->field('id,title,remark as content,send_time,views,status,imgs')->select();
-
+            $relation = array('commt_sums','part_sums');
+            $tempData = D('Admin/ActivityRelation')->relation($relation)->where(array('id' => $v['aid']))->field('id,title,remark as content,send_time,views,status,imgs')->select();
+//            dump($tempData);exit;
             $data2[ $k ]['id'] = $tempData[0]['id'];
             $data2[ $k ]['title'] = $tempData[0]['title'];
             $data2[ $k ]['send_time'] = $tempData[0]['send_time'];
             $data2[ $k ]['content'] = $tempData[0]['content'];
             $data2[ $k ]['views'] = $tempData[0]['views'];
-//            $data2[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+            $data2[ $k ]['major'] =array('major_name'=>'');
+            $data2[ $k ]['part_sums'] = $tempData[0]['part_sums'];
             $data2[ $k ]['imgs'] = $tempData[0]['imgs'];
             $data2[ $k ]['status'] = $tempData[0]['status'];
 //            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
@@ -974,7 +984,7 @@ class UserController extends BasicController
             $data3[ $k ]['send_time'] = $tempData[0]['create_at'];
             $data3[ $k ]['content'] = $tempData[0]['content'];
             $data3[ $k ]['views'] = $tempData[0]['views'];
-//            $data3[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+            $data3[ $k ]['major'] = array('major_name'=>'');
             $data3[ $k ]['imgs'] = $tempData[0]['title_img'];
             $data3[ $k ]['status'] = $tempData[0]['status'];
 //            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
@@ -1048,13 +1058,15 @@ class UserController extends BasicController
 //            }
             $aid = M('activity_part')->where('uid = '.$uid)->field('aid')->order('time desc')->select();
             foreach($aid as $k => $v) {
-                $tempData = D('Admin/ActivityRelation')->relation(true)->where(array('id' => $v['aid']))->field('id,title,remark,views,author,star_time,end_time,address,imgs,status,type,number,send_time,status,joined_number')->select();
+                $tempData = D('Admin/ActivityRelation')->relation(true)->where(array('id' => $v['aid']))->field('id,title,remark,views,author,star_time,end_time,deadline,address,imgs,status,type,number,send_time,status,joined_number')->select();
                 $data2[ $k ]['id'] = $tempData[0]['id'];
                 $data2[ $k ]['title'] = $tempData[0]['title'];
                 $data2[ $k ]['views'] = $tempData[0]['views'];
                 $data2[ $k ]['send_time'] = $tempData[0]['send_time'];
                 $data2[ $k ]['star_time'] = $tempData[0]['star_time'];
                 $data2[ $k ]['end_time'] = $tempData[0]['end_time'];
+                $data2[ $k ]['deadline'] = $tempData[0]['deadline'];
+                $data2[ $k ]['part_sums'] = $tempData[0]['part_sums'];
                 $data2[ $k ]['address'] = $tempData[0]['address'];
                 $data2[ $k ]['imgs'] = $tempData[0]['imgs'];
                 $data2[ $k ]['status'] = $tempData[0]['status'];
