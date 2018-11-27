@@ -265,7 +265,7 @@ class DetailController extends Controller
                 }
             }
         }
-        $data['sums_page'] = intval(ceil($count/$num));;   //数据总页数
+        $data['sums_page'] = intval(ceil($count/$num));   //数据总页数
         if($nowPage == 0){
             apiReturn('1019',AJAX_FALSE);   //获取数据失败
         }else{

@@ -87,14 +87,19 @@ class PushMsgController extends BasicController
                     //}
                 }
             }
+
             //专业标签
             foreach($get_dat as &$val){
                 $model = M('major');
-                $arr = explode(',', $val['tag_major']);
-                $where['id'] = array('in',$arr);
-                $str = implode(',',$arr);
-                $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
-                $val['major'] = $res;
+                if($val['tag_major'] != ''){
+                    $arr = explode(',', $val['tag_major']);
+                    $where['id'] = array('in',$arr);
+                    $str = implode(',',$arr);
+                    $res =$model->where('id IN ('.$str.')')->field('major_name')->select();
+                    $val['major'] = $res;
+                }else{
+                    $val['major'] = array();
+                }
             }
             apiReturn('1020', AJAX_TRUE, $get_dat);   //获取数据成功
         }

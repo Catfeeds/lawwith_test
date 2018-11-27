@@ -5929,3 +5929,96 @@ NOTIC: [2] Invalid argument supplied for foreach() D:\WorkSpace\PHPStudy\WWW\law
 NOTIC: [2] Invalid argument supplied for foreach() D:\WorkSpace\PHPStudy\WWW\lawwith_test\Application\App\Controller\IndexController.class.php 第 52 行.
 >>>>>>> 0af397ba3633a2a0b81f7750f53482f53f4d6142
 
+[ 2018-11-27T18:07:30+08:00 ] 127.0.0.1 /App/PushMsg/helpTome
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.042002s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.014000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = 'fSQcbp4xniehXTfGVYt1rA%3D%3D' ) AND ( `token` = 'SAIUKYQWZ8HHewbWDmTEyBKtpNSM47f8aF7NtTLCWQKyE0KznUTBzaTRWZpTToy7' ) LIMIT 1   [ RunTime:0.013001s ]
+
+[ 2018-11-27T18:08:06+08:00 ] 127.0.0.1 /App/PushMsg/helpTome
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '17600584560' ) AND ( `token` = '8bce0ddc409e26f3807f1ef13d6fd702' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '17600584560' ) AND ( `token` = '8bce0ddc409e26f3807f1ef13d6fd702' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( FIND_IN_SET(5806, inviters) ) AND ( `type` = 2 ) LIMIT 1   [ RunTime:0.023001s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`imgs`,`send_time`,`tbd_id`,`is_nym`,`views`,`status`,`tag_major`,`reward_money` FROM `lx_resource` WHERE ( FIND_IN_SET(5806, inviters) ) AND ( `type` = 2 ) ORDER BY `send_time` desc LIMIT 0,5   [ RunTime:0.023002s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='158' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='2' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='149' ) LIMIT 1   [ RunTime:0.017000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='18' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='135' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='8' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='128' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+SQL: SHOW COLUMNS FROM `lx_major` [ RunTime:0.015001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (5) )  [ RunTime:0.014001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (3,5,23) )  [ RunTime:0.016001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (3,4) )  [ RunTime:0.015001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (14) )  [ RunTime:0.016001s ]
+
+[ 2018-11-27T18:08:52+08:00 ] 127.0.0.1 /App/PushMsg/helpTome
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '17600584560' ) AND ( `token` = '8bce0ddc409e26f3807f1ef13d6fd702' ) LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '17600584560' ) AND ( `token` = '8bce0ddc409e26f3807f1ef13d6fd702' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( FIND_IN_SET(5806, inviters) ) AND ( `type` = 2 ) LIMIT 1   [ RunTime:0.021001s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`imgs`,`send_time`,`tbd_id`,`is_nym`,`views`,`status`,`tag_major`,`reward_money` FROM `lx_resource` WHERE ( FIND_IN_SET(5806, inviters) ) AND ( `type` = 2 ) ORDER BY `send_time` desc LIMIT 0,5   [ RunTime:0.021001s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.014000s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='158' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='2' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='149' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='18' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='135' ) LIMIT 1   [ RunTime:0.015000s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='8' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='128' ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.015001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+SQL: SHOW COLUMNS FROM `lx_major` [ RunTime:0.014001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (3,5,23) )  [ RunTime:0.014001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (3,4) )  [ RunTime:0.014000s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (14) )  [ RunTime:0.014001s ]
+
+[ 2018-11-27T18:09:24+08:00 ] 127.0.0.1 /App/PushMsg/helpTome
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.018001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '17600584560' ) AND ( `token` = '8bce0ddc409e26f3807f1ef13d6fd702' ) LIMIT 1   [ RunTime:0.015001s ]
+SQL: SELECT `id` FROM `lx_account` WHERE ( `mobile` = '17600584560' ) AND ( `token` = '8bce0ddc409e26f3807f1ef13d6fd702' ) LIMIT 1   [ RunTime:0.018001s ]
+SQL: SHOW COLUMNS FROM `lx_resource` [ RunTime:0.017001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lx_resource` WHERE ( FIND_IN_SET(5806, inviters) ) AND ( `type` = 2 ) LIMIT 1   [ RunTime:0.024001s ]
+SQL: SELECT `id`,`title`,`content`,`author`,`imgs`,`send_time`,`tbd_id`,`is_nym`,`views`,`status`,`tag_major`,`reward_money` FROM `lx_resource` WHERE ( FIND_IN_SET(5806, inviters) ) AND ( `type` = 2 ) ORDER BY `send_time` desc LIMIT 0,5   [ RunTime:0.024002s ]
+SQL: SHOW COLUMNS FROM `lx_resource_comment` [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='158' ) LIMIT 1   [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `lx_account` [ RunTime:0.017001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='2' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='149' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='18' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='135' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='8' ) LIMIT 1   [ RunTime:0.016001s ]
+SQL: SELECT count(*) as counts FROM `lx_resource_comment` WHERE ( 1=1 AND rid='128' ) LIMIT 1   [ RunTime:0.017001s ]
+SQL: SELECT `id`,`uname`,`mobile`,`icon`,`law`,`company`,`position`,`school`,`type`,`status`,`credit` FROM `lx_account` WHERE ( 1=1 AND id='6' ) LIMIT 1   [ RunTime:0.016001s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\lawwith_test\Application\App\Controller\PushMsgController.class.php 第 75 行.
+SQL: SHOW COLUMNS FROM `lx_major` [ RunTime:0.017001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (1,2,3) )  [ RunTime:0.016001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (3,5,23) )  [ RunTime:0.016001s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (3,4) )  [ RunTime:0.015000s ]
+SQL: SELECT `major_name` FROM `lx_major` WHERE ( id IN (14) )  [ RunTime:0.016001s ]
+
