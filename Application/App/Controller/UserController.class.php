@@ -909,8 +909,9 @@ class UserController extends BasicController
         //收藏的帖子和收藏的求助
         $rid = M('Resource_favorite')->where('uid=' . $uid)->field('rid')->order('time desc')->select();
         foreach($rid as $k => $v) {
-            $tempData = D('Admin/ResourceRelation')->relation(true)->where(array('id'     => $v['rid'],
+            $tempData = D('Admin/ResourceRelation')->relation('comment_sums')->where(array('id'=> $v['rid'],
                                                                                     'status' => 1))->field('id,title,send_time,content,views,tag_major,type,imgs,status,reward_money')->select();
+
             $data1[ $k ]['id'] = $tempData[0]['id'];
             $data1[ $k ]['title'] = $tempData[0]['title'];
             $data1[ $k ]['send_time'] = $tempData[0]['send_time'];
@@ -923,50 +924,45 @@ class UserController extends BasicController
             $data1[ $k ]['reward_money'] = $tempData[0]['reward_money'];
             $data1[ $k ]['comment_sums']['counts'] = $tempData[0]['comment_sums']['counts'];
             // Type表示收藏对象的类型 1资讯,2求助,3活动,4视频
-//            if($data1[ $k ]['type'] == 3) {
-//                $data1[ $k ]['type'] = 1;
-//            }
+            $data1[ $k ]['type'] = 2;
 
-//            if($data1[ $k ]['type'] == 2) {
-                $data1[ $k ]['type'] = 2;
-//            }
         }
 
         //收藏的活动
         $aid = M('Activity_favorite')->where('uid=' . $uid)->field('aid')->order('time desc')->select();
         foreach($aid as $k => $v) {
-            $tempData = D('Admin/ActivityRelation')->relation(true)->where(array('id' => $v['aid']))->field('id,title,remark as content,send_time,views,status,imgs')->select();
+            $tempData = D('Admin/ActivityRelation')->relation('commt_sums')->where(array('id' => $v['aid']))->field('id,title,remark as content,send_time,views,status,imgs')->select();
 
             $data2[ $k ]['id'] = $tempData[0]['id'];
             $data2[ $k ]['title'] = $tempData[0]['title'];
             $data2[ $k ]['send_time'] = $tempData[0]['send_time'];
             $data2[ $k ]['content'] = $tempData[0]['content'];
             $data2[ $k ]['views'] = $tempData[0]['views'];
-            $data2[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+//            $data2[ $k ]['tag_major'] = $tempData[0]['tag_major'];
             $data2[ $k ]['imgs'] = $tempData[0]['imgs'];
             $data2[ $k ]['status'] = $tempData[0]['status'];
 //            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
-            $data2[ $k ]['comment_sums']['counts'] = $tempData[0]['comment_sums']['counts'];
+            $data2[ $k ]['comment_sums']['counts'] = $tempData[0]['commt_sums']['counts'];
             $data2[ $k ]['type'] = 3;
         }
 
         //收藏的视频
         $vid = M('Train_favorite')->where('uid=' . $uid)->field('vid')->order('time desc')->select();
         foreach($vid as $k => $v) {
-            $tempData = D('Admin/TrainRelation')->relation(true)->where(array('id' => $v['vid']))->field('id,title,remark as content,title_img,create_at,views,tags,status')->select();
+            $tempData = D('Admin/TrainRelation')->relation('commt_sums')->where(array('id' => $v['vid']))->field('id,title,remark as content,title_img,create_at,views,tags,status')->select();
             $data3[ $k ]['id'] = $tempData[0]['id'];
             $data3[ $k ]['title'] = $tempData[0]['title'];
-            $data3[ $k ]['send_time'] = $tempData[0]['send_time'];
+            $data3[ $k ]['send_time'] = $tempData[0]['create_at'];
             $data3[ $k ]['content'] = $tempData[0]['content'];
             $data3[ $k ]['views'] = $tempData[0]['views'];
-            $data3[ $k ]['tag_major'] = $tempData[0]['tag_major'];
+//            $data3[ $k ]['tag_major'] = $tempData[0]['tag_major'];
             $data3[ $k ]['imgs'] = $tempData[0]['title_img'];
             $data3[ $k ]['status'] = $tempData[0]['status'];
 //            $data2[ $k ]['reward_money'] = $tempData[0]['reward_money'];
-            $data3[ $k ]['comment_sums']['counts'] = $tempData[0]['comment_sums']['counts'];
+            $data3[ $k ]['comment_sums']['counts'] = $tempData[0]['commt_sums']['counts'];
             $data3[ $k ]['type'] = 4;
         }
-
+//        $data3 = $tempData[0];
         if(empty($data1)) {
             $data1 = array();
         }
