@@ -579,7 +579,8 @@ class DetailController extends Controller
 	    //查询当前用户是否收藏此帖子
 	    $map = array('vid' => $vid, 'uid' => $data['my_id']);
 	    $res = M('train_favorite')->where($map)->count();
-	    $res ? $data['is_favorite'] = 1 : $data['is_favorite'] = 2;
+//        $res ? $data['is_favorite'] = 1 : $data['is_favorite'] = 2;
+        $data['is_favorite'] =  $res == 1 ?1 : 2;
 
 	    $data['video_path'] = $letv->videoGetPlayinterface($uu,video_info($data['video_id'],'video_unique'),$type,$pu,$auto_play,$width,$height);
 
